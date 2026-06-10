@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ServiceTemplate from "../components/templates/ServiceTemplate.astro";
+import LocationTemplate from "../components/templates/LocationTemplate.astro";
+import PostTemplate from "../components/templates/PostTemplate.astro";
+import { services, categoryLabels, categoryHubs } from "../data/services";
+import { locationPages, locationContent } from "../data/locations";
+import { posts } from "../data/posts";
+import { seoFor } from "../data/seo.generated";
+import { business } from "../data/site";
+
+export function getStaticPaths() {
+  const trim = (p: string) => p.replace(/^\/|\/$/g, "");
+  const serviceRoutes = services.map((s) => ({
+    params: { slug: trim(s.path) },
+    props: { kind: "service" as const, service: s },
+  }));
+  const locationRoutes = locationPages.map((p) => ({
+    params: { slug: trim(p.path) },
+    props: { kind: "location" as const, page: p },
+  }));
+  const postRoutes = posts.map((p) => ({
+    params: { slug: p.slug },
+    props: { kind: "post" as const, post: p },
+  }));
+  return [...serviceRoutes, ...locationRoutes, ...postRoutes];
+}
+
+const props = Astro.props;
+const site = "https://www.mexlandscaping.com";
+
+let title = "";
+let description = "";
+let ogImage = "";
+let path = "";
+const schema: object[] = [];
+
+const breadcrumb = (items: { name: string; path: string }[]) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: items.map((it, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: it.name,
+    item: new URL(it.path, site).href,
+  })),
+});
+
+if (props.kind === "service") {
+  const s = props.service;
+  path = s.path;
+  const meta = seoFor(s.path);
+  title = meta?.title || `${s.title} | Mex Landscaping`;
+  description = meta?.description || s.intro;
+  ogImage = meta?.ogImage || "";
+  schema.push(
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: s.title,
+      serviceType: s.title,
+      provider: { "@id": `${site}/#business` },
+      areaServed: "Montgomery County & the Main Line, PA",
+      description,
+      url: new URL(s.path, site).href,
+    },
+    breadcrumb([
+      { name: "Home", path: "/" },
+      { name: categoryLabels[s.category], path: categoryHubs[s.category] },
+      { name: s.title, path: s.path },
+    ])
+  );
+} else if (props.kind === "location") {
+  const p = props.page;
+  path = p.path;
+  const meta = seoFor(p.path);
+  const c = locationContent(p);
+  title = meta?.title || `${c.h1} | Mex Landscaping`;
+  description = meta?.description || c.intro;
+  ogImage = meta?.ogImage || "";
+  schema.push(
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: c.h1,
+      provider: { "@id": `${site}/#business` },
+      areaServed: { "@type": "City", name: `${p.city.name}, PA` },
+      description,
+      url: new URL(p.path, site).href,
+    },
+    breadcrumb([
+      { name: "Home", path: "/" },
+      { name: "Service Areas", path: "/service-areas/" },
+      { name: `${p.city.name}, PA`, path: p.path },
+    ])
+  );
+} else {
+  const post = props.post;
+  path = `/${post.slug}/`;
+  title = `${post.title} | Mex Landscaping`;
+  description = post.description;
+  ogImage = post.ogImage || "";
+  schema.push(
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: post.title,
+      description,
+      image: ogImage || undefined,
+      datePublished: post.date,
+      author: { "@type": "Organization", name: business.name },
+      publisher: { "@id": `${site}/#business` },
+      mainEntityOfPage: new URL(path, site).href,
+    },
+    breadcrumb([
+      { name: "Home", path: "/" },
+      { name: "Blog", path: "/blog/" },
+      { name: post.title, path },
+    ])
+  );
+}
+---
+
+<BaseLayout title={title} description={description} path={path} ogImage={ogImage} schema={schema}>
+  {props.kind === "service" && <ServiceTemplate service={props.service} />}
+  {props.kind === "location" && <LocationTemplate page={props.page} />}
+  {props.kind === "post" && <PostTemplate post={props.post} />}
+</BaseLayout>

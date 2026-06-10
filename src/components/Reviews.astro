@@ -1,0 +1,28 @@
+---
+import { reviews } from "../data/site";
+import Section from "./Section.astro";
+import SectionHeading from "./SectionHeading.astro";
+import Icon from "./Icon.astro";
+---
+
+<Section muted>
+  <SectionHeading eyebrow="Kind words" title="Trusted by homeowners and businesses" center />
+  <div class="mt-12 grid gap-6 lg:grid-cols-3">
+    {
+      reviews.map((t) => (
+        <figure class="flex flex-col rounded-3xl border border-forest-100 bg-white p-7">
+          <div class="flex gap-0.5 text-clay-500">
+            {[0, 1, 2, 3, 4].map(() => (
+              <Icon name="star" class="h-4 w-4" />
+            ))}
+          </div>
+          <blockquote class="mt-4 flex-1 text-forest-800">“{t.quote}”</blockquote>
+          <figcaption class="mt-6 border-t border-forest-100 pt-4">
+            <span class="block font-semibold text-forest-900">{t.name}</span>
+            <span class="text-sm text-forest-600">{t.location}</span>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+</Section>

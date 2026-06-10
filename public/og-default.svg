@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#284d2f"/>
+      <stop offset="1" stop-color="#0f1d13"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1040" cy="120" r="220" fill="#5f9136" opacity="0.18"/>
+  <g transform="translate(90,250)">
+    <circle cx="40" cy="20" r="44" fill="#284d2f" stroke="#7cab4f" stroke-width="3"/>
+    <path d="M40 44 A28 28 0 0 1 12 16 C12 4 20 -8 44 -20 C44 -20 48 4 36 24" fill="none" stroke="#7cab4f" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="110" y="6" font-family="Georgia, serif" font-size="58" font-weight="700" fill="#faf7f0">Mex Landscaping</text>
+    <text x="112" y="66" font-family="Arial, sans-serif" font-size="30" fill="#bcd6be">Landscaping · Snow · Hardscape — Norristown, PA</text>
+  </g>
+  <text x="90" y="540" font-family="Arial, sans-serif" font-size="30" font-weight="600" fill="#db8e5c">Free Estimates · (484) 261-6650</text>
+</svg>

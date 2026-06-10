@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import { seoFor } from "../data/seo.generated";
+
+const meta = seoFor("/our-work/");
+const title = meta?.title ?? "Our Work | Mex Landscaping | Norristown PA";
+const description =
+  meta?.description ??
+  "See Mex Landscaping's work across Norristown landscapes — precision, beauty, and craftsmanship.";
+
+// Placeholder gallery — swap each `from/to` for real project photos.
+const projects = [
+  { label: "Paver Patio & Fire Pit", area: "Wayne, PA", grad: "from-clay-400 to-clay-600", span: "lg:row-span-2 h-full min-h-[20rem]" },
+  { label: "Full Landscape Redesign", area: "King of Prussia, PA", grad: "from-leaf-500 to-forest-700", span: "h-56" },
+  { label: "Retaining Wall & Walkway", area: "Bryn Mawr, PA", grad: "from-forest-600 to-forest-800", span: "h-56" },
+  { label: "Lawn Installation", area: "Conshohocken, PA", grad: "from-forest-500 to-leaf-600", span: "h-56" },
+  { label: "Architectural Stone Facade", area: "Gladwyne, PA", grad: "from-clay-500 to-forest-700", span: "h-56" },
+  { label: "Commercial Snow Management", area: "Plymouth Meeting, PA", grad: "from-forest-700 to-forest-900", span: "lg:col-span-2 h-56" },
+  { label: "Landscape Lighting", area: "Malvern, PA", grad: "from-forest-600 to-clay-500", span: "h-56" },
+];
+---
+
+<BaseLayout title={title} description={description} path="/our-work/">
+  <PageHero
+    eyebrow="Portfolio"
+    title="Our work speaks for itself"
+    intro="A look at recent landscaping, hardscape, and property transformations across the Main Line. Every project starts with a plan and ends with a property the owner is proud of."
+    crumbs={[{ label: "Home", href: "/" }, { label: "Our Work" }]}
+  />
+
+  <Section>
+    <SectionHeading eyebrow="Recent projects" title="Designed, built, and maintained by our crews" />
+    <div class="mt-12 grid auto-rows-min gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        projects.map((p) => (
+          <div class={`group relative flex items-end overflow-hidden rounded-3xl bg-gradient-to-br ${p.grad} ${p.span} p-6 shadow-lg ring-1 ring-black/5`}>
+            <div class="relative z-10">
+              <span class="block text-lg font-semibold text-white" style="font-family:var(--font-display)">{p.label}</span>
+              <span class="text-sm text-white/80">{p.area}</span>
+            </div>
+            <div class="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10"></div>
+          </div>
+        ))
+      }
+    </div>
+    <p class="mt-8 text-sm text-forest-500">Project photos are representative placeholders — drop your real gallery images in to replace them.</p>
+  </Section>
+
+  <CtaBanner title="Picture your property next" />
+</BaseLayout>

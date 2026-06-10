@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import { business } from "../data/site";
+import { seoFor } from "../data/seo.generated";
+
+const meta = seoFor("/terms-conditions/");
+const title = meta?.title ?? "Terms & Conditions | Mex Landscaping";
+const description = meta?.description ?? "Mex Landscaping terms and conditions.";
+---
+
+<BaseLayout title={title} description={description} path="/terms-conditions/" noindex>
+  <PageHero title="Terms & Conditions" crumbs={[{ label: "Home", href: "/" }, { label: "Terms & Conditions" }]} />
+  <Section>
+    <div class="prose-mex mx-auto max-w-2xl">
+      <p>Welcome to Mex Landscaping!</p>
+      <p>
+        These terms and conditions outline the rules for using the Mex
+        Landscaping website. By accessing this site, you accept these terms in
+        full.
+      </p>
+      <h2>Use of the site</h2>
+      <p>
+        The content on this website is for general information about our
+        services. We make every effort to keep it accurate and up to date, but
+        details such as pricing and availability are confirmed in a written
+        estimate.
+      </p>
+      <h2>Estimates &amp; services</h2>
+      <p>
+        Estimates provided through this website or by phone are not binding
+        contracts. The scope, schedule, and price of any work are confirmed in a
+        signed agreement before work begins.
+      </p>
+      <h2>Contact</h2>
+      <p>
+        Questions about these terms? Contact us at <a href={business.emailHref}>{business.email}</a>
+        or {business.phoneDisplay}.
+      </p>
+    </div>
+  </Section>
+</BaseLayout>

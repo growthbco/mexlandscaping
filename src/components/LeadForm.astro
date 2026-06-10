@@ -1,0 +1,115 @@
+---
+import { WEB3FORMS_KEY, nav } from "../data/site";
+
+interface Props {
+  /** Pre-fills the "service" field, e.g. "Patios" or "Lawn Mowing — Wayne, PA" */
+  defaultService?: string;
+  compact?: boolean;
+}
+const { defaultService = "", compact = false } = Astro.props;
+
+// Flatten the service menu into a select list.
+const serviceGroups = nav.filter((n) => n.children);
+const inputClass =
+  "w-full rounded-xl border border-forest-200 bg-white px-4 py-3 text-forest-900 placeholder:text-forest-400 focus:border-forest-500 focus:outline-none focus:ring-2 focus:ring-forest-500/20";
+---
+
+<div class="rounded-3xl border border-forest-100 bg-white p-6 sm:p-8" data-leadform>
+  <form class="space-y-5" data-form>
+    <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+    <input type="hidden" name="subject" value="New lead from mexlandscaping.com" />
+    <input type="hidden" name="from_name" value="Mex Landscaping Website" />
+    <!-- Honeypot -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+    <div class={`grid gap-5 ${compact ? "" : "sm:grid-cols-2"}`}>
+      <label class="block">
+        <span class="mb-1.5 block text-sm font-medium text-forest-800">Full name</span>
+        <input name="name" required class={inputClass} placeholder="Jane Doe" />
+      </label>
+      <label class="block">
+        <span class="mb-1.5 block text-sm font-medium text-forest-800">Phone</span>
+        <input name="phone" type="tel" required class={inputClass} placeholder="(484) 555-0123" />
+      </label>
+      <label class="block">
+        <span class="mb-1.5 block text-sm font-medium text-forest-800">Email</span>
+        <input name="email" type="email" required class={inputClass} placeholder="you@example.com" />
+      </label>
+      <label class="block">
+        <span class="mb-1.5 block text-sm font-medium text-forest-800">Service needed</span>
+        <select name="service" class={inputClass}>
+          <option value="" disabled selected={!defaultService}>Select a service</option>
+          {defaultService && <option value={defaultService} selected>{defaultService}</option>}
+          {
+            serviceGroups.map((group) => (
+              <optgroup label={group.label}>
+                {group.children!.map((c) => (
+                  <option value={`${group.label} — ${c.label}`}>{c.label}</option>
+                ))}
+              </optgroup>
+            ))
+          }
+          <option value="Other">Something else</option>
+        </select>
+      </label>
+    </div>
+
+    <label class="block">
+      <span class="mb-1.5 block text-sm font-medium text-forest-800">Project details</span>
+      <textarea name="message" rows={compact ? 3 : 5} class={inputClass} placeholder="Tell us a bit about your property and what you're looking to do..."></textarea>
+    </label>
+
+    <button
+      type="submit"
+      data-submit
+      class="inline-flex w-full items-center justify-center rounded-full bg-clay-500 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-clay-600 disabled:opacity-60 sm:w-auto"
+    >
+      Request My Free Estimate
+    </button>
+    <p class="text-xs text-forest-500">We'll only use your details to respond to your request. No spam, ever.</p>
+  </form>
+
+  <div data-success class="hidden text-center">
+    <span class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-leaf-500/15 text-leaf-600">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="m5 12 5 5L20 7"/></svg>
+    </span>
+    <h3 class="mt-5 text-2xl font-semibold text-forest-900" style="font-family:var(--font-display)">Thanks — we got it!</h3>
+    <p class="mt-2 text-forest-700">A member of the Mex Landscaping team will reach out shortly to schedule your free estimate.</p>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll("[data-leadform]").forEach((root) => {
+    const form = root.querySelector("[data-form]") as HTMLFormElement | null;
+    const success = root.querySelector("[data-success]");
+    const btn = root.querySelector("[data-submit]") as HTMLButtonElement | null;
+    if (!form) return;
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Sending…";
+      }
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { Accept: "application/json" },
+          body: new FormData(form),
+        });
+        const data = await res.json();
+        if (data.success) {
+          form.classList.add("hidden");
+          success?.classList.remove("hidden");
+          return;
+        }
+        throw new Error(data.message || "Submission failed");
+      } catch (err) {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = "Request My Free Estimate";
+        }
+        alert("Sorry — something went wrong. Please call us at (484) 261-6650.");
+      }
+    });
+  });
+</script>

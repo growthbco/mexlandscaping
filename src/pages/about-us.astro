@@ -1,0 +1,91 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import ProcessSteps from "../components/ProcessSteps.astro";
+import Reviews from "../components/Reviews.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import Icon from "../components/Icon.astro";
+import { whyUs } from "../data/site";
+import { seoFor } from "../data/seo.generated";
+
+const meta = seoFor("/about-us/");
+const title = meta?.title ?? "About Us | Mex Landscaping | Norristown PA";
+const description =
+  meta?.description ??
+  "Discover Mex Landscaping's expertise in Norristown, PA. Transform your outdoor space with our skilled team.";
+
+const values = [
+  { title: "Craftsmanship", body: "We sweat the details others skip — proper base prep, clean edges, healthy plantings — because that's what makes the work last." },
+  { title: "Reliability", body: "We show up when we say we will, communicate clearly, and stand behind the work, season after season." },
+  { title: "Respect", body: "Your property is your home and your livelihood. We treat it with care and leave every site clean." },
+];
+---
+
+<BaseLayout title={title} description={description} path="/about-us/" ogImage={meta?.ogImage}>
+  <PageHero
+    eyebrow="About us"
+    title="A professional landscape design and installation company"
+    intro="Mex Landscaping is built on a simple idea: do excellent work, treat people right, and be the one team a property owner can count on all year."
+    crumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
+  />
+
+  <Section>
+    <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div>
+        <SectionHeading eyebrow="Our story" title="Rooted in the communities we serve" />
+        <div class="mt-6 space-y-4 text-forest-800">
+          <p>
+            Mex Landscaping started with a truck, a trailer, and a commitment to
+            outwork and out-care the competition. Today we're a full-service
+            landscape design and installation company trusted by homeowners and
+            businesses across Norristown, King of Prussia, and the Main Line.
+          </p>
+          <p>
+            We built the business to be a single, dependable partner for the
+            whole life of a property — designing and installing landscapes in
+            the warm months, building patios and walls that last, and keeping
+            driveways and lots clear when the snow flies.
+          </p>
+          <p>
+            Whatever the season, our promise is the same: thoughtful plans,
+            skilled crews, and clear communication from the first conversation
+            to the final walkthrough.
+          </p>
+        </div>
+      </div>
+      <div class="grid gap-5 sm:grid-cols-2">
+        {
+          whyUs.map((item) => (
+            <div class="rounded-2xl border border-forest-100 bg-white p-6">
+              <span class="grid h-10 w-10 place-items-center rounded-xl bg-leaf-500/15 text-leaf-600">
+                <Icon name="check" class="h-5 w-5" />
+              </span>
+              <h3 class="mt-4 font-semibold text-forest-900">{item.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-forest-700/90">{item.body}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Section>
+
+  <Section muted>
+    <SectionHeading eyebrow="What we stand for" title="The values behind every job" center />
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {
+        values.map((v) => (
+          <div class="rounded-3xl border border-forest-100 bg-white p-7">
+            <h3 class="text-xl font-semibold text-forest-900" style="font-family:var(--font-display)">{v.title}</h3>
+            <p class="mt-3 text-sm leading-relaxed text-forest-700/90">{v.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <ProcessSteps />
+  <Reviews />
+  <CtaBanner />
+</BaseLayout>

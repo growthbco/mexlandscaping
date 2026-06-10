@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import { business } from "../data/site";
+import { seoFor } from "../data/seo.generated";
+
+const meta = seoFor("/privacy-policy/");
+const title = meta?.title ?? "Privacy Policy | Mex Landscaping";
+const description = meta?.description ?? "Mex Landscaping privacy policy.";
+---
+
+<BaseLayout title={title} description={description} path="/privacy-policy/" noindex>
+  <PageHero title="Privacy Policy" crumbs={[{ label: "Home", href: "/" }, { label: "Privacy Policy" }]} />
+  <Section>
+    <div class="prose-mex mx-auto max-w-2xl">
+      <p>Last updated: April 25, 2024</p>
+      <p>
+        Mex Landscaping (“we”, “us”, “our”) respects your privacy. This policy
+        explains what information we collect through our website and how we use
+        it.
+      </p>
+      <h2>Information we collect</h2>
+      <p>
+        When you submit a contact or estimate form, we collect the information
+        you provide — typically your name, phone number, email address, and
+        details about your project. We use this information solely to respond to
+        your request and provide our services.
+      </p>
+      <h2>How we use your information</h2>
+      <ul>
+        <li>To respond to inquiries and schedule estimates</li>
+        <li>To provide and improve our services</li>
+        <li>To communicate with you about your project</li>
+      </ul>
+      <p>
+        We do not sell your personal information. We may share it with trusted
+        service providers (such as our form and email tools) only as needed to
+        operate our business.
+      </p>
+      <h2>Contact</h2>
+      <p>
+        Questions about this policy? Contact us at <a href={business.emailHref}>{business.email}</a>
+        or {business.phoneDisplay}.
+      </p>
+    </div>
+  </Section>
+</BaseLayout>

@@ -1,0 +1,13 @@
+---
+interface Props {
+  muted?: boolean;
+  class?: string;
+}
+const { muted = false, class: className = "" } = Astro.props;
+---
+
+<section class={`${muted ? "bg-sand" : ""} ${className}`}>
+  <div class="container-page py-16 sm:py-20 lg:py-24">
+    <slot />
+  </div>
+</section>

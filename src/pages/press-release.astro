@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import { seoFor } from "../data/seo.generated";
+
+const meta = seoFor("/press-release/");
+const title = meta?.title ?? "Press Release | Mex Landscaping";
+const description =
+  meta?.description ??
+  "News and announcements from Mex Landscaping, serving Norristown and the Main Line.";
+---
+
+<BaseLayout title={title} description={description} path="/press-release/">
+  <PageHero
+    eyebrow="Newsroom"
+    title="Press & Announcements"
+    intro="News, milestones, and announcements from the Mex Landscaping team."
+    crumbs={[{ label: "Home", href: "/" }, { label: "Press Release" }]}
+  />
+  <Section>
+    <div class="prose-mex mx-auto max-w-2xl">
+      <p>
+        For press inquiries, partnership opportunities, or media requests,
+        please reach out to our team — we'd be glad to share more about our work
+        across Norristown and the Main Line.
+      </p>
+      <p>
+        Check back here for upcoming announcements, community projects, and
+        company news.
+      </p>
+    </div>
+  </Section>
+  <CtaBanner />
+</BaseLayout>
