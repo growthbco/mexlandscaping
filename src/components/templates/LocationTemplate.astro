@@ -74,9 +74,9 @@ const nearby = cities.filter((x) => x.slug !== page.city.slug).slice(0, 8);
       <div class="sticky top-24 space-y-6">
         <div>
           <h2 class="font-display text-xl font-semibold text-forest-900">Free local estimate</h2>
-          <p class="mt-2 text-sm text-forest-700">Serving {page.city.name} and nearby — fast response.</p>
+          <p class="mt-2 text-sm text-forest-700">Serving {page.city.name} and nearby with fast response.</p>
           <div class="mt-4">
-            <LeadForm defaultService={`${c.crumb} — ${page.city.name}, PA`} compact />
+            <LeadForm defaultService={`${c.crumb}: ${page.city.name}, PA`} compact />
           </div>
         </div>
 

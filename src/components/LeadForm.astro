@@ -2,7 +2,7 @@
 import { WEB3FORMS_KEY, nav } from "../data/site";
 
 interface Props {
-  /** Pre-fills the "service" field, e.g. "Patios" or "Lawn Mowing — Wayne, PA" */
+  /** Pre-fills the "service" field, e.g. "Patios" or "Lawn Mowing: Wayne, PA" */
   defaultService?: string;
   compact?: boolean;
   /** "green" renders the solid green hero panel; "card" the white bordered card */
@@ -65,7 +65,7 @@ const labelClass = green
             serviceGroups.map((group) => (
               <optgroup label={group.label}>
                 {group.children!.map((c) => (
-                  <option value={`${group.label} — ${c.label}`}>{c.label}</option>
+                  <option value={`${group.label}: ${c.label}`}>{c.label}</option>
                 ))}
               </optgroup>
             ))
@@ -103,7 +103,7 @@ const labelClass = green
     <span class={`mx-auto grid h-14 w-14 place-items-center rounded-full ${green ? "bg-white/20 text-white" : "bg-leaf-500/15 text-leaf-600"}`}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="m5 12 5 5L20 7"/></svg>
     </span>
-    <h3 class={`mt-5 font-display text-2xl font-semibold ${green ? "text-white" : "text-forest-900"}`}>Thanks — we got it!</h3>
+    <h3 class={`mt-5 font-display text-2xl font-semibold ${green ? "text-white" : "text-forest-900"}`}>Thanks, we got it!</h3>
     <p class={`mt-2 ${green ? "text-white/85" : "text-forest-600"}`}>A member of the Mex Landscaping team will reach out shortly to schedule your free estimate.</p>
   </div>
 </div>
@@ -138,7 +138,7 @@ const labelClass = green
           btn.disabled = false;
           btn.textContent = "Get Your Free Estimate →";
         }
-        alert("Sorry — something went wrong. Please call us at (484) 261-6650.");
+        alert("Sorry, something went wrong. Please call us at (484) 261-6650.");
       }
     });
   });

@@ -72,10 +72,10 @@ const related = servicesByCategory(service.category)
             Get a free estimate
           </h2>
           <p class="mt-2 text-sm text-forest-700">
-            Tell us about your project — we'll get back to you fast.
+            Tell us about your project and we'll get back to you fast.
           </p>
           <div class="mt-4">
-            <LeadForm defaultService={`${catLabel} — ${service.title}`} compact />
+            <LeadForm defaultService={`${catLabel}: ${service.title}`} compact />
           </div>
         </div>
 

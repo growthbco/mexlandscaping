@@ -140,7 +140,7 @@ export const process = [
 export const whyUs = [
   {
     title: "Year-Round Reliability",
-    body: "One trusted team for every season — landscaping in summer, cleanups in fall, snow management in winter.",
+    body: "One trusted team for every season: landscaping in summer, cleanups in fall, snow management in winter.",
   },
   {
     title: "Award-Winning Design",
@@ -159,7 +159,7 @@ export const whyUs = [
 export const reviews = [
   {
     quote:
-      "Mex Landscaping redesigned our entire backyard — new patio, plantings, and lighting. The crew was professional and the result is stunning. We use the space every night now.",
+      "Mex Landscaping redesigned our entire backyard with a new patio, plantings, and lighting. The crew was professional and the result is stunning. We use the space every night now.",
     name: "Jennifer R.",
     location: "King of Prussia, PA",
   },

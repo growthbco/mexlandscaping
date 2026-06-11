@@ -40,8 +40,8 @@ export function locationContent(page: LocationPage) {
       h1: `Landscape Design & Hardscaping in ${city}, PA`,
       crumb: "Design & Hardscaping",
       metaTitle: `Landscape Design & Hardscaping in ${city}, PA | Mex Landscaping`,
-      metaDescription: `Premium landscape design, hardscaping, patios, and outdoor living in ${city}, PA. Mex Landscaping designs and builds high-end outdoor spaces. Free estimate — (484) 261-6650.`,
-      intro: `Mex Landscaping designs and builds high-end outdoor spaces in ${city}, PA — landscape redesigns, patios, fire features, walls, and complete outdoor living. One team, design through build.`,
+      metaDescription: `Premium landscape design, hardscaping, patios, and outdoor living in ${city}, PA. Mex Landscaping designs and builds high-end outdoor spaces. Free estimate: (484) 261-6650.`,
+      intro: `Mex Landscaping designs and builds high-end outdoor spaces in ${city}, PA: landscape redesigns, patios, fire features, walls, and complete outdoor living. One team, design through build.`,
       highlights: [
         "Landscape design & full redesigns",
         "Patios, walkways & retaining walls",
@@ -55,7 +55,7 @@ export function locationContent(page: LocationPage) {
         },
         {
           heading: "Hardscape, outdoor living & more",
-          text: `Patios, walkways, driveways, retaining and seating walls, outdoor kitchens, water features, and architectural stone — the structural craft that turns a ${city} yard into an outdoor destination.`,
+          text: `Patios, walkways, driveways, retaining and seating walls, outdoor kitchens, water features, and architectural stone. It's the structural craft that turns a ${city} yard into an outdoor destination.`,
         },
       ],
       cta: `Call (484) 261-6650 for a free design consultation in ${city}, PA.`,
@@ -82,7 +82,7 @@ export function locationContent(page: LocationPage) {
       },
       {
         heading: "Plowing, salting & de-icing",
-        text: `From pre-treatment ahead of a storm to plowing and post-storm de-icing, we handle the full job — with documented service that keeps commercial properties compliant and protected.`,
+        text: `From pre-treatment ahead of a storm to plowing and post-storm de-icing, we handle the full job, with documented service that keeps commercial properties compliant and protected.`,
       },
     ],
     cta: `Call (484) 261-6650 to set up snow management in ${city}, PA before the next storm.`,

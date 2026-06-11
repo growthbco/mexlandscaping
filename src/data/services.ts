@@ -72,7 +72,7 @@ export const services: Service[] = [
     image: "/images/landscape-design.webp",
     featured: true,
     intro:
-      "Full-service landscape design and installation — from a complete property redesign to refined planting, lighting, and grading. We design it, then our own crews build it.",
+      "Full-service landscape design and installation, from a complete property redesign to refined planting, lighting, and grading. We design it, then our own crews build it.",
     highlights: [
       "Complete property redesigns",
       "Custom planting & bed design",
@@ -82,7 +82,7 @@ export const services: Service[] = [
     body: [
       {
         heading: "Designed and built by one team",
-        text: "A great outdoor space starts with a great plan. We design thoughtful, site-specific landscapes — balancing structure, planting, light, and flow — then build them with our own crews, so the vision that's drawn is the vision that's delivered.",
+        text: "A great outdoor space starts with a great plan. We design thoughtful, site-specific landscapes that balance structure, planting, light, and flow, then build them with our own crews, so the vision that's drawn is the vision that's delivered.",
       },
       {
         heading: "From full redesign to refined detail",
@@ -107,11 +107,11 @@ export const services: Service[] = [
     body: [
       {
         heading: "A professional design & installation company",
-        text: "Mex Landscaping brings creative design and meticulous installation to properties across Norristown and the Main Line — the kind of work that makes a home feel finished and a commercial property feel cared for.",
+        text: "Mex Landscaping brings creative design and meticulous installation to properties across Norristown and the Main Line. It's the kind of work that makes a home feel finished and a commercial property feel cared for.",
       },
       {
         heading: "One trusted partner for the whole property",
-        text: "Design, planting, lighting, drainage, hardscape, and outdoor living — instead of juggling contractors, you get one accountable team that knows your property end to end.",
+        text: "Design, planting, lighting, drainage, hardscape, and outdoor living. Instead of juggling contractors, you get one accountable team that knows your property end to end.",
       },
     ],
   },
@@ -122,7 +122,7 @@ export const services: Service[] = [
     icon: "leaf",
     image: "/images/lawn-install.webp",
     intro:
-      "New sod and seeded lawns engineered to establish fast and last — with the soil prep and grading that make the difference.",
+      "New sod and seeded lawns engineered to establish fast and last, with the soil prep and grading that make the difference.",
     highlights: [
       "Soil prep & precision grading",
       "Premium sod or seed blends",
@@ -136,7 +136,7 @@ export const services: Service[] = [
       },
       {
         heading: "Set up for the long run",
-        text: "We don't just lay turf and leave — we set your new lawn up to root deeply and give you the guidance to keep it lush.",
+        text: "We don't just lay turf and leave. We set your new lawn up to root deeply and give you the guidance to keep it lush.",
       },
     ],
   },
@@ -147,7 +147,7 @@ export const services: Service[] = [
     icon: "leaf",
     image: "/images/landscape-design.webp",
     intro:
-      "Specimen trees, layered shrubs, and perennial plantings — sourced healthy and placed with a designer's eye.",
+      "Specimen trees, layered shrubs, and perennial plantings, sourced healthy and placed with a designer's eye.",
     highlights: [
       "Specimen & native selections",
       "Layered, four-season interest",
@@ -173,7 +173,7 @@ export const services: Service[] = [
     image: "/images/lighting.jpg",
     featured: true,
     intro:
-      "Architectural low-voltage lighting that transforms your property after dark — highlighting the home, the trees, and the spaces you've built.",
+      "Architectural low-voltage lighting that transforms your property after dark, highlighting the home, the trees, and the spaces you've built.",
     highlights: [
       "Architectural & path lighting",
       "Tree uplighting & moonlighting",
@@ -212,7 +212,7 @@ export const services: Service[] = [
       },
       {
         heading: "Protect the investment",
-        text: "Good drainage is invisible when it's done right — and expensive when it's ignored. We solve the root cause so the problem doesn't return.",
+        text: "Good drainage is invisible when it's done right, and expensive when it's ignored. We solve the root cause so the problem doesn't return.",
       },
     ],
   },
@@ -251,7 +251,7 @@ export const services: Service[] = [
     image: "/images/patio.jpg",
     featured: true,
     intro:
-      "Patios, walls, walkways, and driveways built to last decades — the structural backbone of a high-end outdoor space.",
+      "Patios, walls, walkways, and driveways built to last decades: the structural backbone of a high-end outdoor space.",
     highlights: [
       "Patios & walkways",
       "Retaining & seating walls",
@@ -261,11 +261,11 @@ export const services: Service[] = [
     body: [
       {
         heading: "Built-to-last stonework",
-        text: "We design and build hardscapes that hold for decades — with the proper base prep and drainage that keep everything level and tight. Patios, walls, walkways, and driveways, built for how you live outside.",
+        text: "We design and build hardscapes that hold for decades, with the proper base prep and drainage that keep everything level and tight. Patios, walls, walkways, and driveways, built for how you live outside.",
       },
       {
         heading: "Where the difference is hidden",
-        text: "The longevity of any hardscape lives in the base you never see. We never cut corners there — that's why our work lasts.",
+        text: "The longevity of any hardscape lives in the base you never see. We never cut corners there, and that's why our work lasts.",
       },
     ],
   },
@@ -277,7 +277,7 @@ export const services: Service[] = [
     image: "/images/patio.jpg",
     featured: true,
     intro:
-      "Paver and natural-stone patios designed as true outdoor rooms — level, durable, and built for years of gatherings.",
+      "Paver and natural-stone patios designed as true outdoor rooms: level, durable, and built for years of gatherings.",
     highlights: [
       "Paver & natural stone",
       "Engineered base & drainage",
@@ -315,7 +315,7 @@ export const services: Service[] = [
     body: [
       {
         heading: "Crafted paths and steps",
-        text: "A well-built walkway is an invitation. We design and build paths and steps that connect your spaces beautifully — with the base and drainage to stay level and safe for years.",
+        text: "A well-built walkway is an invitation. We design and build paths and steps that connect your spaces beautifully, with the base and drainage to stay level and safe for years.",
       },
       {
         heading: "Detail that elevates the whole property",
@@ -331,7 +331,7 @@ export const services: Service[] = [
     image: "/images/driveway.jpg",
     featured: true,
     intro:
-      "Paver and stone driveways with lasting curb appeal — and the engineered base to handle weight and weather.",
+      "Paver and stone driveways with lasting curb appeal, plus the engineered base to handle weight and weather.",
     highlights: [
       "Heavy-duty base preparation",
       "Paver & stone finishes",
@@ -373,7 +373,7 @@ export const services: Service[] = [
       },
       {
         heading: "Walls you can build a space around",
-        text: "Seating walls, tiered terraces, and stone-faced walls do double duty — solving grade while defining patios, fire features, and gardens.",
+        text: "Seating walls, tiered terraces, and stone-faced walls do double duty, solving grade while defining patios, fire features, and gardens.",
       },
     ],
   },
@@ -398,7 +398,7 @@ export const services: Service[] = [
       },
       {
         heading: "Elevate your curb appeal",
-        text: "The right stone facade transforms a plain surface into a striking feature — and we match color and texture to your home for a seamless look.",
+        text: "The right stone facade transforms a plain surface into a striking feature, and we match color and texture to your home for a seamless look.",
       },
     ],
   },
@@ -413,9 +413,9 @@ export const services: Service[] = [
     featured: true,
     metaTitle: "Outdoor Living Spaces | Fire Pits & Outdoor Kitchens | Mex Landscaping",
     metaDescription:
-      "Custom outdoor living spaces in Norristown, PA — fire pits, fire features, outdoor kitchens, and water features. Mex Landscaping designs and builds it all. Free estimate.",
+      "Custom outdoor living spaces in Norristown, PA: fire pits, fire features, outdoor kitchens, and water features. Mex Landscaping designs and builds it all. Free estimate.",
     intro:
-      "Custom outdoor living spaces — fire features, kitchens, and water features — designed to extend your season and the way you use your home.",
+      "Custom outdoor living spaces with fire features, kitchens, and water features, designed to extend your season and the way you use your home.",
     highlights: [
       "Fire pits & fire features",
       "Outdoor kitchens & bars",
@@ -425,7 +425,7 @@ export const services: Service[] = [
     body: [
       {
         heading: "Rooms without walls",
-        text: "The best outdoor spaces feel like an extension of the home. We design and build complete outdoor living environments — fire features, kitchens, water, and the hardscape that ties them together.",
+        text: "The best outdoor spaces feel like an extension of the home. We design and build complete outdoor living environments: fire features, kitchens, water, and the hardscape that ties them together.",
       },
       {
         heading: "Designed around how you live",
@@ -444,7 +444,7 @@ export const services: Service[] = [
     metaDescription:
       "Custom fire pits and fire features in Norristown, PA. Mex Landscaping builds wood-burning and gas fire features in stone and block to match your patio. Free estimate.",
     intro:
-      "Custom-built fire pits and fire features — the centerpiece of a great outdoor space, built in stone and block to match your patio.",
+      "Custom-built fire pits and fire features: the centerpiece of a great outdoor space, built in stone and block to match your patio.",
     highlights: [
       "Wood-burning & gas features",
       "In-ground & built-up designs",
@@ -454,11 +454,11 @@ export const services: Service[] = [
     body: [
       {
         heading: "The heart of the backyard",
-        text: "A fire feature turns a patio into a destination. We build custom in-ground and built-up fire pits — wood-burning or gas — in stone, block, and brick, sized and finished to match your space.",
+        text: "A fire feature turns a patio into a destination. We build custom in-ground and built-up fire pits, wood-burning or gas, in stone, block, and brick, sized and finished to match your space.",
       },
       {
         heading: "Built safely, built to last",
-        text: "Proper siting, clearances, and materials mean your fire feature is as safe as it is beautiful — and pairs naturally with seating walls and patio lighting.",
+        text: "Proper siting, clearances, and materials mean your fire feature is as safe as it is beautiful, and it pairs naturally with seating walls and patio lighting.",
       },
     ],
   },
@@ -472,7 +472,7 @@ export const services: Service[] = [
     metaDescription:
       "Custom outdoor kitchens in Norristown, PA. Mex Landscaping builds stone and paver outdoor kitchens with built-in grills, counters, and bars. Free estimate.",
     intro:
-      "Built-in outdoor kitchens and bars in stone and stainless — designed for real cooking and real gatherings.",
+      "Built-in outdoor kitchens and bars in stone and stainless, designed for real cooking and real gatherings.",
     highlights: [
       "Built-in grills & counters",
       "Stone & paver construction",
@@ -482,7 +482,7 @@ export const services: Service[] = [
     body: [
       {
         heading: "Cook, host, and stay outside",
-        text: "We build durable outdoor kitchens with built-in grills, stone counters, and bar seating — the anchor of an outdoor space made for entertaining.",
+        text: "We build durable outdoor kitchens with built-in grills, stone counters, and bar seating: the anchor of an outdoor space made for entertaining.",
       },
       {
         heading: "Coordinated with your whole space",
@@ -498,7 +498,7 @@ export const services: Service[] = [
     image: "/images/landscape-design.webp",
     metaTitle: "Water Features | Fountains & Ponds | Mex Landscaping Norristown PA",
     metaDescription:
-      "Custom water features in Norristown, PA — fountains, ponds, and waterfalls designed and built by Mex Landscaping. Add tranquility to your landscape. Free estimate.",
+      "Custom water features in Norristown, PA: fountains, ponds, and waterfalls designed and built by Mex Landscaping. Add tranquility to your landscape. Free estimate.",
     intro:
       "Fountains, ponds, and waterfalls that bring sound, movement, and tranquility to your landscape.",
     highlights: [
@@ -529,9 +529,9 @@ export const services: Service[] = [
     featured: true,
     metaTitle: "Concrete & Masonry | Stamped Concrete & Stonework | Mex Landscaping",
     metaDescription:
-      "Concrete and masonry in Norristown, PA — poured and stamped concrete patios, driveways, steps, and stonework by Mex Landscaping. Built to last. Free estimate.",
+      "Concrete and masonry in Norristown, PA: poured and stamped concrete patios, driveways, steps, and stonework by Mex Landscaping. Built to last. Free estimate.",
     intro:
-      "Poured and stamped concrete, plus full masonry — the structural craft behind patios, driveways, steps, and walls that endure.",
+      "Poured and stamped concrete, plus full masonry: the structural craft behind patios, driveways, steps, and walls that endure.",
     highlights: [
       "Poured & stamped concrete",
       "Concrete patios & driveways",
@@ -541,11 +541,11 @@ export const services: Service[] = [
     body: [
       {
         heading: "Concrete done right",
-        text: "From stamped-concrete patios to driveways, steps, and slabs, we pour, finish, and cure concrete that stays level and crack-resistant — with finishes that look far from ordinary.",
+        text: "From stamped-concrete patios to driveways, steps, and slabs, we pour, finish, and cure concrete that stays level and crack-resistant, with finishes that look far from ordinary.",
       },
       {
         heading: "Masonry craftsmanship",
-        text: "Brick and stone masonry, structural walls, and footings — the kind of foundational work that holds your whole project together for the long haul.",
+        text: "Brick and stone masonry, structural walls, and footings: the kind of foundational work that holds your whole project together for the long haul.",
       },
     ],
   },
@@ -567,7 +567,7 @@ export const services: Service[] = [
     body: [
       {
         heading: "Trusted commercial snow removal",
-        text: "When snow and ice arrive, our 24/7 snow management prevents hazards with expert plowing and de-icing — keeping your driveways, walkways, and lots clear, safe, and accessible.",
+        text: "When snow and ice arrive, our 24/7 snow management prevents hazards with expert plowing and de-icing, keeping your driveways, walkways, and lots clear, safe, and accessible.",
       },
       {
         heading: "Per-storm or seasonal",
@@ -595,7 +595,7 @@ export const services: Service[] = [
       },
       {
         heading: "Reliable when it matters most",
-        text: "We plan routes and crews to keep your property clear before you open — because a snow contractor is only as good as their response time.",
+        text: "We plan routes and crews to keep your property clear before you open, because a snow contractor is only as good as their response time.",
       },
     ],
   },
@@ -655,7 +655,7 @@ export const services: Service[] = [
     intro: "Dependable snow removal for residential and commercial properties across the Main Line.",
     highlights: ["Driveway & lot plowing", "Walkway clearing", "De-icing & salt", "Per-storm or seasonal"],
     body: [
-      { heading: "Skip the shoveling", text: "We keep your property safe and clear all winter — driveways, lots, and walkways — with reliable response on every snowfall." },
+      { heading: "Skip the shoveling", text: "We keep your property safe and clear all winter, from driveways to lots and walkways, with reliable response on every snowfall." },
       { heading: "Coverage that fits", text: "Choose per-storm or seasonal coverage for homes, businesses, and HOAs, with priority response when it counts." },
     ],
   },
@@ -666,10 +666,10 @@ export const services: Service[] = [
     title: "Property Maintenance",
     category: "maintenance",
     icon: "leaf",
-    intro: "Reliable, scheduled upkeep for the properties we design and build — and for clients who simply want it done right.",
+    intro: "Reliable, scheduled upkeep for the properties we design and build, and for clients who simply want it done right.",
     highlights: ["Mowing, edging & blowing", "Bed weeding & mulching", "Seasonal color", "Commercial & HOA contracts"],
     body: [
-      { heading: "Keep it looking its best", text: "From bed care to seasonal transitions, we keep your landscape polished all season — so your time stays yours." },
+      { heading: "Keep it looking its best", text: "From bed care to seasonal transitions, we keep your landscape polished all season, so your time stays yours." },
       { heading: "Homes and businesses", text: "Recurring maintenance plans for single-family homes, commercial properties, and HOAs, with consistent crews and dependable scheduling." },
     ],
   },
@@ -705,7 +705,7 @@ export const services: Service[] = [
     intro: "Expert pruning and care for healthy, shapely shrubs and bushes.",
     highlights: ["Species-specific pruning", "Hedge shaping & renewal", "Disease & pest checks", "Seasonal timing"],
     body: [
-      { heading: "Healthy, shapely, vibrant", text: "Proper pruning keeps shrubs and bushes dense and well-proportioned — pruned at the right time for each species." },
+      { heading: "Healthy, shapely, vibrant", text: "Proper pruning keeps shrubs and bushes dense and well-proportioned, pruned at the right time for each species." },
       { heading: "Renewal and rescue", text: "Overgrown shrubs can often be brought back with the right renewal pruning. We'll tell you honestly what's worth saving." },
     ],
   },
@@ -718,7 +718,7 @@ export const services: Service[] = [
     highlights: ["Full-property leaf removal", "Perennial cutback", "Bed & gutter clearing", "Debris haul-away"],
     body: [
       { heading: "A fresh start for the season", text: "We clear leaves and debris, cut back perennials, and prep beds so your property is clean through winter and ready to rebound in spring." },
-      { heading: "Done thoroughly, hauled away", text: "No piles left behind — we remove the debris and leave your property tidy." },
+      { heading: "Done thoroughly, hauled away", text: "No piles left behind. We remove the debris and leave your property tidy." },
     ],
   },
   {
@@ -730,7 +730,7 @@ export const services: Service[] = [
     highlights: ["Full-property removal", "Lawn & bed clearing", "Recurring fall visits", "Debris haul-away"],
     body: [
       { heading: "Don't let leaves smother your lawn", text: "A thick blanket of leaves blocks light and traps moisture. We clear them thoroughly so your lawn stays healthy into winter." },
-      { heading: "Recurring visits", text: "Leaves don't fall all at once — we can schedule recurring cleanups so your property stays clear from first drop to last." },
+      { heading: "Recurring visits", text: "Leaves don't fall all at once, so we can schedule recurring cleanups so your property stays clear from first drop to last." },
     ],
   },
   {
@@ -742,7 +742,7 @@ export const services: Service[] = [
     highlights: ["Core aeration", "Overseeding with quality blends", "Starter fertilization", "Best-time fall scheduling"],
     body: [
       { heading: "The best thing for a tired lawn", text: "Core aeration relieves compaction; paired with overseeding, it's the most effective way to thicken a thin, worn lawn." },
-      { heading: "Timed for results", text: "Fall is the ideal window in our area — cooler temps and good moisture give new grass the best chance to establish." },
+      { heading: "Timed for results", text: "Fall is the ideal window in our area, when cooler temps and good moisture give new grass the best chance to establish." },
     ],
   },
 ];
