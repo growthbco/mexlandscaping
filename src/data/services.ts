@@ -1,352 +1,229 @@
-// Flat service pages, keyed by their exact live URL path (SEO-preserving).
-// Titles/descriptions/OG come from src/data/seo.generated.ts; this file holds
-// the page structure, category, and hand-authored body copy.
+// Service pages, keyed by their live URL path. Positioned around high-end
+// design/build, hardscaping, outdoor living, and concrete & masonry — with the
+// commodity maintenance pages kept (for SEO) but demoted to a secondary group.
+// Real per-page titles/descriptions still come from src/data/seo.generated.ts
+// where they exist; new premium pages define their own meta inline.
 
-export type ServiceCategory = "landscaping" | "snow" | "hardscape";
+export type ServiceCategory =
+  | "design-build"
+  | "hardscaping"
+  | "outdoor-living"
+  | "concrete-masonry"
+  | "snow"
+  | "maintenance";
 
 export type Service = {
-  path: string; // e.g. "/patios/"
-  title: string; // fallback display title
+  path: string;
+  title: string;
   category: ServiceCategory;
-  icon: "leaf" | "snow" | "stone" | "fence";
+  icon: "leaf" | "stone" | "flame" | "brick" | "drop" | "snow" | "light";
+  image?: string; // /images/...
+  /** Inline meta for NEW pages not in the live-site crawl. */
+  metaTitle?: string;
+  metaDescription?: string;
   intro: string;
   highlights: string[];
   body: { heading: string; text: string }[];
+  featured?: boolean;
 };
 
 export const categoryLabels: Record<ServiceCategory, string> = {
-  landscaping: "Landscaping",
+  "design-build": "Landscape Design & Build",
+  hardscaping: "Hardscaping",
+  "outdoor-living": "Outdoor Living",
+  "concrete-masonry": "Concrete & Masonry",
   snow: "Snow Management",
-  hardscape: "Hardscape",
+  maintenance: "Property Maintenance",
 };
 
 export const categoryHubs: Record<ServiceCategory, string> = {
-  landscaping: "/landscaping-services-in-norristown-pa/",
+  "design-build": "/landscape-design/",
+  hardscaping: "/hardscape-services/",
+  "outdoor-living": "/outdoor-living/",
+  "concrete-masonry": "/concrete-masonry/",
   snow: "/snow-management-services/",
-  hardscape: "/hardscape-services/",
+  maintenance: "/property-maintenance/",
 };
 
+export const categoryIcon: Record<ServiceCategory, Service["icon"]> = {
+  "design-build": "leaf",
+  hardscaping: "stone",
+  "outdoor-living": "flame",
+  "concrete-masonry": "brick",
+  snow: "snow",
+  maintenance: "leaf",
+};
+
+// Categories that headline the brand (drive the homepage + primary nav).
+export const premiumCategories: ServiceCategory[] = [
+  "design-build",
+  "hardscaping",
+  "outdoor-living",
+  "concrete-masonry",
+];
+
 export const services: Service[] = [
-  // ---------------- LANDSCAPING ----------------
+  // ---------------- DESIGN & BUILD ----------------
   {
-    path: "/landscaping-services-in-norristown-pa/",
-    title: "Landscaping Services",
-    category: "landscaping",
+    path: "/landscape-design/",
+    title: "Landscape Design & Build",
+    category: "design-build",
     icon: "leaf",
+    image: "/images/landscape-design.webp",
+    featured: true,
     intro:
-      "From award-winning design to seasonal upkeep, Mex Landscaping handles every detail of your outdoor space so it looks its best in every season.",
+      "Full-service landscape design and installation — from a complete property redesign to refined planting, lighting, and grading. We design it, then our own crews build it.",
     highlights: [
-      "Custom landscape design & installation",
-      "Recurring property maintenance",
-      "Planting, lighting & drainage",
-      "Residential & commercial",
+      "Complete property redesigns",
+      "Custom planting & bed design",
+      "3D-informed planning & phasing",
+      "Design-build under one roof",
     ],
     body: [
       {
-        heading: "Full-service landscaping for Norristown & the Main Line",
-        text: "Mex Landscaping is a professional landscape design and installation company. We bring your outdoor vision to life and keep it thriving all year — combining creative design with the kind of reliable, detail-oriented care that keeps clients coming back season after season.",
+        heading: "Designed and built by one team",
+        text: "A great outdoor space starts with a great plan. We design thoughtful, site-specific landscapes — balancing structure, planting, light, and flow — then build them with our own crews, so the vision that's drawn is the vision that's delivered.",
       },
       {
-        heading: "One team for the whole property",
-        text: "Design, lawns, lighting, planting, drainage, and seasonal cleanups — instead of juggling multiple contractors, you get a single trusted crew that knows your property and shows up when promised.",
+        heading: "From full redesign to refined detail",
+        text: "Whether you're reimagining the entire property or elevating a single area, we work to your goals and budget with a clear plan, a realistic timeline, and craftsmanship in every detail.",
       },
     ],
   },
   {
-    path: "/landscape-design/",
-    title: "Landscape Design",
-    category: "landscaping",
+    path: "/landscaping-services-in-norristown-pa/",
+    title: "Landscaping Services",
+    category: "design-build",
     icon: "leaf",
+    image: "/images/landscape-design.webp",
     intro:
-      "Thoughtful, creative landscape designs that balance beauty and function — built around how you actually use your yard.",
+      "Award-winning landscape design, installation, and refinement for distinctive homes and commercial properties across the Main Line.",
     highlights: [
-      "On-site consultation & assessment",
-      "Detailed planting & layout plans",
-      "Designs for sun, shade & slope",
-      "Budget-conscious, phased options",
+      "Design & installation",
+      "Planting & bed renovation",
+      "Lighting & drainage",
+      "Residential & commercial",
     ],
     body: [
       {
-        heading: "Designs tailored to your property",
-        text: "Great landscapes start with a great plan. We map planting beds, focal points, flow, and seasonal interest into a design that fits your home, your style, and your budget — then build it with our own crews.",
+        heading: "A professional design & installation company",
+        text: "Mex Landscaping brings creative design and meticulous installation to properties across Norristown and the Main Line — the kind of work that makes a home feel finished and a commercial property feel cared for.",
       },
       {
-        heading: "A clear plan before the first dig",
-        text: "You'll see exactly what we're proposing and why, with a clear timeline and phased options so you can invest at a pace that works for you.",
+        heading: "One trusted partner for the whole property",
+        text: "Design, planting, lighting, drainage, hardscape, and outdoor living — instead of juggling contractors, you get one accountable team that knows your property end to end.",
       },
     ],
   },
   {
     path: "/lawn-installation/",
     title: "Lawn Installation",
-    category: "landscaping",
+    category: "design-build",
     icon: "leaf",
+    image: "/images/lawn-install.webp",
     intro:
-      "New sod and seeded lawns that take root and last — with the soil prep and grading that make the difference.",
+      "New sod and seeded lawns engineered to establish fast and last — with the soil prep and grading that make the difference.",
     highlights: [
-      "Soil prep & grading",
+      "Soil prep & precision grading",
       "Premium sod or seed blends",
       "Drainage-aware installation",
-      "Establishment care guidance",
+      "Establishment guidance",
     ],
     body: [
       {
         heading: "A lawn built to thrive",
-        text: "Whether you want fresh sod for instant green or a seeded lawn built for durability, we prepare the soil, grade for drainage, and install turf suited to your light and traffic conditions.",
+        text: "Whether you want fresh sod for instant green or a seeded lawn built for durability, we prepare the soil, grade for drainage, and install turf suited to your light and traffic.",
       },
       {
         heading: "Set up for the long run",
-        text: "We don't just lay turf and leave — we set your new lawn up to establish strong roots and give you the guidance to keep it lush.",
-      },
-    ],
-  },
-  {
-    path: "/landscape-lighting/",
-    title: "Landscape Lighting",
-    category: "landscaping",
-    icon: "leaf",
-    intro:
-      "Low-voltage landscape lighting for beauty, safety, and curb appeal that extends your evenings outdoors.",
-    highlights: [
-      "Path, accent & uplighting",
-      "Energy-efficient LED fixtures",
-      "Timers & smart controls",
-      "Weatherproof, low-maintenance wiring",
-    ],
-    body: [
-      {
-        heading: "Light up your nightscape",
-        text: "Professionally installed landscape lighting highlights your trees, pathways, and architecture while improving safety around steps and entries — turning your yard into a place you enjoy after dark.",
-      },
-      {
-        heading: "Efficient and durable",
-        text: "We use energy-efficient LED fixtures and weatherproof wiring, with timers and smart controls so your lighting takes care of itself.",
-      },
-    ],
-  },
-  {
-    path: "/property-maintenance/",
-    title: "Property Maintenance",
-    category: "landscaping",
-    icon: "leaf",
-    intro:
-      "Reliable, scheduled upkeep for residential and commercial properties — so your landscape always looks its best.",
-    highlights: [
-      "Mowing, edging & blowing",
-      "Bed weeding & mulching",
-      "Seasonal color rotations",
-      "Commercial & HOA contracts",
-    ],
-    body: [
-      {
-        heading: "Polished all season, hands-off for you",
-        text: "From mowing and edging to bed care and seasonal transitions, we handle the routine so you don't have to. Your time is valuable — trust us to keep your property season-ready without the hassle.",
-      },
-      {
-        heading: "Built for homes and businesses",
-        text: "We offer recurring maintenance plans for single-family homes, commercial properties, and HOAs, with consistent crews and dependable scheduling.",
-      },
-    ],
-  },
-  {
-    path: "/storm-water-management/",
-    title: "Storm Water Management",
-    category: "landscaping",
-    icon: "leaf",
-    intro:
-      "Drainage solutions that protect your property from standing water, erosion, and water damage.",
-    highlights: [
-      "Drainage assessment & grading",
-      "French drains & dry wells",
-      "Erosion control planting",
-      "Downspout & runoff management",
-    ],
-    body: [
-      {
-        heading: "Move water where it belongs",
-        text: "Standing water and erosion hurt both your landscape and your foundation. We design and install grading, French drains, dry wells, and swales to keep water moving away from your property.",
-      },
-      {
-        heading: "Protect your investment",
-        text: "Good drainage is invisible when it's done right — and expensive when it's ignored. We solve the root cause so the problem doesn't come back.",
+        text: "We don't just lay turf and leave — we set your new lawn up to root deeply and give you the guidance to keep it lush.",
       },
     ],
   },
   {
     path: "/tree-plant-installation/",
     title: "Tree & Plant Installation",
-    category: "landscaping",
+    category: "design-build",
     icon: "leaf",
+    image: "/images/landscape-design.webp",
     intro:
-      "The right trees, shrubs, and perennials — sourced healthy and planted to thrive for years.",
+      "Specimen trees, layered shrubs, and perennial plantings — sourced healthy and placed with a designer's eye.",
     highlights: [
-      "Native & ornamental selections",
-      "Proper siting for light & soil",
-      "Amended soil & mulching",
-      "Establishment watering guidance",
+      "Specimen & native selections",
+      "Layered, four-season interest",
+      "Proper siting & amended soil",
+      "Establishment care",
     ],
     body: [
       {
-        heading: "Plants that establish and last",
-        text: "We source healthy trees, shrubs, and perennials and plant them with proper soil amendment and spacing so they establish quickly and grow strong.",
+        heading: "Planting with intention",
+        text: "We source healthy trees, shrubs, and perennials and place them with proper spacing, soil amendment, and an eye for how the planting will read in every season.",
       },
       {
         heading: "The right plant, the right place",
-        text: "We match every selection to your light, soil, and design so your planting looks intentional and stays healthy.",
+        text: "Every selection is matched to your light, soil, and design so the planting looks deliberate and stays healthy for years.",
       },
     ],
   },
   {
-    path: "/weeding/",
-    title: "Weeding",
-    category: "landscaping",
-    icon: "leaf",
+    path: "/landscape-lighting/",
+    title: "Landscape Lighting",
+    category: "design-build",
+    icon: "light",
+    image: "/images/lighting.jpg",
+    featured: true,
     intro:
-      "Regular weeding that keeps your beds crisp, clean, and looking intentional all season.",
+      "Architectural low-voltage lighting that transforms your property after dark — highlighting the home, the trees, and the spaces you've built.",
     highlights: [
-      "Hand & selective weeding",
-      "Clean bed edging",
-      "Pre-emergent options",
-      "Debris haul-away",
+      "Architectural & path lighting",
+      "Tree uplighting & moonlighting",
+      "Smart controls & timers",
+      "Weatherproof, low-maintenance",
     ],
     body: [
       {
-        heading: "Tidy beds, season-long",
-        text: "We clear invasive growth and maintain clean edges throughout the growing season, so your landscape always looks cared for.",
+        heading: "Your property, transformed after dusk",
+        text: "Professionally designed lighting brings drama and warmth to your home, trees, and hardscape while improving safety and extending your evenings outside.",
       },
       {
-        heading: "Part of a healthy landscape",
-        text: "Weeding isn't just cosmetic — removing competition keeps your plants healthier and your beds looking their best.",
+        heading: "Designed, not just installed",
+        text: "We compose light and shadow with energy-efficient LED fixtures and weatherproof wiring, with smart controls so it all takes care of itself.",
       },
     ],
   },
   {
-    path: "/trimming/",
-    title: "Trimming",
-    category: "landscaping",
-    icon: "leaf",
+    path: "/storm-water-management/",
+    title: "Drainage & Storm Water Management",
+    category: "design-build",
+    icon: "drop",
+    image: "/images/drainage.webp",
     intro:
-      "Expert trimming and edging that keeps your plantings shapely and your landscape sharp.",
+      "Engineered drainage that protects your property and your investment from standing water and erosion.",
     highlights: [
-      "Shrub & hedge shaping",
-      "Clean lawn & bed edging",
-      "Seasonal timing",
-      "Debris haul-away",
+      "Drainage assessment & grading",
+      "French drains & dry wells",
+      "Erosion control",
+      "Downspout & runoff management",
     ],
     body: [
       {
-        heading: "Crisp, well-shaped, intentional",
-        text: "We shape shrubs and maintain clean edges so your whole property reads as polished and well kept.",
+        heading: "Move water where it belongs",
+        text: "Standing water and erosion damage both your landscape and your foundation. We design and install grading, French drains, dry wells, and swales to keep water moving away from your property.",
       },
       {
-        heading: "Timed for plant health",
-        text: "We trim at the right time for each species to protect blooms and encourage healthy, dense growth.",
-      },
-    ],
-  },
-  {
-    path: "/shrubs-and-bushes/",
-    title: "Shrubs and Bushes",
-    category: "landscaping",
-    icon: "leaf",
-    intro:
-      "Expert pruning and care for healthy, shapely shrubs and bushes that elevate your outdoor space.",
-    highlights: [
-      "Species-specific pruning",
-      "Hedge shaping & renewal",
-      "Disease & pest checks",
-      "Seasonal timing",
-    ],
-    body: [
-      {
-        heading: "Healthy, shapely, vibrant",
-        text: "Proper pruning keeps shrubs and bushes dense, healthy, and well-proportioned. We prune at the right time for each species to protect blooms and growth.",
-      },
-      {
-        heading: "Renewal and rescue",
-        text: "Overgrown or neglected shrubs can often be brought back with the right renewal pruning — we'll tell you honestly what's worth saving.",
-      },
-    ],
-  },
-  {
-    path: "/fall-cleanups/",
-    title: "Fall Cleanups",
-    category: "landscaping",
-    icon: "leaf",
-    intro:
-      "Leaf removal and bed prep that puts your yard to bed for winter and ready to rebound in spring.",
-    highlights: [
-      "Full-property leaf removal",
-      "Perennial cutback",
-      "Bed & gutter clearing",
-      "Debris haul-away",
-    ],
-    body: [
-      {
-        heading: "A fresh start for the season",
-        text: "We clear leaves and debris, cut back perennials, and prep beds so your property is clean through winter and set up to thrive when spring arrives.",
-      },
-      {
-        heading: "Done thoroughly, hauled away",
-        text: "No piles left behind — we remove the debris and leave your property tidy.",
-      },
-    ],
-  },
-  {
-    path: "/leaf-cleanups/",
-    title: "Leaf Cleanup",
-    category: "landscaping",
-    icon: "leaf",
-    intro:
-      "Thorough leaf cleanup in Norristown and across the Main Line to keep your lawn healthy through fall.",
-    highlights: [
-      "Full-property leaf removal",
-      "Lawn & bed clearing",
-      "Recurring fall visits",
-      "Debris haul-away",
-    ],
-    body: [
-      {
-        heading: "Don't let leaves smother your lawn",
-        text: "A thick blanket of leaves blocks light and traps moisture, inviting disease. We clear them thoroughly so your lawn stays healthy heading into winter.",
-      },
-      {
-        heading: "Recurring visits through the season",
-        text: "Leaves don't fall all at once — we can schedule recurring cleanups so your property stays clear from first drop to last.",
-      },
-    ],
-  },
-  {
-    path: "/fall-aeration-seeding/",
-    title: "Fall Aeration & Seeding",
-    category: "landscaping",
-    icon: "leaf",
-    intro:
-      "Thicker, healthier turf through core aeration and overseeding at the ideal time of year.",
-    highlights: [
-      "Core aeration",
-      "Overseeding with quality blends",
-      "Starter fertilization",
-      "Best-time fall scheduling",
-    ],
-    body: [
-      {
-        heading: "The best thing you can do for a tired lawn",
-        text: "Core aeration relieves compaction and lets air, water, and nutrients reach the roots. Paired with overseeding, it's the most effective way to thicken a thin, worn lawn.",
-      },
-      {
-        heading: "Timed for results",
-        text: "Fall is the ideal window for aeration and seeding in our area — cooler temps and good moisture give new grass the best chance to establish.",
+        heading: "Protect the investment",
+        text: "Good drainage is invisible when it's done right — and expensive when it's ignored. We solve the root cause so the problem doesn't return.",
       },
     ],
   },
   {
     path: "/commercial-landscape-installations/",
     title: "Commercial Landscape Installations",
-    category: "landscaping",
+    category: "design-build",
     icon: "leaf",
+    image: "/images/commercial.jpg",
     intro:
-      "Professional commercial landscape installations that elevate your property and impress your visitors.",
+      "Polished commercial landscapes that elevate your property and reflect well on your business.",
     highlights: [
       "Design & installation",
       "Commercial-grade plantings",
@@ -356,40 +233,324 @@ export const services: Service[] = [
     body: [
       {
         heading: "Curb appeal that means business",
-        text: "Your landscape is the first thing clients and tenants see. We design and install commercial landscapes that look sharp, hold up to use, and reflect well on your business.",
+        text: "Your landscape is the first thing clients and tenants see. We design and install commercial landscapes that look sharp, hold up to use, and reflect well on your brand.",
       },
       {
         heading: "Installed and maintained",
-        text: "Pair your installation with a recurring maintenance plan and keep your property looking its best year-round with one accountable partner.",
-      },
-    ],
-  },
-  {
-    path: "/landscaping-king-of-prussia/",
-    title: "Landscaping King of Prussia",
-    category: "landscaping",
-    icon: "leaf",
-    intro:
-      "Full-service landscaping for King of Prussia homes and businesses — design, installation, and year-round care.",
-    highlights: [
-      "Landscape design & installation",
-      "Lawn care & maintenance",
-      "Planting, lighting & drainage",
-      "Free local estimates",
-    ],
-    body: [
-      {
-        heading: "Your King of Prussia landscaping team",
-        text: "Mex Landscaping brings award-winning design and reliable, year-round care to King of Prussia. From a full landscape redesign to recurring maintenance, we're the local team property owners trust.",
-      },
-      {
-        heading: "Local, dependable, and detail-driven",
-        text: "We know the area and the properties here. Call us for a free estimate and a clear plan for your outdoor space.",
+        text: "Pair your installation with a recurring maintenance plan and keep the property looking its best year-round with one accountable partner.",
       },
     ],
   },
 
-  // ---------------- SNOW ----------------
+  // ---------------- HARDSCAPING ----------------
+  {
+    path: "/hardscape-services/",
+    title: "Hardscaping",
+    category: "hardscaping",
+    icon: "stone",
+    image: "/images/patio.jpg",
+    featured: true,
+    intro:
+      "Patios, walls, walkways, and driveways built to last decades — the structural backbone of a high-end outdoor space.",
+    highlights: [
+      "Patios & walkways",
+      "Retaining & seating walls",
+      "Driveways & steps",
+      "Engineered base & drainage",
+    ],
+    body: [
+      {
+        heading: "Built-to-last stonework",
+        text: "We design and build hardscapes that hold for decades — with the proper base prep and drainage that keep everything level and tight. Patios, walls, walkways, and driveways, built for how you live outside.",
+      },
+      {
+        heading: "Where the difference is hidden",
+        text: "The longevity of any hardscape lives in the base you never see. We never cut corners there — that's why our work lasts.",
+      },
+    ],
+  },
+  {
+    path: "/patios/",
+    title: "Patios",
+    category: "hardscaping",
+    icon: "stone",
+    image: "/images/patio.jpg",
+    featured: true,
+    intro:
+      "Paver and natural-stone patios designed as true outdoor rooms — level, durable, and built for years of gatherings.",
+    highlights: [
+      "Paver & natural stone",
+      "Engineered base & drainage",
+      "Custom shapes, borders & inlays",
+      "Sealing & finishing",
+    ],
+    body: [
+      {
+        heading: "Your outdoor living room",
+        text: "We design and build patios with proper base prep and drainage so they stay level and beautiful. Choose from a wide range of pavers, natural stone, and finishes to match your home.",
+      },
+      {
+        heading: "Built on a base that lasts",
+        text: "A beautiful patio is only as good as what's underneath it. Our engineered base and drainage keep your patio tight and level for decades.",
+      },
+    ],
+  },
+  {
+    path: "/walkways/",
+    title: "Walkways & Steps",
+    category: "hardscaping",
+    icon: "stone",
+    image: "/images/walkway.jpg",
+    metaTitle: "Walkways & Steps | Paver & Stone Walkways | Mex Landscaping",
+    metaDescription:
+      "Custom paver and natural-stone walkways and steps in Norristown, PA. Mex Landscaping builds durable, elegant paths that elevate your property. Free estimate.",
+    intro:
+      "Paver and natural-stone walkways and steps that guide guests through your property with craftsmanship and curb appeal.",
+    highlights: [
+      "Paver & natural stone paths",
+      "Stone & block steps",
+      "Lighting integration",
+      "Proper base & drainage",
+    ],
+    body: [
+      {
+        heading: "Crafted paths and steps",
+        text: "A well-built walkway is an invitation. We design and build paths and steps that connect your spaces beautifully — with the base and drainage to stay level and safe for years.",
+      },
+      {
+        heading: "Detail that elevates the whole property",
+        text: "Borders, inlays, and integrated lighting turn a simple path into a defining feature of your landscape.",
+      },
+    ],
+  },
+  {
+    path: "/driveways/",
+    title: "Driveways",
+    category: "hardscaping",
+    icon: "stone",
+    image: "/images/driveway.jpg",
+    featured: true,
+    intro:
+      "Paver and stone driveways with lasting curb appeal — and the engineered base to handle weight and weather.",
+    highlights: [
+      "Heavy-duty base preparation",
+      "Paver & stone finishes",
+      "Drainage integration",
+      "Clean borders & transitions",
+    ],
+    body: [
+      {
+        heading: "First impressions, built to last",
+        text: "A well-built driveway is the first thing guests see. We install paver and stone driveways with the base and drainage they need to handle weight and weather for years.",
+      },
+      {
+        heading: "Curb appeal that holds up",
+        text: "From classic pavers to natural stone, we finish every driveway with clean borders and transitions that elevate the whole property.",
+      },
+    ],
+  },
+  {
+    path: "/retaining-walls/",
+    title: "Retaining & Seating Walls",
+    category: "hardscaping",
+    icon: "stone",
+    image: "/images/stone-wall.jpg",
+    metaTitle: "Retaining Walls & Seating Walls | Mex Landscaping | Norristown PA",
+    metaDescription:
+      "Engineered retaining walls and seating walls in Norristown, PA. Mex Landscaping builds structural, beautiful walls that hold slopes and add usable space. Free estimate.",
+    intro:
+      "Engineered retaining walls and seating walls that hold slopes, create usable space, and anchor your outdoor design.",
+    highlights: [
+      "Engineered, code-aware builds",
+      "Block, natural stone & timber",
+      "Tiered & seating walls",
+      "Proper drainage & backfill",
+    ],
+    body: [
+      {
+        heading: "Structure that's also a feature",
+        text: "Retaining walls control erosion, manage grade, and turn an unusable slope into level, livable space. We build engineered walls that are as durable as they are beautiful.",
+      },
+      {
+        heading: "Walls you can build a space around",
+        text: "Seating walls, tiered terraces, and stone-faced walls do double duty — solving grade while defining patios, fire features, and gardens.",
+      },
+    ],
+  },
+  {
+    path: "/architectural-stone-facades/",
+    title: "Architectural Stone & Facades",
+    category: "hardscaping",
+    icon: "stone",
+    image: "/images/stone-wall.jpg",
+    intro:
+      "Natural and manufactured stone veneer that adds richness and texture to columns, walls, and entries.",
+    highlights: [
+      "Natural & manufactured veneer",
+      "Columns, walls & entries",
+      "Weather-resistant detailing",
+      "Custom color & texture matching",
+    ],
+    body: [
+      {
+        heading: "Texture and richness, built in",
+        text: "Architectural stone facades add depth and character to columns, walls, and outdoor structures. We install natural and manufactured veneer with clean, durable detailing.",
+      },
+      {
+        heading: "Elevate your curb appeal",
+        text: "The right stone facade transforms a plain surface into a striking feature — and we match color and texture to your home for a seamless look.",
+      },
+    ],
+  },
+
+  // ---------------- OUTDOOR LIVING ----------------
+  {
+    path: "/outdoor-living/",
+    title: "Outdoor Living Spaces",
+    category: "outdoor-living",
+    icon: "flame",
+    image: "/images/fire-pit.webp",
+    featured: true,
+    metaTitle: "Outdoor Living Spaces | Fire Pits & Outdoor Kitchens | Mex Landscaping",
+    metaDescription:
+      "Custom outdoor living spaces in Norristown, PA — fire pits, fire features, outdoor kitchens, and water features. Mex Landscaping designs and builds it all. Free estimate.",
+    intro:
+      "Custom outdoor living spaces — fire features, kitchens, and water features — designed to extend your season and the way you use your home.",
+    highlights: [
+      "Fire pits & fire features",
+      "Outdoor kitchens & bars",
+      "Water features",
+      "Pergolas & seating walls",
+    ],
+    body: [
+      {
+        heading: "Rooms without walls",
+        text: "The best outdoor spaces feel like an extension of the home. We design and build complete outdoor living environments — fire features, kitchens, water, and the hardscape that ties them together.",
+      },
+      {
+        heading: "Designed around how you live",
+        text: "Whether it's quiet evenings by the fire or hosting a crowd, we plan the space around the way you'll actually use it, then build it to last.",
+      },
+    ],
+  },
+  {
+    path: "/fire-pits/",
+    title: "Fire Pits & Fire Features",
+    category: "outdoor-living",
+    icon: "flame",
+    image: "/images/fire-pit.webp",
+    featured: true,
+    metaTitle: "Fire Pits & Fire Features | Custom Built | Mex Landscaping Norristown PA",
+    metaDescription:
+      "Custom fire pits and fire features in Norristown, PA. Mex Landscaping builds wood-burning and gas fire features in stone and block to match your patio. Free estimate.",
+    intro:
+      "Custom-built fire pits and fire features — the centerpiece of a great outdoor space, built in stone and block to match your patio.",
+    highlights: [
+      "Wood-burning & gas features",
+      "In-ground & built-up designs",
+      "Matching stone & finishes",
+      "Integrated seating walls",
+    ],
+    body: [
+      {
+        heading: "The heart of the backyard",
+        text: "A fire feature turns a patio into a destination. We build custom in-ground and built-up fire pits — wood-burning or gas — in stone, block, and brick, sized and finished to match your space.",
+      },
+      {
+        heading: "Built safely, built to last",
+        text: "Proper siting, clearances, and materials mean your fire feature is as safe as it is beautiful — and pairs naturally with seating walls and patio lighting.",
+      },
+    ],
+  },
+  {
+    path: "/outdoor-kitchens/",
+    title: "Outdoor Kitchens",
+    category: "outdoor-living",
+    icon: "flame",
+    image: "/images/patio.jpg",
+    metaTitle: "Outdoor Kitchens | Custom Built-In Grills & Bars | Mex Landscaping",
+    metaDescription:
+      "Custom outdoor kitchens in Norristown, PA. Mex Landscaping builds stone and paver outdoor kitchens with built-in grills, counters, and bars. Free estimate.",
+    intro:
+      "Built-in outdoor kitchens and bars in stone and stainless — designed for real cooking and real gatherings.",
+    highlights: [
+      "Built-in grills & counters",
+      "Stone & paver construction",
+      "Bars & seating",
+      "Utilities & lighting integration",
+    ],
+    body: [
+      {
+        heading: "Cook, host, and stay outside",
+        text: "We build durable outdoor kitchens with built-in grills, stone counters, and bar seating — the anchor of an outdoor space made for entertaining.",
+      },
+      {
+        heading: "Coordinated with your whole space",
+        text: "Materials, lighting, and layout are designed to flow with your patio, fire feature, and landscape for one cohesive result.",
+      },
+    ],
+  },
+  {
+    path: "/water-features/",
+    title: "Water Features",
+    category: "outdoor-living",
+    icon: "drop",
+    image: "/images/landscape-design.webp",
+    metaTitle: "Water Features | Fountains & Ponds | Mex Landscaping Norristown PA",
+    metaDescription:
+      "Custom water features in Norristown, PA — fountains, ponds, and waterfalls designed and built by Mex Landscaping. Add tranquility to your landscape. Free estimate.",
+    intro:
+      "Fountains, ponds, and waterfalls that bring sound, movement, and tranquility to your landscape.",
+    highlights: [
+      "Fountains & bubblers",
+      "Ponds & waterfalls",
+      "Low-maintenance recirculation",
+      "Lighting & planting integration",
+    ],
+    body: [
+      {
+        heading: "The sound of moving water",
+        text: "A well-placed water feature adds calm and character to any outdoor space. We design and build fountains, ponds, and waterfalls that fit naturally into your landscape.",
+      },
+      {
+        heading: "Beautiful and low-maintenance",
+        text: "Modern recirculation and thoughtful placement keep your water feature stunning and simple to care for.",
+      },
+    ],
+  },
+
+  // ---------------- CONCRETE & MASONRY ----------------
+  {
+    path: "/concrete-masonry/",
+    title: "Concrete & Masonry",
+    category: "concrete-masonry",
+    icon: "brick",
+    image: "/images/driveway.jpg",
+    featured: true,
+    metaTitle: "Concrete & Masonry | Stamped Concrete & Stonework | Mex Landscaping",
+    metaDescription:
+      "Concrete and masonry in Norristown, PA — poured and stamped concrete patios, driveways, steps, and stonework by Mex Landscaping. Built to last. Free estimate.",
+    intro:
+      "Poured and stamped concrete, plus full masonry — the structural craft behind patios, driveways, steps, and walls that endure.",
+    highlights: [
+      "Poured & stamped concrete",
+      "Concrete patios & driveways",
+      "Steps, footings & slabs",
+      "Brick & stone masonry",
+    ],
+    body: [
+      {
+        heading: "Concrete done right",
+        text: "From stamped-concrete patios to driveways, steps, and slabs, we pour, finish, and cure concrete that stays level and crack-resistant — with finishes that look far from ordinary.",
+      },
+      {
+        heading: "Masonry craftsmanship",
+        text: "Brick and stone masonry, structural walls, and footings — the kind of foundational work that holds your whole project together for the long haul.",
+      },
+    ],
+  },
+
+  // ---------------- SNOW MANAGEMENT (secondary) ----------------
   {
     path: "/snow-management-services/",
     title: "Commercial Snow Management",
@@ -405,8 +566,8 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Trusted commercial snow removal in Norristown",
-        text: "When snow and ice arrive, our 24/7 snow management prevents hazards with expert plowing and de-icing. We keep your driveways, walkways, and lots clear so your property stays safe and accessible.",
+        heading: "Trusted commercial snow removal",
+        text: "When snow and ice arrive, our 24/7 snow management prevents hazards with expert plowing and de-icing — keeping your driveways, walkways, and lots clear, safe, and accessible.",
       },
       {
         heading: "Per-storm or seasonal",
@@ -422,19 +583,19 @@ export const services: Service[] = [
     intro:
       "Expert commercial snow plowing that keeps your business open, safe, and liability-ready all winter.",
     highlights: [
-      "Parking lot plowing & clearing",
-      "Ice removal & salt application",
+      "Parking lot plowing",
+      "Ice removal & salt",
       "Sidewalk & entry clearing",
-      "Documented, contracted service",
+      "Documented service",
     ],
     body: [
       {
         heading: "Keep your business accessible",
-        text: "Mex Landscaping offers expert commercial snow plowing services. We clear parking lots, manage ice, and apply salt with documented service so your customers and staff stay safe.",
+        text: "We clear parking lots, manage ice, and apply salt with documented service so your customers and staff stay safe through every storm.",
       },
       {
         heading: "Reliable when it matters most",
-        text: "A snow contractor is only as good as their response time. We plan routes and crews to keep your property clear before you open.",
+        text: "We plan routes and crews to keep your property clear before you open — because a snow contractor is only as good as their response time.",
       },
     ],
   },
@@ -446,7 +607,7 @@ export const services: Service[] = [
     intro:
       "Round-the-clock emergency snow response so a storm never shuts your property down.",
     highlights: [
-      "24/7 storm monitoring & response",
+      "24/7 monitoring & response",
       "Rapid plowing & de-icing",
       "Priority commercial coverage",
       "Salt & ice management",
@@ -467,23 +628,11 @@ export const services: Service[] = [
     title: "Sidewalk Snow Removal",
     category: "snow",
     icon: "snow",
-    intro:
-      "Clear, safe sidewalks and entries that protect your visitors and limit your liability.",
-    highlights: [
-      "Sidewalk & walkway clearing",
-      "Entry & step de-icing",
-      "Salt application",
-      "Commercial & multi-unit",
-    ],
+    intro: "Clear, safe sidewalks and entries that protect your visitors and limit liability.",
+    highlights: ["Sidewalk & walkway clearing", "Entry & step de-icing", "Salt application", "Commercial & multi-unit"],
     body: [
-      {
-        heading: "Safe walkways, reduced liability",
-        text: "Sidewalks and entries are where slip-and-fall risk is highest. We clear and treat them thoroughly so your visitors stay safe and you stay protected.",
-      },
-      {
-        heading: "Part of a complete plan",
-        text: "Combine sidewalk clearing with plowing and de-icing for full-property coverage from a single team.",
-      },
+      { heading: "Safe walkways, reduced liability", text: "Sidewalks and entries are where slip-and-fall risk is highest. We clear and treat them thoroughly so your visitors stay safe and you stay protected." },
+      { heading: "Part of a complete plan", text: "Combine sidewalk clearing with plowing and de-icing for full-property coverage from a single team." },
     ],
   },
   {
@@ -491,23 +640,11 @@ export const services: Service[] = [
     title: "Salting & De-Icing",
     category: "snow",
     icon: "snow",
-    intro:
-      "Professional salting and de-icing that stops ice before it becomes a hazard.",
-    highlights: [
-      "Pre-treatment & post-storm salting",
-      "Lots, walkways & entries",
-      "Ice melt management",
-      "Documented application",
-    ],
+    intro: "Professional salting and de-icing that stops ice before it becomes a hazard.",
+    highlights: ["Pre-treatment & post-storm salting", "Lots, walkways & entries", "Ice melt management", "Documented application"],
     body: [
-      {
-        heading: "Get ahead of the ice",
-        text: "Our professional salting and de-icing services keep surfaces safe and walkable. We pre-treat ahead of storms and re-apply as needed to prevent dangerous refreeze.",
-      },
-      {
-        heading: "Applied right, recorded right",
-        text: "We apply the right product at the right rate and document service, so your property stays safe and your records stay clean.",
-      },
+      { heading: "Get ahead of the ice", text: "We pre-treat ahead of storms and re-apply as needed to prevent dangerous refreeze, keeping surfaces safe and walkable." },
+      { heading: "Applied right, recorded right", text: "We apply the right product at the right rate and document service, so your property stays safe and your records stay clean." },
     ],
   },
   {
@@ -515,121 +652,97 @@ export const services: Service[] = [
     title: "Snow Removal",
     category: "snow",
     icon: "snow",
-    intro:
-      "Dependable snow removal for residential and commercial properties across the Main Line.",
-    highlights: [
-      "Driveway & lot plowing",
-      "Walkway clearing",
-      "De-icing & salt",
-      "Per-storm or seasonal",
-    ],
+    intro: "Dependable snow removal for residential and commercial properties across the Main Line.",
+    highlights: ["Driveway & lot plowing", "Walkway clearing", "De-icing & salt", "Per-storm or seasonal"],
     body: [
-      {
-        heading: "Skip the shoveling",
-        text: "Mex Landscaping offers expert snow removal services. We keep your property safe and clear this winter — driveways, lots, and walkways — with reliable response on every snowfall.",
-      },
-      {
-        heading: "Coverage that fits",
-        text: "Choose per-storm or seasonal coverage for homes, businesses, and HOAs, with priority response when it counts.",
-      },
+      { heading: "Skip the shoveling", text: "We keep your property safe and clear all winter — driveways, lots, and walkways — with reliable response on every snowfall." },
+      { heading: "Coverage that fits", text: "Choose per-storm or seasonal coverage for homes, businesses, and HOAs, with priority response when it counts." },
     ],
   },
 
-  // ---------------- HARDSCAPE ----------------
+  // ---------------- MAINTENANCE (secondary, kept for SEO) ----------------
   {
-    path: "/hardscape-services/",
-    title: "Hardscape Services",
-    category: "hardscape",
-    icon: "stone",
-    intro:
-      "Patios, walls, and walkways that turn a yard into a destination — built durable and beautiful.",
-    highlights: [
-      "Patios & walkways",
-      "Retaining walls",
-      "Driveways & stone facades",
-      "Engineered base & drainage",
-    ],
+    path: "/property-maintenance/",
+    title: "Property Maintenance",
+    category: "maintenance",
+    icon: "leaf",
+    intro: "Reliable, scheduled upkeep for the properties we design and build — and for clients who simply want it done right.",
+    highlights: ["Mowing, edging & blowing", "Bed weeding & mulching", "Seasonal color", "Commercial & HOA contracts"],
     body: [
-      {
-        heading: "Built-to-last stonework",
-        text: "We design and build hardscapes that hold up for decades — with proper base prep and drainage that keep everything level and beautiful. From patios to walls to walkways, we build for how you live outside.",
-      },
-      {
-        heading: "Where the difference is hidden",
-        text: "The longevity of any hardscape lives in the base you never see. We never cut corners there — that's why our work lasts.",
-      },
+      { heading: "Keep it looking its best", text: "From bed care to seasonal transitions, we keep your landscape polished all season — so your time stays yours." },
+      { heading: "Homes and businesses", text: "Recurring maintenance plans for single-family homes, commercial properties, and HOAs, with consistent crews and dependable scheduling." },
     ],
   },
   {
-    path: "/patios/",
-    title: "Patios",
-    category: "hardscape",
-    icon: "stone",
-    intro:
-      "Paver and natural-stone patios built for years of gatherings — level, durable, and beautiful.",
-    highlights: [
-      "Paver & natural stone options",
-      "Engineered base & drainage",
-      "Custom shapes & borders",
-      "Sealing & finishing",
-    ],
+    path: "/weeding/",
+    title: "Weeding",
+    category: "maintenance",
+    icon: "leaf",
+    intro: "Regular weeding that keeps your beds crisp, clean, and intentional all season.",
+    highlights: ["Hand & selective weeding", "Clean bed edging", "Pre-emergent options", "Debris haul-away"],
     body: [
-      {
-        heading: "Your outdoor living room",
-        text: "We design and build patios with proper base prep and drainage so they stay level and beautiful. Choose from a wide range of pavers, natural stone, and finishes to match your home.",
-      },
-      {
-        heading: "Built on a base that lasts",
-        text: "A beautiful patio is only as good as what's underneath it. Our engineered base and drainage keep your patio tight and level for decades.",
-      },
+      { heading: "Tidy beds, season-long", text: "We clear invasive growth and maintain clean edges throughout the growing season, so your landscape always looks cared for." },
+      { heading: "Part of a healthy landscape", text: "Removing competition keeps your plants healthier and your beds looking their best." },
     ],
   },
   {
-    path: "/driveways/",
-    title: "Driveways",
-    category: "hardscape",
-    icon: "stone",
-    intro:
-      "Paver and stone driveways with lasting curb appeal and the base to handle weight and weather.",
-    highlights: [
-      "Heavy-duty base preparation",
-      "Paver & stone finishes",
-      "Drainage integration",
-      "Clean borders & transitions",
-    ],
+    path: "/trimming/",
+    title: "Trimming & Pruning",
+    category: "maintenance",
+    icon: "leaf",
+    intro: "Expert trimming and pruning that keeps plantings shapely and your landscape sharp.",
+    highlights: ["Shrub & hedge shaping", "Clean edging", "Species-correct timing", "Debris haul-away"],
     body: [
-      {
-        heading: "First impressions, built to last",
-        text: "A well-built driveway is the first thing guests see. We install paver and stone driveways with the base and drainage they need to handle weight and weather for years.",
-      },
-      {
-        heading: "Curb appeal that holds up",
-        text: "From classic pavers to natural stone, we finish your driveway with clean borders and transitions that elevate your whole property.",
-      },
+      { heading: "Crisp and well-shaped", text: "We shape shrubs and maintain clean edges so your whole property reads as polished and well kept." },
+      { heading: "Timed for plant health", text: "We prune at the right time for each species to protect blooms and encourage dense, healthy growth." },
     ],
   },
   {
-    path: "/architectural-stone-facades/",
-    title: "Architectural Stone & Facades",
-    category: "hardscape",
-    icon: "stone",
-    intro:
-      "Stone veneer that elevates walls, columns, and entries with rich, durable detailing.",
-    highlights: [
-      "Natural & manufactured veneer",
-      "Columns, walls & entries",
-      "Weather-resistant installation",
-      "Custom color & texture matching",
-    ],
+    path: "/shrubs-and-bushes/",
+    title: "Shrubs & Bushes",
+    category: "maintenance",
+    icon: "leaf",
+    intro: "Expert pruning and care for healthy, shapely shrubs and bushes.",
+    highlights: ["Species-specific pruning", "Hedge shaping & renewal", "Disease & pest checks", "Seasonal timing"],
     body: [
-      {
-        heading: "Texture and richness, built in",
-        text: "Add depth and character with architectural stone facades on columns, walls, and outdoor structures. We install natural and manufactured veneer with clean, durable detailing.",
-      },
-      {
-        heading: "Elevate your curb appeal",
-        text: "The right stone facade transforms a plain surface into a striking feature — and we match color and texture to your home for a seamless look.",
-      },
+      { heading: "Healthy, shapely, vibrant", text: "Proper pruning keeps shrubs and bushes dense and well-proportioned — pruned at the right time for each species." },
+      { heading: "Renewal and rescue", text: "Overgrown shrubs can often be brought back with the right renewal pruning. We'll tell you honestly what's worth saving." },
+    ],
+  },
+  {
+    path: "/fall-cleanups/",
+    title: "Fall Cleanups",
+    category: "maintenance",
+    icon: "leaf",
+    intro: "Leaf removal and bed prep that puts your property to bed for winter.",
+    highlights: ["Full-property leaf removal", "Perennial cutback", "Bed & gutter clearing", "Debris haul-away"],
+    body: [
+      { heading: "A fresh start for the season", text: "We clear leaves and debris, cut back perennials, and prep beds so your property is clean through winter and ready to rebound in spring." },
+      { heading: "Done thoroughly, hauled away", text: "No piles left behind — we remove the debris and leave your property tidy." },
+    ],
+  },
+  {
+    path: "/leaf-cleanups/",
+    title: "Leaf Cleanup",
+    category: "maintenance",
+    icon: "leaf",
+    intro: "Thorough leaf cleanup to keep your lawn healthy through fall.",
+    highlights: ["Full-property removal", "Lawn & bed clearing", "Recurring fall visits", "Debris haul-away"],
+    body: [
+      { heading: "Don't let leaves smother your lawn", text: "A thick blanket of leaves blocks light and traps moisture. We clear them thoroughly so your lawn stays healthy into winter." },
+      { heading: "Recurring visits", text: "Leaves don't fall all at once — we can schedule recurring cleanups so your property stays clear from first drop to last." },
+    ],
+  },
+  {
+    path: "/fall-aeration-seeding/",
+    title: "Aeration & Overseeding",
+    category: "maintenance",
+    icon: "leaf",
+    intro: "Thicker, healthier turf through core aeration and overseeding at the ideal time of year.",
+    highlights: ["Core aeration", "Overseeding with quality blends", "Starter fertilization", "Best-time fall scheduling"],
+    body: [
+      { heading: "The best thing for a tired lawn", text: "Core aeration relieves compaction; paired with overseeding, it's the most effective way to thicken a thin, worn lawn." },
+      { heading: "Timed for results", text: "Fall is the ideal window in our area — cooler temps and good moisture give new grass the best chance to establish." },
     ],
   },
 ];
@@ -642,4 +755,11 @@ export function getService(path: string) {
 
 export function servicesByCategory(category: ServiceCategory) {
   return services.filter((s) => s.category === category);
+}
+
+export function metaForService(s: Service, fallbackTitle?: string) {
+  return {
+    title: s.metaTitle ?? fallbackTitle,
+    description: s.metaDescription,
+  };
 }

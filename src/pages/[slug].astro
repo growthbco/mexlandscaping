@@ -46,13 +46,16 @@ const breadcrumb = (items: { name: string; path: string }[]) => ({
   })),
 });
 
+const abs = (img?: string) =>
+  !img ? "" : img.startsWith("http") ? img : new URL(img, site).href;
+
 if (props.kind === "service") {
   const s = props.service;
   path = s.path;
   const meta = seoFor(s.path);
-  title = meta?.title || `${s.title} | Mex Landscaping`;
-  description = meta?.description || s.intro;
-  ogImage = meta?.ogImage || "";
+  title = meta?.title || s.metaTitle || `${s.title} | Mex Landscaping`;
+  description = meta?.description || s.metaDescription || s.intro;
+  ogImage = meta?.ogImage || abs(s.image);
   schema.push(
     {
       "@context": "https://schema.org",
@@ -75,9 +78,9 @@ if (props.kind === "service") {
   path = p.path;
   const meta = seoFor(p.path);
   const c = locationContent(p);
-  title = meta?.title || `${c.h1} | Mex Landscaping`;
-  description = meta?.description || c.intro;
-  ogImage = meta?.ogImage || "";
+  title = c.metaTitle || meta?.title || `${c.h1} | Mex Landscaping`;
+  description = c.metaDescription || meta?.description || c.intro;
+  ogImage = meta?.ogImage || abs(c.image);
   schema.push(
     {
       "@context": "https://schema.org",

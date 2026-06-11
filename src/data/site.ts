@@ -34,26 +34,42 @@ export type NavItem = { label: string; href: string; children?: NavChild[] };
 
 export const nav: NavItem[] = [
   {
-    label: "Landscaping",
-    href: "/landscaping-services-in-norristown-pa/",
+    label: "Design & Build",
+    href: "/landscape-design/",
     children: [
-      { label: "Landscaping Services", href: "/landscaping-services-in-norristown-pa/" },
-      { label: "Landscape Design", href: "/landscape-design/" },
+      { label: "Landscape Design & Build", href: "/landscape-design/" },
       { label: "Lawn Installation", href: "/lawn-installation/" },
-      { label: "Landscape Lighting", href: "/landscape-lighting/" },
-      { label: "Property Maintenance", href: "/property-maintenance/" },
-      { label: "Storm Water Management", href: "/storm-water-management/" },
       { label: "Tree & Plant Installation", href: "/tree-plant-installation/" },
-      { label: "Weeding", href: "/weeding/" },
-      { label: "Trimming", href: "/trimming/" },
-      { label: "Shrubs & Bushes", href: "/shrubs-and-bushes/" },
-      { label: "Fall Cleanups", href: "/fall-cleanups/" },
-      { label: "Fall Aeration & Seeding", href: "/fall-aeration-seeding/" },
+      { label: "Landscape Lighting", href: "/landscape-lighting/" },
+      { label: "Drainage & Storm Water", href: "/storm-water-management/" },
       { label: "Commercial Installations", href: "/commercial-landscape-installations/" },
     ],
   },
   {
-    label: "Snow Management",
+    label: "Hardscaping",
+    href: "/hardscape-services/",
+    children: [
+      { label: "All Hardscaping", href: "/hardscape-services/" },
+      { label: "Patios", href: "/patios/" },
+      { label: "Walkways & Steps", href: "/walkways/" },
+      { label: "Driveways", href: "/driveways/" },
+      { label: "Retaining & Seating Walls", href: "/retaining-walls/" },
+      { label: "Architectural Stone & Facades", href: "/architectural-stone-facades/" },
+    ],
+  },
+  {
+    label: "Outdoor Living",
+    href: "/outdoor-living/",
+    children: [
+      { label: "Outdoor Living Spaces", href: "/outdoor-living/" },
+      { label: "Fire Pits & Fire Features", href: "/fire-pits/" },
+      { label: "Outdoor Kitchens", href: "/outdoor-kitchens/" },
+      { label: "Water Features", href: "/water-features/" },
+    ],
+  },
+  { label: "Concrete & Masonry", href: "/concrete-masonry/" },
+  {
+    label: "Snow",
     href: "/snow-management-services/",
     children: [
       { label: "Snow Management", href: "/snow-management-services/" },
@@ -61,23 +77,10 @@ export const nav: NavItem[] = [
       { label: "24/7 Emergency Snow", href: "/24-7-emergency-snow-services/" },
       { label: "Sidewalk Snow Removal", href: "/sidewalk-snow-removal/" },
       { label: "Salting & De-Icing", href: "/salting-de-icing/" },
-      { label: "Snow Removal", href: "/snow-removal/" },
     ],
   },
-  {
-    label: "Hardscape",
-    href: "/hardscape-services/",
-    children: [
-      { label: "Hardscape Services", href: "/hardscape-services/" },
-      { label: "Patios", href: "/patios/" },
-      { label: "Driveways", href: "/driveways/" },
-      { label: "Architectural Stone & Facades", href: "/architectural-stone-facades/" },
-    ],
-  },
-  { label: "Service Areas", href: "/service-areas/" },
   { label: "Our Work", href: "/our-work/" },
   { label: "About", href: "/about-us/" },
-  { label: "Blog", href: "/blog/" },
 ];
 
 // Cities for the programmatic local-SEO location pages.

@@ -1,11 +1,11 @@
-// Programmatic local-SEO location pages. The real <title>/description for each
-// come from src/data/seo.generated.ts (keyed by path); this file builds the
-// on-page content per city. Note: the live site's H1s contain a "Lawn Moving"
-// typo — we generate correct "Lawn Mowing" headings here.
+// Programmatic local-SEO location pages — repositioned to premium.
+// The per-city "lawn mowing" pages were repurposed into "Landscape Design &
+// Hardscaping in {city}" pages (new slugs; old lawn-mowing URLs 301 → these via
+// vercel.json). Snow per-city pages are kept (real titles from seo.generated).
 
 import { cities, type City } from "./site";
 
-export type LocationKind = "lawn" | "snow";
+export type LocationKind = "design" | "snow";
 
 export type LocationPage = {
   path: string;
@@ -13,12 +13,17 @@ export type LocationPage = {
   city: City;
 };
 
-export const lawnPath = (slug: string) => `/lawn-mowing-services-in-${slug}-pa/`;
+export const designPath = (slug: string) =>
+  `/landscape-design-hardscaping-in-${slug}-pa/`;
 export const snowPath = (slug: string) =>
   `/snow-management-services-in-${slug}-pa/`;
 
+// Old lawn-mowing URLs we now redirect away from (used to build vercel.json).
+export const oldLawnPath = (slug: string) =>
+  `/lawn-mowing-services-in-${slug}-pa/`;
+
 export const locationPages: LocationPage[] = cities.flatMap((city) => [
-  { path: lawnPath(city.slug), kind: "lawn" as const, city },
+  { path: designPath(city.slug), kind: "design" as const, city },
   { path: snowPath(city.slug), kind: "snow" as const, city },
 ]);
 
@@ -28,35 +33,41 @@ export function getLocationPage(path: string) {
 
 export function locationContent(page: LocationPage) {
   const city = page.city.name;
-  if (page.kind === "lawn") {
+  if (page.kind === "design") {
     return {
       icon: "leaf" as const,
-      h1: `Professional Lawn Mowing Services in ${city}, PA`,
-      crumb: "Lawn Mowing",
-      intro: `Keep your lawn looking pristine year-round with professional lawn mowing services in ${city}, PA. Mex Landscaping delivers precise mowing, clean edging, and detailed trimming for homes and businesses.`,
+      image: "/images/patio.jpg",
+      h1: `Landscape Design & Hardscaping in ${city}, PA`,
+      crumb: "Design & Hardscaping",
+      metaTitle: `Landscape Design & Hardscaping in ${city}, PA | Mex Landscaping`,
+      metaDescription: `Premium landscape design, hardscaping, patios, and outdoor living in ${city}, PA. Mex Landscaping designs and builds high-end outdoor spaces. Free estimate — (484) 261-6650.`,
+      intro: `Mex Landscaping designs and builds high-end outdoor spaces in ${city}, PA — landscape redesigns, patios, fire features, walls, and complete outdoor living. One team, design through build.`,
       highlights: [
-        "Precision mowing on a reliable schedule",
-        "Crisp edging along walks & beds",
-        "Detailed trimming around features",
-        "Residential & commercial properties",
+        "Landscape design & full redesigns",
+        "Patios, walkways & retaining walls",
+        "Fire pits & outdoor living",
+        "Concrete, masonry & stone facades",
       ],
       body: [
         {
-          heading: `Reliable lawn care for ${city} homes & businesses`,
-          text: `A great-looking lawn comes down to consistency and care. Our ${city} crews mow at the right height for your grass, edge clean lines, and trim the spots a mower can't reach — so your property always looks sharp.`,
+          heading: `Design-build landscaping for ${city}`,
+          text: `From a complete property redesign to a custom patio and fire feature, we bring design and construction together under one roof for ${city} homeowners. You get a clear plan, skilled crews, and a finished space built to last.`,
         },
         {
-          heading: "Mowing, edging & trimming — done right",
-          text: `We treat every visit like it matters: sharp blades, careful patterns, and a tidy cleanup that leaves no clippings behind. Sign up for recurring service and never think about your lawn again.`,
+          heading: "Hardscape, outdoor living & more",
+          text: `Patios, walkways, driveways, retaining and seating walls, outdoor kitchens, water features, and architectural stone — the structural craft that turns a ${city} yard into an outdoor destination.`,
         },
       ],
-      cta: `Call (484) 261-6650 for a free lawn mowing quote in ${city}, PA.`,
+      cta: `Call (484) 261-6650 for a free design consultation in ${city}, PA.`,
     };
   }
   return {
     icon: "snow" as const,
+    image: undefined as string | undefined,
     h1: `Commercial Snow Management Services in ${city}, PA`,
     crumb: "Snow Management",
+    metaTitle: undefined as string | undefined, // pulled from seo.generated
+    metaDescription: undefined as string | undefined,
     intro: `Stay safe and accessible all winter with expert snow management services in ${city}, PA. Mex Landscaping provides 24/7 snow removal, plowing, and de-icing for residential and commercial properties.`,
     highlights: [
       "24/7 storm monitoring & response",

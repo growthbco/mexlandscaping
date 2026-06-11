@@ -1,6 +1,4 @@
 ---
-import Icon from "./Icon.astro";
-
 export interface Crumb {
   label: string;
   href?: string;
@@ -10,29 +8,44 @@ interface Props {
   title: string;
   intro?: string;
   crumbs?: Crumb[];
+  image?: string;
 }
-const { eyebrow, title, intro, crumbs } = Astro.props;
+const { eyebrow, title, intro, crumbs, image } = Astro.props;
 ---
 
-<section class="relative overflow-hidden bg-forest-900 text-cream">
-  <div
-    class="pointer-events-none absolute inset-0 opacity-90"
-    style="background: radial-gradient(100% 80% at 90% -20%, #316038 0%, transparent 55%)"
-  >
-  </div>
-  <div class="container-page relative py-16 lg:py-20">
+<section class="relative overflow-hidden bg-ink-900 text-cream">
+  {
+    image ? (
+      <>
+        <img
+          src={image}
+          alt=""
+          aria-hidden="true"
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/85 to-ink-900/55"></div>
+      </>
+    ) : (
+      <div
+        class="pointer-events-none absolute inset-0 opacity-90"
+        style="background: radial-gradient(100% 80% at 90% -20%, #1c2417 0%, transparent 55%)"
+      />
+    )
+  }
+  <div class="container-page relative py-20 lg:py-28">
     {
       crumbs && (
-        <nav class="mb-5 text-sm text-forest-300" aria-label="Breadcrumb">
+        <nav class="mb-5 text-sm text-cream/60" aria-label="Breadcrumb">
           <ol class="flex flex-wrap items-center gap-1.5">
             {crumbs.map((crumb, i) => (
               <li class="flex items-center gap-1.5">
                 {crumb.href ? (
-                  <a href={crumb.href} class="hover:text-clay-300">{crumb.label}</a>
+                  <a href={crumb.href} class="hover:text-gold-300">{crumb.label}</a>
                 ) : (
                   <span class="text-cream">{crumb.label}</span>
                 )}
-                {i < crumbs.length - 1 && <span class="text-forest-600">/</span>}
+                {i < crumbs.length - 1 && <span class="text-cream/30">/</span>}
               </li>
             ))}
           </ol>
@@ -41,15 +54,15 @@ const { eyebrow, title, intro, crumbs } = Astro.props;
     }
     {
       eyebrow && (
-        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-leaf-400">
-          <span class="h-px w-6 bg-leaf-500" />
+        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-eyebrow text-gold-300">
+          <span class="h-px w-6 bg-gold-400" />
           {eyebrow}
         </span>
       )
     }
-    <h1 class="mt-3 max-w-3xl text-4xl font-semibold leading-tight sm:text-5xl" style="font-family:var(--font-display)">
+    <h1 class="mt-4 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.05] sm:text-5xl lg:text-6xl">
       {title}
     </h1>
-    {intro && <p class="mt-5 max-w-2xl text-lg text-forest-200">{intro}</p>}
+    {intro && <p class="mt-5 max-w-2xl text-lg text-cream/80">{intro}</p>}
   </div>
 </section>

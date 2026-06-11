@@ -25,3 +25,4 @@ pnpm-debug.log*
 
 # Local crawl cache
 scripts/.cache/
+.vercel

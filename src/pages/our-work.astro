@@ -10,17 +10,18 @@ const meta = seoFor("/our-work/");
 const title = meta?.title ?? "Our Work | Mex Landscaping | Norristown PA";
 const description =
   meta?.description ??
-  "See Mex Landscaping's work across Norristown landscapes — precision, beauty, and craftsmanship.";
+  "See Mex Landscaping's work across the Main Line — landscape design, hardscaping, fire features, and outdoor living.";
 
-// Placeholder gallery — swap each `from/to` for real project photos.
 const projects = [
-  { label: "Paver Patio & Fire Pit", area: "Wayne, PA", grad: "from-clay-400 to-clay-600", span: "lg:row-span-2 h-full min-h-[20rem]" },
-  { label: "Full Landscape Redesign", area: "King of Prussia, PA", grad: "from-leaf-500 to-forest-700", span: "h-56" },
-  { label: "Retaining Wall & Walkway", area: "Bryn Mawr, PA", grad: "from-forest-600 to-forest-800", span: "h-56" },
-  { label: "Lawn Installation", area: "Conshohocken, PA", grad: "from-forest-500 to-leaf-600", span: "h-56" },
-  { label: "Architectural Stone Facade", area: "Gladwyne, PA", grad: "from-clay-500 to-forest-700", span: "h-56" },
-  { label: "Commercial Snow Management", area: "Plymouth Meeting, PA", grad: "from-forest-700 to-forest-900", span: "lg:col-span-2 h-56" },
-  { label: "Landscape Lighting", area: "Malvern, PA", grad: "from-forest-600 to-clay-500", span: "h-56" },
+  { src: "/images/fire-pit.webp", label: "Stone Fire Pit & Patio", area: "Outdoor Living", span: "lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto" },
+  { src: "/images/lighting.jpg", label: "Architectural Landscape Lighting", area: "Design & Build" },
+  { src: "/images/patio.jpg", label: "Backyard Paver Patio", area: "Hardscaping" },
+  { src: "/images/driveway.jpg", label: "Paver Driveway", area: "Hardscaping" },
+  { src: "/images/walkway.jpg", label: "Walkway & Plantings", area: "Hardscaping" },
+  { src: "/images/landscape-design.webp", label: "Front-Yard Redesign", area: "Design & Build" },
+  { src: "/images/stone-wall.jpg", label: "Stone Retaining Wall", area: "Hardscaping" },
+  { src: "/images/commercial.jpg", label: "Commercial Landscape", area: "Commercial" },
+  { src: "/images/projects/p1.jpg", label: "Custom Project", area: "Design & Build" },
 ];
 ---
 
@@ -28,26 +29,28 @@ const projects = [
   <PageHero
     eyebrow="Portfolio"
     title="Our work speaks for itself"
-    intro="A look at recent landscaping, hardscape, and property transformations across the Main Line. Every project starts with a plan and ends with a property the owner is proud of."
+    intro="A look at recent design-build, hardscape, and outdoor living projects across the Main Line. Every one starts with a plan and ends with a property the owner is proud of."
+    image="/images/fire-pit.webp"
     crumbs={[{ label: "Home", href: "/" }, { label: "Our Work" }]}
   />
 
   <Section>
-    <SectionHeading eyebrow="Recent projects" title="Designed, built, and maintained by our crews" />
-    <div class="mt-12 grid auto-rows-min gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <SectionHeading eyebrow="Recent projects" title="Designed, built, and finished by our crews" />
+    <div class="mt-12 grid auto-rows-[220px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
         projects.map((p) => (
-          <div class={`group relative flex items-end overflow-hidden rounded-3xl bg-gradient-to-br ${p.grad} ${p.span} p-6 shadow-lg ring-1 ring-black/5`}>
-            <div class="relative z-10">
-              <span class="block text-lg font-semibold text-white" style="font-family:var(--font-display)">{p.label}</span>
-              <span class="text-sm text-white/80">{p.area}</span>
-            </div>
-            <div class="absolute inset-0 bg-black/0 transition-colors group-hover:bg-black/10"></div>
-          </div>
+          <figure class={`photo-card group relative overflow-hidden rounded-3xl ring-1 ring-black/5 ${p.span ?? ""}`}>
+            <img src={p.src} alt={p.label} loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/10 to-transparent"></div>
+            <figcaption class="absolute bottom-0 left-0 p-5 text-cream">
+              <span class="text-xs font-semibold uppercase tracking-eyebrow text-gold-300">{p.area}</span>
+              <span class="mt-1 block font-display text-lg font-semibold">{p.label}</span>
+            </figcaption>
+          </figure>
         ))
       }
     </div>
-    <p class="mt-8 text-sm text-forest-500">Project photos are representative placeholders — drop your real gallery images in to replace them.</p>
+    <p class="mt-8 text-sm text-forest-500">More photos available on request — and your project could be next.</p>
   </Section>
 
   <CtaBanner title="Picture your property next" />

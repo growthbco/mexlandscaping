@@ -26,6 +26,16 @@
   --color-cream: #faf7f0;
   --color-sand: #f3ede0;
 
+  /* Dark, dramatic premium surfaces + brass accent */
+  --color-ink-950: #0a0d09;
+  --color-ink-900: #0e120c;
+  --color-ink-800: #141a11;
+  --color-ink-700: #1c2417;
+  --color-gold-200: #ecd9a8;
+  --color-gold-300: #e0c485;
+  --color-gold-400: #cdab63;
+  --color-gold-500: #b08f49;
+
   --font-display: "Fraunces", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
@@ -103,5 +113,34 @@ body {
   }
 }
 .animate-fade-up {
-  animation: fade-up 0.6s ease-out both;
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Editorial display utilities */
+.font-display {
+  font-family: var(--font-display);
+}
+.tracking-eyebrow {
+  letter-spacing: 0.22em;
+}
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Premium photo card: image zoom + gradient scrim on hover */
+.photo-card img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.photo-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Thin brass divider */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--color-gold-400),
+    transparent
+  );
 }
