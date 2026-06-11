@@ -1,26 +1,37 @@
 ---
+import Icon from "./Icon.astro";
+
 interface Props {
   href: string;
   variant?: "primary" | "secondary" | "outline" | "outline-light";
   size?: "md" | "lg";
+  /** Show a trailing arrow (default true) */
+  arrow?: boolean;
   class?: string;
 }
-const { href, variant = "primary", size = "md", class: className = "" } = Astro.props;
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  arrow = true,
+  class: className = "",
+} = Astro.props;
 
 const variants: Record<string, string> = {
-  primary: "bg-clay-500 text-white hover:bg-clay-600 shadow-sm shadow-clay-600/20",
-  secondary: "bg-forest-700 text-cream hover:bg-forest-800",
-  outline: "border border-forest-300 text-forest-800 hover:bg-forest-50",
-  "outline-light": "border border-forest-500 text-cream hover:bg-forest-800",
+  primary: "bg-leaf-500 text-white hover:bg-leaf-600 shadow-sm shadow-leaf-600/20",
+  secondary: "bg-leaf-600 text-white hover:bg-leaf-700",
+  outline: "border-2 border-forest-300 text-forest-800 hover:border-forest-500",
+  "outline-light": "border-2 border-white/30 text-white hover:border-white/60 hover:bg-white/5",
 };
 const sizes: Record<string, string> = {
   md: "px-5 py-2.5 text-sm",
   lg: "px-7 py-3.5 text-base",
 };
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest-600";
+  "group/btn inline-flex items-center justify-center gap-2 rounded-lg font-display font-semibold tracking-wide transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-leaf-600";
 ---
 
 <a href={href} class={`${base} ${variants[variant]} ${sizes[size]} ${className}`}>
   <slot />
+  {arrow && <Icon name="arrow" class="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />}
 </a>

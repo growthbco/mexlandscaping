@@ -5,40 +5,61 @@ interface Props {
   /** Pre-fills the "service" field, e.g. "Patios" or "Lawn Mowing — Wayne, PA" */
   defaultService?: string;
   compact?: boolean;
+  /** "green" renders the solid green hero panel; "card" the white bordered card */
+  theme?: "card" | "green";
 }
-const { defaultService = "", compact = false } = Astro.props;
+const { defaultService = "", compact = false, theme = "card" } = Astro.props;
+
+const green = theme === "green";
 
 // Flatten the service menu into a select list.
 const serviceGroups = nav.filter((n) => n.children);
-const inputClass =
-  "w-full rounded-xl border border-forest-200 bg-white px-4 py-3 text-forest-900 placeholder:text-forest-400 focus:border-forest-500 focus:outline-none focus:ring-2 focus:ring-forest-500/20";
+const inputClass = green
+  ? "w-full rounded-lg border-0 bg-white px-4 py-3 text-forest-900 placeholder:text-forest-400 focus:outline-none focus:ring-2 focus:ring-ink-900/30"
+  : "w-full rounded-lg border border-forest-200 bg-white px-4 py-3 text-forest-900 placeholder:text-forest-400 focus:border-leaf-500 focus:outline-none focus:ring-2 focus:ring-leaf-500/20";
+const labelClass = green
+  ? "sr-only"
+  : "mb-1.5 block text-sm font-medium text-forest-800";
 ---
 
-<div class="rounded-3xl border border-forest-100 bg-white p-6 sm:p-8" data-leadform>
-  <form class="space-y-5" data-form>
+<div
+  class={green
+    ? "rounded-2xl bg-leaf-500 p-6 shadow-2xl shadow-ink-950/30 sm:p-8"
+    : "rounded-2xl border border-forest-100 bg-white p-6 shadow-sm sm:p-8"}
+  data-leadform
+>
+  {
+    green && (
+      <div class="mb-6 text-center text-white">
+        <h2 class="font-display text-2xl font-semibold tracking-wide sm:text-3xl">Get Your Free Estimate</h2>
+        <p class="mt-2 text-sm text-white/85">Fill out the form below and we will get back to you within 24 hours.</p>
+      </div>
+    )
+  }
+  <form class="space-y-4" data-form>
     <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
     <input type="hidden" name="subject" value="New lead from mexlandscaping.com" />
     <input type="hidden" name="from_name" value="Mex Landscaping Website" />
     <!-- Honeypot -->
     <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
 
-    <div class={`grid gap-5 ${compact ? "" : "sm:grid-cols-2"}`}>
+    <div class={`grid gap-4 ${compact || green ? "" : "sm:grid-cols-2"}`}>
       <label class="block">
-        <span class="mb-1.5 block text-sm font-medium text-forest-800">Full name</span>
-        <input name="name" required class={inputClass} placeholder="Jane Doe" />
+        <span class={labelClass}>Full name</span>
+        <input name="name" required class={inputClass} placeholder={green ? "Name*" : "Jane Doe"} />
       </label>
       <label class="block">
-        <span class="mb-1.5 block text-sm font-medium text-forest-800">Phone</span>
-        <input name="phone" type="tel" required class={inputClass} placeholder="(484) 555-0123" />
+        <span class={labelClass}>Email</span>
+        <input name="email" type="email" required class={inputClass} placeholder={green ? "Email*" : "you@example.com"} />
       </label>
       <label class="block">
-        <span class="mb-1.5 block text-sm font-medium text-forest-800">Email</span>
-        <input name="email" type="email" required class={inputClass} placeholder="you@example.com" />
+        <span class={labelClass}>Phone</span>
+        <input name="phone" type="tel" required class={inputClass} placeholder={green ? "Phone*" : "(484) 555-0123"} />
       </label>
       <label class="block">
-        <span class="mb-1.5 block text-sm font-medium text-forest-800">Service needed</span>
+        <span class={labelClass}>Service needed</span>
         <select name="service" class={inputClass}>
-          <option value="" disabled selected={!defaultService}>Select a service</option>
+          <option value="" disabled selected={!defaultService}>Select a Service</option>
           {defaultService && <option value={defaultService} selected>{defaultService}</option>}
           {
             serviceGroups.map((group) => (
@@ -55,26 +76,35 @@ const inputClass =
     </div>
 
     <label class="block">
-      <span class="mb-1.5 block text-sm font-medium text-forest-800">Project details</span>
-      <textarea name="message" rows={compact ? 3 : 5} class={inputClass} placeholder="Tell us a bit about your property and what you're looking to do..."></textarea>
+      <span class={labelClass}>Project details</span>
+      <textarea
+        name="message"
+        rows={compact || green ? 3 : 5}
+        class={inputClass}
+        placeholder={green ? "Tell us about your project (optional)" : "Tell us a bit about your property and what you're looking to do..."}
+      ></textarea>
     </label>
 
     <button
       type="submit"
       data-submit
-      class="inline-flex w-full items-center justify-center rounded-full bg-clay-500 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-clay-600 disabled:opacity-60 sm:w-auto"
+      class={green
+        ? "inline-flex w-full items-center justify-center gap-2 rounded-lg bg-leaf-700 px-7 py-3.5 font-display font-semibold tracking-wide text-white transition-colors hover:bg-ink-900 disabled:opacity-60"
+        : "inline-flex w-full items-center justify-center gap-2 rounded-lg bg-leaf-500 px-7 py-3.5 font-display font-semibold tracking-wide text-white transition-colors hover:bg-leaf-600 disabled:opacity-60 sm:w-auto"}
     >
-      Request My Free Estimate
+      Get Your Free Estimate →
     </button>
-    <p class="text-xs text-forest-500">We'll only use your details to respond to your request. No spam, ever.</p>
+    <p class={`text-center text-xs ${green ? "text-white/80" : "text-forest-500"}`}>
+      Your information is secure. We will never share it with anyone.
+    </p>
   </form>
 
   <div data-success class="hidden text-center">
-    <span class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-leaf-500/15 text-leaf-600">
+    <span class={`mx-auto grid h-14 w-14 place-items-center rounded-full ${green ? "bg-white/20 text-white" : "bg-leaf-500/15 text-leaf-600"}`}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="m5 12 5 5L20 7"/></svg>
     </span>
-    <h3 class="mt-5 text-2xl font-semibold text-forest-900" style="font-family:var(--font-display)">Thanks — we got it!</h3>
-    <p class="mt-2 text-forest-700">A member of the Mex Landscaping team will reach out shortly to schedule your free estimate.</p>
+    <h3 class={`mt-5 font-display text-2xl font-semibold ${green ? "text-white" : "text-forest-900"}`}>Thanks — we got it!</h3>
+    <p class={`mt-2 ${green ? "text-white/85" : "text-forest-600"}`}>A member of the Mex Landscaping team will reach out shortly to schedule your free estimate.</p>
   </div>
 </div>
 
@@ -106,7 +136,7 @@ const inputClass =
       } catch (err) {
         if (btn) {
           btn.disabled = false;
-          btn.textContent = "Request My Free Estimate";
+          btn.textContent = "Get Your Free Estimate →";
         }
         alert("Sorry — something went wrong. Please call us at (484) 261-6650.");
       }

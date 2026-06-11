@@ -1,42 +1,46 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette — deep forest greens, fresh leaf, warm terracotta */
-  --color-forest-50: #f1f6f1;
-  --color-forest-100: #dceadd;
-  --color-forest-200: #bcd6be;
-  --color-forest-300: #91b894;
-  --color-forest-400: #639668;
-  --color-forest-500: #437a49;
-  --color-forest-600: #316038;
-  --color-forest-700: #284d2f;
-  --color-forest-800: #213e27;
-  --color-forest-900: #1c3321;
-  --color-forest-950: #0f1d13;
+  /* Brand palette — slate neutrals, MEX green, gold accents.
+     Token names kept from the original theme so existing markup remaps. */
+  --color-forest-50: #f3f5f7;
+  --color-forest-100: #e6e9ed;
+  --color-forest-200: #d3d8df;
+  --color-forest-300: #aab2bd;
+  --color-forest-400: #87919e;
+  --color-forest-500: #5d6877;
+  --color-forest-600: #475260;
+  --color-forest-700: #374151;
+  --color-forest-800: #2b3441;
+  --color-forest-900: #1f2733;
+  --color-forest-950: #141a22;
 
-  --color-leaf-400: #7cab4f;
-  --color-leaf-500: #5f9136;
-  --color-leaf-600: #4a7329;
+  /* Primary action green (logo-adjacent kelly green) */
+  --color-leaf-400: #2fb35f;
+  --color-leaf-500: #1f9d4f;
+  --color-leaf-600: #15803d;
+  --color-leaf-700: #136f36;
 
-  --color-clay-300: #e8b08a;
-  --color-clay-400: #db8e5c;
-  --color-clay-500: #c97240;
-  --color-clay-600: #a85a30;
+  /* Gold / amber accents — stars, checkmarks, eyebrows on dark */
+  --color-clay-300: #f7ce64;
+  --color-clay-400: #f0b429;
+  --color-clay-500: #eab308;
+  --color-clay-600: #ca9a06;
 
-  --color-cream: #faf7f0;
-  --color-sand: #f3ede0;
+  --color-cream: #ffffff;
+  --color-sand: #f4f6f8;
 
-  /* Dark, dramatic premium surfaces + brass accent */
-  --color-ink-950: #0a0d09;
-  --color-ink-900: #0e120c;
-  --color-ink-800: #141a11;
-  --color-ink-700: #1c2417;
-  --color-gold-200: #ecd9a8;
-  --color-gold-300: #e0c485;
-  --color-gold-400: #cdab63;
-  --color-gold-500: #b08f49;
+  /* Dark navy-slate surfaces (header, footer, dark sections) */
+  --color-ink-950: #1a212b;
+  --color-ink-900: #232b37;
+  --color-ink-800: #2a3340;
+  --color-ink-700: #333e4d;
+  --color-gold-200: #f8d978;
+  --color-gold-300: #f5c542;
+  --color-gold-400: #eab308;
+  --color-gold-500: #ca9a06;
 
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
@@ -46,7 +50,7 @@ html {
 
 body {
   background: var(--color-cream);
-  color: var(--color-forest-900);
+  color: var(--color-forest-700);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
@@ -87,19 +91,19 @@ body {
 .prose-mex li {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--color-forest-800);
+  color: var(--color-forest-700);
 }
 .prose-mex ul {
   list-style: disc;
   padding-left: 1.4rem;
 }
 .prose-mex a {
-  color: var(--color-forest-600);
+  color: var(--color-leaf-600);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 .prose-mex a:hover {
-  color: var(--color-clay-600);
+  color: var(--color-leaf-500);
 }
 
 @keyframes fade-up {
@@ -116,9 +120,11 @@ body {
   animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Editorial display utilities */
+/* Display type: bold condensed uppercase, used for all headings & buttons */
 .font-display {
   font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
 .tracking-eyebrow {
   letter-spacing: 0.22em;
@@ -127,7 +133,7 @@ body {
   text-wrap: balance;
 }
 
-/* Premium photo card: image zoom + gradient scrim on hover */
+/* Photo card: image zoom on hover */
 .photo-card img {
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -135,7 +141,7 @@ body {
   transform: scale(1.06);
 }
 
-/* Thin brass divider */
+/* Thin gold divider */
 .rule-gold {
   height: 1px;
   background: linear-gradient(

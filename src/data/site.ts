@@ -112,21 +112,30 @@ export const cities: City[] = [
 
 export const process = [
   {
-    step: "01",
-    title: "Project Discussion",
-    body: "We begin by understanding your unique vision and needs. Our team listens to your goals, shares ideas, and provides expert advice to ensure we're aligned with your expectations.",
+    step: "1",
+    icon: "phone",
+    title: "Free Consultation",
+    body: "Call us or fill out our form for a free, no-obligation estimate.",
   },
   {
-    step: "02",
-    title: "Project Planning",
-    body: "Next, we craft a detailed, creative plan tailored to your property. Whether it's landscaping, snow management, or fencing, our plan includes innovative solutions and a clear timeline.",
+    step: "2",
+    icon: "clipboard",
+    title: "On-Site Visit",
+    body: "We visit your property to assess your needs and discuss your vision.",
   },
   {
-    step: "03",
-    title: "Project Execution",
-    body: "Our experienced professionals execute the plan with precision and care. From the first dig to the finishing touches, we transform your property into a beautiful, functional space.",
+    step: "3",
+    icon: "hammer",
+    title: "We Get to Work",
+    body: "Our experienced crew completes your project with quality and care.",
   },
-];
+  {
+    step: "4",
+    icon: "heart",
+    title: "Enjoy Your Space",
+    body: "Sit back and enjoy your beautifully transformed outdoor space.",
+  },
+] as const;
 
 export const whyUs = [
   {

@@ -4,10 +4,13 @@ import Section from "../components/Section.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import Button from "../components/Button.astro";
 import Icon from "../components/Icon.astro";
+import LeadForm from "../components/LeadForm.astro";
 import ProcessSteps from "../components/ProcessSteps.astro";
+import WhyChoose from "../components/WhyChoose.astro";
 import Reviews from "../components/Reviews.astro";
+import Faqs from "../components/Faqs.astro";
 import CtaBanner from "../components/CtaBanner.astro";
-import { cities } from "../data/site";
+import { cities, business } from "../data/site";
 import { seoFor } from "../data/seo.generated";
 
 const meta = seoFor("/")!;
@@ -41,6 +44,20 @@ const featured = [
     blurb: "Poured and stamped concrete, plus full masonry — the craft that endures.",
     icon: "brick",
   },
+  {
+    label: "Landscape Lighting",
+    href: "/landscape-lighting/",
+    image: "/images/lighting.jpg",
+    blurb: "Low-voltage lighting that makes your home and landscape shine after dark.",
+    icon: "light",
+  },
+  {
+    label: "Snow Management",
+    href: "/snow-management-services/",
+    image: "/images/commercial.jpg",
+    blurb: "Reliable plowing, salting, and 24/7 storm response for homes and businesses.",
+    icon: "snow",
+  },
 ] as const;
 
 const gallery = [
@@ -51,152 +68,64 @@ const gallery = [
   { src: "/images/driveway.jpg", label: "Paver driveway" },
 ];
 
-const trust = [
-  "Design–build under one roof",
-  "Free, no-obligation estimates",
-  "Licensed & insured",
-];
-const stats = [
-  { value: "22+", label: "Communities served" },
-  { value: "Design", label: "to build, one team" },
-  { value: "5★", label: "Homeowner-rated" },
+const heroBullets = [
+  "Licensed, Insured & Locally Owned",
+  "5-Star Rated by Homeowners",
+  "Free Estimates Within 24 Hours",
+  "High-Quality Materials & Craftsmanship",
 ];
 ---
 
 <BaseLayout title={meta.title} description={meta.description} path="/">
   <!-- Hero -->
-  <section class="relative isolate overflow-hidden bg-ink-950 text-cream">
+  <section class="relative isolate overflow-hidden bg-ink-950 text-white">
     <img
-      src="/images/lighting.jpg"
-      alt="Dusk landscape lighting on a stone Main Line home built by Mex Landscaping"
+      src="/images/landscape-design.webp"
+      alt="Freshly landscaped lawn at a Main Line home by Mex Landscaping"
       class="absolute inset-0 -z-10 h-full w-full object-cover"
       loading="eager"
     />
-    <div class="absolute inset-0 -z-10 bg-gradient-to-t from-ink-950 via-ink-950/80 to-ink-950/55"></div>
-    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950/80 to-transparent"></div>
+    <div class="absolute inset-0 -z-10 bg-ink-950/70"></div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950/80 via-ink-950/40 to-transparent"></div>
 
-    <div class="container-page relative flex min-h-[88vh] flex-col justify-center py-24 lg:py-32">
-      <div class="max-w-2xl animate-fade-up">
-        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-eyebrow text-gold-300">
-          <span class="h-px w-8 bg-gold-400"></span>
-          Design · Build · Outdoor Living
+    <div class="container-page relative grid items-center gap-12 py-16 lg:grid-cols-[1fr_26rem] lg:gap-16 lg:py-20">
+      <div class="animate-fade-up">
+        <span class="block text-sm font-bold uppercase tracking-eyebrow text-gold-300">
+          5-Star Landscaping on the Main Line
         </span>
-        <h1 class="mt-6 text-balance font-display text-5xl font-semibold leading-[1.03] sm:text-6xl lg:text-7xl">
-          High-end landscape design &amp; build on the Main Line
+        <h1 class="mt-4 text-balance font-display text-5xl font-semibold leading-[1.02] sm:text-6xl lg:text-7xl">
+          High-end landscape design &amp; build in Norristown, PA
         </h1>
-        <p class="mt-6 max-w-xl text-lg text-cream/85">
+        <p class="mt-5 max-w-xl text-lg text-white/85">
           Mex Landscaping designs and builds distinctive outdoor spaces —
           landscape redesigns, patios, fire features, and hardscaping — for fine
           homes across Norristown, the Main Line, and beyond.
         </p>
-        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-          <Button href="/contact-us/" size="lg">Start your project</Button>
-          <Button href="/our-work/" size="lg" variant="outline-light">View our work</Button>
-        </div>
-        <ul class="mt-10 flex flex-wrap gap-x-7 gap-y-2 text-sm text-cream/75">
-          {trust.map((t) => (
-            <li class="flex items-center gap-2">
-              <Icon name="check" class="h-4 w-4 text-gold-300" />
+        <ul class="mt-8 space-y-3.5">
+          {heroBullets.map((t) => (
+            <li class="flex items-center gap-3 font-medium">
+              <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-clay-400 text-ink-950">
+                <Icon name="check" class="h-3.5 w-3.5" />
+              </span>
               {t}
             </li>
           ))}
         </ul>
-      </div>
-    </div>
-
-    <div class="relative border-t border-white/10 bg-ink-950/60 backdrop-blur">
-      <div class="container-page grid grid-cols-3 divide-x divide-white/10">
-        {stats.map((s) => (
-          <div class="px-4 py-6 text-center">
-            <div class="font-display text-2xl font-semibold text-gold-300 sm:text-3xl">{s.value}</div>
-            <div class="mt-1 text-xs text-cream/60 sm:text-sm">{s.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Positioning intro -->
-  <Section>
-    <div class="grid items-end gap-8 lg:grid-cols-2">
-      <SectionHeading
-        eyebrow="What we do"
-        title="A design-build firm for distinctive outdoor spaces"
-      />
-      <p class="text-lg leading-relaxed text-forest-700/90">
-        We focus on the work that transforms a property — full landscape
-        redesigns, custom hardscaping, fire features, and outdoor living. From
-        the first sketch to the final stone, it's one accountable team and one
-        standard of craftsmanship.
-      </p>
-    </div>
-
-    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {featured.map((f) => (
-        <a href={f.href} class="photo-card group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-3xl ring-1 ring-black/5">
-          <img src={f.image} alt={f.label} loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
-          <div class="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/30 to-transparent"></div>
-          <div class="relative p-6 text-cream">
-            <span class="grid h-10 w-10 place-items-center rounded-xl bg-white/10 text-gold-300 backdrop-blur">
-              <Icon name={f.icon} class="h-5 w-5" />
-            </span>
-            <h3 class="mt-4 font-display text-xl font-semibold">{f.label}</h3>
-            <p class="mt-1.5 text-sm text-cream/75">{f.blurb}</p>
-            <span class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-300">
-              Explore
-              <Icon name="arrow" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </span>
-          </div>
-        </a>
-      ))}
-    </div>
-  </Section>
-
-  <!-- Signature work (dark gallery) -->
-  <section class="bg-ink-900 text-cream">
-    <div class="container-page py-20 lg:py-24">
-      <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-        <div>
-          <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-eyebrow text-gold-300">
-            <span class="h-px w-6 bg-gold-400"></span>Signature work
-          </span>
-          <h2 class="mt-3 font-display text-3xl font-semibold sm:text-4xl">Built across the Main Line</h2>
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <a
+            href={business.phoneHref}
+            class="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-7 py-3.5 font-bold text-ink-900 shadow-lg transition hover:bg-forest-50"
+          >
+            <Icon name="phone" class="h-5 w-5 text-leaf-500" />
+            {business.phoneDisplay}
+          </a>
+          <Button href="/our-work/" size="lg" variant="outline-light" arrow={false}>View Our Work</Button>
         </div>
-        <a href="/our-work/" class="inline-flex items-center gap-1.5 font-semibold text-gold-300 hover:text-gold-200">
-          See the full portfolio
-          <Icon name="arrow" class="h-4 w-4" />
-        </a>
       </div>
 
-      <div class="mt-10 grid auto-rows-[180px] grid-cols-2 gap-4 sm:grid-cols-4">
-        {gallery.map((g) => (
-          <figure class={`photo-card group relative overflow-hidden rounded-2xl ring-1 ring-white/10 ${g.span ?? ""}`}>
-            <img src={g.src} alt={g.label} loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-ink-950/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
-            <figcaption class="absolute bottom-3 left-3 text-sm font-medium text-cream opacity-0 transition-opacity group-hover:opacity-100">{g.label}</figcaption>
-          </figure>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Outdoor living feature band -->
-  <section class="relative isolate overflow-hidden bg-ink-950 text-cream">
-    <img src="/images/fire-pit.webp" alt="Custom stone fire pit and patio at dusk" class="absolute inset-0 -z-10 h-full w-full object-cover" loading="lazy" />
-    <div class="absolute inset-0 -z-10 bg-ink-950/70"></div>
-    <div class="container-page relative py-24 lg:py-32">
-      <div class="max-w-xl">
-        <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-eyebrow text-gold-300">
-          <span class="h-px w-6 bg-gold-400"></span>Outdoor living
-        </span>
-        <h2 class="mt-4 font-display text-4xl font-semibold leading-tight sm:text-5xl">Designed for the way you live outside</h2>
-        <p class="mt-5 text-lg text-cream/85">
-          Fire pits, outdoor kitchens, water features, and the hardscape that
-          ties them together — complete outdoor rooms built around how you'll
-          actually use the space.
-        </p>
-        <div class="mt-8">
-          <Button href="/outdoor-living/" size="lg">Explore outdoor living</Button>
+      <div class="animate-fade-up lg:justify-self-end">
+        <div class="w-full lg:w-[26rem]">
+          <LeadForm theme="green" />
         </div>
       </div>
     </div>
@@ -204,24 +133,113 @@ const stats = [
 
   <ProcessSteps />
 
-  <!-- Service areas -->
+  <!-- Services -->
   <Section muted>
     <SectionHeading
-      eyebrow="Where we work"
-      title="Premium landscaping across the Main Line"
-      intro="Norristown, King of Prussia, and the surrounding communities — design, hardscape, and outdoor living."
+      eyebrow="What we do"
+      title="Our services"
+      intro="From full landscape transformations to year-round maintenance and snow — one accountable team and one standard of craftsmanship."
+      center
     />
-    <ul class="mt-10 flex flex-wrap gap-2.5">
-      {cities.map((c) => (
-        <li>
-          <a href={`/landscape-design-hardscaping-in-${c.slug}-pa/`} class="block rounded-full border border-forest-200 bg-white px-4 py-1.5 text-sm font-medium text-forest-700 hover:border-forest-400 hover:text-forest-900">
-            {c.name}
-          </a>
-        </li>
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {featured.map((f) => (
+        <div class="photo-card group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-black/5">
+          <div class="relative overflow-hidden">
+            <a href={f.href} class="block aspect-[16/10]">
+              <img src={f.image} alt={f.label} loading="lazy" class="h-full w-full object-cover" />
+            </a>
+            <span class="absolute left-4 top-4 grid h-11 w-11 place-items-center rounded-full bg-white text-leaf-600 shadow-md">
+              <Icon name={f.icon} class="h-5 w-5" />
+            </span>
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <h3 class="font-display text-xl font-semibold text-forest-900">
+              <a href={f.href}>{f.label}</a>
+            </h3>
+            <p class="mt-2 flex-1 text-sm leading-relaxed text-forest-600">{f.blurb}</p>
+            <Button href={f.href} class="mt-5 w-full">Learn More</Button>
+          </div>
+        </div>
       ))}
-    </ul>
+    </div>
   </Section>
 
+  <!-- Signature work (dark gallery) -->
+  <section class="bg-ink-900 text-white">
+    <div class="container-page py-20 lg:py-24">
+      <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div>
+          <span class="block text-sm font-semibold uppercase tracking-eyebrow text-gold-300">Our work</span>
+          <h2 class="mt-3 font-display text-4xl font-semibold sm:text-5xl">Built across the Main Line</h2>
+        </div>
+        <a href="/our-work/" class="inline-flex items-center gap-2 font-display text-base font-semibold tracking-wide text-leaf-400 hover:text-white">
+          See the Full Portfolio
+          <Icon name="arrow" class="h-4 w-4" />
+        </a>
+      </div>
+
+      <div class="mt-10 grid auto-rows-[180px] grid-cols-2 gap-4 sm:grid-cols-4">
+        {gallery.map((g) => (
+          <figure class={`photo-card group relative overflow-hidden rounded-xl ring-1 ring-white/10 ${g.span ?? ""}`}>
+            <img src={g.src} alt={g.label} loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-ink-950/70 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
+            <figcaption class="absolute bottom-3 left-3 text-sm font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">{g.label}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <WhyChoose />
+
+  <!-- Outdoor living feature band -->
+  <section class="relative isolate mt-8 overflow-hidden bg-ink-950 text-white">
+    <img src="/images/fire-pit.webp" alt="Custom stone fire pit and patio at dusk" class="absolute inset-0 -z-10 h-full w-full object-cover" loading="lazy" />
+    <div class="absolute inset-0 -z-10 bg-ink-950/70"></div>
+    <div class="container-page relative py-24 lg:py-32">
+      <div class="max-w-xl">
+        <span class="block text-sm font-semibold uppercase tracking-eyebrow text-gold-300">Outdoor living</span>
+        <h2 class="mt-4 font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">Designed for the way you live outside</h2>
+        <p class="mt-5 text-lg text-white/85">
+          Fire pits, outdoor kitchens, water features, and the hardscape that
+          ties them together — complete outdoor rooms built around how you'll
+          actually use the space.
+        </p>
+        <div class="mt-8">
+          <Button href="/outdoor-living/" size="lg">Explore Outdoor Living</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service areas -->
+  <section class="bg-ink-900 text-white">
+    <div class="container-page py-20 lg:py-24">
+      <span class="block text-sm font-semibold uppercase tracking-eyebrow text-gold-300">Service areas</span>
+      <h2 class="mt-3 max-w-2xl font-display text-4xl font-semibold leading-[1.05] sm:text-5xl">
+        Proudly serving Montgomery County &amp; the Main Line
+      </h2>
+      <p class="mt-4 max-w-2xl text-lg text-white/75">
+        Norristown, King of Prussia, and the surrounding communities — design,
+        hardscape, and outdoor living.
+      </p>
+      <ul class="mt-10 flex flex-wrap gap-2.5">
+        {cities.map((c) => (
+          <li>
+            <a href={`/landscape-design-hardscaping-in-${c.slug}-pa/`} class="block rounded-lg border border-white/15 px-4 py-2 text-sm font-medium text-white/85 transition hover:border-leaf-400 hover:text-white">
+              {c.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
   <Reviews />
-  <CtaBanner title="Let's design something exceptional" />
+
+  <Section>
+    <Faqs />
+  </Section>
+
+  <CtaBanner title="Ready to transform your property?" />
 </BaseLayout>
