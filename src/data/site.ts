@@ -35,6 +35,7 @@ export type NavChild = { label: string; href: string };
 export type NavItem = { label: string; href: string; children?: NavChild[] };
 
 export const nav: NavItem[] = [
+  { label: "Home", href: "/" },
   {
     label: "Design & Build",
     href: "/landscape-design/",
@@ -83,6 +84,7 @@ export const nav: NavItem[] = [
   },
   { label: "Our Work", href: "/our-work/" },
   { label: "About", href: "/about-us/" },
+  { label: "Contact", href: "/contact-us/" },
 ];
 
 // Cities for the programmatic local-SEO location pages.
