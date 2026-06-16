@@ -121,10 +121,18 @@ const labelClass = green
         btn.textContent = "Sending…";
       }
       try {
+        // Tag every submission with the page it came from, so leads are
+        // differentiated by source (e.g. the King of Prussia page) even
+        // though all forms share one Web3Forms key.
+        const fd = new FormData(form);
+        const pageName = document.title.replace(/\s*\|\s*Mex Landscaping.*$/i, "").trim();
+        fd.set("subject", `New lead from ${pageName || location.pathname}`);
+        fd.set("page", pageName || location.pathname);
+        fd.set("page_url", location.href);
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: { Accept: "application/json" },
-          body: new FormData(form),
+          body: fd,
         });
         const data = await res.json();
         if (data.success) {
