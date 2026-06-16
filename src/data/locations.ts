@@ -9,6 +9,14 @@
 // fall back to the base template until Phase 2.
 
 import { cities, type City } from "./site";
+import { snowProfilesA } from "./snow-profiles-a";
+import { snowProfilesB } from "./snow-profiles-b";
+
+// Merged per-city snow content (Phase 3). See ./snow-profiles-{a,b}.ts.
+const snowProfiles: Record<string, SnowProfile> = {
+  ...snowProfilesA,
+  ...snowProfilesB,
+};
 
 export type LocationKind = "design" | "snow";
 
@@ -20,6 +28,17 @@ export type LocationPage = {
 
 export type LocBlock = { heading: string; text: string };
 export type Faq = { q: string; a: string };
+
+// Per-city snow-management content (Phase 3). Differentiates the snow
+// location pages by local geography and property mix (commercial corridors,
+// estate driveways, hilly streets, walkable suburbs). Populated in
+// ./snow-profiles-a.ts and ./snow-profiles-b.ts.
+export type SnowProfile = {
+  metaDescription: string;
+  intro: string;
+  snowBody: LocBlock[];
+  snowFaqs: Faq[];
+};
 
 export const designPath = (slug: string) =>
   `/landscape-design-hardscaping-in-${slug}-pa/`;
@@ -1124,21 +1143,26 @@ export function locationContent(page: LocationPage) {
       cta: `Call (484) 261-6650 for a free design consultation in ${city}, PA.`,
     };
   }
+  const snow = snowProfiles[page.city.slug];
   return {
     icon: "snow" as const,
     image: undefined as string | undefined,
     h1: `Commercial Snow Management Services in ${city}, PA`,
     crumb: "Snow Management",
-    metaTitle: undefined as string | undefined, // pulled from seo.generated
-    metaDescription: undefined as string | undefined,
-    intro: `Stay safe and accessible all winter with expert snow management services in ${city}, PA. Mex Landscaping provides 24/7 snow removal, plowing, and de-icing for residential and commercial properties.`,
+    metaTitle: snow
+      ? `Snow Removal & Management in ${city}, PA | Mex Landscaping`
+      : (undefined as string | undefined),
+    metaDescription: snow?.metaDescription ?? (undefined as string | undefined),
+    intro:
+      snow?.intro ??
+      `Stay safe and accessible all winter with expert snow management services in ${city}, PA. Mex Landscaping provides 24/7 snow removal, plowing, and de-icing for residential and commercial properties.`,
     highlights: [
       "24/7 storm monitoring & response",
       "Plowing for lots & driveways",
       "Salting & de-icing",
       "Documented commercial service",
     ],
-    body: [
+    body: snow?.snowBody ?? [
       {
         heading: `Keep your ${city} property clear & hazard-free`,
         text: `When the snow falls in ${city}, you need a team that's already on the road. We monitor every storm and respond around the clock to keep your driveways, walkways, and parking lots clear and safe.`,
@@ -1148,7 +1172,7 @@ export function locationContent(page: LocationPage) {
         text: `From pre-treatment ahead of a storm to plowing and post-storm de-icing, we handle the full job, with documented service that keeps commercial properties compliant and protected.`,
       },
     ],
-    faqs: undefined as Faq[] | undefined,
+    faqs: (snow?.snowFaqs ?? undefined) as Faq[] | undefined,
     cta: `Call (484) 261-6650 to set up snow management in ${city}, PA before the next storm.`,
   };
 }
