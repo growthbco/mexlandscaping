@@ -73,6 +73,17 @@ if (props.kind === "service") {
       { name: s.title, path: s.path },
     ])
   );
+  if (s.faqs?.length) {
+    schema.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: s.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    });
+  }
 } else if (props.kind === "location") {
   const p = props.page;
   path = p.path;
@@ -97,6 +108,17 @@ if (props.kind === "service") {
       { name: `${p.city.name}, PA`, path: p.path },
     ])
   );
+  if (c.faqs?.length) {
+    schema.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: c.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    });
+  }
 } else {
   const post = props.post;
   path = `/${post.slug}/`;
