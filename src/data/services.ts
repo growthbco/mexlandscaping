@@ -142,12 +142,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "A professional design & installation company",
-        text: "Mex Landscaping brings creative design and meticulous installation to properties across Norristown and the Main Line. It's the kind of work that makes a home feel finished and a commercial property feel cared for.",
+        heading: "Full-service landscaping in Norristown, PA",
+        text: "Mex Landscaping brings creative design and meticulous installation to homes and commercial properties across Norristown and the Main Line. We are a design-build company, which means the same team that plans your landscape also installs it. From planting and lawns to hardscape, lighting, drainage, and outdoor living, we cover the full range of landscaping services Montgomery County properties need. It is the kind of work that makes a home feel finished and a commercial property feel genuinely cared for.",
+      },
+      {
+        heading: "Landscape design and installation services",
+        text: "Our core services begin with design: a thoughtful, site-specific plan that balances structure, planting, grading, and flow. From there our crews install it all, including new lawns, specimen trees and layered plantings, garden beds, and seasonal color. We plan four-season interest into every design so the property looks intentional the day we finish and only improves as it grows in. Whether you want a single area refreshed or a full property reimagined, we work at both scales.",
+      },
+      {
+        heading: "Hardscape, lighting, and drainage in one place",
+        text: "Beautiful landscaping needs structure and protection. We build patios, walkways, retaining walls, and driveways, install architectural low-voltage lighting that transforms a property after dark, and engineer drainage that keeps water moving away from your home. Because all of it happens under one roof, the stonework, planting, lighting, and grading are designed to work together as one system rather than being stitched together by separate contractors who never spoke to each other.",
       },
       {
         heading: "One trusted partner for the whole property",
-        text: "Design, planting, lighting, drainage, hardscape, and outdoor living. Instead of juggling contractors, you get one accountable team that knows your property end to end.",
+        text: "Most homeowners do not want to manage a different contractor for every task. With Mex Landscaping you get one accountable team that knows your property end to end, from the design on paper to the final detail in the ground. That continuity means fewer surprises, cleaner coordination between trades, and a result that looks deliberate. For commercial clients, we can pair installation with a recurring maintenance plan so the property stays sharp all year.",
+      },
+      {
+        heading: "Serving Norristown and the Main Line",
+        text: "We provide landscaping services throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken. Every project begins with a free consultation to understand your goals, your property, and your budget, followed by a clear plan and an honest estimate. Whether you are starting fresh or finishing a long-postponed project, we are ready to help. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What landscaping services do you offer?",
+        a: "We are a full-service design-build company. That includes landscape design, lawn installation, tree and plant installation, garden beds, hardscaping such as patios and walls, landscape lighting, drainage and storm water management, outdoor living spaces, and ongoing property maintenance. Because we handle it all in-house, the pieces are coordinated to work together.",
+      },
+      {
+        q: "Do you work on both homes and commercial properties?",
+        a: "Yes. We design, install, and maintain landscapes for single-family homes, commercial properties, businesses, and HOAs across the Main Line. Commercial clients often pair a fresh installation with a recurring maintenance plan so the property stays polished year-round with one accountable partner instead of several.",
+      },
+      {
+        q: "How much do landscaping services cost?",
+        a: "It depends entirely on the scope, from refreshing a single bed to redesigning an entire property with hardscape, planting, lighting, and drainage. We discuss your goals and budget up front and provide a clear, itemized estimate so you can decide how to proceed or phase the work over time.",
+      },
+      {
+        q: "Can you do everything, or do I need separate contractors?",
+        a: "You can use one team for everything. Design, planting, lawns, hardscape, lighting, drainage, and maintenance are all in-house. Keeping it under one roof is a big part of why the finished property looks cohesive rather than assembled piece by piece by crews who never coordinated.",
+      },
+      {
+        q: "What areas do you serve?",
+        a: "We serve Norristown and the surrounding Main Line and Montgomery County communities, including King of Prussia, Wayne, Bryn Mawr, Conshohocken, and Plymouth Meeting. If you are nearby and unsure whether we cover your town, just call (484) 261-6650 and ask, or request a free estimate.",
       },
     ],
   },
@@ -167,12 +201,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "A lawn built to thrive",
-        text: "Whether you want fresh sod for instant green or a seeded lawn built for durability, we prepare the soil, grade for drainage, and install turf suited to your light and traffic.",
+        heading: "New lawn installation in Norristown and the Main Line",
+        text: "A thick, healthy lawn is the backdrop the whole landscape is set against, and a tired or patchy one drags everything down. Mex Landscaping installs new sod and seeded lawns for homes and commercial properties across Norristown and the Main Line. Whether you want the instant green of fresh sod or a seeded lawn built for durability and value, we handle the work that actually determines success: removing old turf, correcting the grade, preparing the soil, and installing turf matched to your light and traffic.",
+      },
+      {
+        heading: "Sod or seed: choosing the right approach",
+        text: "Both methods can produce a beautiful lawn; the right one depends on your timeline, budget, and site. Sod gives you a finished, established-looking lawn almost immediately, which is ideal for slopes prone to erosion or when you want fast results. A seeded lawn costs less and lets us tailor the blend precisely to sun, shade, and wear. We help you weigh the trade-offs and select a premium turf or seed blend suited to our Montgomery County climate.",
+      },
+      {
+        heading: "Soil prep and grading make the difference",
+        text: "Most failed lawns fail before a single blade goes down. Compacted, poor soil and improper grading lead to thin turf, pooling water, and constant struggle. We grade for positive drainage so water sheds away from the house, then prepare and amend the soil to give roots something to grow into. This groundwork is invisible once the lawn is green, and it is the single biggest reason our installations establish quickly and stay healthy.",
       },
       {
         heading: "Set up for the long run",
-        text: "We don't just lay turf and leave. We set your new lawn up to root deeply and give you the guidance to keep it lush.",
+        text: "We do not lay turf and walk away. A new lawn needs the right start to root deeply, so we set yours up to establish and give you clear guidance on watering and early care during the critical first weeks. A lawn that roots deeply is more drought-tolerant, more disease-resistant, and far easier to maintain. We can also fold ongoing lawn care into a recurring maintenance plan if you would rather hand it off entirely.",
+      },
+      {
+        heading: "Lawn installation across Montgomery County",
+        text: "We install new lawns throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken. Every project starts with a free on-site estimate where we look at your soil, grade, and light, then recommend sod or seed and give you a clear scope and price. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Is sod or seed better for a new lawn?",
+        a: "Both work well. Sod gives you an instant, established lawn and is great for slopes or when you want fast results, but it costs more up front. Seed is more economical and lets us tailor the blend to your conditions, though it takes longer to fill in. We recommend the right approach after seeing your site.",
+      },
+      {
+        q: "How much does new lawn installation cost?",
+        a: "Cost depends on the square footage, whether you choose sod or seed, how much old turf has to be removed, and the grading and soil prep the site needs. Sod costs more than seed up front. We provide a clear, no-obligation estimate after measuring the area and assessing the soil and grade.",
+      },
+      {
+        q: "When is the best time to install a lawn?",
+        a: "In our area, fall is often ideal for seeding because cooler temperatures and steady moisture help new grass establish, and spring is a strong second window. Sod can be installed across most of the growing season. We will advise on the best timing for your property and the method you choose.",
+      },
+      {
+        q: "How long before I can use my new lawn?",
+        a: "New sod typically needs a few weeks of careful watering before normal use so the roots can knit into the soil. A seeded lawn takes longer to fill in and should be kept off until it is well established. We give you specific guidance for your installation so the lawn gets the start it needs.",
+      },
+      {
+        q: "Do you fix the drainage and soil, or just lay the lawn?",
+        a: "We handle the full job, including grading for drainage and preparing the soil. That groundwork is exactly what determines whether a lawn thrives, so we never skip it. If your yard has standing water or compaction issues, installing a new lawn is the right time to correct them.",
       },
     ],
   },
@@ -192,12 +260,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Planting with intention",
-        text: "We source healthy trees, shrubs, and perennials and place them with proper spacing, soil amendment, and an eye for how the planting will read in every season.",
+        heading: "Tree and plant installation, placed with a designer's eye",
+        text: "Thoughtful planting is what separates a designed landscape from a random collection of shrubs. Mex Landscaping installs specimen trees, layered shrubs, and perennial plantings for properties across Norristown and the Main Line. We source healthy material and place it with proper spacing, amended soil, and an eye for how the planting will read in every season. The result looks deliberate the day it goes in and grows into something even better as it matures over the years.",
       },
       {
-        heading: "The right plant, the right place",
-        text: "Every selection is matched to your light, soil, and design so the planting looks deliberate and stays healthy for years.",
+        heading: "Specimen trees, shrubs, and perennials",
+        text: "A strong planting layers different roles. Specimen and shade trees give a property structure and scale, evergreens add year-round form and screening, flowering shrubs and perennials bring color and texture, and ornamental grasses add movement. We select a mix that delivers four-season interest, including native options well suited to Montgomery County, so there is something working in spring bloom, summer fullness, fall color, and winter structure rather than one short burst and a long flat stretch.",
+      },
+      {
+        heading: "The right plant in the right place",
+        text: "Even a beautiful plant struggles in the wrong spot. We match every selection to your light, soil, moisture, and how much maintenance you want to take on, then site it with proper spacing so it has room to reach mature size without crowding. Trees and shrubs go in with amended soil and correct planting depth, the details that quietly determine whether new plantings thrive or limp along for years. Good siting up front prevents most planting problems down the road.",
+      },
+      {
+        heading: "Establishment care for healthy plantings",
+        text: "Getting plants in the ground is only the start. New trees and shrubs need the right care through their first season to root in and establish, so we give you clear guidance on watering and early care, and we can fold ongoing plant health into a maintenance plan. We also coordinate plantings with your hardscape, lighting, and lawn so the whole landscape reads as one cohesive design rather than separate projects placed side by side.",
+      },
+      {
+        heading: "Planting installation in Norristown and the Main Line",
+        text: "We install trees, shrubs, and perennials throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, whether as a single bed renovation or part of a full landscape design. It starts with a free on-site consultation where we look at your conditions and goals. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the best time of year to plant trees and shrubs?",
+        a: "Spring and fall are generally the best windows in our area because milder temperatures and steady moisture help new plants establish with less stress. That said, with proper care many trees and shrubs can be planted across much of the growing season. We will advise on timing based on the specific plants and your site.",
+      },
+      {
+        q: "Do you use native plants?",
+        a: "Yes. We include native trees, shrubs, and perennials wherever they fit the design, since they are well adapted to Montgomery County conditions and tend to be lower maintenance and supportive of local pollinators. We blend natives with other quality selections to get the look, structure, and four-season interest the design calls for.",
+      },
+      {
+        q: "How much does tree and plant installation cost?",
+        a: "It depends on the number and size of plants, the species you choose, and any soil amendment or bed preparation involved. A single specimen tree is a modest project; a full bed renovation or a property-wide planting plan is a larger investment. We provide a clear estimate after seeing your site and discussing your goals.",
+      },
+      {
+        q: "Will you make sure the plants survive?",
+        a: "We plant healthy material with proper siting, soil amendment, and correct depth, which gives plantings the best chance to thrive, and we provide clear establishment guidance for the first season. Watering and early care matter a great deal, so we can also include ongoing plant health in a maintenance plan if you prefer to hand it off.",
+      },
+      {
+        q: "Can you design the planting, not just install it?",
+        a: "Absolutely. We are a design-build company, so we can create a planting plan that layers trees, shrubs, and perennials for four-season interest and coordinates with your hardscape, lawn, and lighting. Designing the planting first is what makes a landscape look intentional rather than like a series of one-off additions.",
       },
     ],
   },
@@ -218,12 +320,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Your property, transformed after dusk",
-        text: "Professionally designed lighting brings drama and warmth to your home, trees, and hardscape while improving safety and extending your evenings outside.",
+        heading: "Landscape lighting that transforms a property after dark",
+        text: "A property you spent years perfecting disappears at sunset unless it is lit well. Mex Landscaping designs and installs architectural low-voltage landscape lighting for homes across Norristown and the Main Line. Professionally designed lighting brings drama and warmth to the home's facade, the trees, and the hardscape you have built, while improving safety on steps and paths and extending the hours you actually spend outside. Done right, it makes a property look as considered at night as it does at noon.",
       },
       {
-        heading: "Designed, not just installed",
-        text: "We compose light and shadow with energy-efficient LED fixtures and weatherproof wiring, with smart controls so it all takes care of itself.",
+        heading: "Uplighting, path lighting, and moonlighting",
+        text: "Great lighting design is about composing light and shadow, not flooding the yard. We use a layered mix of techniques: uplighting to graze the texture of stone facades and specimen trees, path and step lighting for safe, elegant circulation, moonlighting placed high in trees to cast a soft natural glow, and accent lighting to highlight focal points. Matching the right fixture and beam to each task is what gives a property depth and warmth instead of harsh, scattered glare.",
+      },
+      {
+        heading: "Low-voltage LED built to last outdoors",
+        text: "We install energy-efficient LED fixtures on a properly designed low-voltage system with weatherproof wiring and connections built to survive our seasons. LED draws very little power, runs cool, and lasts for years, which keeps operating costs low and maintenance minimal. We size the transformer and runs correctly and bury wiring cleanly so the system performs reliably and the daytime landscape stays uncluttered by visible hardware.",
+      },
+      {
+        heading: "Smart controls and a system that runs itself",
+        text: "The best lighting takes care of itself. We set up timers, photocells, and smart controls so the system comes on at dusk, dims or zones as you like, and turns off on schedule without you thinking about it. Because we also build hardscape and outdoor living spaces, we can integrate lighting into patios, walls, steps, and trees as part of a unified design, running conduit during construction so fixtures tie in cleanly rather than being added on later.",
+      },
+      {
+        heading: "Landscape lighting in Norristown and the Main Line",
+        text: "We design and install landscape lighting throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, whether for a new build or an existing landscape. It starts with a free on-site consultation, often best at dusk, so we can plan the effect on your actual property. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How much does landscape lighting cost?",
+        a: "Cost depends on the number of fixtures, the size of the property, the lighting effects you want, and how much wiring needs to be run. A focused entry and facade lighting plan is modest; lighting an entire property with trees, paths, and hardscape is a larger investment. We provide a clear estimate after walking the property and discussing the look you want.",
+      },
+      {
+        q: "Is LED landscape lighting worth it?",
+        a: "Yes. LED fixtures use a fraction of the power of older halogen systems, run cool, and last for years, which keeps both energy and maintenance costs low. The light quality is excellent and the long lifespan means far less fixture replacement, so an LED system is both better looking and more economical to run over time.",
+      },
+      {
+        q: "Can you add lighting to an existing landscape?",
+        a: "Absolutely. Low-voltage systems are well suited to existing properties because the wiring is shallow and can be installed with minimal disruption to established beds and lawns. We design the layout around your current landscape and hardscape so the lighting looks built-in rather than tacked on.",
+      },
+      {
+        q: "Does landscape lighting improve safety?",
+        a: "It does. Lighting steps, walkways, driveways, and entries reduces trip hazards and makes the property safer to navigate at night, while subtle perimeter and facade lighting also adds a layer of security. We balance safety lighting with the aesthetic effect so the property is both safer and more beautiful after dark.",
+      },
+      {
+        q: "Do I need to turn the lights on and off myself?",
+        a: "No. We set up timers, photocells, or smart controls so the system runs on its own, coming on at dusk and shutting off on schedule. You can also adjust zones and timing as you like. The goal is a system that simply works every night without you having to think about it.",
       },
     ],
   },
@@ -243,12 +379,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Move water where it belongs",
-        text: "Standing water and erosion damage both your landscape and your foundation. We design and install grading, French drains, dry wells, and swales to keep water moving away from your property.",
+        heading: "Drainage and storm water management that protects your property",
+        text: "Water is the quiet enemy of every property. Standing water, soggy lawns, and erosion damage your landscape, and runoff that reaches the foundation threatens the house itself. Mex Landscaping designs and installs engineered drainage and storm water management across Norristown and the Main Line. We diagnose where water is actually coming from and where it needs to go, then build grading and drainage systems that move it away from your home reliably, season after season.",
       },
       {
-        heading: "Protect the investment",
-        text: "Good drainage is invisible when it's done right, and expensive when it's ignored. We solve the root cause so the problem doesn't return.",
+        heading: "French drains, dry wells, and grading",
+        text: "There is no single fix for every water problem, so we use the right tool for the site. A French drain intercepts and carries away subsurface water and is ideal for soggy lawns and water against a foundation. Dry wells collect and disperse concentrated runoff underground. Swales and regrading shed surface water across the yard, and channel drains capture it on hardscape. We often combine these into one system designed around how water genuinely moves on your property.",
+      },
+      {
+        heading: "Downspouts, runoff, and erosion control",
+        text: "A surprising amount of water trouble starts at the roof. Downspouts dumping against the house overwhelm the soil and send water exactly where you do not want it. We capture and route downspout discharge underground to a safe outlet, manage runoff from driveways and slopes, and install erosion control on banks and beds where soil is washing away. Controlling water at the source is usually the most effective and least invasive way to solve a drainage problem.",
+      },
+      {
+        heading: "Solving the root cause, not the symptom",
+        text: "Good drainage is invisible when it is done right and expensive when it is ignored. The difference is diagnosing the actual cause instead of chasing symptoms. We assess grade, soil, and the path water takes during a real storm, then design a system that addresses the source so the problem does not simply return next spring. Because we also do grading, hardscape, and planting, we can restore the landscape cleanly once the drainage work is complete.",
+      },
+      {
+        heading: "Drainage solutions for Norristown and the Main Line",
+        text: "We provide drainage and storm water management throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, where older lots and clay soils make water management a common challenge. It starts with a free on-site assessment of how water moves on your property. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is a French drain and do I need one?",
+        a: "A French drain is a gravel-filled trench with a perforated pipe that collects subsurface water and carries it to a safe outlet. It is one of the best solutions for a soggy lawn, water pooling in the yard, or moisture against a foundation. Whether you need one depends on the cause of your water problem, which we determine during an on-site assessment.",
+      },
+      {
+        q: "How much does drainage work cost?",
+        a: "It depends on the size of the area, the type of system, the length of pipe and trenching required, and where the water needs to be routed. A single downspout extension is modest; a full-property French drain and dry well system is a larger investment. We provide a clear estimate after assessing how water moves on your property.",
+      },
+      {
+        q: "Why does water keep coming back after previous repairs?",
+        a: "Usually because the previous work treated a symptom instead of the source. If the grade, soil, or water path was never properly diagnosed, the problem returns. We assess where water actually originates and where it needs to go, then design a system that addresses the root cause so it does not simply reappear.",
+      },
+      {
+        q: "Can you fix water getting into my basement or against the foundation?",
+        a: "Often, yes. A great deal of foundation moisture comes from poor surface grading and downspouts discharging too close to the house. We can regrade, route downspout water away underground, and install French drains to relieve hydrostatic pressure. We will assess your situation and tell you honestly what the property needs.",
+      },
+      {
+        q: "Will the drainage work tear up my yard?",
+        a: "Some trenching is unavoidable, but we work to keep disruption minimal and, because we are a full landscaping company, we restore the lawn, beds, and grade cleanly once the system is in. The finished drainage is designed to be invisible, doing its job underground while the landscape looks untouched.",
       },
     ],
   },
@@ -268,12 +438,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Curb appeal that means business",
-        text: "Your landscape is the first thing clients and tenants see. We design and install commercial landscapes that look sharp, hold up to use, and reflect well on your brand.",
+        heading: "Commercial landscape installation that means business",
+        text: "Your landscape is the first thing clients, tenants, and visitors see, and it sets expectations before anyone reaches the door. Mex Landscaping designs and installs commercial landscapes for businesses, offices, retail, multifamily, and HOA properties across Norristown and the Main Line. We build landscapes that look sharp, hold up to real traffic, and reflect well on your brand, with the structure and durability a commercial property needs and the polish that makes it stand out from the lot next door.",
       },
       {
-        heading: "Installed and maintained",
-        text: "Pair your installation with a recurring maintenance plan and keep the property looking its best year-round with one accountable partner.",
+        heading: "Commercial-grade plantings and hardscape",
+        text: "Commercial sites face heavier use and tighter expectations than most homes, so we plan accordingly. We select durable, low-maintenance plantings that look professional through every season, and we build hardscape, walkways, and entries to handle steady foot traffic. From the streetscape and parking islands to the main entrance, every element is chosen to perform under real-world conditions while keeping the property looking deliberate, clean, and well managed.",
+      },
+      {
+        heading: "Drainage, grading, and lighting done right",
+        text: "A commercial property has to manage water and stay safe and accessible. We grade for proper drainage, install storm water solutions where runoff is a concern, and can add landscape and entry lighting that improves both safety and after-hours presence. Because we handle planting, hardscape, drainage, and lighting in-house, the whole site is coordinated as one system rather than pieced together by separate vendors who never compare notes.",
+      },
+      {
+        heading: "Installed and maintained by one partner",
+        text: "A great installation only stays great if it is maintained. We can pair your commercial install with a recurring maintenance plan, so the same accountable team that built the landscape keeps it sharp year-round, from mowing and bed care to seasonal color and snow management in winter. One partner for installation and upkeep means consistent results, simpler scheduling, and one point of contact when you need something handled.",
+      },
+      {
+        heading: "Commercial landscaping for Norristown and the Main Line",
+        text: "We design, install, and maintain commercial landscapes throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken. Whether you manage a single building or a portfolio of properties, it starts with a free on-site consultation and a clear, professional proposal. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you work with property managers and HOAs?",
+        a: "Yes. We regularly work with property managers, business owners, and HOA boards across the Main Line. We provide clear proposals, dependable scheduling, and consistent crews, and we can combine installation with ongoing maintenance and winter snow management so the property is covered year-round under one accountable partner.",
+      },
+      {
+        q: "How much does a commercial landscape installation cost?",
+        a: "It depends on the size of the property, the scope of planting and hardscape, and any drainage, grading, or lighting involved. A refreshed entrance is modest compared with a full site redesign. We assess the property and provide a clear, itemized proposal, and we can phase larger projects to fit a budget cycle.",
+      },
+      {
+        q: "Can you maintain the landscape after installation?",
+        a: "Absolutely. Many commercial clients pair installation with a recurring maintenance plan so the same team that built the landscape keeps it looking professional all year. That continuity means the property stays consistent and you have one point of contact instead of juggling separate installation and maintenance vendors.",
+      },
+      {
+        q: "Will the work disrupt my business or tenants?",
+        a: "We plan commercial work to minimize disruption, scheduling around your hours and access needs and keeping the site safe and navigable throughout. We coordinate closely with you on timing and staging so customers, staff, and tenants are inconvenienced as little as possible while the work gets done.",
+      },
+      {
+        q: "Do you handle snow management for commercial properties too?",
+        a: "Yes. We provide commercial snow plowing, salting and de-icing, sidewalk clearing, and 24/7 storm response, with documented service. Pairing landscaping and snow management with one company means your property is covered in every season by a single accountable partner. Call (484) 261-6650 to discuss a plan.",
       },
     ],
   },
@@ -418,12 +622,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Crafted paths and steps",
-        text: "A well-built walkway is an invitation. We design and build paths and steps that connect your spaces beautifully, with the base and drainage to stay level and safe for years.",
+        heading: "Paver and stone walkways and steps, designed and built",
+        text: "A well-built walkway is an invitation, the path that guides guests to your door and ties the property together. Mex Landscaping designs and builds custom paver walkways, natural stone paths, and stone and block steps for homes across Norristown and the Main Line. From the front entry to garden paths and connections between outdoor spaces, we build walks and steps that look intentional and stay level and safe for years, because the structure underneath is done right.",
       },
       {
-        heading: "Detail that elevates the whole property",
-        text: "Borders, inlays, and integrated lighting turn a simple path into a defining feature of your landscape.",
+        heading: "Walkway materials that match your home",
+        text: "The material sets the character of a path. We install concrete pavers in many colors and patterns, natural flagstone and bluestone for a timeless look, brick for classic charm, and large-format stone for a clean, modern feel. For steps, we build with natural stone, block, and matching stone treads. We help you choose a surface and pattern that complements your home's architecture and coordinates with your existing patio, driveway, and entry.",
+      },
+      {
+        heading: "The base and drainage that keep a path safe",
+        text: "A walkway that heaves, settles, or holds water becomes a trip hazard fast, and steps are even less forgiving. We excavate to the proper depth, install and compact a graded aggregate base, and build in slope so water sheds off instead of pooling or freezing. Edge restraints and polymeric jointing lock pavers in place, and steps are built with proper rise, run, and footing so they stay solid and safe through years of use and freeze-thaw.",
+      },
+      {
+        heading: "Detail and lighting that elevate the property",
+        text: "The difference between a plain path and a defining feature is in the detail. Borders, banding, and inlays give a walkway a finished, custom look, and integrated low-voltage lighting traces the path and steps for safety and drama after dark. Because we handle hardscape and lighting in-house, we can run conduit during construction so the lighting ties in cleanly, and we match materials so the walkway clearly belongs to the rest of your landscape.",
+      },
+      {
+        heading: "Walkway and step installation in Norristown and the Main Line",
+        text: "We build walkways and steps throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, whether as a standalone project or part of a larger hardscape plan. It starts with a free on-site estimate where we measure the run, talk through materials, and give you a clear scope and price. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How much does a walkway or set of steps cost?",
+        a: "Cost depends on length, width, the material you choose, the number and type of steps, and any grading or drainage involved. A short paver walk is modest; a long natural stone path with steps and lighting is a larger project. We provide a clear, no-obligation estimate after measuring the space and discussing materials.",
+      },
+      {
+        q: "What is the best material for a walkway?",
+        a: "It depends on the look you want and how the path will be used. Pavers are durable, repairable, and come in many styles; natural flagstone and bluestone offer a timeless, high-end appearance; brick brings classic character. We show you real samples and recommend a material that suits your home, budget, and how water moves across the area.",
+      },
+      {
+        q: "Can you build steps on a slope or to my entry?",
+        a: "Yes. We build stone and block steps and stepped walkways to handle grade changes, entries, and connections between levels of the yard. Proper rise, run, and footing are essential for steps that feel comfortable and stay safe, so we engineer them correctly rather than improvising on site.",
+      },
+      {
+        q: "Can you add lighting to a walkway or steps?",
+        a: "Absolutely, and it is most efficient to plan it together. We can run low-voltage wiring during construction and install path and step lighting that improves safety after dark and gives the walk a polished look. Because we handle hardscape and lighting in-house, everything ties in cleanly rather than being retrofitted later.",
+      },
+      {
+        q: "Will my walkway hold up to freeze-thaw winters?",
+        a: "When it is built on a proper base, yes. The heaving and settling people associate with old walkways comes from a rushed or missing base. We excavate, compact a graded aggregate base, and build in drainage so water sheds off instead of freezing underneath, which is exactly what keeps a path level through our winters.",
       },
     ],
   },
@@ -565,12 +803,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Texture and richness, built in",
-        text: "Architectural stone facades add depth and character to columns, walls, and outdoor structures. We install natural and manufactured veneer with clean, durable detailing.",
+        heading: "Architectural stone veneer and facades",
+        text: "Stone veneer is one of the highest-impact ways to add depth, texture, and a sense of permanence to a property. Mex Landscaping installs natural and manufactured stone facades on columns, walls, entries, and outdoor structures across Norristown and the Main Line. A flat, ordinary surface becomes a rich architectural feature with the right stone and clean detailing. Whether you are dressing up an entry, a chimney, or a set of piers, we bring the craftsmanship that makes veneer look original to the home rather than applied on top.",
       },
       {
-        heading: "Elevate your curb appeal",
-        text: "The right stone facade transforms a plain surface into a striking feature, and we match color and texture to your home for a seamless look.",
+        heading: "Natural and manufactured stone options",
+        text: "We work in both natural stone and manufactured stone veneer, and each has its place. Natural stone offers unmatched depth, variation, and longevity. Manufactured veneer is lighter, often more affordable, and available in a wide range of colors and profiles that convincingly mimic natural stone. We help you choose based on the look you want, the structure being faced, and your budget, then install it with proper preparation and detailing for a result that holds up outdoors.",
+      },
+      {
+        heading: "Columns, walls, entries, and facades",
+        text: "Stone facades transform the elements that frame a property. We face entry columns and piers, freestanding and retaining walls, the base of the home, chimneys, mailbox posts, and outdoor kitchen and fireplace surrounds. Adding stone to these focal points gives a property a cohesive, custom character and ties the architecture to the landscape. We coordinate the stone with your patios, walls, and other hardscape so the whole property reads as one deliberate design.",
+      },
+      {
+        heading: "Weather-resistant detailing that lasts",
+        text: "Stone veneer only performs as well as the work behind it. We install over proper substrate and weather-resistant detailing, with careful attention to moisture management, flashing where needed, and clean mortar joints and color matching. That detailing is what keeps a facade tight, dry, and looking sharp through our freeze-thaw winters rather than cracking or letting water behind it. Done correctly, architectural stone is as durable as it is striking.",
+      },
+      {
+        heading: "Stone facade installation in Norristown and the Main Line",
+        text: "We install architectural stone and facades throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, whether as a standalone upgrade or part of a larger hardscape or outdoor living project. It starts with a free on-site estimate where we look at the surface, discuss stone options, and match color and texture to your home. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the difference between natural and manufactured stone veneer?",
+        a: "Natural stone is quarried and offers the deepest color, variation, and longevity, but it is heavier and usually costs more. Manufactured veneer is a molded, colored product that is lighter, often more affordable, and made to mimic natural stone closely. Both look excellent when installed well; we help you choose based on the structure, the look, and your budget.",
+      },
+      {
+        q: "How much does stone facade work cost?",
+        a: "It depends on the square footage, whether you choose natural or manufactured stone, the complexity of the surface, and any prep required. Facing a single entry column is modest compared with a full chimney or the base of a house. We provide a clear estimate after seeing the surface and discussing material options.",
+      },
+      {
+        q: "Can you match stone to my existing home or hardscape?",
+        a: "Yes. Matching color, texture, and joint style so new stonework blends with your home and existing hardscape is a core part of the job. Whether you want the facade to disappear into the architecture or stand as a clean feature, we select and detail the stone to achieve a cohesive look.",
+      },
+      {
+        q: "Will stone veneer hold up to our winters?",
+        a: "When it is installed with proper substrate, moisture management, and detailing, yes. The failures people worry about, such as cracking or water getting behind the stone, come from poor preparation. We install over a sound base with weather-resistant detailing and quality mortar work so the facade stays tight and dry through freeze-thaw cycles.",
+      },
+      {
+        q: "Can you add stone to columns or an outdoor kitchen?",
+        a: "Absolutely. Entry columns, piers, fireplace and outdoor kitchen surrounds, and seating walls are some of the most popular places we apply stone veneer. Because we also build hardscape and outdoor living spaces, we can coordinate the stone with the rest of the project so it all matches and reads as one intentional design.",
       },
     ],
   },
@@ -721,12 +993,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Cook, host, and stay outside",
-        text: "We build durable outdoor kitchens with built-in grills, stone counters, and bar seating: the anchor of an outdoor space made for entertaining.",
+        heading: "Custom outdoor kitchens built for real entertaining",
+        text: "An outdoor kitchen turns a patio into the place everyone wants to be, where the cook stays part of the party instead of stuck inside. Mex Landscaping designs and builds custom outdoor kitchens for homes across Norristown and the Main Line. These are durable, built-in installations in stone and stainless, with the grills, counters, and bar seating that make outdoor cooking and hosting genuinely practical. We build them to anchor your outdoor living space and to hold up to years of real use and our seasons.",
       },
       {
-        heading: "Coordinated with your whole space",
-        text: "Materials, lighting, and layout are designed to flow with your patio, fire feature, and landscape for one cohesive result.",
+        heading: "Built-in grills, counters, and bars",
+        text: "We tailor each kitchen to how you cook and entertain. That can include a built-in grill, side burners, prep counters in stone or other durable surfaces, storage cabinetry, a sink, space for a refrigerator, and bar seating where guests can gather while you cook. We size and lay out the kitchen around your habits, whether you want a focused grill station or a full setup that handles a crowd, so the finished space works the way you actually use it.",
+      },
+      {
+        heading: "Durable stone and paver construction",
+        text: "An outdoor kitchen lives outside year-round, so it has to be built like hardscape, not furniture. We construct the base and structure in masonry and finish it in stone, veneer, or paver to match your patio and home. Built-in appliances are set into a solid, weather-resistant framework that handles heat, weather, and freeze-thaw. This is the same engineered, built-to-last approach we bring to our patios and walls, which is why our kitchens stay solid for the long haul.",
+      },
+      {
+        heading: "Utilities and lighting integrated cleanly",
+        text: "The features that make a kitchen effortless are easiest to build in from the start. We coordinate gas, electrical, water, and drainage during construction, and we integrate task and accent lighting so the kitchen is usable and inviting after dark. Because we design and build the whole outdoor living space, the kitchen flows with your patio, fire feature, and landscape, with materials, lighting, and layout coordinated for one cohesive, finished result rather than a grill island dropped onto a slab.",
+      },
+      {
+        heading: "Outdoor kitchen installation in Norristown and the Main Line",
+        text: "We design and build outdoor kitchens throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, whether as part of a new patio or an addition to an existing one. It starts with a free on-site consultation where we discuss layout, appliances, and materials. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How much does an outdoor kitchen cost?",
+        a: "It depends heavily on size, the appliances you select, the finish materials, and how much gas, electric, water, and drainage need to be run. A compact built-in grill station is far more affordable than a full kitchen with multiple appliances, a sink, and bar seating. We provide an itemized estimate so you can see what each element adds and prioritize accordingly.",
+      },
+      {
+        q: "Can you build an outdoor kitchen on my existing patio?",
+        a: "Often, yes. We assess your patio and its base to confirm it can support a built-in kitchen, then build it to integrate with the existing hardscape and run any needed utilities. If the patio is not structured to carry the added weight, we will tell you honestly what is required to do it properly.",
+      },
+      {
+        q: "What appliances can you include?",
+        a: "We can build in a grill, side burners, a sink, refrigeration, storage cabinetry, and bar seating, configured around how you cook and entertain. We design the layout to fit the appliances you want and coordinate the gas, electric, and water during construction so everything is set in cleanly rather than retrofitted later.",
+      },
+      {
+        q: "Will the kitchen hold up to winter weather?",
+        a: "Yes. We build outdoor kitchens like hardscape, on a solid masonry structure finished in weather-resistant stone or paver, so the framework handles freeze-thaw and the elements. Built-in appliances are set to withstand outdoor conditions. With basic seasonal care, a well-built outdoor kitchen lasts for many years.",
+      },
+      {
+        q: "Can you match the kitchen to my patio and fire pit?",
+        a: "Absolutely, and planning them together is the smart approach. Because we design and build the entire outdoor living space, we coordinate the stone, finishes, lighting, and layout so the kitchen, patio, and fire feature all clearly belong together. Call (484) 261-6650 or request a free estimate to plan it as one cohesive space.",
       },
     ],
   },
@@ -749,12 +1055,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "The sound of moving water",
-        text: "A well-placed water feature adds calm and character to any outdoor space. We design and build fountains, ponds, and waterfalls that fit naturally into your landscape.",
+        heading: "The sound of moving water in your landscape",
+        text: "Few additions change the feel of an outdoor space like moving water. The sound softens traffic noise, draws birds, and brings a sense of calm that makes a yard feel like a retreat. Mex Landscaping designs and builds custom water features for homes across Norristown and the Main Line, including fountains, ponds, and waterfalls. We site and build each feature so it looks like it belongs in the landscape, becoming a natural focal point rather than an object set awkwardly into the yard.",
       },
       {
-        heading: "Beautiful and low-maintenance",
-        text: "Modern recirculation and thoughtful placement keep your water feature stunning and simple to care for.",
+        heading: "Fountains, ponds, and waterfalls",
+        text: "Different water features create different moods, so we build the type that fits your space and how much you want to tend it. Bubbling rocks and disappearing fountains add the sound and movement of water with no open pool to maintain, ideal for a clean, low-care accent. Ponds bring an aquatic garden with plants and fish, and waterfalls and streams add dramatic movement and sound. We help you choose the right feature for your landscape, budget, and maintenance preference.",
+      },
+      {
+        heading: "Built to look natural and last",
+        text: "A water feature has to be engineered correctly to look effortless. We build a proper foundation and basin, select pumps and plumbing sized to the feature, and arrange stone and planting so the water reads as a natural part of the landscape. Careful placement of the source, the flow, and the edges is what separates a convincing waterfall or stream from one that looks staged. The mechanical work is hidden so only the beauty shows.",
+      },
+      {
+        heading: "Low-maintenance recirculation and integration",
+        text: "Modern water features are far simpler to live with than people expect. Recirculating systems reuse the same water efficiently, and thoughtful design keeps upkeep minimal. We integrate the feature with your surrounding landscape, lighting, and hardscape so it ties into the larger design, and we can add low-voltage lighting to bring the water to life after dark. Because we build the full outdoor environment, the water feature is planned as part of the whole rather than added in isolation.",
+      },
+      {
+        heading: "Water feature installation in Norristown and the Main Line",
+        text: "We design and build water features throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, whether as a standalone accent or part of a complete outdoor living space. It starts with a free on-site consultation where we find the right spot and feature for your property. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Are water features hard to maintain?",
+        a: "Less than most people assume. Recirculating systems reuse the same water, and low-maintenance options like bubbling rocks and disappearing fountains have no open pool to tend. Ponds with fish and plants require more attention. We design around the level of upkeep you want and explain the care involved before we build so there are no surprises.",
+      },
+      {
+        q: "How much does a water feature cost?",
+        a: "It depends on the type and size, from a compact bubbling fountain to a large pond or multi-tier waterfall, plus the stone, pump, and plumbing involved and any lighting you add. We provide a clear estimate after discussing the feature you want and seeing where it will go on your property.",
+      },
+      {
+        q: "What kind of water feature is best for a small yard?",
+        a: "For smaller spaces, a bubbling rock, urn, or disappearing fountain is often ideal. It delivers the sound and movement of water in a compact footprint, has no open pool, and is easy to care for. We can recommend the right scale and style so the feature feels proportionate to your space.",
+      },
+      {
+        q: "Can you add lighting to a water feature?",
+        a: "Yes, and it makes a big difference. Low-voltage lighting set into or around the feature brings the water to life after dark and lets you enjoy it in the evening. Because we handle outdoor lighting in-house, we can integrate it cleanly during construction so the wiring is hidden and the effect is built in.",
+      },
+      {
+        q: "Will a water feature attract mosquitoes?",
+        a: "Properly designed features that keep water moving and recirculating do not provide the still, stagnant water mosquitoes need to breed. Moving water in fountains, waterfalls, and well-built ponds actually discourages them. We design the flow and circulation so the feature stays healthy and pleasant to be around.",
       },
     ],
   },
@@ -840,12 +1180,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Trusted commercial snow removal",
-        text: "When snow and ice arrive, our 24/7 snow management prevents hazards with expert plowing and de-icing, keeping your driveways, walkways, and lots clear, safe, and accessible.",
+        heading: "Trusted commercial snow management in Montgomery County",
+        text: "When snow and ice arrive, a property has to stay safe and open, and that takes planning, not luck. Mex Landscaping provides 24/7 commercial snow management across Norristown and the Main Line, keeping driveways, walkways, entries, and parking lots clear, safe, and accessible all winter. We combine plowing, de-icing, and sidewalk clearing into one coordinated service so your property is covered end to end and you are not chasing separate contractors when the forecast turns.",
       },
       {
-        heading: "Per-storm or seasonal",
-        text: "Choose per-storm billing or a flat seasonal contract with priority response. Either way, we show up before you need to leave and document the work.",
+        heading: "Plowing, de-icing, and sidewalk clearing",
+        text: "Complete snow management is more than pushing snow off the lot. We plow drive lanes and parking areas, clear sidewalks, entries, and steps where slip-and-fall risk is highest, and apply salt and de-icing material to stop ice from forming and refreezing. Handling all of it as one service means nothing falls through the cracks between visits, and every part of the property, from the back of the lot to the front door, is addressed.",
+      },
+      {
+        heading: "24/7 monitoring and storm response",
+        text: "Storms do not wait for business hours. We monitor conditions and respond around the clock, working before you open so your staff, customers, and tenants arrive to a clear, safe property. Commercial clients get priority coverage, and we plan routes and crews so response time stays dependable even during a long or heavy event, because a snow contractor is only as good as how fast and reliably they show up.",
+      },
+      {
+        heading: "Per-storm or seasonal, documented",
+        text: "We offer both per-storm billing and flat seasonal contracts with priority response, so you can choose the structure that fits your budget and risk tolerance. Either way, we document our service with records of each visit and treatment, which gives you peace of mind and supports insurance and liability needs. For commercial properties, clear documentation is as important as the plowing itself.",
+      },
+      {
+        heading: "Snow management for Norristown and the Main Line",
+        text: "We provide commercial snow management throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, for offices, retail, multifamily, and HOA properties. Pairing snow management with our landscaping and maintenance means one accountable partner all year. Call (484) 261-6650 or request a free estimate to set up coverage before the season.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you offer per-storm or seasonal snow contracts?",
+        a: "Both. Per-storm billing means you pay for service as storms occur, while a flat seasonal contract gives you predictable budgeting and priority response regardless of how much snow falls. We will help you choose the structure that fits your property and budget, and we document service either way.",
+      },
+      {
+        q: "How quickly do you respond to a storm?",
+        a: "We monitor conditions and respond around the clock, prioritizing commercial clients so the property is clear before you open. We plan routes and crews to keep response dependable even during long or heavy events. Response time is exactly what we build our service around, because that is what keeps your property safe and open.",
+      },
+      {
+        q: "Do you handle sidewalks and entries, not just the lot?",
+        a: "Yes. Complete snow management includes plowing drive lanes and parking areas plus clearing sidewalks, entries, and steps and applying de-icing material. Sidewalks and entries are where slip-and-fall risk is highest, so we treat them as a core part of the service, not an add-on.",
+      },
+      {
+        q: "Do you document snow and ice service?",
+        a: "We do. We keep records of each visit and treatment, which gives you peace of mind and supports your insurance and liability documentation. For commercial properties, that record of when service occurred is an important part of managing winter risk.",
+      },
+      {
+        q: "Can you handle our landscaping and snow with one company?",
+        a: "Yes, and many clients prefer it. Using one accountable partner for landscaping, maintenance, and winter snow management means consistent service, simpler scheduling, and a single point of contact year-round. Call (484) 261-6650 or request a free estimate to set up a plan.",
       },
     ],
   },
@@ -864,12 +1238,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Keep your business accessible",
-        text: "We clear parking lots, manage ice, and apply salt with documented service so your customers and staff stay safe through every storm.",
+        heading: "Commercial snow plowing that keeps you open",
+        text: "A closed or hazardous lot costs you customers, sales, and liability exposure. Mex Landscaping provides commercial snow plowing across Norristown and the Main Line that keeps your business open, safe, and accessible through every storm. We clear parking lots, drive lanes, and entries, manage ice, and document our service, so your customers, staff, and tenants can come and go safely no matter what the winter throws at the property.",
       },
       {
-        heading: "Reliable when it matters most",
-        text: "We plan routes and crews to keep your property clear before you open, because a snow contractor is only as good as their response time.",
+        heading: "Parking lots, drive lanes, and entries",
+        text: "We plow the full footprint of a commercial property: parking areas, drive lanes, loading zones, and entrances. We push and stack snow where it will not block parking, sightlines, or access, and we clear right up to entries and sidewalks so there is a safe path from the lot to the door. Handling the whole site as one job keeps the property genuinely usable rather than partly cleared.",
+      },
+      {
+        heading: "Ice removal and salt application",
+        text: "Plowing alone does not make a lot safe. We apply salt and de-icing material to prevent ice from forming and to stop refreeze after plowing, focusing on high-traffic lanes, entries, and walkways where the risk is greatest. Pre-treating ahead of a storm and re-treating as conditions change keeps surfaces walkable and drivable, which is a major part of limiting slip-and-fall and accident liability on your property.",
+      },
+      {
+        heading: "Reliable response, documented service",
+        text: "A snow contractor is only as good as their response time. We plan routes and crews to keep your property clear before you open and respond around the clock during storms, with commercial clients getting priority coverage. We document each visit and treatment so you have clean records for insurance and liability. Choose per-storm or a flat seasonal contract, whichever fits your budget and risk needs.",
+      },
+      {
+        heading: "Commercial plowing for Norristown and the Main Line",
+        text: "We provide commercial snow plowing throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, for offices, retail, multifamily, and HOA properties. Set up coverage before the season so you are not scrambling when the first storm hits. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How much does commercial snow plowing cost?",
+        a: "Cost depends on the size of the lot, the layout, where snow can be stacked, and whether you choose per-storm or seasonal billing. De-icing and sidewalk clearing add to the scope. We assess the property and provide a clear proposal so you know exactly what is covered and how it is billed before the season starts.",
+      },
+      {
+        q: "When do you plow during a storm?",
+        a: "We monitor conditions and respond around the clock, working to keep your property clear before you open and returning as needed during longer events. Commercial clients receive priority coverage. The exact trigger and frequency are set in your plan so expectations are clear before the snow flies.",
+      },
+      {
+        q: "Do you apply salt and de-icer too?",
+        a: "Yes. Plowing removes snow, but salt and de-icing material are what prevent ice and refreeze, especially in high-traffic lanes and entries. We can pre-treat ahead of a storm and re-treat as conditions change to keep surfaces safe, which is central to limiting liability on a commercial property.",
+      },
+      {
+        q: "Do you provide service records for insurance?",
+        a: "We do. We document each visit and treatment, giving you records that support insurance and liability requirements. For commercial properties, having proof of when service occurred is an important part of managing winter risk, so we make documentation a standard part of the service.",
+      },
+      {
+        q: "Can you start coverage mid-season?",
+        a: "In many cases, yes, though setting up before the season is ideal so your property is on the route from the first storm. Contact us as early as you can and we will work to get you covered. Call (484) 261-6650 or request a free estimate to discuss availability.",
       },
     ],
   },
@@ -888,12 +1296,46 @@ export const services: Service[] = [
     ],
     body: [
       {
-        heading: "Storms don't keep business hours",
-        text: "Our 24/7 emergency snow services keep your property safe and clear whenever the weather hits. We monitor conditions and respond around the clock.",
+        heading: "24/7 emergency snow response that never sleeps",
+        text: "Snow rarely arrives at a convenient hour. A storm that starts overnight can shut a property down by morning if no one is watching. Mex Landscaping provides 24/7 emergency snow services across Norristown and the Main Line, monitoring conditions and responding around the clock so a storm never closes you down. Whether it hits at 2 a.m. or during the evening rush, we are ready to clear and treat your property and keep it safe and accessible.",
       },
       {
-        heading: "Priority response, documented",
-        text: "Commercial clients get priority coverage with documented service records for peace of mind and easy insurance reporting.",
+        heading: "Around-the-clock monitoring and rapid response",
+        text: "Fast response starts with watching the weather, not reacting to it. We track conditions continuously through the season and mobilize crews as snow accumulates, so clearing begins promptly rather than after the property is already buried. Rapid plowing and de-icing during and after a storm keep snow from compacting into ice and keep access open, which matters most for properties that cannot afford to wait until daylight.",
+      },
+      {
+        heading: "Plowing and de-icing whenever the weather hits",
+        text: "Emergency response covers the full job: plowing drive lanes, parking, and access points, clearing entries and walkways, and applying salt and de-icing material to stop ice and refreeze. During a long or intense storm we return as needed to stay ahead of accumulation. The goal is simple, to keep your property usable and safe throughout the event rather than only after it ends.",
+      },
+      {
+        heading: "Priority coverage, documented",
+        text: "Commercial clients receive priority emergency coverage so the properties that most need to stay open are handled first. We document each visit and treatment, which gives you records for insurance and liability and peace of mind that service happened when it was needed. Combined with per-storm or seasonal plans, our 24/7 response means you have a partner watching the weather so you do not have to.",
+      },
+      {
+        heading: "Emergency snow service for Norristown and the Main Line",
+        text: "We provide 24/7 emergency snow services throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, for commercial and HOA properties. Set up coverage before winter so you have priority response when a storm hits. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What does 24/7 emergency snow service include?",
+        a: "It includes around-the-clock monitoring and response, with plowing, de-icing, and entry and walkway clearing performed whenever a storm hits, day or night. We return as needed during long events to stay ahead of accumulation. Commercial clients receive priority coverage so critical properties are cleared first.",
+      },
+      {
+        q: "Do you really respond in the middle of the night?",
+        a: "Yes. We monitor conditions continuously and mobilize as snow accumulates, including overnight, so your property is clear and safe by the time people arrive. That around-the-clock response is the whole point of an emergency plan, especially for properties that cannot wait until morning.",
+      },
+      {
+        q: "How does emergency service differ from a regular contract?",
+        a: "Emergency 24/7 service emphasizes continuous monitoring and priority, rapid response at any hour, which is essential for properties that must stay open. It can be structured per-storm or as a seasonal contract. We will help you set the right plan based on how critical fast clearing is for your property.",
+      },
+      {
+        q: "Is emergency snow service available for my property?",
+        a: "We offer it for commercial and HOA properties across Montgomery County and the Main Line. The best step is to set up coverage before winter so you are on the priority route from the first storm. Call (484) 261-6650 or request a free estimate to confirm availability for your location.",
+      },
+      {
+        q: "Do you document emergency service for insurance?",
+        a: "Yes. We record each visit and treatment so you have documentation that supports insurance and liability needs. Having a clear record of when service occurred during a storm is an important part of managing winter risk on a commercial property.",
       },
     ],
   },
@@ -905,8 +1347,48 @@ export const services: Service[] = [
     intro: "Clear, safe sidewalks and entries that protect your visitors and limit liability.",
     highlights: ["Sidewalk & walkway clearing", "Entry & step de-icing", "Salt application", "Commercial & multi-unit"],
     body: [
-      { heading: "Safe walkways, reduced liability", text: "Sidewalks and entries are where slip-and-fall risk is highest. We clear and treat them thoroughly so your visitors stay safe and you stay protected." },
-      { heading: "Part of a complete plan", text: "Combine sidewalk clearing with plowing and de-icing for full-property coverage from a single team." },
+      {
+        heading: "Sidewalk snow removal that protects your visitors",
+        text: "Sidewalks and entries are where slip-and-fall risk is highest, and where a property owner's liability is greatest. Mex Landscaping provides thorough sidewalk snow removal across Norristown and the Main Line, clearing and treating walkways, entries, and steps so your visitors stay safe and you stay protected. While a plow handles the lot, the path from the parking space to the front door is what people actually walk, so we treat it as a priority rather than an afterthought.",
+      },
+      {
+        heading: "Walkways, entries, and steps cleared and treated",
+        text: "We clear sidewalks, building entrances, steps, and the connecting paths that pedestrians use, then apply salt or de-icing material to prevent ice and refreeze. Steps and entries get particular attention because they are the most common spots for a fall. Keeping these areas clear and walkable through a storm is one of the most direct ways to reduce the slip-and-fall exposure that worries commercial and multifamily property owners.",
+      },
+      {
+        heading: "Done thoroughly, on time",
+        text: "Sidewalk clearing only works if it happens reliably and early. We coordinate sidewalk service with our plowing routes so walkways are cleared before people arrive and re-treated as a storm continues. For multi-unit and commercial properties with significant pedestrian traffic, that consistency is essential, since a single icy entry can undo the safety of an otherwise clear property.",
+      },
+      {
+        heading: "Part of a complete snow plan",
+        text: "Sidewalk removal is most effective as part of full-property coverage. We combine sidewalk and entry clearing with plowing, de-icing, and salting so one team handles the entire property from the lot to the front door. That coordination means nothing falls between contractors, and we document the service for your insurance and liability records. Choose per-storm or seasonal coverage to fit your needs.",
+      },
+      {
+        heading: "Sidewalk snow removal for Norristown and the Main Line",
+        text: "We provide sidewalk snow removal throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, for commercial, multifamily, and HOA properties. Set up coverage before winter so your walkways are clear from the first storm. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Why is sidewalk clearing so important?",
+        a: "Sidewalks, entries, and steps are where slip-and-fall accidents most often happen, which makes them the area of greatest liability for a property owner. Keeping these pedestrian paths clear and treated is one of the most direct ways to keep visitors safe and protect yourself, which is why we treat it as a priority part of snow management.",
+      },
+      {
+        q: "Do you treat steps and entries, not just flat sidewalks?",
+        a: "Yes. Steps and building entrances get particular attention because they are the most common spots for a fall. We clear and apply de-icing material to walkways, steps, and entries so the entire pedestrian path stays as safe as possible through a storm.",
+      },
+      {
+        q: "Can sidewalk removal be combined with plowing?",
+        a: "Absolutely, and it is the most effective approach. We coordinate sidewalk and entry clearing with our plowing and de-icing so one team covers the whole property from the lot to the door. That keeps anything from falling between separate contractors and gives you a single point of accountability.",
+      },
+      {
+        q: "How much does sidewalk snow removal cost?",
+        a: "It depends on the length of walkway, the number of entries and steps, the foot traffic, and whether you choose per-storm or seasonal billing. We assess the property and provide a clear proposal, and it is often most economical bundled with plowing and de-icing as full-property coverage.",
+      },
+      {
+        q: "Do you document sidewalk service?",
+        a: "Yes. We record each visit and treatment so you have documentation for insurance and liability. Because sidewalks carry the highest slip-and-fall risk, having a record of when they were cleared and treated is especially valuable for commercial and multifamily property owners.",
+      },
     ],
   },
   {
@@ -917,8 +1399,48 @@ export const services: Service[] = [
     intro: "Professional salting and de-icing that stops ice before it becomes a hazard.",
     highlights: ["Pre-treatment & post-storm salting", "Lots, walkways & entries", "Ice melt management", "Documented application"],
     body: [
-      { heading: "Get ahead of the ice", text: "We pre-treat ahead of storms and re-apply as needed to prevent dangerous refreeze, keeping surfaces safe and walkable." },
-      { heading: "Applied right, recorded right", text: "We apply the right product at the right rate and document service, so your property stays safe and your records stay clean." },
+      {
+        heading: "Professional salting and de-icing in Montgomery County",
+        text: "Ice is often more dangerous than snow because it is harder to see and harder to clear once it forms. Mex Landscaping provides professional salting and de-icing across Norristown and the Main Line, stopping ice before it becomes a hazard. We treat parking lots, drive lanes, walkways, entries, and steps to keep surfaces safe and walkable through freezing temperatures, melt-and-refreeze cycles, and the storms that leave a thin, slick glaze behind.",
+      },
+      {
+        heading: "Pre-treatment and post-storm application",
+        text: "Timing is everything with ice control. Pre-treating surfaces before a storm helps prevent snow and ice from bonding to the pavement, which makes plowing more effective and reduces ice formation. After plowing, we apply salt or de-icing material to melt residual ice and prevent the refreeze that turns a cleared lot dangerous overnight. Applying at the right moments, not just once, is what keeps a property genuinely safe across a full event.",
+      },
+      {
+        heading: "The right product at the right rate",
+        text: "Effective de-icing is about applying the correct material at the correct rate for the conditions, not simply dumping salt. Over-applying wastes product and can harm plantings and surfaces, while under-applying leaves ice behind. We treat lots, walkways, and entries with the appropriate material and coverage for the temperature and situation, focusing on high-traffic and high-risk areas where safe footing and traction matter most.",
+      },
+      {
+        heading: "Applied right, recorded right",
+        text: "De-icing is a core part of limiting slip-and-fall and accident liability, so we document each application with records of when and where service occurred. That keeps your insurance and liability documentation clean and gives you proof that the property was treated. We coordinate salting and de-icing with plowing and sidewalk clearing so one team manages the full property and nothing is missed between visits.",
+      },
+      {
+        heading: "Salting and de-icing for Norristown and the Main Line",
+        text: "We provide salting and de-icing throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, for commercial, multifamily, and HOA properties. Bundle it with plowing and sidewalk clearing for complete winter coverage from one accountable team. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is the difference between salting and de-icing?",
+        a: "Salting is one form of de-icing, the broader practice of preventing and melting ice on pavement. De-icing can use rock salt or other ice-melt products applied before a storm to prevent bonding or after plowing to melt residual ice and stop refreeze. We use the right material and timing for the conditions to keep surfaces safe.",
+      },
+      {
+        q: "Why pre-treat before a storm?",
+        a: "Pre-treating helps keep snow and ice from bonding to the pavement, which makes plowing cleaner and reduces ice formation. Getting ahead of a storm this way means less ice to fight afterward and safer surfaces throughout the event. It is one of the most effective parts of a complete ice-control plan.",
+      },
+      {
+        q: "Will de-icing salt damage my pavement or plants?",
+        a: "Applied correctly, at the right rate for conditions, de-icing material keeps surfaces safe without overuse. Over-application is what can harm plantings and surfaces, which is exactly why we apply the appropriate product and coverage rather than simply dumping salt. Proper application protects both safety and the property.",
+      },
+      {
+        q: "Do you document de-icing applications?",
+        a: "Yes. We record when and where we treat so you have clear documentation for insurance and liability. Since ice control is central to limiting slip-and-fall exposure, having proof that the property was treated during an event is an important part of managing winter risk.",
+      },
+      {
+        q: "Can I get de-icing without full plowing service?",
+        a: "Often yes, though salting and de-icing work best coordinated with plowing and sidewalk clearing as part of complete coverage. We can tailor a plan to your property's needs. Call (484) 261-6650 or request a free estimate to discuss the right combination of services.",
+      },
     ],
   },
   {
@@ -929,8 +1451,48 @@ export const services: Service[] = [
     intro: "Dependable snow removal for residential and commercial properties across the Main Line.",
     highlights: ["Driveway & lot plowing", "Walkway clearing", "De-icing & salt", "Per-storm or seasonal"],
     body: [
-      { heading: "Skip the shoveling", text: "We keep your property safe and clear all winter, from driveways to lots and walkways, with reliable response on every snowfall." },
-      { heading: "Coverage that fits", text: "Choose per-storm or seasonal coverage for homes, businesses, and HOAs, with priority response when it counts." },
+      {
+        heading: "Dependable snow removal across the Main Line",
+        text: "When winter arrives, a clear, safe property is not a luxury, it is a necessity. Mex Landscaping provides dependable snow removal for residential and commercial properties across Norristown and the Main Line. From driveways and walkways to parking lots and entries, we keep your property safe and accessible all season with reliable response on every snowfall, so you can skip the shoveling and trust that the property is handled before you need to be anywhere.",
+      },
+      {
+        heading: "Driveways, lots, and walkways cleared",
+        text: "We clear the full property: residential driveways, commercial parking lots and drive lanes, walkways, entries, and steps. Snow is pushed and stacked where it will not block access or sightlines, and pedestrian paths are cleared so the route from the car to the door is safe. Whether it is a single home or a commercial lot, we handle the whole footprint so the property is genuinely usable, not just partly plowed.",
+      },
+      {
+        heading: "De-icing and salt to stop refreeze",
+        text: "Removing snow is only half the job. We apply salt and de-icing material to prevent ice and the refreeze that turns a cleared surface dangerous after temperatures drop. High-traffic areas, walkways, and entries get particular attention, since that is where slips happen. Pairing plowing with proper de-icing keeps surfaces safe to walk and drive on throughout the freeze-thaw conditions common to our winters.",
+      },
+      {
+        heading: "Coverage that fits your property",
+        text: "Every property has different needs, so we offer both per-storm and seasonal coverage for homes, businesses, and HOAs, with priority response when it counts. Per-storm billing means you pay as storms occur; a seasonal plan gives predictable budgeting and priority service. For commercial clients we document the work for insurance and liability, and we can coordinate snow removal with year-round landscaping and maintenance.",
+      },
+      {
+        heading: "Snow removal for Norristown and the Main Line",
+        text: "We provide snow removal throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, for residential, commercial, and HOA properties. Set up coverage before the season so your property is on the route from the first storm. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you offer per-storm or seasonal snow removal?",
+        a: "Both. Per-storm billing means you pay for service as storms occur, while a seasonal plan provides predictable budgeting and priority response no matter how much snow falls. We help you choose the structure that fits your property and budget, whether it is a single driveway or a commercial lot.",
+      },
+      {
+        q: "Do you handle residential driveways as well as commercial lots?",
+        a: "Yes. We provide snow removal for homes, businesses, and HOAs across the Main Line, clearing driveways, walkways, parking lots, and entries. We tailor the service to the property, from a single-family driveway to a full commercial site, with reliable response on every snowfall.",
+      },
+      {
+        q: "Do you apply salt and de-icer with snow removal?",
+        a: "We do. Plowing removes snow, but salt and de-icing material prevent ice and refreeze, especially in high-traffic areas and on walkways and entries. We pair clearing with proper de-icing so surfaces stay safe to walk and drive on through freeze-thaw conditions.",
+      },
+      {
+        q: "How quickly do you clear after a storm?",
+        a: "We respond reliably on every snowfall and prioritize service so your property is clear when you need it, with priority response available for commercial and seasonal-contract clients. The exact timing is set in your plan so you know what to expect before the season begins.",
+      },
+      {
+        q: "How do I sign up for snow removal?",
+        a: "The best step is to set up coverage before winter so your property is on the route from the first storm. Call (484) 261-6650 or request a free estimate, and we will assess your property and recommend per-storm or seasonal coverage that fits your needs.",
+      },
     ],
   },
 
@@ -943,8 +1505,48 @@ export const services: Service[] = [
     intro: "Reliable, scheduled upkeep for the properties we design and build, and for clients who simply want it done right.",
     highlights: ["Mowing, edging & blowing", "Bed weeding & mulching", "Seasonal color", "Commercial & HOA contracts"],
     body: [
-      { heading: "Keep it looking its best", text: "From bed care to seasonal transitions, we keep your landscape polished all season, so your time stays yours." },
-      { heading: "Homes and businesses", text: "Recurring maintenance plans for single-family homes, commercial properties, and HOAs, with consistent crews and dependable scheduling." },
+      {
+        heading: "Property maintenance that keeps your landscape sharp",
+        text: "A beautiful landscape stays beautiful only with consistent care. Mex Landscaping provides reliable, scheduled property maintenance for the landscapes we design and build, and for clients who simply want it done right. Across Norristown and the Main Line, we handle the recurring upkeep that keeps a property polished all season, from mowing and bed care to seasonal transitions, so your landscape always looks cared for and your time stays your own.",
+      },
+      {
+        heading: "Mowing, edging, and bed care",
+        text: "Our maintenance covers the work that keeps a property crisp week to week: mowing, edging, and blowing for a clean, even lawn, plus bed weeding, mulching, and trimming to keep plantings tidy and defined. We maintain clean edges where lawn meets bed, since that crisp line is what makes a whole property read as well kept. Consistent care also keeps plants healthier by removing competition and catching small problems early.",
+      },
+      {
+        heading: "Seasonal transitions and color",
+        text: "A landscape changes through the year, and good maintenance changes with it. We handle spring cleanups to wake the property up, seasonal color to keep beds vibrant, summer upkeep, and fall cleanups and cutbacks to put the landscape to bed for winter. Managing these transitions on the right schedule keeps the property looking intentional in every season rather than peaking briefly and then drifting.",
+      },
+      {
+        heading: "Consistent crews, dependable scheduling",
+        text: "The value of a maintenance plan is consistency, so we provide recurring service with dependable scheduling and crews that get to know your property. That continuity means the work is done the same way every visit and small issues are noticed before they grow. For commercial properties and HOAs, dependable scheduling and one accountable point of contact keep the property consistently presentable without you having to manage it.",
+      },
+      {
+        heading: "Maintenance for homes and businesses on the Main Line",
+        text: "We provide property maintenance throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, for single-family homes, commercial properties, and HOAs. We can also fold winter snow management into a year-round plan so one partner keeps your property sharp in every season. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What does a property maintenance plan include?",
+        a: "Plans typically include mowing, edging, and blowing, bed weeding and mulching, trimming and pruning, seasonal color, and spring and fall cleanups, tailored to your property. We build the plan around what your landscape needs and how polished you want it kept, and we can add services like aeration or snow management.",
+      },
+      {
+        q: "Do you maintain landscapes you did not install?",
+        a: "Yes. While we maintain many of the landscapes we design and build, we also take on clients who simply want their existing property cared for properly. We assess what the landscape needs and set up a recurring plan that keeps it looking its best all season.",
+      },
+      {
+        q: "How much does property maintenance cost?",
+        a: "It depends on the size of the property, the scope of services, and how often you want visits. A basic mowing and bed-care plan differs from full-service maintenance with seasonal color and cleanups. We assess your property and provide a clear plan and price so you know exactly what is included.",
+      },
+      {
+        q: "Do you work with commercial properties and HOAs?",
+        a: "We do. We provide recurring maintenance for commercial properties and HOAs with consistent crews, dependable scheduling, and one accountable point of contact. We can also combine maintenance with snow management so the property is covered year-round by a single partner.",
+      },
+      {
+        q: "Can you keep my property maintained year-round?",
+        a: "Yes. We handle the full seasonal arc, from spring cleanup through summer upkeep, fall cleanups, and winter snow management, on a recurring schedule. One partner across all seasons keeps the property consistent and frees you from coordinating multiple vendors. Call (484) 261-6650 or request a free estimate.",
+      },
     ],
   },
   {
@@ -955,8 +1557,48 @@ export const services: Service[] = [
     intro: "Regular weeding that keeps your beds crisp, clean, and intentional all season.",
     highlights: ["Hand & selective weeding", "Clean bed edging", "Pre-emergent options", "Debris haul-away"],
     body: [
-      { heading: "Tidy beds, season-long", text: "We clear invasive growth and maintain clean edges throughout the growing season, so your landscape always looks cared for." },
-      { heading: "Part of a healthy landscape", text: "Removing competition keeps your plants healthier and your beds looking their best." },
+      {
+        heading: "Regular weeding that keeps beds crisp",
+        text: "Nothing undoes a polished landscape faster than weeds taking over the beds. Mex Landscaping provides regular weeding for properties across Norristown and the Main Line, keeping garden beds clean, crisp, and intentional all season. We clear invasive growth and maintain the clean edges and tidy beds that make a whole property look cared for. Staying ahead of weeds on a regular schedule is far easier and more effective than letting them establish and then fighting them.",
+      },
+      {
+        heading: "Hand weeding, edging, and pre-emergent options",
+        text: "Effective weeding combines methods. We hand-pull and selectively remove weeds from beds, maintain clean bed edges that discourage grass and weeds from creeping in, and can apply pre-emergent treatments to reduce weed germination before it starts. We also haul away the debris so nothing is left behind. The combination keeps beds looking sharp while reducing how aggressively weeds return between visits.",
+      },
+      {
+        heading: "Why regular weeding matters",
+        text: "Weeds do more than look untidy. They compete with your plantings for water, nutrients, and light, which stresses the plants you actually want and leaves beds looking neglected. Removing that competition on a regular schedule keeps your shrubs, perennials, and other plantings healthier and gives the landscape the clean, deliberate look that good design deserves. It is small, consistent work that makes a big visual difference.",
+      },
+      {
+        heading: "Part of complete property care",
+        text: "Weeding is most effective as part of regular maintenance. We can fold it into a recurring plan alongside mowing, edging, mulching, and trimming so your beds and lawn stay consistently sharp without you thinking about it. Pairing weeding with mulch is especially effective, since a good mulch layer suppresses new weeds while keeping moisture in and beds looking finished.",
+      },
+      {
+        heading: "Weeding service for Norristown and the Main Line",
+        text: "We provide weeding throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, as a standalone service or part of a recurring maintenance plan. Keeping beds clean all season is one of the simplest ways to make a property look its best. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How often should beds be weeded?",
+        a: "Most properties benefit from regular weeding throughout the growing season, since staying ahead of weeds is far easier than removing established ones. The right frequency depends on your beds, plantings, and how meticulous you want them kept. We can set up a recurring schedule that keeps your beds consistently crisp.",
+      },
+      {
+        q: "Do you use pre-emergent or just pull weeds?",
+        a: "We can do both. Hand-pulling and selective removal clear existing weeds, while pre-emergent treatments reduce germination before weeds appear. Pairing the two, often with a fresh mulch layer, gives the longest-lasting clean result. We tailor the approach to your beds and preferences.",
+      },
+      {
+        q: "Does mulching help with weeds?",
+        a: "Yes. A good mulch layer suppresses many new weeds by blocking light to germinating seeds, while also retaining moisture and giving beds a finished look. Weeding and mulching together are one of the most effective and cost-efficient ways to keep beds clean through the season.",
+      },
+      {
+        q: "Can weeding be part of a maintenance plan?",
+        a: "Absolutely. Weeding is most effective as part of recurring maintenance alongside mowing, edging, mulching, and trimming, so your property stays consistently sharp. We can include it in a regular plan tailored to your landscape and how polished you want it kept.",
+      },
+      {
+        q: "Do you haul away the weeds and debris?",
+        a: "Yes. We remove and haul away the weeds and debris so nothing is left behind and your beds are clean when we finish. Leaving a tidy property after every visit is part of how we keep your landscape looking its best.",
+      },
     ],
   },
   {
@@ -967,8 +1609,48 @@ export const services: Service[] = [
     intro: "Expert trimming and pruning that keeps plantings shapely and your landscape sharp.",
     highlights: ["Shrub & hedge shaping", "Clean edging", "Species-correct timing", "Debris haul-away"],
     body: [
-      { heading: "Crisp and well-shaped", text: "We shape shrubs and maintain clean edges so your whole property reads as polished and well kept." },
-      { heading: "Timed for plant health", text: "We prune at the right time for each species to protect blooms and encourage dense, healthy growth." },
+      {
+        heading: "Expert trimming and pruning that keeps a landscape sharp",
+        text: "Overgrown, shapeless shrubs make even a well-designed landscape look neglected. Mex Landscaping provides expert trimming and pruning for properties across Norristown and the Main Line, keeping shrubs, hedges, and ornamentals shapely and your whole property looking sharp. There is a real difference between cutting plants back and pruning them properly, and our crews shape plantings with an eye for both their natural form and how they fit the overall landscape.",
+      },
+      {
+        heading: "Shrub shaping, hedge work, and clean edges",
+        text: "We shape and maintain shrubs and hedges, define crisp hedge lines, and keep ornamentals tidy and proportioned. Clean, well-shaped plantings and defined edges are what make a property read as polished and intentional. We trim to maintain the size and form each plant should have in its spot, so beds stay open and balanced rather than crowded, leggy, or overgrown by the end of the season.",
+      },
+      {
+        heading: "Timed and cut for plant health",
+        text: "Good pruning is as much about timing and technique as appearance. Cutting at the wrong time can remove next season's blooms or stress a plant, so we prune each species at the appropriate time of year and make clean, correct cuts. Done right, pruning protects flowering, encourages dense, healthy growth, improves air circulation, and removes dead or damaged wood, which keeps plantings vigorous rather than simply smaller.",
+      },
+      {
+        heading: "Part of complete property care",
+        text: "Trimming and pruning are most effective as part of regular maintenance. We can include them in a recurring plan alongside mowing, weeding, mulching, and seasonal cleanups so your plantings stay shapely and your whole property stays consistently sharp. We also haul away all clippings and debris, leaving the landscape tidy after every visit rather than leaving piles behind.",
+      },
+      {
+        heading: "Trimming and pruning for Norristown and the Main Line",
+        text: "We provide trimming and pruning throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, as a standalone service or part of a recurring maintenance plan. Well-pruned plantings are one of the clearest signs of a property that is genuinely cared for. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "When is the best time to prune shrubs?",
+        a: "It depends on the species. Many spring-flowering shrubs are best pruned right after they bloom, while others are pruned in late winter or at other times. Pruning at the wrong time can cut off next season's flowers or stress the plant, which is exactly why we time pruning by species rather than doing everything at once.",
+      },
+      {
+        q: "What is the difference between trimming and pruning?",
+        a: "Trimming generally refers to shaping and maintaining size and form, while pruning is the broader practice of making selective cuts for plant health, including removing dead or damaged wood and improving structure and airflow. We do both, shaping plantings to look sharp while keeping them healthy.",
+      },
+      {
+        q: "Can you reshape overgrown shrubs and hedges?",
+        a: "Yes. We can bring many overgrown shrubs and hedges back into shape, and in some cases use renewal pruning over time to rejuvenate a plant that has gotten leggy. We will assess the plantings and tell you honestly what can be restored and what is better replaced.",
+      },
+      {
+        q: "Do you clean up the clippings?",
+        a: "Always. We haul away all clippings and debris and leave the property tidy after every visit. A clean finish is part of the job, so your beds and lawn look better after we prune, not buried under cuttings.",
+      },
+      {
+        q: "Can trimming be part of a maintenance plan?",
+        a: "Absolutely. Trimming and pruning fit naturally into a recurring maintenance plan alongside mowing, weeding, mulching, and seasonal cleanups, so your plantings stay shapely all season. We can build a plan around your property and how polished you want it kept. Call (484) 261-6650 or request a free estimate.",
+      },
     ],
   },
   {
@@ -979,8 +1661,48 @@ export const services: Service[] = [
     intro: "Expert pruning and care for healthy, shapely shrubs and bushes.",
     highlights: ["Species-specific pruning", "Hedge shaping & renewal", "Disease & pest checks", "Seasonal timing"],
     body: [
-      { heading: "Healthy, shapely, vibrant", text: "Proper pruning keeps shrubs and bushes dense and well-proportioned, pruned at the right time for each species." },
-      { heading: "Renewal and rescue", text: "Overgrown shrubs can often be brought back with the right renewal pruning. We'll tell you honestly what's worth saving." },
+      {
+        heading: "Expert care for healthy shrubs and bushes",
+        text: "Shrubs and bushes are the backbone of most plantings, giving beds structure, screening, and year-round form, but only when they are cared for well. Mex Landscaping provides expert pruning and care for shrubs and bushes across Norristown and the Main Line. We keep them healthy, shapely, and well-proportioned, pruning at the right time and in the right way for each species so they stay dense and vibrant rather than overgrown, sparse, or misshapen.",
+      },
+      {
+        heading: "Species-specific pruning and shaping",
+        text: "Different shrubs need different care, so we prune by species rather than applying one approach to everything. We shape hedges and foundation plantings, maintain ornamental and flowering shrubs, and make clean, correct cuts that respect each plant's natural form. Pruning at the appropriate time protects blooms on flowering shrubs and encourages dense, healthy growth, which keeps your plantings looking deliberate and full season after season.",
+      },
+      {
+        heading: "Renewal pruning and rescue",
+        text: "Overgrown or leggy shrubs are not always a lost cause. With the right renewal pruning, often staged over a season or two, many shrubs can be rejuvenated, encouraged to fill back in from the base and return to a healthy shape. We assess what you have and tell you honestly what is worth saving and what is better replaced, so you are not paying to nurse along a plant that has reached the end of its life.",
+      },
+      {
+        heading: "Healthier plants through proper care",
+        text: "Good shrub care is about health as much as appearance. Proper pruning removes dead and damaged wood, improves air circulation to reduce disease pressure, and keeps plants vigorous. While we work, we keep an eye out for signs of pests or disease and can flag issues early, when they are easiest to address. Healthy shrubs hold their shape, resist problems, and look far better than ones simply sheared back.",
+      },
+      {
+        heading: "Shrub and bush care for Norristown and the Main Line",
+        text: "We care for shrubs and bushes throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, as a standalone service or part of a recurring maintenance plan. Well-kept shrubs are one of the clearest signs of a property that is genuinely cared for. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How often should shrubs and bushes be pruned?",
+        a: "Most shrubs benefit from pruning at least once a year, though timing and frequency vary by species and the look you want. Flowering shrubs in particular need to be pruned at the right time to avoid cutting off blooms. We prune on a schedule suited to each plant rather than treating them all the same.",
+      },
+      {
+        q: "Can overgrown shrubs be saved?",
+        a: "Often, yes. Many overgrown or leggy shrubs respond well to renewal pruning, sometimes staged over a season or two, which encourages them to fill back in and return to a healthy shape. We assess your plantings and tell you honestly which are worth restoring and which are better replaced.",
+      },
+      {
+        q: "Do you prune flowering shrubs at the right time?",
+        a: "Yes. Timing is critical for flowering shrubs, since pruning at the wrong point can remove the buds for next season's blooms. We prune each species at the appropriate time to protect flowering and encourage healthy growth, rather than shearing everything on a single visit.",
+      },
+      {
+        q: "Will you check for pests or disease?",
+        a: "We keep an eye out as we work. While pruning and shaping, we watch for signs of pests or disease and can flag issues early, when they are easiest and least costly to address. Catching a problem before it spreads is part of keeping your shrubs healthy.",
+      },
+      {
+        q: "Can shrub care be part of a maintenance plan?",
+        a: "Absolutely. Shrub and bush care fits naturally into a recurring maintenance plan alongside trimming, weeding, mulching, and cleanups, so your plantings stay healthy and shapely all season. We can build a plan around your property and how meticulous you want it kept. Call (484) 261-6650 or request a free estimate.",
+      },
     ],
   },
   {
@@ -991,8 +1713,48 @@ export const services: Service[] = [
     intro: "Leaf removal and bed prep that puts your property to bed for winter.",
     highlights: ["Full-property leaf removal", "Perennial cutback", "Bed & gutter clearing", "Debris haul-away"],
     body: [
-      { heading: "A fresh start for the season", text: "We clear leaves and debris, cut back perennials, and prep beds so your property is clean through winter and ready to rebound in spring." },
-      { heading: "Done thoroughly, hauled away", text: "No piles left behind. We remove the debris and leave your property tidy." },
+      {
+        heading: "Fall cleanups that put your property to bed",
+        text: "How a property is closed out in fall sets up how it looks the following spring. Mex Landscaping provides thorough fall cleanups across Norristown and the Main Line, clearing leaves and debris, cutting back perennials, and prepping beds so your landscape is clean through winter and ready to rebound when the season turns. A good fall cleanup is one of the highest-value services of the year, protecting the lawn and beds you have invested in through the months ahead.",
+      },
+      {
+        heading: "Leaf removal, cutbacks, and bed prep",
+        text: "A complete fall cleanup is more than raking leaves. We perform full-property leaf removal from lawns and beds, cut back spent perennials, clear out beds, and tidy the landscape for winter. We can also clear leaves from gutters and other problem areas where they cause trouble. Each piece matters: leaves left on the lawn smother grass, and beds full of debris invite pests and disease over winter.",
+      },
+      {
+        heading: "Why fall cleanup protects your landscape",
+        text: "A thick layer of fallen leaves blocks light and traps moisture against the lawn, which can lead to matting, mold, and dead patches by spring. Debris-filled beds give pests and disease a place to overwinter. Clearing it all out lets the lawn breathe, keeps beds healthy, and removes the mess that would otherwise greet you in spring. Doing it thoroughly in fall means far less repair work when the growing season returns.",
+      },
+      {
+        heading: "Done thoroughly, hauled away",
+        text: "We do not leave piles behind. After clearing leaves, cutting back, and prepping the beds, we remove and haul away all the debris so your property is genuinely clean and tidy heading into winter. For many clients, fall cleanup pairs naturally with aeration and overseeding earlier in the season and a spring cleanup afterward, all of which we can handle as part of a recurring maintenance plan.",
+      },
+      {
+        heading: "Fall cleanups for Norristown and the Main Line",
+        text: "We provide fall cleanups throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, as a standalone service or part of a recurring maintenance plan. Scheduling early helps ensure your property is handled before winter sets in. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "When should a fall cleanup be done?",
+        a: "The ideal time is after most of the leaves have come down but before snow and hard freezes arrive, typically in mid to late fall. Because leaves do not all drop at once, some properties benefit from more than one visit. We help you schedule the timing so the property is properly closed out before winter.",
+      },
+      {
+        q: "What is included in a fall cleanup?",
+        a: "A full fall cleanup typically includes leaf removal from lawns and beds, cutting back spent perennials, clearing out beds, tidying the landscape for winter, and hauling away all debris. We can tailor the scope to your property and add related services like a final mow or gutter leaf clearing.",
+      },
+      {
+        q: "Why not just leave the leaves?",
+        a: "A thick layer of leaves blocks light and traps moisture against the lawn, which can cause matting, mold, and dead patches by spring, while debris-filled beds invite pests and disease over winter. Clearing it out protects the lawn and beds and means far less repair work when the growing season returns.",
+      },
+      {
+        q: "Do you haul away the leaves and debris?",
+        a: "Yes. We remove and haul away all the leaves and debris so your property is genuinely clean heading into winter, with no piles left behind. A tidy finish is part of every cleanup we do.",
+      },
+      {
+        q: "Can fall cleanup be part of a maintenance plan?",
+        a: "Absolutely. Fall cleanup fits naturally into a recurring maintenance plan alongside mowing, bed care, and spring cleanups, and pairs well with fall aeration and overseeding. We can handle the full seasonal arc so your property is cared for year-round. Call (484) 261-6650 or request a free estimate.",
+      },
     ],
   },
   {
@@ -1003,8 +1765,48 @@ export const services: Service[] = [
     intro: "Thorough leaf cleanup to keep your lawn healthy through fall.",
     highlights: ["Full-property removal", "Lawn & bed clearing", "Recurring fall visits", "Debris haul-away"],
     body: [
-      { heading: "Don't let leaves smother your lawn", text: "A thick blanket of leaves blocks light and traps moisture. We clear them thoroughly so your lawn stays healthy into winter." },
-      { heading: "Recurring visits", text: "Leaves don't fall all at once, so we can schedule recurring cleanups so your property stays clear from first drop to last." },
+      {
+        heading: "Thorough leaf cleanup to protect your lawn",
+        text: "Fallen leaves may look harmless, but left in place they can do real damage to a lawn. Mex Landscaping provides thorough leaf cleanup for properties across Norristown and the Main Line, clearing leaves from lawns and beds so your turf stays healthy through fall and into winter. We remove the blanket of leaves that would otherwise smother the grass, and we haul it all away so your property is clean rather than buried under cuttings and debris.",
+      },
+      {
+        heading: "Full-property leaf removal",
+        text: "We clear leaves from the whole property, lawns, beds, and the corners where leaves collect and pack down. We can also clear leaves from gutters and other problem spots where they cause damage. Pulling leaves out of beds matters as much as off the lawn, since wet, matted leaves in beds trap moisture against plant crowns and create a haven for pests and disease over the winter months.",
+      },
+      {
+        heading: "Why leaf removal keeps a lawn healthy",
+        text: "A thick blanket of leaves blocks the sunlight grass needs and traps moisture against the turf, which encourages matting, mold, and dead patches that show up in spring. Clearing leaves thoroughly lets the lawn breathe and stay healthy through the dormant season, so it greens up strong rather than emerging thin and damaged. It is a simple service that prevents a lot of avoidable lawn repair later.",
+      },
+      {
+        heading: "Recurring visits through the season",
+        text: "Leaves do not fall all at once, so a single cleanup often is not enough. We can schedule recurring visits through the fall so your property stays clear from the first drop to the last, rather than letting leaves pile up between a single early and late cleanup. For many clients, recurring leaf cleanup fits naturally into a broader fall cleanup and maintenance plan that closes the property out properly for winter.",
+      },
+      {
+        heading: "Leaf cleanup for Norristown and the Main Line",
+        text: "We provide leaf cleanup throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, as a one-time service, recurring visits, or part of a full maintenance plan. Keeping leaves cleared is one of the easiest ways to protect your lawn through fall. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "How many leaf cleanups do I need in a season?",
+        a: "It depends on how many trees you have and when they drop. Because leaves do not all fall at once, many properties benefit from recurring visits through the fall rather than a single cleanup, which prevents leaves from piling up and smothering the lawn between visits. We help you plan the right schedule.",
+      },
+      {
+        q: "Can't I just leave the leaves on the lawn?",
+        a: "It is best not to. A thick layer of leaves blocks sunlight and traps moisture against the turf, which can cause matting, mold, and dead patches by spring. Clearing them keeps the lawn healthy through the dormant season so it comes back strong rather than thin and damaged.",
+      },
+      {
+        q: "Do you remove leaves from beds too, not just the lawn?",
+        a: "Yes. We clear leaves from lawns and beds, and from corners where they collect. Pulling leaves out of beds is important because wet, matted leaves trap moisture against plant crowns and give pests and disease a place to overwinter, so we do not leave them piled in the planting areas.",
+      },
+      {
+        q: "Do you haul the leaves away?",
+        a: "Always. We remove and haul away all the leaves and debris so your property is genuinely clean, with no piles left behind. A tidy finish is part of every cleanup we do.",
+      },
+      {
+        q: "Is leaf cleanup the same as a fall cleanup?",
+        a: "Leaf cleanup focuses on removing leaves, while a full fall cleanup also includes cutting back perennials, clearing beds, and prepping the landscape for winter. The two pair naturally, and we can handle leaf removal on its own or as part of a complete fall cleanup and maintenance plan. Call (484) 261-6650 or request a free estimate.",
+      },
     ],
   },
   {
@@ -1015,8 +1817,48 @@ export const services: Service[] = [
     intro: "Thicker, healthier turf through core aeration and overseeding at the ideal time of year.",
     highlights: ["Core aeration", "Overseeding with quality blends", "Starter fertilization", "Best-time fall scheduling"],
     body: [
-      { heading: "The best thing for a tired lawn", text: "Core aeration relieves compaction; paired with overseeding, it's the most effective way to thicken a thin, worn lawn." },
-      { heading: "Timed for results", text: "Fall is the ideal window in our area, when cooler temps and good moisture give new grass the best chance to establish." },
+      {
+        heading: "Aeration and overseeding for a thicker lawn",
+        text: "If your lawn is thin, worn, or struggling, core aeration paired with overseeding is the single most effective way to bring it back. Mex Landscaping provides aeration and overseeding for properties across Norristown and the Main Line. Core aeration relieves the compaction that chokes a lawn, and overseeding introduces fresh, quality grass into the existing turf. Together, performed at the right time of year, they thicken a tired lawn and build the kind of dense, healthy turf that resists weeds and stands up to use.",
+      },
+      {
+        heading: "What core aeration does",
+        text: "Over time, soil compacts and a layer of thatch builds up, blocking the air, water, and nutrients that roots need. Core aeration pulls small plugs of soil from the lawn, opening it up so roots can breathe and grow deeper. That relief from compaction alone improves a lawn's health and its ability to take in water and fertilizer. It also creates the ideal conditions for new seed to make contact with the soil and germinate.",
+      },
+      {
+        heading: "Overseeding and starter fertilization",
+        text: "Aeration sets the stage; overseeding does the filling in. We spread a quality grass seed blend suited to our area, and the freshly opened soil from aeration gives that seed excellent seed-to-soil contact, which is exactly what it needs to germinate and establish. A starter fertilization supports the young grass as it takes hold. The result over the following weeks is a noticeably thicker, fuller lawn that crowds out weeds and looks healthier.",
+      },
+      {
+        heading: "Timed for results",
+        text: "Timing makes the difference between strong establishment and wasted effort. Fall is the ideal window in our region: the soil is still warm, temperatures are cooling, weeds are slowing down, and moisture is more reliable, all of which give new grass the best chance to establish before winter. We schedule aeration and overseeding for that prime fall window so you get the most from the service, and it pairs naturally with a fall cleanup.",
+      },
+      {
+        heading: "Aeration and overseeding for Norristown and the Main Line",
+        text: "We provide aeration and overseeding throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, as a standalone service or part of a recurring maintenance plan. It is one of the best investments you can make in a tired lawn. Call (484) 261-6650 or request a free estimate.",
+      },
+    ],
+    faqs: [
+      {
+        q: "What is core aeration and why does my lawn need it?",
+        a: "Core aeration pulls small plugs of soil from the lawn to relieve compaction and break up thatch, letting air, water, and nutrients reach the roots. Compacted soil chokes a lawn and leaves it thin. Aeration restores that flow and, paired with overseeding, is the most effective way to thicken a worn lawn.",
+      },
+      {
+        q: "Why combine aeration with overseeding?",
+        a: "Aeration opens the soil and creates excellent seed-to-soil contact, which is exactly what new seed needs to germinate and establish. Overseeding into a freshly aerated lawn fills in thin areas with fresh grass far more successfully than seeding alone. The two together are what produce a noticeably thicker, healthier lawn.",
+      },
+      {
+        q: "When is the best time to aerate and overseed?",
+        a: "Fall is the ideal window in our area. The soil is still warm while the air cools, weeds slow down, and moisture is more reliable, giving new grass the best chance to establish before winter. We schedule the service for that prime fall window to get the strongest results.",
+      },
+      {
+        q: "How soon will I see results?",
+        a: "New grass from overseeding typically begins to fill in over the following few weeks as it germinates and establishes, with the fullest results visible the next growing season. Proper watering during establishment helps a great deal, and we give you clear guidance so the new grass gets the start it needs.",
+      },
+      {
+        q: "How much does aeration and overseeding cost?",
+        a: "It depends mainly on the size of the lawn and whether you add starter fertilization or other services. It is one of the most cost-effective ways to improve a tired lawn. We provide a clear estimate after assessing your lawn. Call (484) 261-6650 or request a free estimate.",
+      },
     ],
   },
 ];
