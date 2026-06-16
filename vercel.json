@@ -111,6 +111,46 @@
       "source": "/lawn-mowing-services-in-berwyn-pa/",
       "destination": "/landscape-design-hardscaping-in-berwyn-pa/",
       "permanent": true
+    },
+    {
+      "source": "/landscaping-king-of-prussia/",
+      "destination": "/landscape-design-hardscaping-in-king-of-prussia-pa/",
+      "permanent": true
+    },
+    {
+      "source": "/category/retaining-walls/",
+      "destination": "/retaining-walls/",
+      "permanent": true
+    },
+    {
+      "source": "/category/snow-removal/",
+      "destination": "/snow-management-services/",
+      "permanent": true
+    },
+    {
+      "source": "/category/lawn-care/",
+      "destination": "/property-maintenance/",
+      "permanent": true
+    },
+    {
+      "source": "/category/landscaping-spring/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/category/norristown-green-scape/",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/category/trimming-tricks/",
+      "destination": "/trimming/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/blog/",
+      "permanent": true
     }
   ]
 }
