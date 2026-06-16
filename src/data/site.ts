@@ -29,7 +29,7 @@ export const business = {
 // where leads should land; no account or per-form setup). One key handles every
 // form on the site. Set PUBLIC_WEB3FORMS_KEY in the env, or paste it below.
 export const WEB3FORMS_KEY =
-  import.meta.env.PUBLIC_WEB3FORMS_KEY ?? "w3f_live_sP1A0zbDT3Yb483GLgiEVwtnT6IhKfLd";
+  import.meta.env.PUBLIC_WEB3FORMS_KEY ?? "3c6c0650-a0c3-4ae8-a555-eef53b5550d1";
 
 export type NavChild = { label: string; href: string };
 export type NavItem = { label: string; href: string; children?: NavChild[] };
