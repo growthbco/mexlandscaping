@@ -57,6 +57,10 @@ const labelClass = green
         <input name="phone" type="tel" required class={inputClass} placeholder={green ? "Phone*" : "(484) 555-0123"} />
       </label>
       <label class="block">
+        <span class={labelClass}>Property ZIP or town</span>
+        <input name="zip" required class={inputClass} placeholder={green ? "Property ZIP or town*" : "e.g. 19401 or Norristown"} />
+      </label>
+      <label class="block">
         <span class={labelClass}>Service needed</span>
         <select name="service" class={inputClass}>
           <option value="" disabled selected={!defaultService}>Select a Service</option>
@@ -71,6 +75,35 @@ const labelClass = green
             ))
           }
           <option value="Other">Something else</option>
+        </select>
+      </label>
+      <label class="block">
+        <span class={labelClass}>Budget range</span>
+        <select name="budget" required class={inputClass}>
+          <option value="" disabled selected>{green ? "Budget range*" : "Select a budget range"}</option>
+          <option value="$5k - $15k">$5k - $15k</option>
+          <option value="$15k - $40k">$15k - $40k</option>
+          <option value="$40k - $100k">$40k - $100k</option>
+          <option value="$100k+">$100k+</option>
+          <option value="Not sure yet">Not sure yet</option>
+        </select>
+      </label>
+      <label class="block">
+        <span class={labelClass}>Project timeline</span>
+        <select name="timeline" required class={inputClass}>
+          <option value="" disabled selected>{green ? "Project timeline*" : "Select a timeline"}</option>
+          <option value="As soon as possible">As soon as possible</option>
+          <option value="1 to 3 months">1 to 3 months</option>
+          <option value="3 to 6 months">3 to 6 months</option>
+          <option value="Just exploring">Just exploring</option>
+        </select>
+      </label>
+      <label class="block">
+        <span class={labelClass}>Property type</span>
+        <select name="property_type" required class={inputClass}>
+          <option value="" disabled selected>{green ? "Property type*" : "Select property type"}</option>
+          <option value="Residential">Residential</option>
+          <option value="Commercial">Commercial</option>
         </select>
       </label>
     </div>
