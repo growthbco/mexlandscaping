@@ -16,7 +16,7 @@ export const business = {
     zip: "19404",
   },
   geo: { lat: 40.1215, lng: -75.34 },
-  hours: "Mon–Sat, 7am–6pm",
+  hours: "Mon to Sat, 7am to 6pm",
   priceRange: "$$",
   social: {
     facebook: "https://www.facebook.com/mexlandscaping",
