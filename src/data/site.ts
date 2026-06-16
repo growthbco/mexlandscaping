@@ -25,9 +25,11 @@ export const business = {
   },
 } as const;
 
-// Web3Forms access key — replace with your real key (or set PUBLIC_WEB3FORMS_KEY).
-export const WEB3FORMS_KEY =
-  import.meta.env.PUBLIC_WEB3FORMS_KEY ?? "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY";
+// Formspree form ID — the part after /f/ in your endpoint (e.g. "xayzgkqw").
+// Set PUBLIC_FORMSPREE_ID in the environment, or paste the ID in the fallback below.
+export const FORMSPREE_ID =
+  import.meta.env.PUBLIC_FORMSPREE_ID ?? "REPLACE_WITH_YOUR_FORMSPREE_ID";
+export const FORMSPREE_ENDPOINT = `https://formspree.io/f/${FORMSPREE_ID}`;
 
 export type NavChild = { label: string; href: string };
 export type NavItem = { label: string; href: string; children?: NavChild[] };
