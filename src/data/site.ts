@@ -25,11 +25,11 @@ export const business = {
   },
 } as const;
 
-// Formspree form ID — the part after /f/ in your endpoint (e.g. "xayzgkqw").
-// Set PUBLIC_FORMSPREE_ID in the environment, or paste the ID in the fallback below.
-export const FORMSPREE_ID =
-  import.meta.env.PUBLIC_FORMSPREE_ID ?? "REPLACE_WITH_YOUR_FORMSPREE_ID";
-export const FORMSPREE_ENDPOINT = `https://formspree.io/f/${FORMSPREE_ID}`;
+// Web3Forms access key — get one free at web3forms.com (just enter the email
+// where leads should land; no account or per-form setup). One key handles every
+// form on the site. Set PUBLIC_WEB3FORMS_KEY in the env, or paste it below.
+export const WEB3FORMS_KEY =
+  import.meta.env.PUBLIC_WEB3FORMS_KEY ?? "w3f_live_sP1A0zbDT3Yb483GLgiEVwtnT6IhKfLd";
 
 export type NavChild = { label: string; href: string };
 export type NavItem = { label: string; href: string; children?: NavChild[] };

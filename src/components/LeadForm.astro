@@ -1,5 +1,5 @@
 ---
-import { FORMSPREE_ENDPOINT, nav } from "../data/site";
+import { WEB3FORMS_KEY, nav } from "../data/site";
 
 interface Props {
   /** Pre-fills the "service" field, e.g. "Patios" or "Lawn Mowing: Wayne, PA" */
@@ -36,10 +36,12 @@ const labelClass = green
       </div>
     )
   }
-  <form class="space-y-4" data-form action={FORMSPREE_ENDPOINT} method="POST">
-    <input type="hidden" name="_subject" value="New lead from mexlandscaping.com" />
+  <form class="space-y-4" data-form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
+    <input type="hidden" name="subject" value="New lead from mexlandscaping.com" />
+    <input type="hidden" name="from_name" value="Mex Landscaping Website" />
     <!-- Honeypot -->
-    <input type="text" name="_gotcha" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+    <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
 
     <div class={`grid gap-4 ${compact || green ? "" : "sm:grid-cols-2"}`}>
       <label class="block">
@@ -119,12 +121,13 @@ const labelClass = green
         btn.textContent = "Sending…";
       }
       try {
-        const res = await fetch(form.action, {
+        const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: { Accept: "application/json" },
           body: new FormData(form),
         });
-        if (res.ok) {
+        const data = await res.json();
+        if (data.success) {
           form.classList.add("hidden");
           success?.classList.remove("hidden");
           if (typeof (window as any).gtag === "function") {
@@ -135,8 +138,7 @@ const labelClass = green
           }
           return;
         }
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.errors?.[0]?.message || "Submission failed");
+        throw new Error(data.message || "Submission failed");
       } catch (err) {
         if (btn) {
           btn.disabled = false;
