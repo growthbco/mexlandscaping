@@ -5,152 +5,152 @@
     {
       "source": "/lawn-mowing-services-in-norristown-pa/",
       "destination": "/landscape-design-hardscaping-in-norristown-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-king-of-prussia-pa/",
       "destination": "/landscape-design-hardscaping-in-king-of-prussia-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-bryn-mawr-pa/",
       "destination": "/landscape-design-hardscaping-in-bryn-mawr-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-wayne-pa/",
       "destination": "/landscape-design-hardscaping-in-wayne-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-conshohocken-pa/",
       "destination": "/landscape-design-hardscaping-in-conshohocken-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-plymouth-meeting-pa/",
       "destination": "/landscape-design-hardscaping-in-plymouth-meeting-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-gladwyne-pa/",
       "destination": "/landscape-design-hardscaping-in-gladwyne-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-newtown-square-pa/",
       "destination": "/landscape-design-hardscaping-in-newtown-square-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-east-norriton-pa/",
       "destination": "/landscape-design-hardscaping-in-east-norriton-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-malvern-pa/",
       "destination": "/landscape-design-hardscaping-in-malvern-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-paoli-pa/",
       "destination": "/landscape-design-hardscaping-in-paoli-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-villanova-pa/",
       "destination": "/landscape-design-hardscaping-in-villanova-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-eagleville-pa/",
       "destination": "/landscape-design-hardscaping-in-eagleville-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-broomall-pa/",
       "destination": "/landscape-design-hardscaping-in-broomall-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-blue-bell-pa/",
       "destination": "/landscape-design-hardscaping-in-blue-bell-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-worcester-pa/",
       "destination": "/landscape-design-hardscaping-in-worcester-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-whitemarsh-pa/",
       "destination": "/landscape-design-hardscaping-in-whitemarsh-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-radnor-pa/",
       "destination": "/landscape-design-hardscaping-in-radnor-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-marple-township-pa/",
       "destination": "/landscape-design-hardscaping-in-marple-township-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-havertown-pa/",
       "destination": "/landscape-design-hardscaping-in-havertown-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-collegeville-pa/",
       "destination": "/landscape-design-hardscaping-in-collegeville-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/lawn-mowing-services-in-berwyn-pa/",
       "destination": "/landscape-design-hardscaping-in-berwyn-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/landscaping-king-of-prussia/",
       "destination": "/landscape-design-hardscaping-in-king-of-prussia-pa/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/category/retaining-walls/",
       "destination": "/retaining-walls/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/category/snow-removal/",
       "destination": "/snow-management-services/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/category/lawn-care/",
       "destination": "/property-maintenance/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/category/landscaping-spring/",
       "destination": "/blog/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/category/norristown-green-scape/",
       "destination": "/blog/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/category/trimming-tricks/",
       "destination": "/trimming/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/category/uncategorized/",
       "destination": "/blog/",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }
