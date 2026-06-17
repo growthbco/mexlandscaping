@@ -1,7 +1,9 @@
 ---
 import type { Service } from "../../data/services";
-import { categoryLabels, categoryHubs, servicesByCategory } from "../../data/services";
+import { categoryLabels, categoryHubs, servicesByCategory, premiumCategories } from "../../data/services";
 import { seoFor } from "../../data/seo.generated";
+import { cities } from "../../data/site";
+import { designPath, snowPath } from "../../data/locations";
 import PageHero from "../PageHero.astro";
 import Section from "../Section.astro";
 import LeadForm from "../LeadForm.astro";
@@ -20,6 +22,14 @@ const hub = categoryHubs[service.category];
 const related = servicesByCategory(service.category)
   .filter((s) => s.path !== service.path)
   .slice(0, 5);
+
+// Internal links: service page -> the city pages where we offer it.
+const areaPath = service.category === "snow" ? snowPath : designPath;
+const areaCities = cities.slice(0, 12);
+// Cross-category links to the other main service hubs.
+const otherCats = premiumCategories
+  .filter((cat) => cat !== service.category)
+  .map((cat) => ({ label: categoryLabels[cat], href: categoryHubs[cat] }));
 ---
 
 <PageHero
@@ -84,6 +94,37 @@ const related = servicesByCategory(service.category)
           </div>
         )
       }
+
+      <div class="mt-14">
+        <h2 class="font-display text-2xl font-semibold text-forest-900">
+          {service.title} across the Main Line
+        </h2>
+        <p class="mt-3 text-forest-700">
+          We provide {service.title.toLowerCase()} throughout Montgomery County and the
+          Main Line, including:
+        </p>
+        <ul class="mt-5 flex flex-wrap gap-2.5">
+          {
+            areaCities.map((ct) => (
+              <li>
+                <a
+                  href={areaPath(ct.slug)}
+                  class="block rounded-full border border-forest-200 bg-white px-4 py-1.5 text-sm font-medium text-forest-700 transition hover:border-leaf-500 hover:text-forest-900"
+                >
+                  {ct.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <a
+          href="/service-areas/"
+          class="mt-5 inline-flex items-center gap-1.5 font-display text-sm font-semibold tracking-wide text-leaf-600 hover:text-leaf-500"
+        >
+          View all service areas
+          <Icon name="arrow" class="h-4 w-4" />
+        </a>
+      </div>
     </div>
 
     <aside class="lg:col-span-1">
@@ -112,6 +153,27 @@ const related = servicesByCategory(service.category)
                       class="group flex items-center justify-between rounded-xl px-3 py-2 text-sm text-forest-700 hover:bg-forest-50"
                     >
                       {r.title}
+                      <Icon name="arrow" class="h-4 w-4 text-forest-300 transition-transform group-hover:translate-x-0.5 group-hover:text-clay-500" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+
+        {
+          otherCats.length > 0 && (
+            <div class="rounded-3xl border border-forest-100 bg-white p-7">
+              <h3 class="font-semibold text-forest-900">Explore more services</h3>
+              <ul class="mt-4 space-y-1">
+                {otherCats.map((cat) => (
+                  <li>
+                    <a
+                      href={cat.href}
+                      class="group flex items-center justify-between rounded-xl px-3 py-2 text-sm text-forest-700 hover:bg-forest-50"
+                    >
+                      {cat.label}
                       <Icon name="arrow" class="h-4 w-4 text-forest-300 transition-transform group-hover:translate-x-0.5 group-hover:text-clay-500" />
                     </a>
                   </li>

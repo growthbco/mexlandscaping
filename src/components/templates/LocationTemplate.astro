@@ -20,6 +20,29 @@ const otherKindLabel = isDesign
   : `Landscape Design & Hardscaping in ${page.city.name}`;
 const buildHref = isDesign ? designPath : snowPath;
 const nearby = cities.filter((x) => x.slug !== page.city.slug).slice(0, 8);
+
+// Internal links from this city page to the relevant service pages.
+const designServices = [
+  { label: "Landscape Design & Build", href: "/landscape-design/" },
+  { label: "Patios", href: "/patios/" },
+  { label: "Walkways & Steps", href: "/walkways/" },
+  { label: "Driveways", href: "/driveways/" },
+  { label: "Retaining & Seating Walls", href: "/retaining-walls/" },
+  { label: "Outdoor Living", href: "/outdoor-living/" },
+  { label: "Fire Pits & Fire Features", href: "/fire-pits/" },
+  { label: "Outdoor Kitchens", href: "/outdoor-kitchens/" },
+  { label: "Concrete & Masonry", href: "/concrete-masonry/" },
+  { label: "Landscape Lighting", href: "/landscape-lighting/" },
+];
+const snowServices = [
+  { label: "Commercial Snow Management", href: "/snow-management-services/" },
+  { label: "Commercial Snow Plowing", href: "/commercial-snow-plowing/" },
+  { label: "24/7 Emergency Snow", href: "/24-7-emergency-snow-services/" },
+  { label: "Sidewalk Snow Removal", href: "/sidewalk-snow-removal/" },
+  { label: "Salting & De-Icing", href: "/salting-de-icing/" },
+  { label: "Snow Removal", href: "/snow-removal/" },
+];
+const cityServices = isDesign ? designServices : snowServices;
 ---
 
 <PageHero
@@ -58,6 +81,25 @@ const nearby = cities.filter((x) => x.slug !== page.city.slug).slice(0, 8);
           ))
         }
       </ul>
+
+      <div class="mt-12">
+        <h2 class="font-display text-2xl font-semibold text-forest-900">
+          Services we offer in {page.city.name}
+        </h2>
+        <div class="mt-5 grid gap-3 sm:grid-cols-2">
+          {
+            cityServices.map((s) => (
+              <a
+                href={s.href}
+                class="group flex items-center justify-between rounded-2xl border border-forest-100 bg-white px-5 py-3.5 text-forest-800 transition hover:border-leaf-500/40 hover:bg-forest-50"
+              >
+                <span class="font-medium">{s.label}</span>
+                <Icon name="arrow" class="h-4 w-4 shrink-0 text-forest-300 transition-transform group-hover:translate-x-0.5 group-hover:text-leaf-600" />
+              </a>
+            ))
+          }
+        </div>
+      </div>
 
       {
         c.faqs && c.faqs.length > 0 && (
