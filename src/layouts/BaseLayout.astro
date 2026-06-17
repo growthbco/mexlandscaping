@@ -26,7 +26,10 @@ const {
 
 const site = "https://www.mexlandscaping.com";
 const canonical = new URL(path, site).href;
-const image = ogImage && ogImage.length ? ogImage : `${site}/og-default.svg`;
+// Ignore legacy WordPress /wp-content/ image URLs (they 404 on the new site)
+// and fall back to a real 1200x630 raster share image.
+const cleanOg = ogImage && !ogImage.includes("/wp-content/") ? ogImage : "";
+const image = cleanOg.length ? cleanOg : `${site}/images/og-default.jpg`;
 
 // LocalBusiness schema rendered site-wide.
 const localBusiness = {
