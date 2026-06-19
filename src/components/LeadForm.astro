@@ -181,6 +181,16 @@ const labelClass = green
           // dataLayer push so GTM can fire a Google Ads conversion on lead_submit.
           (window as any).dataLayer = (window as any).dataLayer || [];
           (window as any).dataLayer.push({ event: "lead_submit", form_page: pageName || location.pathname });
+          // Fire-and-forget Telegram notification (production only; no-op in dev).
+          try {
+            const payload: Record<string, string> = {};
+            fd.forEach((v, k) => { payload[k] = String(v); });
+            fetch("/api/notify-lead", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            }).catch(() => {});
+          } catch (e) { /* ignore */ }
           return;
         }
         throw new Error(data.message || "Submission failed");
