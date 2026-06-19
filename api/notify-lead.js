@@ -29,20 +29,22 @@ export default async function handler(req, res) {
     return;
   }
 
-  const row = (emoji, val) => (val ? `${emoji} ${String(val).trim()}` : null);
+  // Clean, plain-text format (no emojis, no markdown) so it forwards nicely
+  // over iMessage.
+  const line = (label, val) => (val ? `${label}: ${String(val).trim()}` : null);
   const text = [
-    "🌿 *New Lead — Mex Landscaping*",
-    data.page ? `_${String(data.page).trim()}_` : null,
+    "New Website Lead",
     "",
-    row("👤", data.name),
-    row("📞", data.phone),
-    row("✉️", data.email),
-    row("📍", data.zip),
-    row("🛠", data.service),
-    row("💰", data.budget),
-    row("⏱", data.timeline),
-    row("🏠", data.property_type),
-    data.message ? `📝 ${String(data.message).trim()}` : null,
+    line("Name", data.name),
+    line("Phone", data.phone),
+    line("Email", data.email),
+    line("Location", data.zip),
+    line("Service", data.service),
+    line("Budget", data.budget),
+    line("Timeline", data.timeline),
+    line("Property", data.property_type),
+    line("Details", data.message),
+    line("Source", data.page),
   ].filter((l) => l !== null).join("\n");
 
   try {
@@ -52,7 +54,6 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         chat_id: chatId,
         text,
-        parse_mode: "Markdown",
         disable_web_page_preview: true,
       }),
     });
