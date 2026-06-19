@@ -171,12 +171,16 @@ const labelClass = green
         if (data.success) {
           form.classList.add("hidden");
           success?.classList.remove("hidden");
+          // GA4 event (direct gtag) for the hardcoded GA4 tag.
           if (typeof (window as any).gtag === "function") {
             (window as any).gtag("event", "generate_lead", {
               event_category: "lead_form",
-              event_label: "estimate_request",
+              event_label: pageName || location.pathname,
             });
           }
+          // dataLayer push so GTM can fire a Google Ads conversion on lead_submit.
+          (window as any).dataLayer = (window as any).dataLayer || [];
+          (window as any).dataLayer.push({ event: "lead_submit", form_page: pageName || location.pathname });
           return;
         }
         throw new Error(data.message || "Submission failed");

@@ -1,0 +1,113 @@
+---
+import "../styles/global.css";
+import Icon from "../components/Icon.astro";
+import { business } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+}
+const { title, description, path } = Astro.props;
+const site = "https://www.mexlandscaping.com";
+const canonical = new URL(path, site).href;
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5CFHNLJV');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <!-- Paid landing page: keep out of the index. -->
+    <meta name="robots" content="noindex,nofollow" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CRXNSCNB4M" is:inline></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CRXNSCNB4M');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="flex min-h-screen flex-col pb-16 sm:pb-0">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CFHNLJV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Minimal header: logo + phone only. No nav = one conversion path. -->
+    <header class="bg-ink-900 text-white">
+      <div class="container-page flex h-20 items-center justify-between gap-4">
+        <a href="/" aria-label="Mex Landscaping home" class="inline-flex shrink-0 items-center">
+          <img src="/images/mex-landscaping-logo.png" alt="Mex Landscaping Inc." width="358" height="255" class="h-14 w-auto" />
+        </a>
+        <a
+          href={business.phoneHref}
+          data-tel
+          class="inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-bold text-ink-900 transition hover:bg-forest-50 sm:text-base"
+        >
+          <Icon name="phone" class="h-4 w-4 text-leaf-500" />
+          {business.phoneDisplay}
+        </a>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <!-- Minimal footer -->
+    <footer class="bg-ink-900 text-white/60">
+      <div class="container-page flex flex-col items-center gap-3 py-8 text-center text-sm">
+        <p class="font-display text-base font-semibold tracking-wide text-white">{business.legalName}</p>
+        <p>Licensed &amp; Insured · Serving Norristown &amp; the Main Line</p>
+        <a href={business.phoneHref} data-tel class="font-semibold text-white hover:text-leaf-400">{business.phoneDisplay}</a>
+        <p class="text-white/40">© {year} {business.legalName}. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Sticky mobile call/estimate bar -->
+    <div class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t border-white/10 bg-ink-900 sm:hidden">
+      <a href={business.phoneHref} data-tel class="flex items-center justify-center gap-2 py-3.5 font-display font-semibold tracking-wide text-white">
+        <Icon name="phone" class="h-5 w-5 text-leaf-400" />
+        Call Now
+      </a>
+      <a href="#estimate" class="flex items-center justify-center gap-2 bg-leaf-500 py-3.5 font-display font-semibold tracking-wide text-white">
+        Free Estimate
+        <Icon name="arrow" class="h-4 w-4" />
+      </a>
+    </div>
+
+    <script is:inline>
+      // Push a dataLayer event on any click-to-call so GTM can fire a
+      // Google Ads call conversion.
+      document.querySelectorAll('a[data-tel]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'phone_click', form_page: document.title });
+        });
+      });
+    </script>
+  </body>
+</html>

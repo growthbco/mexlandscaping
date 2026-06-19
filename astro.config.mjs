@@ -18,6 +18,8 @@ export default defineConfig({
     sitemap({
       changefreq: 'monthly',
       priority: 0.7,
+      // Paid landing pages are noindex; keep them out of the sitemap.
+      filter: (page) => !page.includes('/lp/'),
     }),
   ],
 });
