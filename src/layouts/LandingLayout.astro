@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Icon from "../components/Icon.astro";
+import MobileCtaBar from "../components/MobileCtaBar.astro";
 import { business } from "../data/site";
 
 interface Props {
@@ -28,7 +29,9 @@ const year = new Date().getFullYear();
     })(window,document,'script','dataLayer','GTM-5CFHNLJV');</script>
     <!-- End Google Tag Manager -->
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -88,21 +91,12 @@ const year = new Date().getFullYear();
     </footer>
 
     <!-- Sticky mobile call/estimate bar -->
-    <div class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t border-white/10 bg-ink-900 sm:hidden">
-      <a href={business.phoneHref} data-tel class="flex items-center justify-center gap-2 py-3.5 font-display font-semibold tracking-wide text-white">
-        <Icon name="phone" class="h-5 w-5 text-leaf-400" />
-        Call Now
-      </a>
-      <a href="#estimate" class="flex items-center justify-center gap-2 bg-leaf-500 py-3.5 font-display font-semibold tracking-wide text-white">
-        Free Estimate
-        <Icon name="arrow" class="h-4 w-4" />
-      </a>
-    </div>
+    <MobileCtaBar estimateHref="#estimate" />
 
     <script is:inline>
       // Push a dataLayer event on any click-to-call so GTM can fire a
       // Google Ads call conversion.
-      document.querySelectorAll('a[data-tel]').forEach(function (el) {
+      document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
         el.addEventListener('click', function () {
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({ event: 'phone_click', form_page: document.title });

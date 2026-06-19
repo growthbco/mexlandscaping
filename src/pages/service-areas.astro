@@ -4,6 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import Section from "../components/Section.astro";
 import SectionHeading from "../components/SectionHeading.astro";
 import CtaBanner from "../components/CtaBanner.astro";
+import MapEmbed from "../components/MapEmbed.astro";
 import Icon from "../components/Icon.astro";
 import { cities } from "../data/site";
 import { designPath, snowPath } from "../data/locations";
@@ -47,6 +48,12 @@ const description =
           </div>
         ))
       }
+    </div>
+
+    <div class="mt-14">
+      <h2 class="font-display text-2xl font-semibold text-forest-900">Based in Norristown, PA</h2>
+      <p class="mt-2 text-forest-700">Centrally located to serve Montgomery County and the Main Line.</p>
+      <MapEmbed class="mt-6" />
     </div>
   </Section>
 

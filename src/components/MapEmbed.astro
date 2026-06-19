@@ -1,0 +1,19 @@
+---
+// Google Maps embed of the Mex Landscaping Google Business Profile location.
+// Reinforces local SEO (NAP + map) on relevant pages. Lazy-loaded.
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+---
+
+<div class={`overflow-hidden rounded-2xl border border-forest-100 shadow-sm ${className}`}>
+  <iframe
+    title="Mex Landscaping location on Google Maps"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3050.838022708453!2d-75.36105792331027!3d40.123613071488265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c697be042d00f1%3A0xaa38175854085a96!2sMex%20Landscaping!5e0!3m2!1sen!2sus!4v1781884273520!5m2!1sen!2sus"
+    class="block h-[320px] w-full sm:h-[400px]"
+    style="border:0;"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>

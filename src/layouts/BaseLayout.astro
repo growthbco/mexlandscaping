@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import MobileCtaBar from "../components/MobileCtaBar.astro";
 import { business } from "../data/site";
 
 interface Props {
@@ -76,7 +77,9 @@ const allSchema = [localBusiness, ...schema];
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5CFHNLJV');</script>
     <!-- End Google Tag Manager -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{title}</title>
@@ -126,14 +129,24 @@ const allSchema = [localBusiness, ...schema];
       ))
     }
   </head>
-  <body class="flex min-h-screen flex-col">
+  <body class="flex min-h-screen flex-col pb-16 sm:pb-0">
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CFHNLJV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <Header />
     <main class="flex-1">
       <slot />
     </main>
     <Footer />
+    <MobileCtaBar />
+    <script is:inline>
+      // Push a dataLayer event on any click-to-call so GTM can fire a
+      // Google Ads call conversion.
+      document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'phone_click', form_page: document.title });
+        });
+      });
+    </script>
   </body>
 </html>
