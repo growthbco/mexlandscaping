@@ -153,9 +153,9 @@
       "statusCode": 301
     },
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "mexlandscaping.com" }],
-      "destination": "https://www.mexlandscaping.com/:path*",
+      "destination": "https://www.mexlandscaping.com/$1",
       "statusCode": 301
     }
   ]
