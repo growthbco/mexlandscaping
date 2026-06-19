@@ -151,6 +151,12 @@
       "source": "/category/uncategorized/",
       "destination": "/blog/",
       "statusCode": 301
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "mexlandscaping.com" }],
+      "destination": "https://www.mexlandscaping.com/:path*",
+      "statusCode": 301
     }
   ]
 }
