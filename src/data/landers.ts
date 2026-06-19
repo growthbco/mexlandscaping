@@ -308,6 +308,68 @@ export const landers: Lander[] = [
       },
     ],
   },
+  {
+    slug: "hardscaping",
+    adGroup: "Hardscaping (PMax)",
+    metaTitle: "Custom Hardscaping | Patios, Driveways & Walls | Mex Landscaping",
+    metaDescription:
+      "Custom hardscaping in Norristown and Montgomery County, PA: paver patios, driveways, walkways, retaining walls, and stonework. Built to last. Free estimate.",
+    h1: "Custom Hardscaping in Norristown & the Main Line",
+    subhead:
+      "Paver patios, driveways, walkways, retaining walls, and stonework, designed and built by one team and engineered to last for decades. Free estimate.",
+    heroImage: "/images/patio.jpg",
+    formService: "Hardscaping",
+    trust: ["Licensed & Insured", "Locally Owned", "5-Star Rated", "Free Estimates"],
+    benefits: [
+      {
+        title: "One team, design through build",
+        body: "We design your hardscape and build it with our own crews. Patios, walls, walkways, and driveways planned together so everything connects and the finished space looks intentional, not pieced together.",
+      },
+      {
+        title: "Engineered to last decades",
+        body: "Every patio, wall, and driveway starts with excavation, a compacted base, and drainage built in. That hidden groundwork is the single biggest reason our work stays level and tight for the long haul.",
+      },
+      {
+        title: "Premium materials, high-end finish",
+        body: "Concrete pavers, natural flagstone and bluestone, full stone, and Belgian block. We match materials to your home and deliver the kind of finish that fits a premium property.",
+      },
+    ],
+    included: [
+      "Paver and natural stone patios",
+      "Paver, stone, and Belgian block driveways",
+      "Walkways, steps, and entries",
+      "Retaining and seating walls",
+      "Architectural stone and stonework",
+      "Engineered base, drainage, and clean finish",
+    ],
+    gallery: [
+      { src: "/images/patio.jpg", label: "Custom paver patio" },
+      { src: "/images/driveway.jpg", label: "Paver driveway" },
+      { src: "/images/stone-wall.jpg", label: "Natural stone wall" },
+    ],
+    faqs: [
+      {
+        q: "What is hardscaping?",
+        a: "Hardscaping is the built, structural side of a landscape: patios, walkways, driveways, retaining and seating walls, steps, and stonework. We design and build all of it so the hard elements give your yard its shape and function.",
+      },
+      {
+        q: "How much does a hardscaping project cost?",
+        a: "It varies widely by scope, materials, square footage, and site conditions like slope and drainage. A single walkway is a modest project; a full backyard with a patio, walls, and stonework is a larger investment. We provide a clear, itemized estimate and can phase the work.",
+      },
+      {
+        q: "Do you design as well as build?",
+        a: "Yes. We are a design-build contractor, so the same team plans your project and installs it. That keeps the design grounded in what can actually be built on your site and gives you one accountable point of contact from start to finish.",
+      },
+      {
+        q: "Can a large project be done in phases?",
+        a: "Yes. We can design the full vision up front, then build it in stages that fit your budget and timeline, making sure earlier phases connect cleanly with what comes later.",
+      },
+      {
+        q: "What areas do you serve?",
+        a: "We build hardscaping throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, Conshohocken, Plymouth Meeting, Gladwyne, and Newtown Square.",
+      },
+    ],
+  },
 ];
 
 export function getLander(slug: string) {
