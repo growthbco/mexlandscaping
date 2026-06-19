@@ -81,10 +81,10 @@ const labelClass = green
         <span class={labelClass}>Budget range</span>
         <select name="budget" required class={inputClass}>
           <option value="" disabled selected>{green ? "Budget range*" : "Select a budget range"}</option>
-          <option value="$5k - $15k">$5k - $15k</option>
-          <option value="$15k - $40k">$15k - $40k</option>
-          <option value="$40k - $100k">$40k - $100k</option>
-          <option value="$100k+">$100k+</option>
+          <option value="5k to 15k">$5k - $15k</option>
+          <option value="15k to 40k">$15k - $40k</option>
+          <option value="40k to 100k">$40k - $100k</option>
+          <option value="100k plus">$100k+</option>
           <option value="Not sure yet">Not sure yet</option>
         </select>
       </label>
@@ -161,39 +161,38 @@ const labelClass = green
         const pageName = document.title.replace(/\s*\|\s*Mex Landscaping.*$/i, "").trim();
         fd.set("subject", `New lead from ${pageName || location.pathname}`);
         fd.set("page", pageName || location.pathname);
-        fd.set("page_url", location.href);
-        const res = await fetch("https://api.web3forms.com/submit", {
+
+        // Send to BOTH channels independently. The Telegram endpoint is our own
+        // (not subject to the email provider's spam filter), so a lead is never
+        // lost just because the email provider hiccups.
+        const payload: Record<string, string> = {};
+        fd.forEach((v, k) => { payload[k] = String(v); });
+        const telegramOk = fetch("/api/notify-lead/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }).then((r) => r.ok).catch(() => false);
+        const emailOk = fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: { Accept: "application/json" },
           body: fd,
-        });
-        const data = await res.json();
-        if (data.success) {
+        }).then((r) => r.json()).then((d) => !!d.success).catch(() => false);
+
+        const [tg, email] = await Promise.all([telegramOk, emailOk]);
+        if (tg || email) {
           form.classList.add("hidden");
           success?.classList.remove("hidden");
-          // GA4 event (direct gtag) for the hardcoded GA4 tag.
           if (typeof (window as any).gtag === "function") {
             (window as any).gtag("event", "generate_lead", {
               event_category: "lead_form",
               event_label: pageName || location.pathname,
             });
           }
-          // dataLayer push so GTM can fire a Google Ads conversion on lead_submit.
           (window as any).dataLayer = (window as any).dataLayer || [];
           (window as any).dataLayer.push({ event: "lead_submit", form_page: pageName || location.pathname });
-          // Fire-and-forget Telegram notification (production only; no-op in dev).
-          try {
-            const payload: Record<string, string> = {};
-            fd.forEach((v, k) => { payload[k] = String(v); });
-            fetch("/api/notify-lead/", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(payload),
-            }).catch(() => {});
-          } catch (e) { /* ignore */ }
           return;
         }
-        throw new Error(data.message || "Submission failed");
+        throw new Error("Submission failed");
       } catch (err) {
         if (btn) {
           btn.disabled = false;
