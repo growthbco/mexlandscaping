@@ -1,0 +1,365 @@
+---
+// Internal tool: the owners fill this out after finishing a job so marketing
+// has everything needed to request a review from the customer. Not linked
+// anywhere on the site, noindex, and excluded from the sitemap.
+import "../styles/global.css";
+import { WEB3FORMS_KEY } from "../data/site";
+
+const services = [
+  "Patio",
+  "Retaining wall",
+  "Walkway or steps",
+  "Drainage",
+  "Planting / garden beds",
+  "Sod or seeded lawn",
+  "Artificial turf",
+  "Landscape lighting",
+  "Fence",
+  "Grading / excavation",
+  "Lawn care / maintenance",
+  "Snow removal",
+  "Other",
+];
+
+const inputClass =
+  "w-full rounded-lg border border-forest-200 bg-white px-4 py-3.5 text-base text-forest-900 placeholder:text-forest-400 focus:border-leaf-500 focus:outline-none focus:ring-2 focus:ring-leaf-500/20";
+const labelClass = "mb-1.5 block text-sm font-semibold text-forest-800";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Completed Project Report | Mex Landscaping</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..700&display=swap"
+    />
+  </head>
+  <body class="min-h-screen bg-sand text-forest-900 antialiased">
+    <main class="mx-auto max-w-xl px-4 py-8 sm:py-12">
+      <div class="mb-8 text-center">
+        <img src="/images/mex-landscaping-logo.png" alt="Mex Landscaping" class="mx-auto h-14 w-auto" />
+        <h1 class="mt-5 font-display text-3xl font-semibold tracking-wide">Job Finished? Tell Us About It</h1>
+        <p class="mt-2 text-forest-600">
+          Fill this out right after you finish a job. It takes 2 minutes and helps us get the customer's
+          review and show off your work online.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-forest-100 bg-white p-5 shadow-sm sm:p-8" data-intake>
+        <form class="space-y-6" data-form>
+          <!-- Honeypot -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off" />
+
+          <fieldset class="space-y-4">
+            <legend class="font-display text-lg font-semibold tracking-wide text-forest-900">The customer</legend>
+            <label class="block">
+              <span class={labelClass}>Customer name *</span>
+              <input name="customer_name" required class={inputClass} placeholder="John Smith" />
+            </label>
+            <label class="block">
+              <span class={labelClass}>Customer phone *</span>
+              <input name="customer_phone" type="tel" required class={inputClass} placeholder="(484) 555-0123" />
+            </label>
+            <label class="block">
+              <span class={labelClass}>Customer email</span>
+              <input name="customer_email" type="email" class={inputClass} placeholder="If you have it" />
+              <span class="mt-1 block text-xs text-forest-500">Helps a lot: we can send the review link by email too.</span>
+            </label>
+            <label class="block">
+              <span class={labelClass}>Job address *</span>
+              <input name="job_address" required class={inputClass} placeholder="123 Main St, Norristown" />
+            </label>
+          </fieldset>
+
+          <fieldset class="space-y-4">
+            <legend class="font-display text-lg font-semibold tracking-wide text-forest-900">The work</legend>
+            <div>
+              <span class={labelClass}>What did we do? Tap all that apply *</span>
+              <div class="grid grid-cols-2 gap-2">
+                {
+                  services.map((s) => (
+                    <label class="flex cursor-pointer items-center gap-2 rounded-lg border border-forest-200 px-3 py-2.5 text-sm font-medium text-forest-800 transition-colors has-checked:border-leaf-500 has-checked:bg-leaf-500/10 has-checked:text-leaf-700">
+                      <input type="checkbox" name="service" value={s} class="h-4 w-4 accent-leaf-600" />
+                      {s}
+                    </label>
+                  ))
+                }
+              </div>
+            </div>
+            <label class="block">
+              <span class={labelClass}>Quick description of the job</span>
+              <textarea
+                name="description"
+                rows="3"
+                class={inputClass}
+                placeholder="Example: tore out old timber wall, built new block retaining wall about 40 ft, planted 6 boxwoods"></textarea>
+            </label>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <label class="block">
+                <span class={labelClass}>Total price *</span>
+                <input name="price" required inputmode="numeric" class={inputClass} placeholder="12,500" />
+              </label>
+              <label class="block">
+                <span class={labelClass}>Date finished *</span>
+                <input name="completed_date" type="date" required class={inputClass} />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="space-y-4">
+            <legend class="font-display text-lg font-semibold tracking-wide text-forest-900">The customer's reaction</legend>
+            <label class="block">
+              <span class={labelClass}>How happy is the customer? *</span>
+              <select name="customer_mood" required class={inputClass}>
+                <option value="" disabled selected>Pick one</option>
+                <option>Very happy, loved it</option>
+                <option>Happy</option>
+                <option>Just OK</option>
+                <option>Had some issues</option>
+              </select>
+            </label>
+            <label class="block">
+              <span class={labelClass}>Did they say anything nice about the work?</span>
+              <textarea
+                name="customer_quote"
+                rows="2"
+                class={inputClass}
+                placeholder="Example: she said the patio came out better than she imagined"></textarea>
+            </label>
+            <label class="block">
+              <span class={labelClass}>Can we post photos of this job online? *</span>
+              <select name="photo_permission" required class={inputClass}>
+                <option value="" disabled selected>Pick one</option>
+                <option>Yes, customer said OK</option>
+                <option>Ask the customer first</option>
+                <option>No</option>
+                <option>Did not ask</option>
+              </select>
+            </label>
+          </fieldset>
+
+          <fieldset class="space-y-3">
+            <legend class="font-display text-lg font-semibold tracking-wide text-forest-900">Photos</legend>
+            <p class="text-sm text-forest-600">
+              Add up to 10 photos. Before and after shots are the best. You can take them right from this page.
+            </p>
+            <label
+              class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-forest-300 bg-sand px-4 py-8 text-center transition-colors hover:border-leaf-500"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-8 w-8 text-leaf-600">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.8 7h.9l1.2-2h6.2l1.2 2h.9A2.8 2.8 0 0 1 20 9.8v7.4a2.8 2.8 0 0 1-2.8 2.8H6.8A2.8 2.8 0 0 1 4 17.2V9.8A2.8 2.8 0 0 1 6.8 7Z" />
+                <circle cx="12" cy="13" r="3.2" />
+              </svg>
+              <span class="font-semibold text-forest-800">Tap to add photos</span>
+              <span class="text-xs text-forest-500">or take a new one with your camera</span>
+              <input type="file" name="photos" accept="image/*" multiple class="hidden" data-photos />
+            </label>
+            <div class="grid grid-cols-3 gap-2 empty:hidden" data-thumbs></div>
+          </fieldset>
+
+          <label class="block">
+            <span class={labelClass}>Anything else we should know?</span>
+            <textarea name="notes" rows="2" class={inputClass} placeholder="Optional"></textarea>
+          </label>
+
+          <button
+            type="submit"
+            data-submit
+            class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-leaf-500 px-7 py-4 font-display text-lg font-semibold tracking-wide text-white transition-colors hover:bg-leaf-600 disabled:opacity-60"
+          >
+            Send Project Report
+          </button>
+          <p class="text-center text-xs text-forest-500" data-status></p>
+        </form>
+
+        <div data-success class="hidden py-6 text-center">
+          <span class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-leaf-500/15 text-leaf-600">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="m5 12 5 5L20 7"/></svg>
+          </span>
+          <h2 class="mt-5 font-display text-2xl font-semibold text-forest-900">Got it, thank you!</h2>
+          <p class="mt-2 text-forest-600">The project report and photos were sent. We will take it from here and ask the customer for a review.</p>
+          <button
+            type="button"
+            data-again
+            class="mt-6 inline-flex items-center justify-center rounded-lg border border-forest-200 px-6 py-3 font-semibold text-forest-800 transition-colors hover:border-leaf-500 hover:text-leaf-700"
+          >
+            Report another job
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script define:vars={{ WEB3FORMS_KEY }}>
+      const root = document.querySelector("[data-intake]");
+      const form = root.querySelector("[data-form]");
+      const success = root.querySelector("[data-success]");
+      const btn = root.querySelector("[data-submit]");
+      const status = root.querySelector("[data-status]");
+      const photoInput = root.querySelector("[data-photos]");
+      const thumbs = root.querySelector("[data-thumbs]");
+
+      const MAX_PHOTOS = 10;
+      let photos = []; // { file, url }
+
+      // Default the date field to today.
+      const dateEl = form.querySelector('[name="completed_date"]');
+      const now = new Date();
+      dateEl.value = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+
+      function renderThumbs() {
+        thumbs.innerHTML = "";
+        photos.forEach((p, i) => {
+          const cell = document.createElement("div");
+          cell.className = "relative";
+          const img = document.createElement("img");
+          img.src = p.url;
+          img.className = "h-24 w-full rounded-lg object-cover";
+          const x = document.createElement("button");
+          x.type = "button";
+          x.textContent = "✕";
+          x.className =
+            "absolute right-1 top-1 grid h-6 w-6 place-items-center rounded-full bg-black/60 text-xs text-white";
+          x.addEventListener("click", () => {
+            URL.revokeObjectURL(p.url);
+            photos.splice(i, 1);
+            renderThumbs();
+          });
+          cell.append(img, x);
+          thumbs.append(cell);
+        });
+      }
+
+      photoInput.addEventListener("change", () => {
+        for (const file of photoInput.files) {
+          if (photos.length >= MAX_PHOTOS) break;
+          if (!file.type.startsWith("image/")) continue;
+          photos.push({ file, url: URL.createObjectURL(file) });
+        }
+        photoInput.value = "";
+        renderThumbs();
+      });
+
+      // Shrink a photo to <=1600px JPEG so uploads are fast on job-site cell
+      // signal and stay under the API body limit. Returns base64 (no prefix).
+      async function compress(file) {
+        const bitmap = await createImageBitmap(file);
+        const scale = Math.min(1, 1600 / Math.max(bitmap.width, bitmap.height));
+        const w = Math.round(bitmap.width * scale);
+        const h = Math.round(bitmap.height * scale);
+        const canvas = document.createElement("canvas");
+        canvas.width = w;
+        canvas.height = h;
+        canvas.getContext("2d").drawImage(bitmap, 0, 0, w, h);
+        bitmap.close();
+        const blob = await new Promise((r) => canvas.toBlob(r, "image/jpeg", 0.8));
+        const dataUrl = await new Promise((r) => {
+          const fr = new FileReader();
+          fr.onload = () => r(fr.result);
+          fr.readAsDataURL(blob);
+        });
+        return String(dataUrl).split(",")[1];
+      }
+
+      const post = (payload) =>
+        fetch("/api/notify-project/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }).then((r) => r.json()).then((d) => !!d.ok).catch(() => false);
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const services = [...form.querySelectorAll('[name="service"]:checked')].map((c) => c.value);
+        if (!services.length) {
+          alert("Please tap at least one type of work.");
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = "Sending…";
+
+        const fd = new FormData(form);
+        const val = (k) => String(fd.get(k) || "").trim();
+        // Strip $ from the price: Web3Forms flags messages with $ as spam.
+        const price = val("price").replace(/\$/g, "");
+        const summary = {
+          kind: "summary",
+          botcheck: fd.get("botcheck") ? "1" : "",
+          customer_name: val("customer_name"),
+          customer_phone: val("customer_phone"),
+          customer_email: val("customer_email"),
+          job_address: val("job_address"),
+          services: services.join(", "),
+          description: val("description"),
+          price,
+          completed_date: val("completed_date"),
+          customer_mood: val("customer_mood"),
+          customer_quote: val("customer_quote"),
+          photo_permission: val("photo_permission"),
+          notes: val("notes"),
+          photo_count: photos.length ? `${photos.length} photo(s) below` : "none",
+        };
+
+        try {
+          status.textContent = "Sending project details…";
+          // Telegram (primary) + email copy via Web3Forms, independently, same
+          // dual-fire pattern as the lead form so a report is never lost.
+          const emailFd = new FormData();
+          emailFd.set("access_key", WEB3FORMS_KEY);
+          emailFd.set("subject", `Completed project: ${summary.customer_name}`);
+          emailFd.set("from_name", "Mex Project Intake");
+          Object.entries(summary).forEach(([k, v]) => {
+            if (k !== "kind" && k !== "botcheck" && v) emailFd.set(k, v);
+          });
+          const [tgOk, emailOk] = await Promise.all([
+            post(summary),
+            fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              headers: { Accept: "application/json" },
+              body: emailFd,
+            }).then((r) => r.json()).then((d) => !!d.success).catch(() => false),
+          ]);
+          if (!tgOk && !emailOk) throw new Error("summary_failed");
+
+          // Photos go to Telegram one at a time so one bad photo does not
+          // sink the rest.
+          let sent = 0;
+          for (let i = 0; i < photos.length; i++) {
+            status.textContent = `Sending photo ${i + 1} of ${photos.length}…`;
+            try {
+              const b64 = await compress(photos[i].file);
+              const ok = await post({
+                kind: "photo",
+                photo: b64,
+                caption: `${summary.customer_name} (${summary.job_address}) photo ${i + 1}/${photos.length}`,
+              });
+              if (ok) sent++;
+            } catch {}
+          }
+          if (photos.length && sent < photos.length) {
+            alert(`Heads up: ${photos.length - sent} photo(s) did not go through. Everything else was sent.`);
+          }
+
+          form.classList.add("hidden");
+          success.classList.remove("hidden");
+          status.textContent = "";
+        } catch {
+          btn.disabled = false;
+          btn.textContent = "Send Project Report";
+          status.textContent = "";
+          alert("Sorry, something went wrong. Please try again, or text the details and photos to the office.");
+        }
+      });
+
+      root.querySelector("[data-again]").addEventListener("click", () => location.reload());
+    </script>
+  </body>
+</html>

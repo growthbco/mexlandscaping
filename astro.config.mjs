@@ -16,10 +16,16 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      changefreq: 'monthly',
-      priority: 0.7,
-      // Paid landing pages are noindex; keep them out of the sitemap.
-      filter: (page) => !page.includes('/lp/'),
+      // changefreq/priority are ignored by Google; lastmod is the signal that matters.
+      lastmod: new Date(),
+      // Keep noindex pages out of the sitemap: paid landers, internal tools,
+      // legal pages, and the empty press-release placeholder.
+      filter: (page) =>
+        !page.includes('/lp/') &&
+        !page.includes('/project-intake/') &&
+        !page.includes('/privacy-policy/') &&
+        !page.includes('/terms-conditions/') &&
+        !page.includes('/press-release/'),
     }),
   ],
 });
