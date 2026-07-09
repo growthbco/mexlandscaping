@@ -70,7 +70,7 @@ export const services: Service[] = [
     title: "Landscape Design & Build",
     category: "design-build",
     icon: "leaf",
-    image: "/images/design-boxwood-beds.webp",
+    image: "/images/lighting-dusk.webp",
     featured: true,
     intro:
       "Full-service landscape design and installation, from a complete property redesign to refined planting, lighting, and grading. We design it, then our own crews build it.",
