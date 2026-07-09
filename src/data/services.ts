@@ -12,6 +12,8 @@ export type ServiceCategory =
   | "snow"
   | "maintenance";
 
+export type ServiceGalleryItem = { src: string; alt: string; caption: string };
+
 export type Service = {
   path: string;
   title: string;
@@ -24,6 +26,8 @@ export type Service = {
   intro: string;
   highlights: string[];
   body: { heading: string; text: string }[];
+  /** Optional real project photos rendered as a captioned grid on the page. */
+  gallery?: ServiceGalleryItem[];
   /** Optional keyword-rich FAQ block (also emitted as FAQPage schema). */
   faqs?: { q: string; a: string }[];
   featured?: boolean;
@@ -75,6 +79,38 @@ export const services: Service[] = [
     featured: true,
     intro:
       "Full-service landscape design and installation, from a complete property redesign to refined planting, lighting, and grading. We design it, then our own crews build it.",
+    gallery: [
+      {
+        src: "/images/design-boxwood-beds.webp",
+        alt: "Sculpted boxwood island bed in a fresh landscape design",
+        caption: "Sculpted boxwood island bed",
+      },
+      {
+        src: "/images/design-front-beds.webp",
+        alt: "Fresh mulch beds and new plantings at the front of a home",
+        caption: "Fresh mulch and new plantings",
+      },
+      {
+        src: "/images/design-porch-beds.webp",
+        alt: "River-rock foundation bed along a front porch",
+        caption: "River-rock foundation bed",
+      },
+      {
+        src: "/images/design-maple-beds.webp",
+        alt: "Mulched planting beds with a Japanese maple",
+        caption: "Beds with Japanese maple",
+      },
+      {
+        src: "/images/curb-colonial.webp",
+        alt: "Colonial home with a redesigned front landscape",
+        caption: "Colonial front landscape",
+      },
+      {
+        src: "/images/curb-craftsman.webp",
+        alt: "Craftsman home with fresh curb appeal landscaping",
+        caption: "Craftsman curb appeal",
+      },
+    ],
     highlights: [
       "Complete property redesigns",
       "Custom planting & bed design",
@@ -134,6 +170,23 @@ export const services: Service[] = [
     image: "/images/turf-deck.webp",
     intro:
       "New sod and seeded lawns engineered to establish fast and last, with the soil prep and grading that make the difference.",
+    gallery: [
+      {
+        src: "/images/sod-seeded.webp",
+        alt: "Freshly installed new lawn",
+        caption: "New lawn installation",
+      },
+      {
+        src: "/images/turf-pool.webp",
+        alt: "Artificial turf lawn and bluestone beside a pool",
+        caption: "Turf and bluestone at the pool",
+      },
+      {
+        src: "/images/curb-stone-house.webp",
+        alt: "Stone-front home with a healthy established lawn",
+        caption: "Stone-front home and lawn",
+      },
+    ],
     highlights: [
       "Soil prep & precision grading",
       "Premium sod or seed blends",
@@ -193,6 +246,23 @@ export const services: Service[] = [
     image: "/images/design-maple-beds.webp",
     intro:
       "Specimen trees, layered shrubs, and perennial plantings, sourced healthy and placed with a designer's eye.",
+    gallery: [
+      {
+        src: "/images/design-maple-beds.webp",
+        alt: "Japanese maple planted in a mulched bed",
+        caption: "Japanese maple in a mulched bed",
+      },
+      {
+        src: "/images/design-boxwood-beds.webp",
+        alt: "Sculpted boxwood plantings in an island bed",
+        caption: "Sculpted boxwood plantings",
+      },
+      {
+        src: "/images/curb-tan-house.webp",
+        alt: "Foundation beds and layered plantings at a home",
+        caption: "Foundation beds and plantings",
+      },
+    ],
     highlights: [
       "Specimen & native selections",
       "Layered, four-season interest",
@@ -253,6 +323,18 @@ export const services: Service[] = [
     featured: true,
     intro:
       "Architectural low-voltage lighting that transforms your property after dark, highlighting the home, the trees, and the spaces you've built.",
+    gallery: [
+      {
+        src: "/images/lighting-dusk.webp",
+        alt: "Low-voltage architectural landscape lighting at dusk",
+        caption: "Architectural lighting at dusk",
+      },
+      {
+        src: "/images/firepit-lit.webp",
+        alt: "Fire feature and patio glowing in the evening",
+        caption: "Fire feature in the evening",
+      },
+    ],
     highlights: [
       "Architectural & path lighting",
       "Tree uplighting & moonlighting",
@@ -312,6 +394,23 @@ export const services: Service[] = [
     image: "/images/drainage-drycreek.webp",
     intro:
       "Yard drainage solutions built to last: French drains, dry wells, and grading that protect your property from standing water and erosion.",
+    gallery: [
+      {
+        src: "/images/drainage-pipe.webp",
+        alt: "French drain outlet discharging water away from the house",
+        caption: "French drain outlet",
+      },
+      {
+        src: "/images/drainage-riprap.webp",
+        alt: "Rip-rap stone drainage swale on a slope",
+        caption: "Rip-rap drainage swale",
+      },
+      {
+        src: "/images/drainage-creek-steps.webp",
+        alt: "Dry creek drainage channel with stone steps",
+        caption: "Dry creek with stone steps",
+      },
+    ],
     highlights: [
       "Drainage assessment & grading",
       "French drains & dry wells",
@@ -371,6 +470,18 @@ export const services: Service[] = [
     image: "/images/commercial-after.webp",
     intro:
       "Polished commercial landscapes that elevate your property and reflect well on your business.",
+    gallery: [
+      {
+        src: "/images/commercial-before.webp",
+        alt: "Bare commercial lot before landscape installation",
+        caption: "Before: bare lot, staged material",
+      },
+      {
+        src: "/images/commercial-after.webp",
+        alt: "Commercial property with new shade trees and planted beds",
+        caption: "After: new trees and planted beds",
+      },
+    ],
     highlights: [
       "Design & installation",
       "Commercial-grade plantings",
@@ -435,6 +546,23 @@ export const services: Service[] = [
       "One partner for commercial landscaping, grounds maintenance, and snow management across Montgomery County and the Main Line. Documented service, single contract. (484) 261-6650.",
     intro:
       "One accountable partner for commercial properties: landscape installation, year-round grounds maintenance, and documented snow management under a single contract.",
+    gallery: [
+      {
+        src: "/images/commercial-before.webp",
+        alt: "Commercial lot before grounds installation",
+        caption: "Before: unfinished commercial lot",
+      },
+      {
+        src: "/images/commercial-after.webp",
+        alt: "Commercial grounds after trees and bed installation",
+        caption: "After: finished commercial grounds",
+      },
+      {
+        src: "/images/design-front-beds.webp",
+        alt: "Fresh planted beds and mulch at a building frontage",
+        caption: "Fresh beds and plantings",
+      },
+    ],
     highlights: [
       "Single contract: landscaping + snow",
       "Licensed & insured, documentation on request",
@@ -503,6 +631,28 @@ export const services: Service[] = [
     featured: true,
     intro:
       "Patios, walls, walkways, and driveways built to last decades: the structural backbone of a high-end outdoor space.",
+    gallery: [
+      {
+        src: "/images/wall-block-curved.webp",
+        alt: "Curved segmental block seat wall",
+        caption: "Curved block seat wall",
+      },
+      {
+        src: "/images/pergola-patio.webp",
+        alt: "Paver patio with cedar pergola",
+        caption: "Paver patio and pergola",
+      },
+      {
+        src: "/images/walkway-cobble.webp",
+        alt: "Paver walkway with cobblestone edging",
+        caption: "Walkway with cobble edging",
+      },
+      {
+        src: "/images/driveway-gravel-pad.webp",
+        alt: "Stone parking pad with timber edging",
+        caption: "Stone parking pad",
+      },
+    ],
     highlights: [
       "Patios & walkways",
       "Retaining & seating walls",
@@ -563,6 +713,23 @@ export const services: Service[] = [
     featured: true,
     intro:
       "Paver and natural-stone patios designed as true outdoor rooms: level, durable, and built for years of gatherings.",
+    gallery: [
+      {
+        src: "/images/pergola-patio.webp",
+        alt: "Paver patio with a custom cedar pergola",
+        caption: "Paver patio with cedar pergola",
+      },
+      {
+        src: "/images/firepit-lit.webp",
+        alt: "Gravel patio with a custom stone fire pit",
+        caption: "Gravel patio and fire pit",
+      },
+      {
+        src: "/images/turf-pool.webp",
+        alt: "Bluestone paving and turf beside a pool",
+        caption: "Bluestone by the pool",
+      },
+    ],
     highlights: [
       "Paver & natural stone",
       "Engineered base & drainage",
@@ -625,6 +792,23 @@ export const services: Service[] = [
       "Custom paver and natural-stone walkways and steps in Norristown, PA. Mex Landscaping builds durable, elegant paths that elevate your property. Free estimate.",
     intro:
       "Paver and natural-stone walkways and steps that guide guests through your property with craftsmanship and curb appeal.",
+    gallery: [
+      {
+        src: "/images/walkway-cobble.webp",
+        alt: "Paver walkway with cobblestone edging",
+        caption: "Walkway with cobblestone edging",
+      },
+      {
+        src: "/images/drainage-creek-steps.webp",
+        alt: "Natural stone steps crossing a dry creek bed",
+        caption: "Stone steps over a dry creek",
+      },
+      {
+        src: "/images/wall-stone-after.webp",
+        alt: "Natural stone steps beside a fieldstone wall",
+        caption: "Stone steps and fieldstone wall",
+      },
+    ],
     highlights: [
       "Paver & natural stone paths",
       "Stone & block steps",
@@ -685,6 +869,18 @@ export const services: Service[] = [
     featured: true,
     intro:
       "Paver and stone driveways with lasting curb appeal, plus the engineered base to handle weight and weather.",
+    gallery: [
+      {
+        src: "/images/driveway-gravel-pad.webp",
+        alt: "Stone parking pad with timber edging",
+        caption: "Stone parking pad with timber edge",
+      },
+      {
+        src: "/images/wall-stone-house.webp",
+        alt: "Driveway entrance framed by a natural fieldstone wall",
+        caption: "Driveway entrance and stone wall",
+      },
+    ],
     highlights: [
       "Heavy-duty base preparation",
       "Paver & stone finishes",
@@ -747,6 +943,38 @@ export const services: Service[] = [
       "Engineered retaining walls and seating walls in Norristown, PA. Mex Landscaping builds structural, beautiful walls that hold slopes and add usable space. Free estimate.",
     intro:
       "Engineered retaining walls and seating walls that hold slopes, create usable space, and anchor your outdoor design.",
+    gallery: [
+      {
+        src: "/images/wall-stone-during.webp",
+        alt: "Masons hand-laying a natural fieldstone retaining wall",
+        caption: "Hand-laying the fieldstone wall",
+      },
+      {
+        src: "/images/wall-stone-after.webp",
+        alt: "Finished natural fieldstone wall with stone steps",
+        caption: "Finished fieldstone wall and steps",
+      },
+      {
+        src: "/images/wall-block-curved.webp",
+        alt: "Curved segmental block seating wall",
+        caption: "Curved segmental block seat wall",
+      },
+      {
+        src: "/images/wall-timber-steps.webp",
+        alt: "Timber retaining wall with built-in steps",
+        caption: "Timber wall with built-in steps",
+      },
+      {
+        src: "/images/wall-timber-L.webp",
+        alt: "L-shaped timber retaining wall with drainage",
+        caption: "L-shaped timber wall and drainage",
+      },
+      {
+        src: "/images/wall-timber-long.webp",
+        alt: "Long timber retaining wall holding a slope",
+        caption: "Long timber retaining wall",
+      },
+    ],
     highlights: [
       "Engineered, code-aware builds",
       "Block, natural stone & timber",
@@ -871,6 +1099,28 @@ export const services: Service[] = [
       "Custom outdoor living spaces in Norristown, PA: fire pits, fire features, outdoor kitchens, and water features. Mex Landscaping designs and builds it all. Free estimate.",
     intro:
       "Custom outdoor living spaces with fire features, kitchens, and water features, designed to extend your season and the way you use your home.",
+    gallery: [
+      {
+        src: "/images/firepit-lit.webp",
+        alt: "Custom stone fire pit and gravel patio at dusk",
+        caption: "Fire pit and gravel patio",
+      },
+      {
+        src: "/images/pergola-patio.webp",
+        alt: "Cedar pergola built over a paver patio",
+        caption: "Cedar pergola over a paver patio",
+      },
+      {
+        src: "/images/turf-pool.webp",
+        alt: "Turf lawn meeting bluestone paving beside a pool",
+        caption: "Turf and bluestone by the pool",
+      },
+      {
+        src: "/images/lighting-dusk.webp",
+        alt: "Architectural landscape lighting at dusk",
+        caption: "Architectural landscape lighting",
+      },
+    ],
     highlights: [
       "Fire pits & fire features",
       "Outdoor kitchens & bars",
@@ -934,6 +1184,23 @@ export const services: Service[] = [
       "Custom fire pits and fire features in Norristown, PA. Mex Landscaping builds wood-burning and gas fire features in stone and block to match your patio. Free estimate.",
     intro:
       "Custom-built fire pits and fire features: the centerpiece of a great outdoor space, built in stone and block to match your patio.",
+    gallery: [
+      {
+        src: "/images/firepit-lit.webp",
+        alt: "Custom stone fire pit lit at dusk on a gravel patio",
+        caption: "Stone fire pit at dusk",
+      },
+      {
+        src: "/images/pergola-patio.webp",
+        alt: "Cedar pergola over a paver patio",
+        caption: "Cedar pergola and paver patio",
+      },
+      {
+        src: "/images/lighting-dusk.webp",
+        alt: "Landscape lighting extending the evening outdoors",
+        caption: "Evening landscape lighting",
+      },
+    ],
     highlights: [
       "Wood-burning & gas features",
       "In-ground & built-up designs",

@@ -58,6 +58,33 @@ const otherCats = premiumCategories
         ))
       }
 
+      {
+        service.gallery && service.gallery.length > 0 && (
+          <div class="mb-10">
+            <h2 class="font-display text-2xl font-semibold text-forest-900">
+              Recent work by Mex Landscaping
+            </h2>
+            <div class="mt-5 grid gap-4 sm:grid-cols-3">
+              {service.gallery.map((g) => (
+                <figure class="overflow-hidden rounded-2xl border border-forest-100 bg-white">
+                  <img
+                    src={g.src}
+                    alt={g.alt}
+                    loading="lazy"
+                    decoding="async"
+                    class="aspect-[4/3] w-full object-cover"
+                  />
+                  <figcaption class="px-4 py-3 text-sm text-forest-700">{g.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+            <p class="mt-4 text-sm text-forest-600">
+              See more on <a href="/our-work/" class="font-semibold text-leaf-600 hover:text-leaf-500">Our Work</a> and in our <a href="/projects/" class="font-semibold text-leaf-600 hover:text-leaf-500">project case studies</a>.
+            </p>
+          </div>
+        )
+      }
+
       <h2 class="font-display mt-2 text-2xl font-semibold text-forest-900">
         What's included
       </h2>
