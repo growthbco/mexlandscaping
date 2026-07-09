@@ -113,38 +113,6 @@ const labelClass = "mb-1.5 block text-sm font-semibold text-forest-800";
             </div>
           </fieldset>
 
-          <fieldset class="space-y-4">
-            <legend class="font-display text-lg font-semibold tracking-wide text-forest-900">The customer's reaction</legend>
-            <label class="block">
-              <span class={labelClass}>How happy is the customer? *</span>
-              <select name="customer_mood" required class={inputClass}>
-                <option value="" disabled selected>Pick one</option>
-                <option>Very happy, loved it</option>
-                <option>Happy</option>
-                <option>Just OK</option>
-                <option>Had some issues</option>
-              </select>
-            </label>
-            <label class="block">
-              <span class={labelClass}>Did they say anything nice about the work?</span>
-              <textarea
-                name="customer_quote"
-                rows="2"
-                class={inputClass}
-                placeholder="Example: she said the patio came out better than she imagined"></textarea>
-            </label>
-            <label class="block">
-              <span class={labelClass}>Can we post photos of this job online? *</span>
-              <select name="photo_permission" required class={inputClass}>
-                <option value="" disabled selected>Pick one</option>
-                <option>Yes, customer said OK</option>
-                <option>Ask the customer first</option>
-                <option>No</option>
-                <option>Did not ask</option>
-              </select>
-            </label>
-          </fieldset>
-
           <fieldset class="space-y-3">
             <legend class="font-display text-lg font-semibold tracking-wide text-forest-900">Photos</legend>
             <p class="text-sm text-forest-600">
@@ -163,11 +131,6 @@ const labelClass = "mb-1.5 block text-sm font-semibold text-forest-800";
             </label>
             <div class="grid grid-cols-3 gap-2 empty:hidden" data-thumbs></div>
           </fieldset>
-
-          <label class="block">
-            <span class={labelClass}>Anything else we should know?</span>
-            <textarea name="notes" rows="2" class={inputClass} placeholder="Optional"></textarea>
-          </label>
 
           <button
             type="submit"
@@ -301,10 +264,6 @@ const labelClass = "mb-1.5 block text-sm font-semibold text-forest-800";
           description: val("description"),
           price,
           completed_date: val("completed_date"),
-          customer_mood: val("customer_mood"),
-          customer_quote: val("customer_quote"),
-          photo_permission: val("photo_permission"),
-          notes: val("notes"),
           photo_count: photos.length ? `${photos.length} photo(s) below` : "none",
         };
 

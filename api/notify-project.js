@@ -63,10 +63,6 @@ export default async function handler(req, res) {
       line("Details", data.description),
       line("Price", data.price),
       line("Completed", data.completed_date),
-      line("Customer mood", data.customer_mood),
-      line("Nice quote", data.customer_quote),
-      line("Photo permission", data.photo_permission),
-      line("Notes", data.notes),
       line("Photos coming", data.photo_count),
     ].filter((l) => l !== null).join("\n");
 
