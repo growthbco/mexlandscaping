@@ -68,12 +68,6 @@ const gallery = [
   { src: "/images/wall-stone-after.webp", label: "Natural stone wall & steps" },
 ];
 
-const heroBullets = [
-  "Licensed, Insured & Locally Owned",
-  "5-Star Rated by Homeowners",
-  "Free Estimates Within 24 Hours",
-  "High-Quality Materials & Craftsmanship",
-];
 ---
 
 <BaseLayout
@@ -100,7 +94,7 @@ const heroBullets = [
     <div class="container-page relative grid items-center gap-12 py-16 lg:grid-cols-[1fr_34rem] lg:gap-14 lg:py-20">
       <div class="animate-fade-up">
         <span class="block text-sm font-bold uppercase tracking-eyebrow text-gold-300">
-          5-Star Landscaping on the Main Line
+          Landscape Design &amp; Build on the Main Line
         </span>
         <h1 class="mt-4 text-balance font-display text-5xl font-semibold leading-[1.02] sm:text-6xl lg:text-7xl">
           High-end landscape design &amp; build in Norristown, PA
@@ -110,16 +104,16 @@ const heroBullets = [
           landscape redesigns and patios to fire features and hardscaping, for fine
           homes across Norristown, the Main Line, and beyond.
         </p>
-        <ul class="mt-8 space-y-3.5">
-          {heroBullets.map((t) => (
-            <li class="flex items-center gap-3 font-medium">
-              <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-clay-400 text-ink-950">
-                <Icon name="check" class="h-3.5 w-3.5" />
-              </span>
-              {t}
-            </li>
-          ))}
-        </ul>
+        <p class="mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 text-[15px] font-medium text-white/90">
+          <span>Licensed &amp; Insured</span>
+          <span class="text-gold-300" aria-hidden="true">·</span>
+          <span class="inline-flex items-center gap-1.5">
+            <Icon name="star" class="h-4 w-4 text-gold-300" />
+            4.9 on Google
+          </span>
+          <span class="text-gold-300" aria-hidden="true">·</span>
+          <span>Free Estimates Within 24 Hours</span>
+        </p>
         <div class="mt-9 flex flex-col gap-3 sm:flex-row">
           <a
             href={business.phoneHref}
@@ -134,7 +128,7 @@ const heroBullets = [
 
       <div class="animate-fade-up lg:justify-self-end">
         <div class="w-full lg:w-[34rem]">
-          <LeadForm theme="green" />
+          <LeadForm />
         </div>
       </div>
     </div>
@@ -166,7 +160,10 @@ const heroBullets = [
               <a href={f.href}>{f.label}</a>
             </h3>
             <p class="mt-2 flex-1 text-sm leading-relaxed text-forest-600">{f.blurb}</p>
-            <Button href={f.href} class="mt-5 w-full">Learn More</Button>
+            <a href={f.href} class="mt-5 inline-flex items-center gap-1.5 font-semibold text-leaf-600 transition hover:text-leaf-500">
+              View service
+              <Icon name="arrow" class="h-4 w-4" />
+            </a>
           </div>
         </div>
       ))}
