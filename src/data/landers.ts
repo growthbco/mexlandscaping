@@ -29,7 +29,7 @@ export const landers: Lander[] = [
     h1: "Inground Trampoline Installation in Montgomery County, PA",
     subhead:
       "Safe, built-to-last sunken trampolines, installed start to finish. We handle the dig, the drainage, the install, and a clean finish. Free, no-obligation estimate.",
-    heroImage: "/images/lawn-install.webp",
+    heroImage: "/images/trampoline-1.webp",
     formService: "Inground Trampolines",
     trust: ["Licensed & Insured", "Locally Owned", "5-Star Rated", "Free Estimates"],
     benefits: [
@@ -54,8 +54,9 @@ export const landers: Lander[] = [
       "Final grading, cleanup, and walkthrough",
     ],
     gallery: [
-      { src: "/images/lawn-install.webp", label: "Fresh, level backyard lawn" },
-      { src: "/images/landscape-design.webp", label: "Finished outdoor space" },
+      { src: "/images/trampoline-1.webp", label: "Sunken trampoline, flush with the lawn" },
+      { src: "/images/trampoline-3.webp", label: "Inground install with safety net enclosure" },
+      { src: "/images/trampoline-2.webp", label: "Finished, level, and ready to use" },
     ],
     faqs: [
       {
@@ -85,7 +86,7 @@ export const landers: Lander[] = [
     h1: "Custom Patio Installation in Norristown & the Main Line",
     subhead:
       "Paver, natural stone, and flagstone patios designed and built as true outdoor rooms. Level, durable, and built on a base that lasts. Free patio estimate.",
-    heroImage: "/images/patio.jpg",
+    heroImage: "/images/pergola-patio.webp",
     formService: "Patios",
     trust: ["Licensed & Insured", "Locally Owned", "5-Star Rated", "Free Estimates"],
     benefits: [
@@ -111,9 +112,9 @@ export const landers: Lander[] = [
       "Cleanup and final walkthrough",
     ],
     gallery: [
-      { src: "/images/patio.jpg", label: "Custom paver patio" },
-      { src: "/images/walkway.jpg", label: "Walkway and plantings" },
-      { src: "/images/fire-pit.webp", label: "Patio with fire feature" },
+      { src: "/images/firepit-lit.webp", label: "Fire pit and gravel patio" },
+      { src: "/images/walkway-cobble.webp", label: "Paver walkway and cobble edging" },
+      { src: "/images/wall-block-curved.webp", label: "Seat wall and plantings" },
     ],
     faqs: [
       {
@@ -143,7 +144,7 @@ export const landers: Lander[] = [
     h1: "Custom Paver & Stone Driveway Installation",
     subhead:
       "Paver, natural stone, and Belgian block driveways built for real weight and decades of freeze-thaw. Boost your curb appeal. Free driveway estimate.",
-    heroImage: "/images/driveway.jpg",
+    heroImage: "/images/driveway-gravel-pad.webp",
     formService: "Driveways",
     trust: ["Licensed & Insured", "Locally Owned", "5-Star Rated", "Free Estimates"],
     benefits: [
@@ -169,9 +170,9 @@ export const landers: Lander[] = [
       "Cleanup and final walkthrough",
     ],
     gallery: [
-      { src: "/images/driveway.jpg", label: "Paver driveway" },
-      { src: "/images/walkway.jpg", label: "Walkway and entry" },
-      { src: "/images/stone-wall.jpg", label: "Stone detail" },
+      { src: "/images/wall-stone-house.webp", label: "Driveway framed by stone walls" },
+      { src: "/images/walkway-cobble.webp", label: "Walkway and entry" },
+      { src: "/images/drainage-creek-steps.webp", label: "Grading and drainage" },
     ],
     faqs: [
       {
@@ -201,7 +202,7 @@ export const landers: Lander[] = [
     h1: "Engineered Retaining Walls in Montgomery County, PA",
     subhead:
       "Block, natural stone, and boulder retaining walls that hold back soil, control erosion, and turn a steep slope into usable yard. Built to last. Free estimate.",
-    heroImage: "/images/stone-wall.jpg",
+    heroImage: "/images/wall-stone-after.webp",
     formService: "Retaining & Seating Walls",
     trust: ["Licensed & Insured", "Locally Owned", "5-Star Rated", "Free Estimates"],
     benefits: [
@@ -227,9 +228,9 @@ export const landers: Lander[] = [
       "Cleanup and final walkthrough",
     ],
     gallery: [
-      { src: "/images/stone-wall.jpg", label: "Natural stone retaining wall" },
-      { src: "/images/patio.jpg", label: "Wall with patio" },
-      { src: "/images/landscape-design.webp", label: "Terraced landscape" },
+      { src: "/images/wall-timber-steps.webp", label: "Timber wall with built-in steps" },
+      { src: "/images/wall-block-curved.webp", label: "Curved segmental block wall" },
+      { src: "/images/wall-stone-during.webp", label: "Natural stonework in progress" },
     ],
     faqs: [
       {
@@ -259,7 +260,7 @@ export const landers: Lander[] = [
     h1: "Yard Drainage & Storm Water Solutions",
     subhead:
       "Standing water, a soggy lawn, water in the basement, or erosion? We find the root cause and engineer a fix that lasts. French drains, regrading, and dry wells. Free estimate.",
-    heroImage: "/images/drainage.webp",
+    heroImage: "/images/drainage-drycreek.webp",
     formService: "Drainage & Storm Water",
     trust: ["Licensed & Insured", "Locally Owned", "5-Star Rated", "Free Estimates"],
     benefits: [
@@ -285,9 +286,9 @@ export const landers: Lander[] = [
       "Cleanup and final walkthrough",
     ],
     gallery: [
-      { src: "/images/drainage.webp", label: "Drainage solution" },
-      { src: "/images/landscape-design.webp", label: "Healthy, dry landscape" },
-      { src: "/images/walkway.jpg", label: "Graded walkway" },
+      { src: "/images/drainage-riprap.webp", label: "River-rock dry creek bed" },
+      { src: "/images/drainage-creek-steps.webp", label: "Dry creek with stone steps" },
+      { src: "/images/drainage-pipe.webp", label: "French drain outlet and stone" },
     ],
     faqs: [
       {
@@ -317,7 +318,7 @@ export const landers: Lander[] = [
     h1: "Custom Hardscaping in Norristown & the Main Line",
     subhead:
       "Paver patios, driveways, walkways, retaining walls, and stonework, designed and built by one team and engineered to last for decades. Free estimate.",
-    heroImage: "/images/patio.jpg",
+    heroImage: "/images/walkway-cobble.webp",
     formService: "Hardscaping",
     trust: ["Licensed & Insured", "Locally Owned", "5-Star Rated", "Free Estimates"],
     benefits: [
@@ -343,9 +344,9 @@ export const landers: Lander[] = [
       "Engineered base, drainage, and clean finish",
     ],
     gallery: [
-      { src: "/images/patio.jpg", label: "Custom paver patio" },
-      { src: "/images/driveway.jpg", label: "Paver driveway" },
-      { src: "/images/stone-wall.jpg", label: "Natural stone wall" },
+      { src: "/images/pergola-patio.webp", label: "Cedar pergola over pavers" },
+      { src: "/images/wall-stone-after.webp", label: "Natural stone retaining wall" },
+      { src: "/images/firepit-lit.webp", label: "Fire pit patio" },
     ],
     faqs: [
       {

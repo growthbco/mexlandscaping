@@ -153,10 +153,57 @@
       "statusCode": 301
     },
     {
+      "source": "/snow-removal/",
+      "destination": "/snow-management-services/",
+      "statusCode": 301
+    },
+    {
+      "source": "/landscaping-services-in-norristown-pa/",
+      "destination": "/landscape-design-hardscaping-in-norristown-pa/",
+      "statusCode": 301
+    },
+    {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "mexlandscaping.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "mexlandscaping.com"
+        }
+      ],
       "destination": "https://www.mexlandscaping.com/$1",
       "statusCode": 301
+    }
+  ],
+  "headers": [
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
     }
   ]
 }

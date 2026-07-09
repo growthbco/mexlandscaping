@@ -35,15 +35,20 @@ let ogImage = "";
 let path = "";
 const schema: object[] = [];
 
+// Collapse consecutive duplicate paths: when a service IS its own category hub
+// (e.g. /hardscape-services/), the middle and leaf crumbs would otherwise be
+// identical, which invalidates the BreadcrumbList for rich results.
 const breadcrumb = (items: { name: string; path: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  itemListElement: items.map((it, i) => ({
-    "@type": "ListItem",
-    position: i + 1,
-    name: it.name,
-    item: new URL(it.path, site).href,
-  })),
+  itemListElement: items
+    .filter((it, i, arr) => i === 0 || arr[i - 1].path !== it.path)
+    .map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      item: new URL(it.path, site).href,
+    })),
 });
 
 const abs = (img?: string) =>
@@ -131,8 +136,9 @@ if (props.kind === "service") {
       "@type": "Article",
       headline: post.title,
       description,
-      image: ogImage || undefined,
+      image: abs(ogImage) || `${site}/images/og-default.jpg`,
       datePublished: post.date,
+      dateModified: post.date,
       author: { "@type": "Organization", name: business.name },
       publisher: { "@id": `${site}/#business` },
       mainEntityOfPage: new URL(path, site).href,

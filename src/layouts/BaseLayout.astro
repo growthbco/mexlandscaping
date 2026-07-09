@@ -14,6 +14,8 @@ interface Props {
   /** Extra JSON-LD objects to inject (Service, BreadcrumbList, Article, etc.) */
   schema?: object[];
   noindex?: boolean;
+  /** Above-the-fold hero image to preload at high priority (LCP) */
+  preloadImage?: string;
 }
 
 const {
@@ -23,6 +25,7 @@ const {
   ogImage,
   schema = [],
   noindex = false,
+  preloadImage,
 } = Astro.props;
 
 const site = "https://www.mexlandscaping.com";
@@ -40,7 +43,8 @@ const localBusiness = {
   name: business.name,
   legalName: business.legalName,
   url: site,
-  telephone: business.phone,
+  // E.164 format (Google's preferred telephone format for LocalBusiness).
+  telephone: business.phoneHref.replace("tel:", ""),
   email: business.email,
   priceRange: business.priceRange,
   image,
@@ -57,11 +61,33 @@ const localBusiness = {
     latitude: business.geo.lat,
     longitude: business.geo.lng,
   },
-  areaServed: "Montgomery County & the Main Line, PA",
+  hasMap: business.social.google,
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "07:00",
+      closes: "18:00",
+    },
+  ],
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Montgomery County, PA" },
+    { "@type": "AdministrativeArea", name: "The Main Line, PA" },
+    { "@type": "AdministrativeArea", name: "Delaware County, PA" },
+  ],
   sameAs: [business.social.facebook, business.social.google, business.social.tiktok],
 };
 
-const allSchema = [localBusiness, ...schema];
+const webSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${site}/#website`,
+  name: business.name,
+  url: site,
+  publisher: { "@id": `${site}/#business` },
+};
+
+const allSchema = [localBusiness, webSite, ...schema];
 ---
 
 <!doctype html>
@@ -111,13 +137,23 @@ const allSchema = [localBusiness, ...schema];
       gtag('config', 'G-CRXNSCNB4M');
     </script>
 
-    <!-- Fonts -->
+    {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high" />}
+
+    <!-- Fonts: loaded async so the third-party CSS request never blocks first paint -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..700&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     {
       allSchema.map((s) => (

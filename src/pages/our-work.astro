@@ -10,18 +10,99 @@ const meta = seoFor("/our-work/");
 const title = meta?.title ?? "Our Work | Mex Landscaping | Norristown PA";
 const description =
   meta?.description ??
-  "See Mex Landscaping's work across the Main Line: landscape design, hardscaping, fire features, and outdoor living.";
+  "Real projects by Mex Landscaping across the Main Line: retaining walls, drainage, patios, landscape design, and before-and-after transformations.";
 
-const projects = [
-  { src: "/images/fire-pit.webp", label: "Stone Fire Pit & Patio", area: "Outdoor Living", span: "lg:col-span-2 lg:row-span-2 aspect-square lg:aspect-auto" },
-  { src: "/images/lighting.jpg", label: "Architectural Landscape Lighting", area: "Design & Build" },
-  { src: "/images/patio.jpg", label: "Backyard Paver Patio", area: "Hardscaping" },
-  { src: "/images/driveway.jpg", label: "Paver Driveway", area: "Hardscaping" },
-  { src: "/images/walkway.jpg", label: "Walkway & Plantings", area: "Hardscaping" },
-  { src: "/images/landscape-design.webp", label: "Front-Yard Redesign", area: "Design & Build" },
-  { src: "/images/stone-wall.jpg", label: "Stone Retaining Wall", area: "Hardscaping" },
-  { src: "/images/commercial.jpg", label: "Commercial Landscape", area: "Commercial" },
-  { src: "/images/projects/p1.jpg", label: "Custom Project", area: "Design & Build" },
+// Real before / during / after sequences from completed jobs.
+const transformations = [
+  {
+    title: "Natural Stone Retaining Wall & Driveway",
+    area: "Retaining Walls",
+    blurb:
+      "A failing slope beside the garage rebuilt with a hand-laid fieldstone retaining wall and a clean stone entrance.",
+    steps: [
+      { src: "/images/wall-stone-during.webp", tag: "During", label: "Our masons laying the fieldstone wall" },
+      { src: "/images/wall-stone-after.webp", tag: "After", label: "Finished wall and stone steps" },
+      { src: "/images/wall-stone-house.webp", tag: "Finished", label: "Completed driveway and entrance" },
+    ],
+  },
+  {
+    title: "Backyard Artificial Turf Lawn",
+    area: "Lawn & Turf",
+    blurb:
+      "A patchy, bare backyard graded, base-prepped, and finished with a lush, low-maintenance turf lawn edged to the deck.",
+    steps: [
+      { src: "/images/turf-before.webp", tag: "Before", label: "Worn-out, patchy backyard" },
+      { src: "/images/turf-deck.webp", tag: "After", label: "Finished turf lawn to the deck" },
+    ],
+  },
+  {
+    title: "Commercial Grounds Installation",
+    area: "Commercial",
+    blurb:
+      "A bare commercial lot transformed with new shade trees, foundation shrub beds, and fresh grading.",
+    steps: [
+      { src: "/images/commercial-before.webp", tag: "Before", label: "Bare lot with staged plant material" },
+      { src: "/images/commercial-after.webp", tag: "After", label: "New trees and planted beds" },
+    ],
+  },
+];
+
+// Categorized gallery — grouped, not thrown together.
+const groups = [
+  {
+    area: "Landscape Design & Curb Appeal",
+    photos: [
+      { src: "/images/design-boxwood-beds.webp", label: "Sculpted boxwood island bed" },
+      { src: "/images/curb-craftsman.webp", label: "Craftsman curb appeal" },
+      { src: "/images/curb-colonial.webp", label: "Colonial front landscape" },
+      { src: "/images/curb-tan-house.webp", label: "Foundation beds and plantings" },
+      { src: "/images/design-front-beds.webp", label: "Fresh mulch and new plantings" },
+      { src: "/images/design-porch-beds.webp", label: "River-rock foundation bed" },
+      { src: "/images/design-maple-beds.webp", label: "Mulch beds with Japanese maple" },
+      { src: "/images/curb-stone-house.webp", label: "Stone-front home and lawn" },
+    ],
+  },
+  {
+    area: "Patios, Walkways & Driveways",
+    photos: [
+      { src: "/images/pergola-patio.webp", label: "Cedar pergola over a paver patio" },
+      { src: "/images/walkway-cobble.webp", label: "Walkway with cobblestone edging" },
+      { src: "/images/driveway-gravel-pad.webp", label: "Stone parking pad with timber edge" },
+    ],
+  },
+  {
+    area: "Retaining Walls",
+    photos: [
+      { src: "/images/wall-timber-steps.webp", label: "Timber wall with built-in steps" },
+      { src: "/images/wall-timber-L.webp", label: "L-shaped timber wall and drainage" },
+      { src: "/images/wall-block-curved.webp", label: "Curved segmental block seat wall" },
+    ],
+  },
+  {
+    area: "Drainage & Dry Creek Beds",
+    photos: [
+      { src: "/images/drainage-drycreek.webp", label: "River-rock dry creek bed" },
+      { src: "/images/drainage-creek-steps.webp", label: "Dry creek with stone steps" },
+      { src: "/images/drainage-riprap.webp", label: "Rip-rap drainage swale" },
+      { src: "/images/drainage-pipe.webp", label: "French drain outlet" },
+    ],
+  },
+  {
+    area: "Outdoor Living, Lighting & Turf",
+    photos: [
+      { src: "/images/firepit-lit.webp", label: "Fire pit and gravel patio" },
+      { src: "/images/lighting-dusk.webp", label: "Architectural landscape lighting" },
+      { src: "/images/turf-pool.webp", label: "Turf lawn and bluestone by the pool" },
+      { src: "/images/sod-seeded.webp", label: "New lawn installation" },
+    ],
+  },
+  {
+    area: "Trampolines & Fencing",
+    photos: [
+      { src: "/images/trampoline-1.webp", label: "Inground trampoline, flush to the lawn" },
+      { src: "/images/rail-fence.webp", label: "Post-and-rail fence installation" },
+    ],
+  },
 ];
 ---
 
@@ -29,24 +110,62 @@ const projects = [
   <PageHero
     eyebrow="Portfolio"
     title="Our work speaks for itself"
-    intro="A look at recent design-build, hardscape, and outdoor living projects across the Main Line. Every one starts with a plan and ends with a property the owner is proud of."
-    image="/images/fire-pit.webp"
+    intro="Real design-build, hardscape, drainage, and outdoor living projects across the Main Line. Every one starts with a plan and ends with a property the owner is proud of."
+    image="/images/curb-colonial.webp"
     crumbs={[{ label: "Home", href: "/" }, { label: "Our Work" }]}
   />
 
   <Section>
-    <SectionHeading eyebrow="Recent projects" title="Designed, built, and finished by our crews" />
-    <div class="mt-12 grid auto-rows-[220px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <SectionHeading
+      eyebrow="Before & After"
+      title="Real transformations, start to finish"
+      intro="The same crew handles the dig, the base, and the finish, so the result holds up. Here are a few projects from bare ground to done."
+    />
+    <div class="mt-12 space-y-14">
       {
-        projects.map((p) => (
-          <figure class={`photo-card group relative overflow-hidden rounded-3xl ring-1 ring-black/5 ${p.span ?? ""}`}>
-            <img src={p.src} alt={p.label} loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/10 to-transparent"></div>
-            <figcaption class="absolute bottom-0 left-0 p-5 text-cream">
-              <span class="text-xs font-semibold uppercase tracking-eyebrow text-gold-300">{p.area}</span>
-              <span class="mt-1 block font-display text-lg font-semibold">{p.label}</span>
-            </figcaption>
-          </figure>
+        transformations.map((t) => (
+          <div>
+            <div class="flex flex-wrap items-baseline justify-between gap-2">
+              <h3 class="font-display text-2xl font-semibold text-forest-900">{t.title}</h3>
+              <span class="text-xs font-semibold uppercase tracking-eyebrow text-gold-500">{t.area}</span>
+            </div>
+            <p class="mt-2 max-w-2xl text-forest-600">{t.blurb}</p>
+            <div class={`mt-6 grid gap-5 ${t.steps.length === 3 ? "sm:grid-cols-3" : "sm:grid-cols-2"}`}>
+              {t.steps.map((s) => (
+                <figure class="relative overflow-hidden rounded-3xl ring-1 ring-black/5">
+                  <img src={s.src} alt={s.label} loading="lazy" class="aspect-[4/3] h-full w-full object-cover" />
+                  <span class="absolute left-4 top-4 rounded-full bg-ink-950/80 px-3 py-1 text-xs font-semibold uppercase tracking-eyebrow text-cream">
+                    {s.tag}
+                  </span>
+                  <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/85 to-transparent p-4">
+                    <span class="block text-sm font-medium text-cream">{s.label}</span>
+                  </div>
+                </figure>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section muted>
+    <SectionHeading eyebrow="Recent projects" title="Designed, built, and finished by our crews" />
+    <div class="mt-12 space-y-12">
+      {
+        groups.map((g) => (
+          <div>
+            <h3 class="font-display text-xl font-semibold text-forest-900">{g.area}</h3>
+            <div class="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {g.photos.map((p) => (
+                <figure class="group relative overflow-hidden rounded-2xl ring-1 ring-black/5">
+                  <img src={p.src} alt={p.label} loading="lazy" class="aspect-square h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-ink-950/85 via-ink-950/10 to-transparent"></div>
+                  <figcaption class="absolute bottom-0 left-0 p-4 text-sm font-medium text-cream">{p.label}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
         ))
       }
     </div>

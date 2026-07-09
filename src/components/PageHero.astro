@@ -23,6 +23,8 @@ const { eyebrow, title, intro, crumbs, image } = Astro.props;
           aria-hidden="true"
           class="absolute inset-0 h-full w-full object-cover"
           loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-ink-950 via-ink-950/85 to-ink-900/55"></div>
       </>

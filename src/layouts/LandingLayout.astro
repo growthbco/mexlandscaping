@@ -13,6 +13,26 @@ const { title, description, path } = Astro.props;
 const site = "https://www.mexlandscaping.com";
 const canonical = new URL(path, site).href;
 const year = new Date().getFullYear();
+
+// Minimal LocalBusiness schema so landers still carry entity signals.
+const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LandscapingBusiness",
+  "@id": `${site}/#business`,
+  name: business.name,
+  legalName: business.legalName,
+  url: site,
+  telephone: business.phoneHref.replace("tel:", ""),
+  email: business.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: business.address.street,
+    addressLocality: business.address.city,
+    addressRegion: business.address.state,
+    postalCode: business.address.zip,
+    addressCountry: "US",
+  },
+};
 ---
 
 <!doctype html>
@@ -50,9 +70,19 @@ const year = new Date().getFullYear();
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..700&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400..700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <script type="application/ld+json" set:html={JSON.stringify(localBusiness)} is:inline />
   </head>
   <body class="flex min-h-screen flex-col pb-16 sm:pb-0">
     <!-- Google Tag Manager (noscript) -->
@@ -63,7 +93,7 @@ const year = new Date().getFullYear();
     <header class="bg-ink-900 text-white">
       <div class="container-page flex h-20 items-center justify-between gap-4">
         <a href="/" aria-label="Mex Landscaping home" class="inline-flex shrink-0 items-center">
-          <img src="/images/mex-landscaping-logo.png" alt="Mex Landscaping Inc." width="358" height="255" class="h-14 w-auto" />
+          <img src="/images/mex-landscaping-logo.png" alt="Mex Landscaping" width="358" height="255" class="h-14 w-auto" />
         </a>
         <a
           href={business.phoneHref}

@@ -1113,7 +1113,7 @@ export function locationContent(page: LocationPage) {
     const profile = cityProfiles[page.city.slug];
     return {
       icon: "leaf" as const,
-      image: "/images/patio.jpg",
+      image: "/images/design-front-beds.webp",
       h1: `Landscape Design & Hardscaping in ${city}, PA`,
       crumb: "Design & Hardscaping",
       metaTitle: `Landscape Design & Hardscaping in ${city}, PA | Mex Landscaping`,

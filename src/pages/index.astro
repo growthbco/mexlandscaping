@@ -19,53 +19,53 @@ const featured = [
   {
     label: "Landscape Design & Build",
     href: "/landscape-design/",
-    image: "/images/landscape-design.webp",
+    image: "/images/design-boxwood-beds.webp",
     blurb: "Complete redesigns, planting, lighting, and grading, designed and built by one team.",
     icon: "leaf",
   },
   {
     label: "Hardscaping",
     href: "/hardscape-services/",
-    image: "/images/patio.jpg",
+    image: "/images/pergola-patio.webp",
     blurb: "Patios, walkways, walls, and driveways built on an engineered base to last decades.",
     icon: "stone",
   },
   {
     label: "Outdoor Living",
     href: "/outdoor-living/",
-    image: "/images/fire-pit.webp",
+    image: "/images/firepit-lit.webp",
     blurb: "Fire features, outdoor kitchens, and water features that extend your season.",
     icon: "flame",
   },
   {
     label: "Concrete & Masonry",
     href: "/concrete-masonry/",
-    image: "/images/driveway.jpg",
+    image: "/images/driveway-gravel-pad.webp",
     blurb: "Poured and stamped concrete, plus full masonry: the craft that endures.",
     icon: "brick",
   },
   {
     label: "Landscape Lighting",
     href: "/landscape-lighting/",
-    image: "/images/lighting.jpg",
+    image: "/images/lighting-dusk.webp",
     blurb: "Low-voltage lighting that makes your home and landscape shine after dark.",
     icon: "light",
   },
   {
     label: "Snow Management",
     href: "/snow-management-services/",
-    image: "/images/commercial.jpg",
+    image: "/images/commercial.webp",
     blurb: "Reliable plowing, salting, and 24/7 storm response for homes and businesses.",
     icon: "snow",
   },
 ] as const;
 
 const gallery = [
-  { src: "/images/fire-pit.webp", label: "Fire feature & patio", span: "sm:col-span-2 sm:row-span-2" },
-  { src: "/images/lighting.jpg", label: "Landscape lighting" },
-  { src: "/images/patio.jpg", label: "Paver patio" },
-  { src: "/images/walkway.jpg", label: "Walkway & plantings" },
-  { src: "/images/driveway.jpg", label: "Paver driveway" },
+  { src: "/images/firepit-lit.webp", label: "Fire feature & patio", span: "sm:col-span-2 sm:row-span-2" },
+  { src: "/images/lighting-dusk.webp", label: "Landscape lighting" },
+  { src: "/images/pergola-patio.webp", label: "Cedar pergola & patio" },
+  { src: "/images/walkway-cobble.webp", label: "Walkway & cobble edging" },
+  { src: "/images/driveway-gravel-pad.webp", label: "Stone parking pad" },
 ];
 
 const heroBullets = [
@@ -76,14 +76,23 @@ const heroBullets = [
 ];
 ---
 
-<BaseLayout title={meta.title} description={meta.description} path="/">
+<BaseLayout
+  title={meta.title}
+  description={meta.description}
+  path="/"
+  preloadImage="/images/design-boxwood-beds.webp"
+>
   <!-- Hero -->
   <section class="relative isolate overflow-hidden bg-ink-950 text-white">
     <img
-      src="/images/landscape-design.webp"
+      src="/images/design-boxwood-beds.webp"
       alt="Freshly landscaped lawn at a Main Line home by Mex Landscaping"
       class="absolute inset-0 -z-10 h-full w-full object-cover"
       loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      width="900"
+      height="1200"
     />
     <div class="absolute inset-0 -z-10 bg-ink-950/70"></div>
     <div class="absolute inset-0 -z-10 bg-gradient-to-r from-ink-950/80 via-ink-950/40 to-transparent"></div>
@@ -194,7 +203,7 @@ const heroBullets = [
 
   <!-- Outdoor living feature band -->
   <section class="relative isolate mt-8 overflow-hidden bg-ink-950 text-white">
-    <img src="/images/fire-pit.webp" alt="Custom stone fire pit and patio at dusk" class="absolute inset-0 -z-10 h-full w-full object-cover" loading="lazy" />
+    <img src="/images/firepit-lit.webp" alt="Custom stone fire pit and patio at dusk" class="absolute inset-0 -z-10 h-full w-full object-cover" loading="lazy" />
     <div class="absolute inset-0 -z-10 bg-ink-950/70"></div>
     <div class="container-page relative py-24 lg:py-32">
       <div class="max-w-xl">

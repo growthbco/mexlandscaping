@@ -71,7 +71,7 @@ export const services: Service[] = [
     title: "Landscape Design & Build",
     category: "design-build",
     icon: "leaf",
-    image: "/images/landscape-design.webp",
+    image: "/images/design-boxwood-beds.webp",
     featured: true,
     intro:
       "Full-service landscape design and installation, from a complete property redesign to refined planting, lighting, and grading. We design it, then our own crews build it.",
@@ -127,70 +127,11 @@ export const services: Service[] = [
     ],
   },
   {
-    path: "/landscaping-services-in-norristown-pa/",
-    title: "Landscaping Services",
-    category: "design-build",
-    icon: "leaf",
-    image: "/images/landscape-design.webp",
-    intro:
-      "Award-winning landscape design, installation, and refinement for distinctive homes and commercial properties across the Main Line.",
-    highlights: [
-      "Design & installation",
-      "Planting & bed renovation",
-      "Lighting & drainage",
-      "Residential & commercial",
-    ],
-    body: [
-      {
-        heading: "Full-service landscaping in Norristown, PA",
-        text: "Mex Landscaping brings creative design and meticulous installation to homes and commercial properties across Norristown and the Main Line. We are a design-build company, which means the same team that plans your landscape also installs it. From planting and lawns to hardscape, lighting, drainage, and outdoor living, we cover the full range of landscaping services Montgomery County properties need. It is the kind of work that makes a home feel finished and a commercial property feel genuinely cared for.",
-      },
-      {
-        heading: "Landscape design and installation services",
-        text: "Our core services begin with design: a thoughtful, site-specific plan that balances structure, planting, grading, and flow. From there our crews install it all, including new lawns, specimen trees and layered plantings, garden beds, and seasonal color. We plan four-season interest into every design so the property looks intentional the day we finish and only improves as it grows in. Whether you want a single area refreshed or a full property reimagined, we work at both scales.",
-      },
-      {
-        heading: "Hardscape, lighting, and drainage in one place",
-        text: "Beautiful landscaping needs structure and protection. We build patios, walkways, retaining walls, and driveways, install architectural low-voltage lighting that transforms a property after dark, and engineer drainage that keeps water moving away from your home. Because all of it happens under one roof, the stonework, planting, lighting, and grading are designed to work together as one system rather than being stitched together by separate contractors who never spoke to each other.",
-      },
-      {
-        heading: "One trusted partner for the whole property",
-        text: "Most homeowners do not want to manage a different contractor for every task. With Mex Landscaping you get one accountable team that knows your property end to end, from the design on paper to the final detail in the ground. That continuity means fewer surprises, cleaner coordination between trades, and a result that looks deliberate. For commercial clients, we can pair installation with a recurring maintenance plan so the property stays sharp all year.",
-      },
-      {
-        heading: "Serving Norristown and the Main Line",
-        text: "We provide landscaping services throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken. Every project begins with a free consultation to understand your goals, your property, and your budget, followed by a clear plan and an honest estimate. Whether you are starting fresh or finishing a long-postponed project, we are ready to help. Call (484) 261-6650 or request a free estimate.",
-      },
-    ],
-    faqs: [
-      {
-        q: "What landscaping services do you offer?",
-        a: "We are a full-service design-build company. That includes landscape design, lawn installation, tree and plant installation, garden beds, hardscaping such as patios and walls, landscape lighting, drainage and storm water management, outdoor living spaces, and ongoing property maintenance. Because we handle it all in-house, the pieces are coordinated to work together.",
-      },
-      {
-        q: "Do you work on both homes and commercial properties?",
-        a: "Yes. We design, install, and maintain landscapes for single-family homes, commercial properties, businesses, and HOAs across the Main Line. Commercial clients often pair a fresh installation with a recurring maintenance plan so the property stays polished year-round with one accountable partner instead of several.",
-      },
-      {
-        q: "How much do landscaping services cost?",
-        a: "It depends entirely on the scope, from refreshing a single bed to redesigning an entire property with hardscape, planting, lighting, and drainage. We discuss your goals and budget up front and provide a clear, itemized estimate so you can decide how to proceed or phase the work over time.",
-      },
-      {
-        q: "Can you do everything, or do I need separate contractors?",
-        a: "You can use one team for everything. Design, planting, lawns, hardscape, lighting, drainage, and maintenance are all in-house. Keeping it under one roof is a big part of why the finished property looks cohesive rather than assembled piece by piece by crews who never coordinated.",
-      },
-      {
-        q: "What areas do you serve?",
-        a: "We serve Norristown and the surrounding Main Line and Montgomery County communities, including King of Prussia, Wayne, Bryn Mawr, Conshohocken, and Plymouth Meeting. If you are nearby and unsure whether we cover your town, just call (484) 261-6650 and ask, or request a free estimate.",
-      },
-    ],
-  },
-  {
     path: "/lawn-installation/",
     title: "Lawn Installation",
     category: "design-build",
     icon: "leaf",
-    image: "/images/lawn-install.webp",
+    image: "/images/turf-deck.webp",
     intro:
       "New sod and seeded lawns engineered to establish fast and last, with the soil prep and grading that make the difference.",
     highlights: [
@@ -249,7 +190,7 @@ export const services: Service[] = [
     title: "Tree & Plant Installation",
     category: "design-build",
     icon: "leaf",
-    image: "/images/landscape-design.webp",
+    image: "/images/design-maple-beds.webp",
     intro:
       "Specimen trees, layered shrubs, and perennial plantings, sourced healthy and placed with a designer's eye.",
     highlights: [
@@ -308,7 +249,7 @@ export const services: Service[] = [
     title: "Landscape Lighting",
     category: "design-build",
     icon: "light",
-    image: "/images/lighting.jpg",
+    image: "/images/lighting-dusk.webp",
     featured: true,
     intro:
       "Architectural low-voltage lighting that transforms your property after dark, highlighting the home, the trees, and the spaces you've built.",
@@ -368,9 +309,9 @@ export const services: Service[] = [
     title: "Drainage & Storm Water Management",
     category: "design-build",
     icon: "drop",
-    image: "/images/drainage.webp",
+    image: "/images/drainage-drycreek.webp",
     intro:
-      "Engineered drainage that protects your property and your investment from standing water and erosion.",
+      "Yard drainage solutions built to last: French drains, dry wells, and grading that protect your property from standing water and erosion.",
     highlights: [
       "Drainage assessment & grading",
       "French drains & dry wells",
@@ -427,7 +368,7 @@ export const services: Service[] = [
     title: "Commercial Landscape Installations",
     category: "design-build",
     icon: "leaf",
-    image: "/images/commercial.jpg",
+    image: "/images/commercial-after.webp",
     intro:
       "Polished commercial landscapes that elevate your property and reflect well on your business.",
     highlights: [
@@ -488,7 +429,7 @@ export const services: Service[] = [
     title: "Hardscaping",
     category: "hardscaping",
     icon: "stone",
-    image: "/images/patio.jpg",
+    image: "/images/pergola-patio.webp",
     featured: true,
     intro:
       "Patios, walls, walkways, and driveways built to last decades: the structural backbone of a high-end outdoor space.",
@@ -548,7 +489,7 @@ export const services: Service[] = [
     title: "Patios",
     category: "hardscaping",
     icon: "stone",
-    image: "/images/patio.jpg",
+    image: "/images/pergola-patio.webp",
     featured: true,
     intro:
       "Paver and natural-stone patios designed as true outdoor rooms: level, durable, and built for years of gatherings.",
@@ -608,7 +549,7 @@ export const services: Service[] = [
     title: "Walkways & Steps",
     category: "hardscaping",
     icon: "stone",
-    image: "/images/walkway.jpg",
+    image: "/images/walkway-cobble.webp",
     metaTitle: "Walkways & Steps | Paver & Stone Walkways | Mex Landscaping",
     metaDescription:
       "Custom paver and natural-stone walkways and steps in Norristown, PA. Mex Landscaping builds durable, elegant paths that elevate your property. Free estimate.",
@@ -670,7 +611,7 @@ export const services: Service[] = [
     title: "Driveways",
     category: "hardscaping",
     icon: "stone",
-    image: "/images/driveway.jpg",
+    image: "/images/driveway-gravel-pad.webp",
     featured: true,
     intro:
       "Paver and stone driveways with lasting curb appeal, plus the engineered base to handle weight and weather.",
@@ -730,7 +671,7 @@ export const services: Service[] = [
     title: "Retaining & Seating Walls",
     category: "hardscaping",
     icon: "stone",
-    image: "/images/stone-wall.jpg",
+    image: "/images/wall-stone-after.webp",
     metaTitle: "Retaining Walls & Seating Walls | Mex Landscaping | Norristown PA",
     metaDescription:
       "Engineered retaining walls and seating walls in Norristown, PA. Mex Landscaping builds structural, beautiful walls that hold slopes and add usable space. Free estimate.",
@@ -792,7 +733,7 @@ export const services: Service[] = [
     title: "Architectural Stone & Facades",
     category: "hardscaping",
     icon: "stone",
-    image: "/images/stone-wall.jpg",
+    image: "/images/wall-stone-house.webp",
     intro:
       "Natural and manufactured stone veneer that adds richness and texture to columns, walls, and entries.",
     highlights: [
@@ -853,7 +794,7 @@ export const services: Service[] = [
     title: "Outdoor Living Spaces",
     category: "outdoor-living",
     icon: "flame",
-    image: "/images/fire-pit.webp",
+    image: "/images/firepit-lit.webp",
     featured: true,
     metaTitle: "Outdoor Living Spaces | Fire Pits & Outdoor Kitchens | Mex Landscaping",
     metaDescription:
@@ -916,7 +857,7 @@ export const services: Service[] = [
     title: "Fire Pits & Fire Features",
     category: "outdoor-living",
     icon: "flame",
-    image: "/images/fire-pit.webp",
+    image: "/images/firepit-lit.webp",
     featured: true,
     metaTitle: "Fire Pits & Fire Features | Custom Built | Mex Landscaping Norristown PA",
     metaDescription:
@@ -979,7 +920,7 @@ export const services: Service[] = [
     title: "Outdoor Kitchens",
     category: "outdoor-living",
     icon: "flame",
-    image: "/images/patio.jpg",
+    image: "/images/pergola-patio.webp",
     metaTitle: "Outdoor Kitchens | Custom Built-In Grills & Bars | Mex Landscaping",
     metaDescription:
       "Custom outdoor kitchens in Norristown, PA. Mex Landscaping builds stone and paver outdoor kitchens with built-in grills, counters, and bars. Free estimate.",
@@ -1041,7 +982,7 @@ export const services: Service[] = [
     title: "Water Features",
     category: "outdoor-living",
     icon: "drop",
-    image: "/images/landscape-design.webp",
+    image: "/images/drainage-creek-steps.webp",
     metaTitle: "Water Features | Fountains & Ponds | Mex Landscaping Norristown PA",
     metaDescription:
       "Custom water features in Norristown, PA: fountains, ponds, and waterfalls designed and built by Mex Landscaping. Add tranquility to your landscape. Free estimate.",
@@ -1105,7 +1046,7 @@ export const services: Service[] = [
     title: "Concrete & Masonry",
     category: "concrete-masonry",
     icon: "brick",
-    image: "/images/driveway.jpg",
+    image: "/images/wall-stone-during.webp",
     featured: true,
     metaTitle: "Concrete & Masonry | Stamped Concrete & Stonework | Mex Landscaping",
     metaDescription:
@@ -1443,65 +1384,13 @@ export const services: Service[] = [
       },
     ],
   },
-  {
-    path: "/snow-removal/",
-    title: "Snow Removal",
-    category: "snow",
-    icon: "snow",
-    intro: "Dependable snow removal for residential and commercial properties across the Main Line.",
-    highlights: ["Driveway & lot plowing", "Walkway clearing", "De-icing & salt", "Per-storm or seasonal"],
-    body: [
-      {
-        heading: "Dependable snow removal across the Main Line",
-        text: "When winter arrives, a clear, safe property is not a luxury, it is a necessity. Mex Landscaping provides dependable snow removal for residential and commercial properties across Norristown and the Main Line. From driveways and walkways to parking lots and entries, we keep your property safe and accessible all season with reliable response on every snowfall, so you can skip the shoveling and trust that the property is handled before you need to be anywhere.",
-      },
-      {
-        heading: "Driveways, lots, and walkways cleared",
-        text: "We clear the full property: residential driveways, commercial parking lots and drive lanes, walkways, entries, and steps. Snow is pushed and stacked where it will not block access or sightlines, and pedestrian paths are cleared so the route from the car to the door is safe. Whether it is a single home or a commercial lot, we handle the whole footprint so the property is genuinely usable, not just partly plowed.",
-      },
-      {
-        heading: "De-icing and salt to stop refreeze",
-        text: "Removing snow is only half the job. We apply salt and de-icing material to prevent ice and the refreeze that turns a cleared surface dangerous after temperatures drop. High-traffic areas, walkways, and entries get particular attention, since that is where slips happen. Pairing plowing with proper de-icing keeps surfaces safe to walk and drive on throughout the freeze-thaw conditions common to our winters.",
-      },
-      {
-        heading: "Coverage that fits your property",
-        text: "Every property has different needs, so we offer both per-storm and seasonal coverage for homes, businesses, and HOAs, with priority response when it counts. Per-storm billing means you pay as storms occur; a seasonal plan gives predictable budgeting and priority service. For commercial clients we document the work for insurance and liability, and we can coordinate snow removal with year-round landscaping and maintenance.",
-      },
-      {
-        heading: "Snow removal for Norristown and the Main Line",
-        text: "We provide snow removal throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, for residential, commercial, and HOA properties. Set up coverage before the season so your property is on the route from the first storm. Call (484) 261-6650 or request a free estimate.",
-      },
-    ],
-    faqs: [
-      {
-        q: "Do you offer per-storm or seasonal snow removal?",
-        a: "Both. Per-storm billing means you pay for service as storms occur, while a seasonal plan provides predictable budgeting and priority response no matter how much snow falls. We help you choose the structure that fits your property and budget, whether it is a single driveway or a commercial lot.",
-      },
-      {
-        q: "Do you handle residential driveways as well as commercial lots?",
-        a: "Yes. We provide snow removal for homes, businesses, and HOAs across the Main Line, clearing driveways, walkways, parking lots, and entries. We tailor the service to the property, from a single-family driveway to a full commercial site, with reliable response on every snowfall.",
-      },
-      {
-        q: "Do you apply salt and de-icer with snow removal?",
-        a: "We do. Plowing removes snow, but salt and de-icing material prevent ice and refreeze, especially in high-traffic areas and on walkways and entries. We pair clearing with proper de-icing so surfaces stay safe to walk and drive on through freeze-thaw conditions.",
-      },
-      {
-        q: "How quickly do you clear after a storm?",
-        a: "We respond reliably on every snowfall and prioritize service so your property is clear when you need it, with priority response available for commercial and seasonal-contract clients. The exact timing is set in your plan so you know what to expect before the season begins.",
-      },
-      {
-        q: "How do I sign up for snow removal?",
-        a: "The best step is to set up coverage before winter so your property is on the route from the first storm. Call (484) 261-6650 or request a free estimate, and we will assess your property and recommend per-storm or seasonal coverage that fits your needs.",
-      },
-    ],
-  },
-
   // ---------------- MAINTENANCE (secondary, kept for SEO) ----------------
   {
     path: "/property-maintenance/",
     title: "Property Maintenance",
     category: "maintenance",
     icon: "leaf",
+    image: "/images/design-front-beds.webp",
     intro: "Reliable, scheduled upkeep for the properties we design and build, and for clients who simply want it done right.",
     highlights: ["Mowing, edging & blowing", "Bed weeding & mulching", "Seasonal color", "Commercial & HOA contracts"],
     body: [
@@ -1554,6 +1443,7 @@ export const services: Service[] = [
     title: "Weeding",
     category: "maintenance",
     icon: "leaf",
+    image: "/images/design-maple-beds.webp",
     intro: "Regular weeding that keeps your beds crisp, clean, and intentional all season.",
     highlights: ["Hand & selective weeding", "Clean bed edging", "Pre-emergent options", "Debris haul-away"],
     body: [
@@ -1606,6 +1496,7 @@ export const services: Service[] = [
     title: "Trimming & Pruning",
     category: "maintenance",
     icon: "leaf",
+    image: "/images/design-boxwood-beds.webp",
     intro: "Expert trimming and pruning that keeps plantings shapely and your landscape sharp.",
     highlights: ["Shrub & hedge shaping", "Clean edging", "Species-correct timing", "Debris haul-away"],
     body: [
@@ -1658,6 +1549,7 @@ export const services: Service[] = [
     title: "Shrubs & Bushes",
     category: "maintenance",
     icon: "leaf",
+    image: "/images/design-porch-beds.webp",
     intro: "Expert pruning and care for healthy, shapely shrubs and bushes.",
     highlights: ["Species-specific pruning", "Hedge shaping & renewal", "Disease & pest checks", "Seasonal timing"],
     body: [
@@ -1710,6 +1602,7 @@ export const services: Service[] = [
     title: "Fall Cleanups",
     category: "maintenance",
     icon: "leaf",
+    image: "/images/curb-tan-house.webp",
     intro: "Leaf removal and bed prep that puts your property to bed for winter.",
     highlights: ["Full-property leaf removal", "Perennial cutback", "Bed & gutter clearing", "Debris haul-away"],
     body: [
@@ -1762,6 +1655,7 @@ export const services: Service[] = [
     title: "Leaf Cleanup",
     category: "maintenance",
     icon: "leaf",
+    image: "/images/curb-colonial.webp",
     intro: "Thorough leaf cleanup to keep your lawn healthy through fall.",
     highlights: ["Full-property removal", "Lawn & bed clearing", "Recurring fall visits", "Debris haul-away"],
     body: [
@@ -1814,6 +1708,7 @@ export const services: Service[] = [
     title: "Aeration & Overseeding",
     category: "maintenance",
     icon: "leaf",
+    image: "/images/sod-seeded.webp",
     intro: "Thicker, healthier turf through core aeration and overseeding at the ideal time of year.",
     highlights: ["Core aeration", "Overseeding with quality blends", "Starter fertilization", "Best-time fall scheduling"],
     body: [

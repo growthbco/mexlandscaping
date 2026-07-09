@@ -15,12 +15,16 @@ export const business = {
     state: "PA",
     zip: "19404",
   },
-  geo: { lat: 40.1215, lng: -75.34 },
+  // Matches the verified GBP pin (same coordinates as the Maps embed).
+  geo: { lat: 40.12361, lng: -75.36106 },
   hours: "Mon to Sat, 7am to 6pm",
   priceRange: "$$",
   social: {
     facebook: "https://www.facebook.com/mexlandscaping",
-    google: "https://g.page/mexlandscaping",
+    // Direct GBP place URL (CID from the verified Maps embed of this business).
+    // The old g.page/mexlandscaping short link resolves to a Google search
+    // page, not the profile, so "Read All Reviews" dead-ended.
+    google: "https://maps.google.com/?cid=12265579253277940374",
     tiktok: "https://www.tiktok.com/@mexlandscaping",
   },
 } as const;
@@ -147,7 +151,7 @@ export const whyUs = [
     body: "One trusted team for every season: landscaping in summer, cleanups in fall, snow management in winter.",
   },
   {
-    title: "Award-Winning Design",
+    title: "Design-Build Craftsmanship",
     body: "Thoughtful, creative designs tailored to your property, your style, and your budget.",
   },
   {
