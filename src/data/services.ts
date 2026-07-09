@@ -425,6 +425,76 @@ export const services: Service[] = [
 
   // ---------------- HARDSCAPING ----------------
   {
+    path: "/commercial-landscaping/",
+    title: "Commercial Landscaping",
+    category: "design-build",
+    icon: "leaf",
+    image: "/images/commercial-after.webp",
+    metaTitle: "Commercial Landscaping & Grounds Management | Montgomery County, PA",
+    metaDescription:
+      "One partner for commercial landscaping, grounds maintenance, and snow management across Montgomery County and the Main Line. Documented service, single contract. (484) 261-6650.",
+    intro:
+      "One accountable partner for commercial properties: landscape installation, year-round grounds maintenance, and documented snow management under a single contract.",
+    highlights: [
+      "Single contract: landscaping + snow",
+      "Licensed & insured, documentation on request",
+      "Documented service records",
+      "Offices, HOAs, retail & medical properties",
+    ],
+    body: [
+      {
+        heading: "Commercial landscaping for Montgomery County properties",
+        text: "A commercial property's grounds are part of its first impression, its tenant experience, and its liability exposure. Mex Landscaping provides commercial landscaping across Norristown, King of Prussia, and Montgomery County: landscape installation and enhancements, year-round grounds maintenance, and winter snow management, all from one accountable company. Property managers get a single point of contact, a single invoice, and a property that consistently reflects well on the businesses inside it.",
+      },
+      {
+        heading: "Built for property managers, not just properties",
+        text: "Managing vendors is its own job, and we try to make ours the easiest line on your list. We are licensed and insured, with documentation available whenever your files or your insurer require it. Our snow and de-icing work is recorded per visit, so you have time-stamped service records if a slip-and-fall claim ever needs answering. Requests get a response, schedules are kept, and the crews that show up are our own, in uniform and accountable to us.",
+      },
+      {
+        heading: "Landscape installation and enhancements",
+        text: "Whether it is a bare new-construction lot or a tired frontage that needs to be brought back, we design and install commercial landscapes that stay presentable with realistic upkeep: shade trees, foundation and island beds, seasonal color, lawn installation, and the grading and drainage that keep it all healthy. Because we are a design-build company, the same team plans the installation and puts it in the ground.",
+      },
+      {
+        heading: "Year-round grounds maintenance",
+        text: "Consistency is what separates a managed property from a neglected one. Our recurring commercial maintenance covers mowing, edging, bed care, mulching, pruning, and seasonal cleanups on a fixed schedule, so the property looks cared for every week of the season, not just after a service call. Maintenance clients get priority scheduling for enhancements and repairs.",
+      },
+      {
+        heading: "Snow management under the same contract",
+        text: "The same company that maintains your grounds in July can keep them open and safe in January. We provide commercial snow plowing, sidewalk clearing, and salting and de-icing with 24/7 storm response and per-visit documentation, on per-storm or seasonal terms. One contract covering the whole year means no seasonal vendor scramble and no gaps in accountability.",
+      },
+      {
+        heading: "Serving commercial properties across the region",
+        text: "We serve offices, HOAs and communities, retail centers, medical and professional buildings, and multi-tenant properties across Norristown, King of Prussia, Plymouth Meeting, Conshohocken, Blue Bell, and the surrounding Montgomery County and Main Line area. Call (484) 261-6650 or request a proposal, and we will walk the property, understand how it is used, and put together a clear scope and price.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Can you provide a certificate of insurance (COI)?",
+        a: "Yes. Mex Landscaping is fully licensed and insured, and documentation is available on request for your vendor files, property owner, or insurer.",
+      },
+      {
+        q: "Can landscaping and snow management be on one contract?",
+        a: "Yes, and that is how most of our commercial clients prefer it. A single year-round agreement covers grounds maintenance through the growing season and snow management through the winter, with one point of contact and one invoice.",
+      },
+      {
+        q: "Do you document your snow and de-icing service?",
+        a: "We do. Snow visits are recorded, including de-icing applications, so you have time-stamped service records for insurance and liability purposes. Documentation is a standard part of our commercial winter service, not an add-on.",
+      },
+      {
+        q: "Do you handle multiple properties for one manager?",
+        a: "Yes. We can quote and service a portfolio of properties under coordinated scheduling and consolidated billing. Walk us through the portfolio and we will build a proposal that covers each site appropriately.",
+      },
+      {
+        q: "What types of commercial properties do you work with?",
+        a: "Offices and corporate campuses, HOAs and residential communities, retail centers, medical and professional buildings, and multi-tenant properties across Montgomery County and the Main Line.",
+      },
+      {
+        q: "How do we get a commercial proposal?",
+        a: "Call (484) 261-6650 or request an estimate through the site. We will walk the property with you, discuss standards and budget, and provide a clear written scope covering installation, maintenance, snow, or all three.",
+      },
+    ],
+  },
+  {
     path: "/hardscape-services/",
     title: "Hardscaping",
     category: "hardscaping",
