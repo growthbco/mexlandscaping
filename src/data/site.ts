@@ -74,7 +74,7 @@ export const nav: NavItem[] = [
       { label: "Water Features", href: "/water-features/" },
     ],
   },
-  { label: "Concrete & Masonry", href: "/concrete-masonry/" },
+  { label: "Split Rail Fencing", href: "/split-rail-fencing/" },
   {
     label: "Snow",
     href: "/snow-management-services/",

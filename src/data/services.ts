@@ -1,5 +1,5 @@
 // Service pages, keyed by their live URL path. Positioned around high-end
-// design/build, hardscaping, outdoor living, and concrete & masonry — with the
+// design/build, hardscaping, outdoor living, and split rail fencing — with the
 // commodity maintenance pages kept (for SEO) but demoted to a secondary group.
 // Real per-page titles/descriptions still come from src/data/seo.generated.ts
 // where they exist; new premium pages define their own meta inline.
@@ -8,7 +8,6 @@ export type ServiceCategory =
   | "design-build"
   | "hardscaping"
   | "outdoor-living"
-  | "concrete-masonry"
   | "snow"
   | "maintenance";
 
@@ -37,7 +36,6 @@ export const categoryLabels: Record<ServiceCategory, string> = {
   "design-build": "Landscape Design & Build",
   hardscaping: "Hardscaping",
   "outdoor-living": "Outdoor Living",
-  "concrete-masonry": "Concrete & Masonry",
   snow: "Snow Management",
   maintenance: "Property Maintenance",
 };
@@ -46,7 +44,6 @@ export const categoryHubs: Record<ServiceCategory, string> = {
   "design-build": "/landscape-design/",
   hardscaping: "/hardscape-services/",
   "outdoor-living": "/outdoor-living/",
-  "concrete-masonry": "/concrete-masonry/",
   snow: "/snow-management-services/",
   maintenance: "/property-maintenance/",
 };
@@ -55,7 +52,6 @@ export const categoryIcon: Record<ServiceCategory, Service["icon"]> = {
   "design-build": "leaf",
   hardscaping: "stone",
   "outdoor-living": "flame",
-  "concrete-masonry": "brick",
   snow: "snow",
   maintenance: "leaf",
 };
@@ -65,7 +61,6 @@ export const premiumCategories: ServiceCategory[] = [
   "design-build",
   "hardscaping",
   "outdoor-living",
-  "concrete-masonry",
 ];
 
 export const services: Service[] = [
@@ -1378,71 +1373,86 @@ export const services: Service[] = [
   },
 
   // ---------------- CONCRETE & MASONRY ----------------
+  // ---------------- FENCING ----------------
   {
-    path: "/concrete-masonry/",
-    title: "Concrete & Masonry",
-    category: "concrete-masonry",
-    icon: "brick",
-    image: "/images/wall-stone-during.webp",
-    featured: true,
-    metaTitle: "Concrete & Masonry | Stamped Concrete & Stonework | Mex Landscaping",
+    path: "/split-rail-fencing/",
+    title: "Split Rail Fencing",
+    category: "hardscaping",
+    icon: "stone",
+    image: "/images/rail-fence.webp",
+    metaTitle: "Split Rail Fence Installation | Norristown & Main Line | Mex Landscaping",
     metaDescription:
-      "Concrete and masonry in Norristown, PA: poured and stamped concrete patios, driveways, steps, and stonework by Mex Landscaping. Built to last. Free estimate.",
+      "Split rail and post-and-rail fence installation is a Mex Landscaping specialty. Classic 2-rail and 3-rail fencing set properly, across Norristown and the Main Line.",
     intro:
-      "Poured and stamped concrete, plus full masonry: the structural craft behind patios, driveways, steps, and walls that endure.",
+      "Split rail fencing is our specialty: classic post-and-rail fence lines that define a property beautifully without walling it in.",
     highlights: [
-      "Poured & stamped concrete",
-      "Concrete patios & driveways",
-      "Steps, footings & slabs",
-      "Brick & stone masonry",
+      "2-rail & 3-rail post-and-rail",
+      "Property lines & pasture-style runs",
+      "Welded wire backing for pets",
+      "Posts set below the frost line",
     ],
     body: [
       {
-        heading: "Concrete and masonry contractor for Norristown and the Main Line",
-        text: "Concrete and masonry are the structural craft behind a property that lasts. Mex Landscaping provides poured and stamped concrete and full masonry services across Norristown and the Main Line, from patios and driveways to steps, slabs, walls, and stonework. We pour, finish, and build with the prep and detailing that keep concrete level and crack-resistant and masonry tight and true, year after year through our freeze-thaw winters.",
+        heading: "Split rail fence installation in Norristown and the Main Line",
+        text: "Few fences suit this area like split rail. It defines a property line, frames a yard, and adds that established, estate-and-farmland character the Main Line is known for, all without blocking views or boxing the property in. Split rail fencing is a Mex Landscaping specialty: we install classic 2-rail and 3-rail post-and-rail fence lines for homes and properties across Norristown, Montgomery County, and the Main Line.",
       },
       {
-        heading: "Stamped and decorative concrete",
-        text: "Concrete does not have to look plain. Stamped concrete can mimic the look of pavers, brick, flagstone, or natural stone at a single poured surface, and decorative finishes and colors add character to patios, walkways, and pool surrounds. We form, pour, and finish stamped-concrete patios, driveways, and steps with proper joints and curing so the surface stays attractive and resists cracking.",
+        heading: "Built to stay straight, season after season",
+        text: "A rail fence looks simple, but the difference between a crisp fence line and a wavy one is all in the installation. We lay out runs precisely, dig every post hole to proper depth below the frost line, and set posts so the line stays straight and the rails stay seated through freeze-thaw winters. Corners, gates, and grade changes are planned rather than improvised, which is what keeps a long run looking intentional across a sloped or curved property.",
       },
       {
-        heading: "Poured concrete driveways, steps, and slabs",
-        text: "For driveways, walkways, steps, footings, and slabs, we pour concrete on a properly prepared and compacted base with the right reinforcement and control joints. That groundwork is what keeps a slab from heaving and cracking over time. Whether it is a new garage slab, a set of front steps, or a full driveway, we build it to stay level and solid.",
+        heading: "Keep the look, keep the dog in the yard",
+        text: "The most common request we hear: the classic rail look, but pet-safe. We install welded wire mesh backing along the fence line, fastened cleanly to the rails, so dogs stay in the yard while the fence keeps its open, traditional character. From the street you see a rail fence; from the yard you get real containment.",
       },
       {
-        heading: "Brick and stone masonry",
-        text: "Our masonry work covers brick and natural stone, structural and freestanding walls, piers and columns, steps, footings, and repairs. Masonry is foundational work in every sense, the kind of craftsmanship that holds a whole project together and reads as permanent. We match mortar, color, and coursing carefully so new masonry blends with existing work or stands on its own as a clean, deliberate feature.",
+        heading: "Fencing that works with your landscape",
+        text: "Because we are a landscape design-build company, your fence is planned as part of the property, not dropped onto it. We coordinate fence lines with driveways, planting beds, stone walls, and grading so gates land where you actually walk and the fence complements the landscape around it. Pairing a new fence line with fresh plantings or a driveway entrance is common, and one crew handles all of it.",
       },
       {
-        heading: "Built to last across Montgomery County",
-        text: "We provide concrete and masonry throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken. Every project starts with a free on-site estimate covering prep, materials, finish, and a clear price. Call (484) 261-6650 or request a free estimate.",
+        heading: "Serving Norristown, Montgomery County, and the Main Line",
+        text: "We install split rail fencing throughout the area, including Norristown, King of Prussia, Wayne, Bryn Mawr, Conshohocken, and the surrounding communities. Call (484) 261-6650 or request a free estimate, and we will walk the fence line with you, talk through rail style and gates, and give you a clear price.",
+      },
+    ],
+    gallery: [
+      {
+        src: "/images/rail-fence.webp",
+        alt: "Post-and-rail split rail fence installed by Mex Landscaping",
+        caption: "Post-and-rail fence installation",
+      },
+      {
+        src: "/images/driveway-gravel-pad.webp",
+        alt: "Stone parking pad with timber edging alongside a fence line",
+        caption: "Stone parking pad with timber edge",
+      },
+      {
+        src: "/images/curb-colonial.webp",
+        alt: "Colonial home with an open front landscape suited to rail fencing",
+        caption: "Open front landscape",
       },
     ],
     faqs: [
       {
-        q: "Is stamped concrete or pavers better for a patio or driveway?",
-        a: "Each has its place. Stamped concrete gives a continuous, custom-patterned surface and can cost less to install than pavers, but it is a single slab that can crack and is harder to repair invisibly. Pavers flex with freeze-thaw and individual units can be reset. We install both and will give you an honest recommendation for your project and budget.",
+        q: "Do you specialize in split rail fencing?",
+        a: "Yes. Split rail and post-and-rail fencing is a specialty of ours, not a sideline. We focus on this style because it suits the properties we work on across Norristown and the Main Line, and doing it constantly is what keeps our fence lines straight, our posts solid, and our pricing sharp.",
       },
       {
-        q: "Why does concrete crack, and how do you prevent it?",
-        a: "Most cracking comes from a poor base, missing control joints, or improper curing. We prevent it by excavating and compacting a proper base, adding reinforcement and correctly spaced control joints, and curing the concrete properly. Doing the groundwork right is what keeps a slab level and crack-resistant for the long haul.",
+        q: "Can you make a split rail fence dog-proof?",
+        a: "Yes. We add welded wire mesh backing along the inside of the fence, fastened cleanly so it nearly disappears from the street view. It is the standard way to keep the classic rail look while safely containing dogs, and we install it on a large share of our fence projects.",
       },
       {
-        q: "Can you match or repair existing brick or stonework?",
-        a: "Yes. We take care to match mortar color, joint style, and coursing so repairs and additions blend with your existing masonry. Whether it is a damaged section of wall, worn steps, or new work alongside old, we aim for a result that looks original rather than patched.",
+        q: "What is the difference between 2-rail and 3-rail fencing?",
+        a: "Height and visual weight. A 2-rail fence is lower and reads lighter, ideal for marking a property line or framing a front yard. A 3-rail fence is taller and more substantial, better for containment with wire backing and for a more estate-like presence. We help you choose based on the property and the job the fence needs to do.",
       },
       {
-        q: "How much does concrete or masonry work cost?",
-        a: "It depends on the type of work, the square footage or wall area, the finish you choose, and the site prep required. A plain slab is more economical than a large stamped-concrete patio or detailed stonework. We provide a clear, itemized estimate after assessing the project on-site.",
+        q: "How long does a split rail fence installation take?",
+        a: "Most residential fence lines are installed in a few days once materials are on site, depending on total length, gates, and terrain. We confirm the timeline with your estimate so you know what to expect before we start.",
       },
       {
-        q: "Do you handle the base prep and drainage too?",
-        a: "Yes. We handle the full job, including excavation, base preparation, reinforcement, and drainage. That foundational prep is exactly what determines whether concrete and masonry last, so we never treat it as an afterthought or hand it off to someone else.",
+        q: "Do you replace old or failing rail fences?",
+        a: "Yes. We remove tired fence lines and set new posts and rails properly, rather than patching new rails into rotted posts. If sections of your fence are leaning or the rails keep falling, a proper reset is usually the better investment, and we can quote both options honestly.",
       },
     ],
   },
-
-  // ---------------- SNOW MANAGEMENT (secondary) ----------------
   {
     path: "/snow-management-services/",
     title: "Commercial Snow Management",

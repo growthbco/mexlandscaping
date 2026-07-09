@@ -1189,7 +1189,7 @@ export function locationContent(page: LocationPage) {
         "Landscape design & full redesigns",
         "Patios, walkways & retaining walls",
         "Fire pits & outdoor living",
-        "Concrete, masonry & stone facades",
+        "Drainage, lighting & split rail fencing",
       ],
       body: profile?.designBody ?? [
         {
