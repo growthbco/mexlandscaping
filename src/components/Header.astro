@@ -4,7 +4,7 @@ import Icon from "./Icon.astro";
 import Button from "./Button.astro";
 ---
 
-<header class="sticky top-0 z-50 border-b border-forest-100 bg-white shadow-sm">
+<header class="sticky top-0 z-50 bg-ink-900 text-white shadow-lg shadow-ink-950/20">
   <div class="container-page flex h-20 items-center justify-between gap-4">
     <a href="/" aria-label="Mex Landscaping home" class="inline-flex shrink-0 items-center">
       <img
@@ -24,7 +24,7 @@ import Button from "./Button.astro";
             <div class="group relative">
               <a
                 href={item.href}
-                class="inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-[15px] font-medium text-ink-800 hover:text-leaf-600"
+                class="inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 font-display text-sm font-semibold tracking-wide text-white/90 hover:text-white"
               >
                 {item.label}
                 <Icon name="chevron" class="h-3.5 w-3.5 opacity-70" />
@@ -45,7 +45,7 @@ import Button from "./Button.astro";
           ) : (
             <a
               href={item.href}
-              class="whitespace-nowrap rounded-md px-2.5 py-2 text-[15px] font-medium text-ink-800 hover:text-leaf-600"
+              class="whitespace-nowrap rounded-md px-2.5 py-2 font-display text-sm font-semibold tracking-wide text-white/90 hover:text-white"
             >
               {item.label}
             </a>
@@ -57,7 +57,7 @@ import Button from "./Button.astro";
     <div class="hidden shrink-0 items-center gap-2 xl:flex">
       <a
         href={business.phoneHref}
-        class="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2.5 text-sm font-bold text-ink-900 transition hover:text-leaf-600"
+        class="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2.5 text-sm font-bold text-ink-900 transition hover:bg-forest-50"
       >
         <Icon name="phone" class="h-4 w-4 text-leaf-500" />
         {business.phoneDisplay}
@@ -68,7 +68,7 @@ import Button from "./Button.astro";
     <button
       type="button"
       id="menu-toggle"
-      class="grid h-10 w-10 place-items-center rounded-lg text-ink-900 hover:bg-forest-50 xl:hidden"
+      class="grid h-10 w-10 place-items-center rounded-lg text-white hover:bg-white/10 xl:hidden"
       aria-label="Toggle menu"
       aria-expanded="false"
     >
@@ -78,26 +78,26 @@ import Button from "./Button.astro";
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden border-t border-forest-100 bg-white xl:hidden">
+  <div id="mobile-menu" class="hidden border-t border-white/10 bg-ink-900 xl:hidden">
     <nav class="container-page max-h-[calc(100vh-5rem)] space-y-1 overflow-y-auto py-4">
       {
         nav.map((item) =>
           item.children ? (
             <details class="group">
-              <summary class="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2.5 text-base font-semibold text-ink-900 hover:bg-forest-50">
+              <summary class="flex cursor-pointer list-none items-center justify-between rounded-lg px-3 py-2.5 font-display text-base font-semibold tracking-wide text-white hover:bg-white/5">
                 {item.label}
                 <Icon name="chevron" class="h-4 w-4 transition-transform group-open:rotate-180" />
               </summary>
-              <div class="ml-3 border-l border-forest-200 pl-3">
+              <div class="ml-3 border-l border-white/15 pl-3">
                 {item.children.map((child) => (
-                  <a href={child.href} class="block rounded-lg px-3 py-2 text-sm text-forest-700 hover:text-leaf-600">
+                  <a href={child.href} class="block rounded-lg px-3 py-2 text-sm text-white/75 hover:text-white">
                     {child.label}
                   </a>
                 ))}
               </div>
             </details>
           ) : (
-            <a href={item.href} class="block rounded-lg px-3 py-2.5 text-base font-semibold text-ink-900 hover:bg-forest-50">
+            <a href={item.href} class="block rounded-lg px-3 py-2.5 font-display text-base font-semibold tracking-wide text-white hover:bg-white/5">
               {item.label}
             </a>
           )
@@ -106,7 +106,7 @@ import Button from "./Button.astro";
       <div class="space-y-3 pt-3">
         <a
           href={business.phoneHref}
-          class="flex items-center justify-center gap-2 rounded-lg border border-forest-200 px-4 py-3 font-bold text-ink-900"
+          class="flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 font-bold text-ink-900"
         >
           <Icon name="phone" class="h-4 w-4 text-leaf-500" />
           {business.phoneDisplay}
