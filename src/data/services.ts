@@ -76,7 +76,7 @@ export const services: Service[] = [
       "Full-service landscape design and installation, from a complete property redesign to refined planting, lighting, and grading. We design it, then our own crews build it.",
     gallery: [
       {
-        src: "/images/design-boxwood-beds.webp",
+        src: "/images/curb-colonial.webp",
         alt: "Sculpted boxwood island bed in a fresh landscape design",
         caption: "Sculpted boxwood island bed",
       },
@@ -96,9 +96,9 @@ export const services: Service[] = [
         caption: "Beds with Japanese maple",
       },
       {
-        src: "/images/curb-colonial.webp",
-        alt: "Colonial home with a redesigned front landscape",
-        caption: "Colonial front landscape",
+        src: "/images/curb-tan-house.webp",
+        alt: "Fresh foundation beds and layered plantings at a home",
+        caption: "Foundation beds and plantings",
       },
       {
         src: "/images/curb-craftsman.webp",
@@ -248,7 +248,7 @@ export const services: Service[] = [
         caption: "Japanese maple in a mulched bed",
       },
       {
-        src: "/images/design-boxwood-beds.webp",
+        src: "/images/curb-colonial.webp",
         alt: "Sculpted boxwood plantings in an island bed",
         caption: "Sculpted boxwood plantings",
       },
@@ -1922,7 +1922,7 @@ export const services: Service[] = [
     title: "Trimming & Pruning",
     category: "maintenance",
     icon: "leaf",
-    image: "/images/design-boxwood-beds.webp",
+    image: "/images/curb-colonial.webp",
     intro: "Expert trimming and pruning that keeps plantings shapely and your landscape sharp.",
     highlights: ["Shrub & hedge shaping", "Clean edging", "Species-correct timing", "Debris haul-away"],
     body: [
