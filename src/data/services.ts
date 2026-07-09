@@ -1454,6 +1454,85 @@ export const services: Service[] = [
     ],
   },
   {
+    path: "/concrete-masonry/",
+    title: "Outdoor Concrete & Masonry",
+    category: "hardscaping",
+    icon: "brick",
+    image: "/images/wall-stone-after.webp",
+    metaTitle: "Outdoor Concrete & Masonry | Patios, Steps & Stonework | Mex Landscaping",
+    metaDescription:
+      "Outdoor concrete and masonry for Norristown and the Main Line: stamped and poured concrete patios, walkways, steps, and landscape stonework. Outdoor projects only.",
+    intro:
+      "Stamped and poured concrete, stone steps, and landscape masonry, for outdoor projects only. We build the concrete and stonework that belongs in a landscape.",
+    highlights: [
+      "Stamped & poured concrete patios",
+      "Concrete walkways, steps & pads",
+      "Stone veneer on outdoor walls & columns",
+      "Outdoor fireplaces & fire features",
+    ],
+    body: [
+      {
+        heading: "Outdoor concrete and masonry in Norristown and the Main Line",
+        text: "Some outdoor spaces call for concrete and stone rather than pavers: a stamped concrete patio, a poured walkway, wide front steps, or stone veneer that dresses a landscape wall or entry column. Mex Landscaping handles that work as part of our design-build service across Norristown, Montgomery County, and the Main Line. Because it is planned alongside the grading, drainage, and planting around it, the finished concrete and stonework belongs to the landscape instead of just sitting in it.",
+      },
+      {
+        heading: "Stamped and poured concrete done right",
+        text: "Concrete succeeds or fails on preparation. We excavate to proper depth, build a compacted base, form cleanly, and place control joints where they belong so slabs cure strong and crack where they are designed to, not across the middle of your patio. Stamped finishes add the texture of stone or slate at a friendlier price point, and broom-finished concrete remains the workhorse for walkways, pads, and steps that need to perform through Pennsylvania freeze-thaw.",
+      },
+      {
+        heading: "Landscape masonry and stonework",
+        text: "Our masonry lives outdoors: natural and manufactured stone veneer on landscape walls, entry columns, and seating walls, stone steps and stoops, and the masonry structure behind outdoor fireplaces and fire features. It is the same craft you see in our fieldstone retaining walls, applied to the finishing details that give a property permanence and character.",
+      },
+      {
+        heading: "What we do not do",
+        text: "We keep this service focused on outdoor landscape projects, so a few things are outside our scope: chimney repair or rebuilds, brick repointing and structural repairs on the house itself, foundation work, interior masonry, and historic restoration. Those belong with a dedicated masonry repair contractor. If your project is part of the landscape, the patio, the steps, the outdoor fireplace, the stonework around the yard, it is exactly what we do.",
+      },
+      {
+        heading: "One team for the whole outdoor project",
+        text: "Concrete and masonry rarely travel alone. A stamped patio wants planting and lighting around it; new front steps deserve refreshed beds beside them; an outdoor fireplace anchors a whole outdoor room. As a design-build company we plan and build all of it together, so you get one accountable team and a finished space instead of a slab. Call (484) 261-6650 or request a free estimate and we will look at the project as a whole.",
+      },
+    ],
+    gallery: [
+      {
+        src: "/images/wall-stone-during.webp",
+        alt: "Mex Landscaping masons hand-laying natural fieldstone",
+        caption: "Our masons laying natural fieldstone",
+      },
+      {
+        src: "/images/wall-stone-after.webp",
+        alt: "Finished natural stone wall and stone steps",
+        caption: "Finished stone wall and steps",
+      },
+      {
+        src: "/images/firepit-lit.webp",
+        alt: "Custom stone fire pit built by Mex Landscaping",
+        caption: "Custom stone fire pit",
+      },
+    ],
+    faqs: [
+      {
+        q: "Do you repair chimneys or do brick repointing?",
+        a: "No. Our concrete and masonry work is for outdoor landscape projects only: patios, walkways, steps, landscape stonework, and outdoor fire features. Chimney work, repointing, foundation repair, and historic restoration belong with a dedicated masonry repair contractor.",
+      },
+      {
+        q: "Is stamped concrete or pavers better for a patio?",
+        a: "Both can be excellent, and we build both. Stamped concrete costs less up front and gives a continuous surface with stone-like texture. Pavers cost more but handle freeze-thaw by flexing joint by joint and can be repaired spot by spot. We walk you through the trade-offs for your site and budget with no bias, since we install either one.",
+      },
+      {
+        q: "What outdoor concrete work do you do?",
+        a: "Stamped and poured concrete patios, walkways, steps and stoops, and pads for sheds, hoops, and equipment. Every pour gets proper excavation, a compacted base, clean forming, and control joints placed to manage cracking through our freeze-thaw winters.",
+      },
+      {
+        q: "Do you build outdoor fireplaces?",
+        a: "Yes. Outdoor fireplaces and fire features are landscape masonry at its best: a solid masonry structure finished in stone or veneer, planned as the anchor of an outdoor room. We design and build them as part of a complete outdoor living space.",
+      },
+      {
+        q: "Can you match stone to my house or existing walls?",
+        a: "Usually, yes. We work with natural and manufactured stone in a wide range of colors and profiles, and we match new stonework to existing walls, walkways, or the house itself so additions read as original rather than patched on.",
+      },
+    ],
+  },
+  {
     path: "/snow-management-services/",
     title: "Commercial Snow Management",
     category: "snow",

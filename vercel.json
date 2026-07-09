@@ -163,11 +163,6 @@
       "statusCode": 301
     },
     {
-      "source": "/concrete-masonry/",
-      "destination": "/hardscape-services/",
-      "statusCode": 301
-    },
-    {
       "source": "/(.*)",
       "has": [
         {

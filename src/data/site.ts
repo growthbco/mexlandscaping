@@ -62,6 +62,7 @@ export const nav: NavItem[] = [
       { label: "Driveways", href: "/driveways/" },
       { label: "Retaining & Seating Walls", href: "/retaining-walls/" },
       { label: "Architectural Stone & Facades", href: "/architectural-stone-facades/" },
+      { label: "Outdoor Concrete & Masonry", href: "/concrete-masonry/" },
     ],
   },
   {
