@@ -64,11 +64,15 @@ export function getLocationPage(path: string) {
 // true and public. No fabricated project counts, stats, or claims.
 // ---------------------------------------------------------------------------
 
+export type GalleryItem = { src: string; alt: string; caption: string };
+
 type CityProfile = {
   metaDescription: string;
   intro: string;
   designBody: LocBlock[];
   designFaqs: Faq[];
+  /** Optional real project photos rendered as a captioned grid on the page. */
+  gallery?: GalleryItem[];
 };
 
 const cityProfiles: Record<string, CityProfile> = {
@@ -130,8 +134,20 @@ const cityProfiles: Record<string, CityProfile> = {
         text: "King of Prussia, in Upper Merion Township, blends established residential neighborhoods with newer developments and a major commercial corridor. We design and build for all of it: full landscape redesigns, paver and natural stone patios, retaining and seating walls, walkways, driveways, fire features, and outdoor living spaces. As a design-build company, one accountable team plans your project and installs it, so the result is cohesive from the first sketch to the last stone.",
       },
       {
+        heading: "Expert landscape design in King of Prussia",
+        text: "Every project starts with landscape design: a site-specific plan that balances plantings, hardscape, grading, and flow before anything is built. For King of Prussia properties that often means designing around newer construction, connecting a patio to the house cleanly, and planning four-season interest so the yard looks intentional from day one. Because the designer and the build crew are the same company, the plan you approve is the landscape you get.",
+      },
+      {
         heading: "Landscaping for King of Prussia neighborhoods",
         text: "From long-established streets to newer subdivisions, King of Prussia homes deserve outdoor spaces that match the quality of the neighborhood. We create complete landscape designs with layered plantings, custom hardscape, drainage, and lighting, all planned together. Whether you are finishing a new-construction yard or reimagining an older property, we work to your goals and budget with a clear plan and a realistic timeline.",
+      },
+      {
+        heading: "Patios and retaining walls for King of Prussia homes",
+        text: "Hardscaping is where a King of Prussia backyard becomes an outdoor room. We build paver and natural stone patios on engineered, compacted bases that stay level through Pennsylvania freeze-thaw, and retaining and seating walls that turn sloped or unusable ground into level living space. Fire pits, walkways, steps, and outdoor kitchens complete the picture, all matched to the home's materials and style.",
+      },
+      {
+        heading: "Landscape lighting and drainage in King of Prussia",
+        text: "The details that make a landscape work long-term are the ones you plan up front. We install low-voltage landscape lighting that extends evenings outdoors and adds safety and presence after dark, and we engineer drainage, French drains, dry wells, downspout routing, and grading, so water moves away from the house instead of pooling in the lawn. Both are designed into the master plan rather than bolted on later.",
       },
       {
         heading: "Residential and commercial outdoor spaces",
@@ -142,7 +158,28 @@ const cityProfiles: Record<string, CityProfile> = {
         text: "We are right nearby in Montgomery County and serve King of Prussia along with Wayne, Bridgeport, Norristown, and the rest of Upper Merion and the surrounding communities. Call (484) 261-6650 or request a free estimate, and we will visit the property, discuss your goals, and provide a clear scope and price.",
       },
     ],
+    gallery: [
+      {
+        src: "/images/pergola-patio.webp",
+        alt: "Custom cedar pergola built over a paver patio by Mex Landscaping",
+        caption: "Custom cedar pergola over a paver patio",
+      },
+      {
+        src: "/images/wall-block-curved.webp",
+        alt: "Curved block retaining wall with steps built by Mex Landscaping",
+        caption: "Curved retaining wall and steps",
+      },
+      {
+        src: "/images/walkway-cobble.webp",
+        alt: "Paver walkway with cobblestone edging installed by Mex Landscaping",
+        caption: "Paver walkway with cobble edging",
+      },
+    ],
     designFaqs: [
+      {
+        q: "Do you offer landscape design services in King of Prussia?",
+        a: "Yes. Landscape design is the core of what we do in King of Prussia. We create a site-specific plan covering plantings, hardscape, grading, drainage, and lighting, then our own crews build it. One accountable team from the first sketch to the finished space.",
+      },
       {
         q: "What parts of King of Prussia do you serve?",
         a: "We serve all of King of Prussia and Upper Merion Township, along with neighboring areas including Wayne, Bridgeport, and Norristown. We are based nearby in Montgomery County, so we cover the King of Prussia area regularly.",
@@ -608,11 +645,36 @@ const cityProfiles: Record<string, CityProfile> = {
         text: "On a property with real architectural character, the hardscape has to match. We build patios, walkways, walls, and outdoor living spaces in natural flagstone, bluestone, and full stone, matching color and texture to the home so new work reads as original rather than added on. Fire features, seating walls, and outdoor kitchens are designed to feel integral to the property, not dropped in.",
       },
       {
+        heading: "Landscape construction and installation in Villanova",
+        text: "Design is only half the job; landscape construction is where a plan becomes a property. Our own crews handle the full installation: excavation and grading, drainage, engineered base work, stone and paver construction, planting, and lighting. Unlike firms that design on paper and hand the plan to a separate construction crew, the people who design your Villanova landscape are the people who build it, so nothing is lost between the drawing and the ground. We also execute plans from independent landscape architects when a design already exists.",
+      },
+      {
         heading: "Serving Villanova and the Main Line",
         text: "We serve Villanova along with neighboring Main Line communities including Bryn Mawr, Wayne, Rosemont, and Radnor, across both Radnor and Lower Merion townships. Call (484) 261-6650 or request a free estimate, and we will visit the property, talk through your vision, and put together a clear, detailed plan and price.",
       },
     ],
+    gallery: [
+      {
+        src: "/images/wall-stone-after.webp",
+        alt: "Hand-laid natural fieldstone retaining wall and stone steps by Mex Landscaping",
+        caption: "Hand-laid natural fieldstone wall and steps",
+      },
+      {
+        src: "/images/firepit-lit.webp",
+        alt: "Custom stone fire pit and patio at dusk built by Mex Landscaping",
+        caption: "Custom stone fire pit at dusk",
+      },
+      {
+        src: "/images/design-maple-beds.webp",
+        alt: "Layered planting beds installed around a mature maple by Mex Landscaping",
+        caption: "Layered planting beds around a mature maple",
+      },
+    ],
     designFaqs: [
+      {
+        q: "Do you handle landscape construction in Villanova?",
+        a: "Yes. Our own crews handle the complete landscape construction: excavation, grading, drainage, engineered bases, stone and paver work, planting, and lighting. We build the landscapes we design, and we can also execute an existing plan from an independent landscape architect.",
+      },
       {
         q: "What areas around Villanova do you serve?",
         a: "We serve Villanova and the surrounding Main Line across Radnor and Lower Merion townships, including Bryn Mawr, Wayne, Rosemont, and Radnor.",
@@ -1140,6 +1202,7 @@ export function locationContent(page: LocationPage) {
         },
       ],
       faqs: profile?.designFaqs as Faq[] | undefined,
+      gallery: profile?.gallery,
       cta: `Call (484) 261-6650 for a free design consultation in ${city}, PA.`,
     };
   }
@@ -1173,6 +1236,7 @@ export function locationContent(page: LocationPage) {
       },
     ],
     faqs: (snow?.snowFaqs ?? undefined) as Faq[] | undefined,
+    gallery: undefined as GalleryItem[] | undefined,
     cta: `Call (484) 261-6650 to set up snow management in ${city}, PA before the next storm.`,
   };
 }

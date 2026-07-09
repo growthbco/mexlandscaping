@@ -5,6 +5,11 @@ import Icon from "./Icon.astro";
 const year = new Date().getFullYear();
 const columns = nav.filter((n) => n.children).slice(0, 2);
 const topCities = cities.slice(0, 8);
+// Main Line entity strip: the money towns, linked to their city pages.
+const mainLineSlugs = ["villanova", "gladwyne", "bryn-mawr", "wayne", "radnor", "berwyn", "king-of-prussia"];
+const mainLineCities = mainLineSlugs
+  .map((slug) => cities.find((c) => c.slug === slug))
+  .filter((c) => !!c);
 ---
 
 <footer class="bg-ink-900 text-white/70">
@@ -22,8 +27,8 @@ const topCities = cities.slice(0, 8);
           />
         </a>
         <p class="mt-5 max-w-xs text-sm leading-relaxed">
-          Your trusted landscaping partner across Norristown and the Main Line.
-          Quality work, every time.
+          Design-build landscaping, hardscaping, and landscape construction for
+          Norristown, Montgomery County, and the Main Line of Philadelphia.
         </p>
         <div class="mt-6 flex items-center gap-3">
           <a href={business.social.facebook} aria-label="Facebook" class="grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white transition hover:bg-leaf-500">
@@ -79,6 +84,23 @@ const topCities = cities.slice(0, 8);
           <a href="/service-areas/" class="ml-1 font-semibold text-leaf-400 hover:text-leaf-500">See all areas →</a>
         </div>
       </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10 bg-ink-950">
+    <div class="container-page py-4 text-center text-sm text-white/50">
+      <span class="font-semibold text-white/80">The Main Line's design-build landscaping contractor</span>
+      <span class="mx-2 hidden sm:inline" aria-hidden="true">·</span>
+      <span class="mt-1 block sm:mt-0 sm:inline">
+        {
+          mainLineCities.map((c, i) => (
+            <>
+              {i > 0 && <span class="mx-1.5 text-white/25" aria-hidden="true">|</span>}
+              <a href={`/landscape-design-hardscaping-in-${c.slug}-pa/`} class="hover:text-white">{c.name}</a>
+            </>
+          ))
+        }
+      </span>
     </div>
   </div>
 
