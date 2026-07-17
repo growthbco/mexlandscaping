@@ -119,11 +119,11 @@ export const services: Service[] = [
       },
       {
         heading: "What a landscape design includes",
-        text: "A complete design considers far more than where the plants go. We plan the hardscape and circulation, the planting palette for four-season interest, grading and drainage, lighting, and how each area connects to the next and to the house. For larger properties we phase the work so a big vision can be built in stages. The goal is a landscape that looks intentional, functions in every season, and grows in beautifully over time.",
+        text: "A complete design considers far more than where the plants go. We plan the <a href=\"/hardscape-services/\">hardscape</a> and circulation, the planting palette for four-season interest, grading and <a href=\"/storm-water-management/\">drainage</a>, <a href=\"/landscape-lighting/\">landscape lighting</a>, and how each area connects to the next and to the house. For larger properties we phase the work so a big vision can be built in stages. The goal is a landscape that looks intentional, functions in every season, and grows in beautifully over time.",
       },
       {
         heading: "Planting design that looks good all year",
-        text: "Thoughtful planting is what separates a designed landscape from a collection of shrubs. We layer specimen trees, structural evergreens, flowering shrubs, ornamental grasses, and perennials so there is texture and color across spring, summer, fall, and winter. Every selection is matched to your light, soil, and maintenance appetite, and placed with proper spacing so the planting reads as deliberate the day it goes in and only gets better as it matures.",
+        text: "Thoughtful planting is what separates a designed landscape from a collection of shrubs. We layer <a href=\"/tree-plant-installation/\">specimen trees and plantings</a>, structural evergreens, flowering shrubs, ornamental grasses, and perennials so there is texture and color across spring, summer, fall, and winter. Every selection is matched to your light, soil, and maintenance appetite, and placed with proper spacing so the planting reads as deliberate the day it goes in and only gets better as it matures.",
       },
       {
         heading: "Full redesign or a single refined area",
@@ -131,7 +131,7 @@ export const services: Service[] = [
       },
       {
         heading: "Residential and commercial design in Norristown and the Main Line",
-        text: "We provide landscape design and installation for homes and commercial properties across Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken. Every project begins with a free consultation to understand your goals, your property, and your budget. Call (484) 261-6650 or request a free estimate to start the conversation.",
+        text: "We provide landscape design and installation for homes and <a href=\"/commercial-landscaping/\">commercial properties</a> across Montgomery County and the Main Line, including <a href=\"/landscape-design-hardscaping-in-norristown-pa/\">Norristown</a>, <a href=\"/landscape-design-hardscaping-in-king-of-prussia-pa/\">King of Prussia</a>, <a href=\"/landscape-design-hardscaping-in-wayne-pa/\">Wayne</a>, Bryn Mawr, and Conshohocken. Every project begins with a free consultation to understand your goals, your property, and your budget. Call (484) 261-6650 or request a free estimate to start the conversation.",
       },
     ],
     faqs: [
@@ -279,11 +279,11 @@ export const services: Service[] = [
       },
       {
         heading: "Establishment care for healthy plantings",
-        text: "Getting plants in the ground is only the start. New trees and shrubs need the right care through their first season to root in and establish, so we give you clear guidance on watering and early care, and we can fold ongoing plant health into a maintenance plan. We also coordinate plantings with your hardscape, lighting, and lawn so the whole landscape reads as one cohesive design rather than separate projects placed side by side.",
+        text: "Getting plants in the ground is only the start. New trees and shrubs need the right care through their first season to root in and establish, so we give you clear guidance on watering and early care, and we can fold ongoing plant health into a maintenance plan. We also coordinate plantings with your <a href=\"/hardscape-services/\">hardscape</a>, <a href=\"/landscape-lighting/\">lighting</a>, and lawn so the whole landscape reads as one cohesive design rather than separate projects placed side by side.",
       },
       {
         heading: "Planting installation in Norristown and the Main Line",
-        text: "We install trees, shrubs, and perennials throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, whether as a single bed renovation or part of a full landscape design. It starts with a free on-site consultation where we look at your conditions and goals. Call (484) 261-6650 or request a free estimate.",
+        text: "We install trees, shrubs, and perennials throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, whether as a single bed renovation or part of a full <a href=\"/landscape-design/\">landscape design</a>. It starts with a free on-site consultation where we look at your conditions and goals. Call (484) 261-6650 or request a free estimate.",
       },
     ],
     faqs: [
@@ -351,7 +351,7 @@ export const services: Service[] = [
       },
       {
         heading: "Smart controls and a system that runs itself",
-        text: "The best lighting takes care of itself. We set up timers, photocells, and smart controls so the system comes on at dusk, dims or zones as you like, and turns off on schedule without you thinking about it. Because we also build hardscape and outdoor living spaces, we can integrate lighting into patios, walls, steps, and trees as part of a unified design, running conduit during construction so fixtures tie in cleanly rather than being added on later.",
+        text: "The best lighting takes care of itself. We set up timers, photocells, and smart controls so the system comes on at dusk, dims or zones as you like, and turns off on schedule without you thinking about it. Because we also build <a href=\"/hardscape-services/\">hardscape</a> and <a href=\"/outdoor-living/\">outdoor living spaces</a>, we can integrate lighting into <a href=\"/patios/\">patios</a>, walls, steps, and trees as part of a unified design, running conduit during construction so fixtures tie in cleanly rather than being added on later.",
       },
       {
         heading: "Landscape lighting in Norristown and the Main Line",
@@ -427,7 +427,7 @@ export const services: Service[] = [
       },
       {
         heading: "Solving the root cause, not the symptom",
-        text: "Good drainage is invisible when it is done right and expensive when it is ignored. The difference is diagnosing the actual cause instead of chasing symptoms. We assess grade, soil, and the path water takes during a real storm, then design a system that addresses the source so the problem does not simply return next spring. Because we also do grading, hardscape, and planting, we can restore the landscape cleanly once the drainage work is complete.",
+        text: "Good drainage is invisible when it is done right and expensive when it is ignored. The difference is diagnosing the actual cause instead of chasing symptoms. We assess grade, soil, and the path water takes during a real storm, then design a system that addresses the source so the problem does not simply return next spring. Because we also do grading, <a href=\"/hardscape-services/\">hardscape</a>, and <a href=\"/tree-plant-installation/\">planting</a>, we can restore the landscape cleanly once the drainage work is complete.",
       },
       {
         heading: "Drainage solutions for Norristown and the Main Line",
@@ -657,11 +657,11 @@ export const services: Service[] = [
     body: [
       {
         heading: "Full-service hardscaping in Norristown and the Main Line",
-        text: "Hardscaping is the structural backbone of any outdoor space: the patios, walkways, walls, driveways, and steps that give a yard its shape and make it usable. Mex Landscaping is a design-build hardscape contractor serving Norristown and the Main Line, and we handle every piece in-house. Because one team designs and builds the whole project, the stonework, grading, and drainage all work together instead of being stitched together by different crews.",
+        text: "Hardscaping is the structural backbone of any outdoor space: the patios, walkways, walls, driveways, and steps that give a yard its shape and make it usable. Mex Landscaping is a <a href=\"/landscape-design/\">design-build</a> hardscape contractor serving Norristown and the Main Line, and we handle every piece in-house. Because one team designs and builds the whole project, the stonework, grading, and drainage all work together instead of being stitched together by different crews.",
       },
       {
         heading: "Everything we build in stone and paver",
-        text: "Our hardscaping covers paver and natural stone patios, walkways and garden paths, steps and stairs, retaining and seating walls, paver and stone driveways, fire pits and fire features, outdoor kitchens, and architectural stone veneer. We work in concrete pavers, natural flagstone and bluestone, full stone and boulders, brick, and porcelain, matching materials to your home and how each space will be used.",
+        text: "Our hardscaping covers paver and natural stone <a href=\"/patios/\">patios</a>, walkways and garden paths, steps and stairs, <a href=\"/retaining-walls/\">retaining and seating walls</a>, paver and stone driveways, fire pits and fire features, <a href=\"/outdoor-kitchens/\">outdoor kitchens</a>, and architectural stone veneer. We work in concrete pavers, natural flagstone and bluestone, full stone and boulders, brick, and porcelain, matching materials to your home and how each space will be used.",
       },
       {
         heading: "The engineered base behind every project",
@@ -669,7 +669,7 @@ export const services: Service[] = [
       },
       {
         heading: "Designed as one cohesive outdoor space",
-        text: "The best results come from planning the hardscape as a whole. A patio flows into a walkway, a seating wall frames a fire pit, lighting traces the steps, and the driveway and entry share the same materials. We design the elements to connect, then build them in a logical sequence so the finished property looks intentional and complete rather than assembled piece by piece over the years.",
+        text: "The best results come from planning the hardscape as a whole. A patio flows into a walkway, a seating wall frames a fire pit, <a href=\"/landscape-lighting/\">landscape lighting</a> traces the steps, and the driveway and entry share the same materials. We design the elements to connect, then build them in a logical sequence so the finished property looks intentional and complete rather than assembled piece by piece over the years.",
       },
       {
         heading: "Your local design-build hardscape contractor",
@@ -746,7 +746,7 @@ export const services: Service[] = [
       },
       {
         heading: "Designed for how you actually use the yard",
-        text: "A patio works best as part of a bigger plan. We size and shape the space around real use: dining, lounging, a grill zone, a path to the door. From there we can integrate a fire pit, a seating wall, steps, low-voltage lighting, and surrounding plantings so the whole area reads as one finished outdoor room rather than a slab dropped in the grass.",
+        text: "A patio works best as part of a bigger plan. We size and shape the space around real use: dining, lounging, a grill zone, a path to the door. From there we can integrate a <a href=\"/fire-pits/\">fire pit</a>, a <a href=\"/retaining-walls/\">seating wall</a>, steps, low-voltage <a href=\"/landscape-lighting/\">landscape lighting</a>, and surrounding plantings so the whole area reads as one finished outdoor room rather than a slab dropped in the grass.",
       },
       {
         heading: "Patio installation across Norristown and the Main Line",
@@ -991,7 +991,7 @@ export const services: Service[] = [
       },
       {
         heading: "Seating walls and tiered terraces that add usable space",
-        text: "Walls can do double duty. A seating wall rings a patio or fire pit with built-in seating and definition. Tiered or terraced walls break a tall grade into a series of planting beds or level landings, which often looks better and performs better than one tall wall. We design walls that solve a grading problem and create an outdoor room at the same time.",
+        text: "Walls can do double duty. A seating wall rings a <a href=\"/patios/\">patio</a> or <a href=\"/fire-pits/\">fire pit</a> with built-in seating and definition. Tiered or terraced walls break a tall grade into a series of planting beds or level landings, which often looks better and performs better than one tall wall. We design walls that solve a grading problem and create an outdoor room at the same time.",
       },
       {
         heading: "Retaining wall contractor for Norristown and the Main Line",
@@ -1129,7 +1129,7 @@ export const services: Service[] = [
       },
       {
         heading: "Fire features, kitchens, and water",
-        text: "An outdoor living space is built from the features you will actually use. We build custom fire pits and fireplaces for cooler evenings, full outdoor kitchens with built-in grills, counters, and bar seating for entertaining, and water features that add sound and calm. Pergolas, seating walls, and shade structures define the space, and we coordinate the materials so the kitchen, fire feature, and patio all clearly belong together.",
+        text: "An outdoor living space is built from the features you will actually use. We build custom <a href=\"/fire-pits/\">fire pits and fireplaces</a> for cooler evenings, full <a href=\"/outdoor-kitchens/\">outdoor kitchens</a> with built-in grills, counters, and bar seating for entertaining, and <a href=\"/water-features/\">water features</a> that add sound and calm. Pergolas, seating walls, and shade structures define the space, and we coordinate the materials so the kitchen, fire feature, and patio all clearly belong together.",
       },
       {
         heading: "Designed around how you actually live outside",
@@ -1137,7 +1137,7 @@ export const services: Service[] = [
       },
       {
         heading: "Lighting and comfort that extend the season",
-        text: "The right details keep you outside longer. Low-voltage lighting makes the space usable and beautiful after dark, a fire feature pushes the season into spring and fall, and thoughtful layout keeps cooking, seating, and traffic from colliding. We build these comfort elements into the plan from the start rather than tacking them on later.",
+        text: "The right details keep you outside longer. Low-voltage <a href=\"/landscape-lighting/\">landscape lighting</a> makes the space usable and beautiful after dark, a fire feature pushes the season into spring and fall, and thoughtful layout keeps cooking, seating, and traffic from colliding. We build these comfort elements into the plan from the start rather than tacking them on later.",
       },
       {
         heading: "Outdoor living builders for Norristown and the Main Line",

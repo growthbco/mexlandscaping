@@ -84,7 +84,7 @@ const cityProfiles: Record<string, CityProfile> = {
     designBody: [
       {
         heading: "Landscape design and hardscaping in Norristown, PA",
-        text: "Norristown is our home base, and we take real pride in the work we do across the borough and the rest of Montgomery County. As a design-build company, we plan and install your project with one accountable team: full landscape redesigns, custom patios, retaining and seating walls, walkways, driveways, fire features, and outdoor living spaces. From the first sketch to the final stone, the people who design your space are the people who build it.",
+        text: "Norristown is our home base, and we take real pride in the work we do across the borough and the rest of Montgomery County. As a <a href=\"/landscape-design/\">design-build company</a>, we plan and install your project with one accountable team: full landscape redesigns, custom <a href=\"/patios/\">patios</a>, retaining and seating walls, walkways, driveways, fire features, and <a href=\"/outdoor-living/\">outdoor living spaces</a>. From the first sketch to the final stone, the people who design your space are the people who build it.",
       },
       {
         heading: "Built for Norristown's established properties",
@@ -92,7 +92,7 @@ const cityProfiles: Record<string, CityProfile> = {
       },
       {
         heading: "Hardscaping and outdoor living in Norristown",
-        text: "A patio, a fire pit, and a seating wall can turn an ordinary Norristown backyard into the place everyone gathers. We build paver and natural stone patios, retaining and seating walls, walkways and steps, paver driveways, and complete outdoor living spaces with fire features and outdoor kitchens. Because we handle every piece in-house, the hardscape, plantings, drainage, and lighting all work together as one finished space.",
+        text: "A patio, a fire pit, and a seating wall can turn an ordinary Norristown backyard into the place everyone gathers. We build paver and natural stone patios, <a href=\"/retaining-walls/\">retaining and seating walls</a>, walkways and steps, paver driveways, and complete outdoor living spaces with <a href=\"/fire-pits/\">fire features</a> and <a href=\"/outdoor-kitchens/\">outdoor kitchens</a>. Because we handle every piece in-house, the hardscape, plantings, drainage, and lighting all work together as one finished space.",
       },
       {
         heading: "Your neighbors' landscaping company",

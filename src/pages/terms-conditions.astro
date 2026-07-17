@@ -14,29 +14,95 @@ const description = meta?.description ?? "Mex Landscaping terms and conditions."
   <PageHero title="Terms & Conditions" crumbs={[{ label: "Home", href: "/" }, { label: "Terms & Conditions" }]} />
   <Section>
     <div class="prose-mex mx-auto max-w-2xl">
-      <p>Welcome to Mex Landscaping!</p>
+      <p>Last updated: July 16, 2026</p>
+      <p>Welcome to {business.legalName}!</p>
       <p>
-        These terms and conditions outline the rules for using the Mex
-        Landscaping website. By accessing this site, you accept these terms in
-        full.
+        These terms and conditions (“Terms”) outline the rules for using the
+        {business.name} website and for communicating with us through it. By
+        accessing this site or submitting a form, you accept these Terms in
+        full. If you do not agree, please do not use the site.
       </p>
+
       <h2>Use of the site</h2>
       <p>
-        The content on this website is for general information about our
-        services. We make every effort to keep it accurate and up to date, but
-        details such as pricing and availability are confirmed in a written
-        estimate.
+        The content on this website is provided for general information about
+        our services. We make every effort to keep it accurate and up to date,
+        but details such as pricing, availability, and project specifics are
+        confirmed only in a written estimate or signed agreement. You agree to
+        use this site lawfully and not to misuse it, attempt to disrupt it, or
+        access it in any way that could damage or impair it.
       </p>
+
       <h2>Estimates &amp; services</h2>
       <p>
         Estimates provided through this website or by phone are not binding
         contracts. The scope, schedule, and price of any work are confirmed in a
-        signed agreement before work begins.
+        signed agreement before work begins. Photographs of past work on this
+        site are examples and do not represent the guaranteed outcome of any
+        individual project.
       </p>
+
+      <h2>Communications consent</h2>
+      <p>
+        When you submit a form, respond to one of our advertisements, or give us
+        your contact details, you agree that we may contact you by phone, email,
+        and text message about your inquiry and our services. Text message
+        frequency varies, and message and data rates may apply. You can opt out
+        of text messages at any time by replying STOP, or reply HELP for help.
+        How we handle your information is described in our
+        <a href="/privacy-policy/">Privacy Policy</a>.
+      </p>
+
+      <h2>Intellectual property</h2>
+      <p>
+        The content on this website, including text, photographs, graphics,
+        logos, and design, is owned by or licensed to {business.legalName} and
+        is protected by applicable intellectual property laws. You may not copy,
+        reproduce, or reuse it without our written permission.
+      </p>
+
+      <h2>Third-party links</h2>
+      <p>
+        This site and our advertising may link to third-party websites and
+        platforms that we do not control. We are not responsible for the
+        content, policies, or practices of those third parties.
+      </p>
+
+      <h2>Disclaimer</h2>
+      <p>
+        This website is provided on an “as is” and “as available” basis. To the
+        fullest extent permitted by law, we make no warranties, express or
+        implied, about the completeness, accuracy, reliability, or availability
+        of the website or its content.
+      </p>
+
+      <h2>Limitation of liability</h2>
+      <p>
+        To the fullest extent permitted by law, {business.legalName} will not be
+        liable for any indirect, incidental, or consequential damages arising
+        from your use of, or inability to use, this website. Nothing in these
+        Terms limits any liability that cannot be limited under applicable law.
+      </p>
+
+      <h2>Governing law</h2>
+      <p>
+        These Terms are governed by the laws of the Commonwealth of
+        Pennsylvania, without regard to its conflict-of-law rules. Any disputes
+        will be handled in the courts located in Montgomery County,
+        Pennsylvania.
+      </p>
+
+      <h2>Changes to these Terms</h2>
+      <p>
+        We may update these Terms from time to time. When we do, we will revise
+        the “Last updated” date above. Your continued use of the site after a
+        change means you accept the updated Terms.
+      </p>
+
       <h2>Contact</h2>
       <p>
-        Questions about these terms? Contact us at <a href={business.emailHref}>{business.email}</a>
-        or {business.phoneDisplay}.
+        Questions about these Terms? Contact {business.legalName} at
+        <a href={business.emailHref}>{business.email}</a> or {business.phoneDisplay}.
       </p>
     </div>
   </Section>

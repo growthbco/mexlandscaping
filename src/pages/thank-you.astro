@@ -1,0 +1,156 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import Section from "../components/Section.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import Reviews from "../components/Reviews.astro";
+import CtaBanner from "../components/CtaBanner.astro";
+import Icon from "../components/Icon.astro";
+import { business } from "../data/site";
+
+const title = "Thank You | Mex Landscaping | Norristown PA";
+const description =
+  "Thanks for reaching out to Mex Landscaping. We'll be in touch shortly. Meanwhile, explore our landscape design, hardscaping, and outdoor living work across the Main Line.";
+
+// What happens next after a request comes in.
+const steps = [
+  {
+    icon: "phone",
+    title: "We'll reach out",
+    body: "A member of our team will call or text you shortly to learn more about your property and your goals.",
+  },
+  {
+    icon: "leaf",
+    title: "We visit and plan",
+    body: "We schedule a free on-site consultation, walk the property with you, and put together a clear plan and honest price.",
+  },
+  {
+    icon: "check",
+    title: "We design and build",
+    body: "One accountable crew handles the whole project, from the first sketch to the final stone, so the vision is the result.",
+  },
+];
+
+// Core services — links reinforce the site's internal structure.
+const services = [
+  { label: "Landscape Design & Build", href: "/landscape-design/" },
+  { label: "Hardscaping", href: "/hardscape-services/" },
+  { label: "Patios", href: "/patios/" },
+  { label: "Retaining & Seating Walls", href: "/retaining-walls/" },
+  { label: "Outdoor Living Spaces", href: "/outdoor-living/" },
+  { label: "Fire Pits & Fire Features", href: "/fire-pits/" },
+  { label: "Landscape Lighting", href: "/landscape-lighting/" },
+  { label: "Drainage & Storm Water", href: "/storm-water-management/" },
+  { label: "Commercial Snow Management", href: "/snow-management-services/" },
+];
+
+// Curated, high-quality showcase photos only (premium shots featured across
+// the homepage and portfolio). Off-brand/utility shots are intentionally left out.
+const gallery = [
+  { src: "/images/wall-stone-house.webp", label: "Fieldstone wall & stone entrance", span: "sm:col-span-2 sm:row-span-2" },
+  { src: "/images/pergola-patio.webp", label: "Cedar pergola over a paver patio" },
+  { src: "/images/lighting-dusk.webp", label: "Architectural landscape lighting" },
+  { src: "/images/firepit-lit.webp", label: "Fire pit & gravel patio" },
+  { src: "/images/curb-colonial.webp", label: "Sculpted boxwood planting design" },
+  { src: "/images/walkway-cobble.webp", label: "Walkway with cobblestone edging" },
+  { src: "/images/wall-stone-after.webp", label: "Natural stone wall & steps" },
+  { src: "/images/turf-pool.webp", label: "Turf lawn & bluestone by the pool" },
+  { src: "/images/commercial-after.webp", label: "Commercial grounds installation" },
+];
+---
+
+<BaseLayout title={title} description={description} path="/thank-you/" noindex>
+  <PageHero
+    eyebrow="Request received"
+    title="Thank you — we'll be in touch shortly"
+    intro="Thanks for reaching out to Mex Landscaping. Your request came through and a member of our team will follow up soon. In the meantime, take a look at what we do and some of the work we're proudest of."
+    image="/images/hero-sunset-house.webp"
+    crumbs={[{ label: "Home", href: "/" }, { label: "Thank You" }]}
+  />
+
+  <Section>
+    <div class="mx-auto max-w-2xl text-center">
+      <p class="text-lg text-forest-700">
+        Need to reach us sooner? Call or text
+        <a href={business.phoneHref} class="font-semibold text-leaf-600 hover:text-leaf-500">{business.phoneDisplay}</a>.
+      </p>
+    </div>
+    <div class="mt-12 grid gap-6 sm:grid-cols-3">
+      {
+        steps.map((s, i) => (
+          <div class="rounded-3xl border border-forest-100 bg-white p-7">
+            <div class="flex items-center gap-3">
+              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-leaf-500/15 text-leaf-600">
+                <Icon name={s.icon} class="h-5 w-5" />
+              </span>
+              <span class="font-display text-sm font-semibold uppercase tracking-eyebrow text-gold-500">
+                Step {i + 1}
+              </span>
+            </div>
+            <h3 class="mt-5 font-display text-xl font-semibold text-forest-900">{s.title}</h3>
+            <p class="mt-2 leading-relaxed text-forest-600">{s.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section muted>
+    <SectionHeading
+      eyebrow="What we do"
+      title="Design, hardscape, and outdoor living, built by one crew"
+      intro="We're a design-build company serving Norristown and the Main Line. We design your outdoor space and our own crews build it, so plantings, hardscape, lighting, and drainage all work together."
+      center
+    />
+    <div class="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        services.map((s) => (
+          <a
+            href={s.href}
+            class="group flex items-center justify-between rounded-2xl border border-forest-100 bg-white px-5 py-4 text-forest-800 transition hover:border-leaf-500/40 hover:bg-forest-50"
+          >
+            <span class="font-medium">{s.label}</span>
+            <Icon name="arrow" class="h-4 w-4 shrink-0 text-forest-300 transition-transform group-hover:translate-x-0.5 group-hover:text-leaf-600" />
+          </a>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section>
+    <SectionHeading
+      eyebrow="Our work"
+      title="A look at what we build"
+      intro="Real projects across the Main Line. See more on our portfolio."
+      center
+    />
+    <div class="mt-12 grid auto-rows-[200px] grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      {
+        gallery.map((g) => (
+          <figure class={`relative overflow-hidden rounded-3xl ring-1 ring-black/5 ${g.span ?? ""}`}>
+            <img
+              src={g.src}
+              alt={g.label}
+              loading="lazy"
+              decoding="async"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+            />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/85 to-transparent p-4">
+              <figcaption class="text-sm font-medium text-cream">{g.label}</figcaption>
+            </div>
+          </figure>
+        ))
+      }
+    </div>
+    <div class="mt-10 text-center">
+      <a href="/our-work/" class="inline-flex items-center gap-2 font-display text-base font-semibold tracking-wide text-leaf-600 hover:text-leaf-500">
+        See the full portfolio
+        <Icon name="arrow" class="h-4 w-4" />
+      </a>
+    </div>
+  </Section>
+
+  <Reviews />
+
+  <CtaBanner title="While you're here, tell us about your project" />
+</BaseLayout>
