@@ -60,7 +60,9 @@ if (props.kind === "service") {
   const meta = seoFor(s.path);
   title = meta?.title || s.metaTitle || `${s.title} | Mex Landscaping`;
   description = meta?.description || s.metaDescription || s.intro;
-  ogImage = meta?.ogImage || abs(s.image);
+  // Prefer the page's real local photo; the legacy meta.ogImage points at
+  // now-dead WordPress uploads, so it's only a last resort.
+  ogImage = abs(s.image) || meta?.ogImage || "";
   schema.push(
     {
       "@context": "https://schema.org",
@@ -96,7 +98,8 @@ if (props.kind === "service") {
   const c = locationContent(p);
   title = c.metaTitle || meta?.title || `${c.h1} | Mex Landscaping`;
   description = c.metaDescription || meta?.description || c.intro;
-  ogImage = meta?.ogImage || abs(c.image);
+  // Prefer the page's real local photo over the dead legacy meta.ogImage.
+  ogImage = abs(c.image) || meta?.ogImage || "";
   schema.push(
     {
       "@context": "https://schema.org",

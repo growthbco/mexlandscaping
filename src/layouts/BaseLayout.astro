@@ -30,10 +30,20 @@ const {
 
 const site = "https://www.mexlandscaping.com";
 const canonical = new URL(path, site).href;
-// Ignore legacy WordPress /wp-content/ image URLs (they 404 on the new site)
-// and fall back to a real 1200x630 raster share image.
-const cleanOg = ogImage && !ogImage.includes("/wp-content/") ? ogImage : "";
-const image = cleanOg.length ? cleanOg : `${site}/images/og-default.jpg`;
+// Resolve the social share image. Trust ONLY images we actually host:
+//  - root-relative paths (absolutized here),
+//  - same-origin absolute URLs that are NOT legacy WordPress uploads.
+// Legacy /wp-content/ URLs and off-domain links (e.g. expired CDN temp
+// URLs) can 404 and produce a blank link preview, so anything else falls
+// back to the known-good 1200x630 default share image.
+const ogDefault = `${site}/images/og-default.jpg`;
+const resolveShareImage = (img?: string) => {
+  if (!img) return ogDefault;
+  if (img.startsWith("/") && !img.startsWith("//")) return `${site}${img}`;
+  if (img.startsWith(site) && !img.includes("/wp-content/")) return img;
+  return ogDefault;
+};
+const image = resolveShareImage(ogImage);
 
 // LocalBusiness schema rendered site-wide.
 const localBusiness = {
