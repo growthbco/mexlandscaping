@@ -117,6 +117,9 @@ export const cities: City[] = [
   { slug: "havertown", name: "Havertown" },
   { slug: "collegeville", name: "Collegeville" },
   { slug: "berwyn", name: "Berwyn" },
+  { slug: "haverford", name: "Haverford" },
+  { slug: "devon", name: "Devon" },
+  { slug: "ardmore", name: "Ardmore" },
 ];
 
 export const process = [

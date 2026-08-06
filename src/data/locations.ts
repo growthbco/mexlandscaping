@@ -76,6 +76,198 @@ type CityProfile = {
 };
 
 const cityProfiles: Record<string, CityProfile> = {
+  haverford: {
+    metaDescription:
+      "High-end landscape design and installation in Haverford, PA. Plans led by a licensed landscape architect and built by our own crews: redesigns, patios, stonework, and outdoor living. Free consultation: (484) 261-6650.",
+    intro:
+      "Mex Landscaping designs and builds high-end outdoor spaces in Haverford, PA. Our plans are led by a licensed landscape architect and installed by our own crews, from full property redesigns to custom stonework, planting, and outdoor living on the Main Line's most established properties.",
+    designBody: [
+      {
+        heading: "Luxury landscape design in Haverford, PA",
+        text: "Haverford is one of the Main Line's most established addresses, with stone homes, mature trees, and properties that deserve a landscape to match. As a <a href=\"/landscape-design/\">design-build firm</a> with a licensed landscape architect on staff, we plan and install cohesive, high-end landscapes: layered planting, custom hardscape, lighting, and grading, all considered together. The person who designs your property is backed by the crew who builds it, so the finished result matches the plan you approve.",
+      },
+      {
+        heading: "Designs led by a licensed landscape architect",
+        text: "On the kind of estate-scale and character properties common in Haverford, design matters as much as construction. Your plan is developed by a Pennsylvania-licensed landscape architect, which means grading, drainage, plant selection, and <a href=\"/hardscape-services/\">hardscape</a> are engineered to work together and to age gracefully. It is a level of design most local landscapers cannot offer, and it protects both the beauty and the value of a significant property.",
+      },
+      {
+        heading: "Stonework and outdoor living built to last",
+        text: "Many Haverford homes are stone and brick with real architectural presence, and the landscape should echo that quality. We build natural stone and paver <a href=\"/patios/\">patios</a>, <a href=\"/retaining-walls/\">retaining and seating walls</a>, walkways and steps, and complete <a href=\"/outdoor-living/\">outdoor living spaces</a> with fire features and outdoor kitchens, all on properly engineered bases that hold up through Pennsylvania freeze-thaw. Materials are chosen to complement the home, not compete with it.",
+      },
+      {
+        heading: "Serving Haverford and the Main Line",
+        text: "We work throughout Haverford and the surrounding Main Line, including Bryn Mawr, Ardmore, Wynnewood, and the neighboring Lower Merion and Haverford Township communities. Call (484) 261-6650 or request a free consultation, and a member of our team will walk the property with you, talk through the vision, and put together a clear plan and price.",
+      },
+    ],
+    gallery: [
+      {
+        src: "/images/curb-colonial.webp",
+        alt: "Sculpted boxwood island bed in a Main Line landscape design",
+        caption: "Sculpted boxwood island bed",
+      },
+      {
+        src: "/images/wall-block-curved.webp",
+        alt: "Curved stone retaining wall with steps built by Mex Landscaping",
+        caption: "Curved retaining wall and steps",
+      },
+      {
+        src: "/images/lighting-dusk.webp",
+        alt: "Low-voltage landscape lighting on a designed property at dusk",
+        caption: "Landscape lighting at dusk",
+      },
+    ],
+    designFaqs: [
+      {
+        q: "Do you have a licensed landscape architect for Haverford projects?",
+        a: "Yes. Our landscape designs are led by a Pennsylvania-licensed landscape architect, so your grading, drainage, planting, and hardscape are planned by a trained, licensed professional and engineered to work as one system. On established Haverford properties, that level of design makes a real difference in both the result and the longevity.",
+      },
+      {
+        q: "Do you handle high-end and estate-scale properties in Haverford?",
+        a: "Regularly. Much of our Haverford work is on larger, established properties where design quality and craftsmanship matter. We create a full master plan, phase larger projects when it makes sense, and hold the same standard of detail across the whole property.",
+      },
+      {
+        q: "Can you match new stonework to an older Haverford home?",
+        a: "Yes. We select materials to complement the home's existing stone, brick, and architecture rather than contrast with it, so a new patio, wall, or walkway looks like it has always belonged to the property.",
+      },
+      {
+        q: "Do you work on mature, wooded Haverford lots?",
+        a: "Often. Many Haverford properties have mature trees, shade, and established grades. We design around them, protecting root zones, planning shade-appropriate plantings, and handling drainage and grading so the landscape works with the existing character of the lot.",
+      },
+      {
+        q: "How do I get a design consultation in Haverford?",
+        a: "Call (484) 261-6650 or request a consultation through the site. We will visit your Haverford property, discuss your goals and budget, and put together a clear plan and price with no obligation.",
+      },
+    ],
+  },
+
+  devon: {
+    metaDescription:
+      "High-end landscape design and installation in Devon, PA. Plans led by a licensed landscape architect and built by our own crews: redesigns, patios, stonework, and outdoor living. Free consultation: (484) 261-6650.",
+    intro:
+      "Mex Landscaping designs and builds high-end outdoor spaces in Devon, PA. Our plans are led by a licensed landscape architect and installed by our own crews, from full property redesigns to custom hardscape, planting, and outdoor living across Easttown Township and the western Main Line.",
+    designBody: [
+      {
+        heading: "Luxury landscape design in Devon, PA",
+        text: "Devon sits on the western edge of the Main Line in Easttown Township, with wooded lots, larger properties, and a strong sense of place. As a <a href=\"/landscape-design/\">design-build firm</a> with a licensed landscape architect on staff, we plan and install cohesive, high-end landscapes: layered planting, custom <a href=\"/hardscape-services/\">hardscape</a>, lighting, and grading, all designed together and built by one accountable team. The plan you approve is the landscape you get.",
+      },
+      {
+        heading: "Designs led by a licensed landscape architect",
+        text: "On Devon's larger, often wooded properties, thoughtful design is what turns acreage into a usable, beautiful landscape. Your plan is developed by a Pennsylvania-licensed landscape architect, so grading, drainage, plant selection, and hardscape are engineered to work together and to hold up over time. It is a level of planning most local landscapers cannot match, and it is what a significant Devon property deserves.",
+      },
+      {
+        heading: "Patios, stonework, and outdoor living",
+        text: "A well-designed outdoor room extends how a Devon home is used through much of the year. We build natural stone and paver <a href=\"/patios/\">patios</a>, <a href=\"/retaining-walls/\">retaining and seating walls</a>, walkways and steps, and complete <a href=\"/outdoor-living/\">outdoor living spaces</a> with fire features and outdoor kitchens, all on engineered bases built for Pennsylvania freeze-thaw. Everything is detailed to match the scale and style of the property.",
+      },
+      {
+        heading: "Serving Devon and the western Main Line",
+        text: "We work throughout Devon and the surrounding western Main Line, including Berwyn, Wayne, Paoli, and Strafford across Easttown and Tredyffrin Townships. Call (484) 261-6650 or request a free consultation, and we will walk the property with you, discuss the vision, and put together a clear plan and price.",
+      },
+    ],
+    gallery: [
+      {
+        src: "/images/pergola-patio.webp",
+        alt: "Custom cedar pergola over a paver patio built by Mex Landscaping",
+        caption: "Custom cedar pergola over a paver patio",
+      },
+      {
+        src: "/images/design-maple-beds.webp",
+        alt: "Layered planting beds with a Japanese maple in a landscape design",
+        caption: "Layered beds with Japanese maple",
+      },
+      {
+        src: "/images/walkway-cobble.webp",
+        alt: "Natural stone walkway with cobble edging installed by Mex Landscaping",
+        caption: "Stone walkway with cobble edging",
+      },
+    ],
+    designFaqs: [
+      {
+        q: "Do you have a licensed landscape architect for Devon projects?",
+        a: "Yes. Our landscape designs are led by a Pennsylvania-licensed landscape architect, so your grading, drainage, planting, and hardscape are planned by a trained, licensed professional and engineered to work as one system. On larger Devon properties, that design discipline is what makes the whole landscape feel cohesive.",
+      },
+      {
+        q: "Do you work on larger and wooded properties in Devon?",
+        a: "Regularly. Many Devon lots are larger and wooded, and we design around mature trees, shade, and existing grades. We can create a full master plan and build it in phases so a big vision comes together cleanly over time.",
+      },
+      {
+        q: "Can you design a complete outdoor living space in Devon?",
+        a: "Yes. We plan and build complete outdoor living spaces: patios, fire features, outdoor kitchens, seating walls, lighting, and the plantings around them, all designed together so the space feels like a natural extension of the home.",
+      },
+      {
+        q: "Do you handle drainage and grading on Devon properties?",
+        a: "We do, and it is planned into the design from the start. On wooded and sloped Devon lots we address grade and water with proper base prep, regrading, French drains or dry wells where needed, and retaining walls to create level, usable space.",
+      },
+      {
+        q: "How do I get a design consultation in Devon?",
+        a: "Call (484) 261-6650 or request a consultation through the site. We will visit your Devon property, discuss your goals and budget, and put together a clear, no-obligation plan and price.",
+      },
+    ],
+  },
+
+  ardmore: {
+    metaDescription:
+      "High-end landscape design and installation in Ardmore, PA. Plans led by a licensed landscape architect and built by our own crews: redesigns, patios, stonework, and outdoor living. Free consultation: (484) 261-6650.",
+    intro:
+      "Mex Landscaping designs and builds high-end outdoor spaces in Ardmore, PA. Our plans are led by a licensed landscape architect and installed by our own crews, from full redesigns to custom hardscape, planting, and outdoor living across Lower Merion and the heart of the Main Line.",
+    designBody: [
+      {
+        heading: "Landscape design and installation in Ardmore, PA",
+        text: "Ardmore sits at the heart of the Main Line in Lower Merion Township, a mix of established homes, tree-lined streets, and classic properties. As a <a href=\"/landscape-design/\">design-build firm</a> with a licensed landscape architect on staff, we plan and install cohesive landscapes: layered planting, custom <a href=\"/hardscape-services/\">hardscape</a>, lighting, and grading, all designed together and built by one accountable team, from the first sketch to the final stone.",
+      },
+      {
+        heading: "Designs led by a licensed landscape architect",
+        text: "Ardmore's established properties reward good design. Your plan is developed by a Pennsylvania-licensed landscape architect, so grading, drainage, plant selection, and hardscape are engineered to work together and to age well. That level of planning is something most residential landscapers cannot offer, and it is the difference between a yard that was planted and a property that was truly designed.",
+      },
+      {
+        heading: "Patios, walls, and refined curb appeal",
+        text: "Whether you are finishing the front of a classic Ardmore home or building an outdoor room in back, hardscape and planting do the heavy lifting. We build natural stone and paver <a href=\"/patios/\">patios</a>, <a href=\"/retaining-walls/\">retaining and seating walls</a>, walkways and steps, and full <a href=\"/outdoor-living/\">outdoor living spaces</a>, along with the layered foundation planting and lighting that give a home real presence from the street.",
+      },
+      {
+        heading: "Serving Ardmore and Lower Merion",
+        text: "We work throughout Ardmore and the surrounding Main Line, including Bryn Mawr, Haverford, Narberth, and Wynnewood across Lower Merion Township. Call (484) 261-6650 or request a free consultation, and we will walk the property with you, talk through the vision, and put together a clear plan and price.",
+      },
+    ],
+    gallery: [
+      {
+        src: "/images/curb-craftsman.webp",
+        alt: "Home with fresh curb-appeal landscaping designed by Mex Landscaping",
+        caption: "Refined curb-appeal planting",
+      },
+      {
+        src: "/images/design-front-beds.webp",
+        alt: "Fresh mulch beds and new plantings at the front of a home",
+        caption: "Fresh foundation beds and plantings",
+      },
+      {
+        src: "/images/wall-block-curved.webp",
+        alt: "Curved stone retaining wall with steps built by Mex Landscaping",
+        caption: "Curved retaining wall and steps",
+      },
+    ],
+    designFaqs: [
+      {
+        q: "Do you have a licensed landscape architect for Ardmore projects?",
+        a: "Yes. Our landscape designs are led by a Pennsylvania-licensed landscape architect, so your grading, drainage, planting, and hardscape are planned by a trained, licensed professional and engineered to work as one system. On established Ardmore properties, that design quality shows in the finished result.",
+      },
+      {
+        q: "Can you improve the curb appeal of a classic Ardmore home?",
+        a: "Yes. Foundation planting, walkways, entry steps, and lighting, all designed together, give a classic home real presence from the street. We plan it to suit the architecture so it looks intentional rather than added on.",
+      },
+      {
+        q: "Do you build patios and outdoor living spaces in Ardmore?",
+        a: "We do. We build paver and natural stone patios, seating and retaining walls, fire features, and complete outdoor living spaces, all designed to fit the scale of the property and match the home's materials.",
+      },
+      {
+        q: "Do you handle drainage on older Ardmore properties?",
+        a: "Regularly. Many established Ardmore homes have older or undersized drainage. We address grade and water as part of the design, with proper base prep, regrading, and French drains or dry wells where needed, so water moves away from the house.",
+      },
+      {
+        q: "How do I get a design consultation in Ardmore?",
+        a: "Call (484) 261-6650 or request a consultation through the site. We will visit your Ardmore property, discuss your goals and budget, and provide a clear, no-obligation plan and price.",
+      },
+    ],
+  },
+
   norristown: {
     metaDescription:
       "Landscape design, hardscaping, patios, and outdoor living in Norristown, PA. Mex Landscaping is based in Norristown and builds high-end outdoor spaces. Free estimate: (484) 261-6650.",
