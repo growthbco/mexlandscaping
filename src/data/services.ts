@@ -67,13 +67,16 @@ export const services: Service[] = [
   // ---------------- DESIGN & BUILD ----------------
   {
     path: "/landscape-design/",
-    title: "Landscape Design & Build",
+    title: "Landscape Design & Installation",
     category: "design-build",
     icon: "leaf",
     image: "/images/lighting-dusk.webp",
     featured: true,
+    metaTitle: "Landscape Design Services | Main Line PA | Mex Landscaping",
+    metaDescription:
+      "High-end landscape design and installation across the Main Line & Montgomery County, PA. Plans led by a licensed landscape architect, built by our own crews. Free consultation: (484) 261-6650.",
     intro:
-      "Full-service landscape design and installation, from a complete property redesign to refined planting, lighting, and grading. We design it, then our own crews build it.",
+      "High-end landscape design and installation across the Main Line and Montgomery County. Plans are led by a Pennsylvania-licensed landscape architect and built by our own crews, from a full property redesign to refined planting, lighting, and grading. We design it, then we build it.",
     gallery: [
       {
         src: "/images/curb-colonial.webp",
@@ -107,9 +110,9 @@ export const services: Service[] = [
       },
     ],
     highlights: [
-      "Complete property redesigns",
+      "Licensed landscape architect on staff",
+      "Luxury & high-end property redesigns",
       "Custom planting & bed design",
-      "3D-informed planning & phasing",
       "Design-build under one roof",
     ],
     body: [
@@ -130,11 +133,27 @@ export const services: Service[] = [
         text: "Some clients are reimagining an entire property; others want to elevate one tired area or finally finish the front of the house. We work at both scales. You get a clear plan, a realistic timeline, an honest budget, and the same attention to detail whether we are rebuilding the whole landscape or perfecting a single garden bed and entry.",
       },
       {
+        heading: "Plans led by a licensed landscape architect",
+        text: "Your plan is developed by a Pennsylvania-licensed landscape architect, not sketched on the back of an estimate. That means grading, drainage, plant selection, and hardscape are engineered to work together and to hold up over time, with the training and accountability a licensed professional brings. It is a level of design most local landscapers cannot offer, and it is the difference between a yard that was planted and a property that was designed.",
+      },
+      {
+        heading: "Luxury and high-end landscape design",
+        text: "For homeowners who want a truly high-end result, we design and build at the level the best Main Line properties deserve: architectural planting schemes, custom stonework, integrated lighting, and outdoor living spaces that feel like a natural extension of the house. Every material and detail is chosen for how it looks the day it is installed and how gracefully it ages. If you want a landscape that reads as considered, cohesive, and genuinely luxurious, that is the work we do best.",
+      },
+      {
         heading: "Residential and commercial design in Norristown and the Main Line",
         text: "We provide landscape design and installation for homes and <a href=\"/commercial-landscaping/\">commercial properties</a> across Montgomery County and the Main Line, including <a href=\"/landscape-design-hardscaping-in-norristown-pa/\">Norristown</a>, <a href=\"/landscape-design-hardscaping-in-king-of-prussia-pa/\">King of Prussia</a>, <a href=\"/landscape-design-hardscaping-in-wayne-pa/\">Wayne</a>, Bryn Mawr, and Conshohocken. Every project begins with a free consultation to understand your goals, your property, and your budget. Call (484) 261-6650 or request a free estimate to start the conversation.",
       },
     ],
     faqs: [
+      {
+        q: "Do you have a licensed landscape architect on staff?",
+        a: "Yes. Our landscape designs are led by a Pennsylvania-licensed landscape architect, which means your grading, drainage, planting, and hardscape are planned by a trained, licensed professional and engineered to work as one system. Most residential landscapers do not offer that, and it is a big part of why our projects hold up and photograph the way they do.",
+      },
+      {
+        q: "What makes a high-end landscape design different?",
+        a: "A high-end design is cohesive rather than piecemeal. Instead of adding one feature at a time, we plan the whole property so the planting, stonework, lighting, grading, and outdoor living areas all relate to each other and to the house. We also specify better materials and detail them properly, so the finished landscape looks intentional the day it is built and only improves as it matures.",
+      },
       {
         q: "What does design-build landscaping mean?",
         a: "Design-build means one company handles both the design and the construction of your landscape. Instead of hiring a designer, then finding a separate contractor to interpret the plan, you work with a single accountable team from concept to completion. It keeps the design grounded in what can actually be built on your site and avoids costly miscommunication.",
