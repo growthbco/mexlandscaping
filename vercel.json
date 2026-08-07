@@ -1,6 +1,18 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "crm.mexlandscaping.com"
+        }
+      ],
+      "destination": "/crm/"
+    }
+  ],
   "redirects": [
     {
       "source": "/lawn-mowing-services-in-norristown-pa/",
@@ -163,6 +175,166 @@
       "statusCode": 301
     },
     {
+      "source": "/can-mex-landscaping-build-asphalt-driveways-in-norristown-pa/",
+      "destination": "/driveways/",
+      "statusCode": 301
+    },
+    {
+      "source": "/does-mex-landscaping-offer-driveway-maintenance-after-build-in-norristown-pa/",
+      "destination": "/driveways/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-mex-landscaping-ensures-driveway-drainage-in-norristown-pa/",
+      "destination": "/driveways/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mex-landscaping-driveway-process-in-norristown-pa-guide/",
+      "destination": "/driveways/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mex-landscaping-driveway-reviews-norristown-pa-customer-feedback/",
+      "destination": "/driveways/",
+      "statusCode": 301
+    },
+    {
+      "source": "/mex-landscaping-free-estimates-for-driveways-in-norristown-pa/",
+      "destination": "/driveways/",
+      "statusCode": 301
+    },
+    {
+      "source": "/do-landscapers-trim-trees/",
+      "destination": "/trimming/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-much-does-it-cost-to-trim-trees-around-a-house/",
+      "destination": "/trimming/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-much-should-i-pay-someone-to-cut-my-grass/",
+      "destination": "/property-maintenance/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-much-does-it-cost-to-have-your-yard-treated/",
+      "destination": "/property-maintenance/",
+      "statusCode": 301
+    },
+    {
+      "source": "/commercial-property-maintenance/",
+      "destination": "/property-maintenance/",
+      "statusCode": 301
+    },
+    {
+      "source": "/can-you-negotiate-landscaping-prices/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/do-i-need-a-gardener-or-landscaper/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/do-landscaping-companies-do-free-estimates/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/do-you-tip-your-landscaper/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-much-does-a-landscape-consultation-cost/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-much-does-it-cost-to-have-someone-do-your-landscaping/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/is-professional-landscaping-worth-it/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/should-i-hire-a-landscaper-or-do-it-myself/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/should-you-pay-a-landscaper-up-front/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-are-the-services-of-landscape/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-do-landscape-plans-include/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-do-most-landscapers-charge-per-hour/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-does-a-landscaper-actually-do/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-is-a-good-landscaping-budget/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-is-the-average-salary-of-a-professional-landscaper/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-is-the-least-expensive-way-to-landscape/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-is-the-most-expensive-part-of-landscaping/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/what-to-expect-when-hiring-a-landscaper/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/why-are-landscapers-so-expensive/",
+      "destination": "/landscape-design/",
+      "statusCode": 301
+    },
+    {
+      "source": "/lawn-mowing-services-in-newton-square-pa/",
+      "destination": "/landscape-design-hardscaping-in-newtown-square-pa/",
+      "statusCode": 301
+    },
+    {
+      "source": "/snow-management-services-in-newton-square-pa/",
+      "destination": "/snow-management-services-in-newtown-square-pa/",
+      "statusCode": 301
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
@@ -175,6 +347,15 @@
     }
   ],
   "headers": [
+    {
+      "source": "/crm/",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
     {
       "source": "/images/(.*)",
       "headers": [
