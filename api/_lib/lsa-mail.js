@@ -68,7 +68,15 @@ export function parseLsaEmail(mail) {
 export async function processLsaMailbox(onEmail) {
   const user = process.env.LSA_IMAP_USER;
   const pass = process.env.LSA_IMAP_PASSWORD;
-  if (!user || !pass) return { skipped: "not_configured" };
+  if (!user || !pass) {
+    return {
+      skipped: "not_configured",
+      have_user: !!user,
+      have_pass: !!pass,
+      user_len: (user || "").length,
+      pass_len: (pass || "").length,
+    };
+  }
 
   const { ImapFlow } = await import("imapflow");
   const { simpleParser } = await import("mailparser");
