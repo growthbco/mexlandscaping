@@ -65,7 +65,11 @@ export async function ensureSchema(db) {
       ext_id     TEXT,
       created_at TIMESTAMPTZ NOT NULL DEFAULT now()
     )`;
-  await db`CREATE UNIQUE INDEX IF NOT EXISTS lead_messages_ext_uniq ON lead_messages (ext_id) WHERE ext_id IS NOT NULL`;
+  // Non-partial unique index so `ON CONFLICT (ext_id)` can infer it. Postgres
+  // treats NULLs as distinct, so rows without an ext_id are still allowed.
+  // (Replaces an earlier partial index that ON CONFLICT could not match.)
+  await db`DROP INDEX IF EXISTS lead_messages_ext_uniq`;
+  await db`CREATE UNIQUE INDEX IF NOT EXISTS lead_messages_ext_key ON lead_messages (ext_id)`;
   await db`CREATE INDEX IF NOT EXISTS lead_messages_lead_idx ON lead_messages (lead_id, created_at)`;
 
   schemaReady = true;
