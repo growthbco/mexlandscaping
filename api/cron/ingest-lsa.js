@@ -38,6 +38,31 @@ export default async function handler(req, res) {
   const db = sql();
   await ensureSchema(db);
 
+  // Manual force-send for specific lead ids (admin/testing). Runs the AI reply
+  // and SENDS it: /api/cron/ingest-lsa/?key=...&send=2,6
+  const forceIds = String(req.query?.send || "")
+    .split(",")
+    .map((s) => parseInt(s.trim(), 10))
+    .filter((n) => Number.isFinite(n));
+  if (forceIds.length) {
+    const out = {};
+    for (const id of forceIds) {
+      try {
+        const rows = await db`SELECT * FROM leads WHERE id = ${id} LIMIT 1`;
+        if (!rows.length) {
+          out[id] = "not_found";
+          continue;
+        }
+        const r = await maybeAutoReply(db, rows[0], dry ? { dryRun: true } : {});
+        out[id] = { action: r.action, reason: r.reason || null, reply: r.reply || null };
+      } catch (e) {
+        out[id] = "error:" + String(e.message || e).slice(0, 120);
+      }
+    }
+    res.status(200).json({ ok: true, forced: out });
+    return;
+  }
+
   const touched = new Set(); // lead ids that gained a customer message this pass
   let created = 0;
   let duplicates = 0;
