@@ -105,10 +105,12 @@ export default async function handler(req, res) {
       // Owner alert + HighLevel sync (best-effort; never block ingest).
       try {
         await sendTelegram(
-          formatLeadMessage("New Google LSA Lead", saved, [
+          formatLeadMessage(`New Google LSA Lead (Lead #${saved.id})`, saved, [
             "",
             `Score: ${score}/100 (${tierLabel(tier)})`,
-            email.isCallLead ? "Type: phone call" : "Type: message (AI will auto-reply)",
+            email.isCallLead
+              ? "Type: phone call"
+              : "Type: message (AI auto-replies; reply to this message to jump in)",
           ]),
         );
       } catch {}
@@ -137,6 +139,11 @@ export default async function handler(req, res) {
             await db`UPDATE leads SET phone = ${email.phone} WHERE id = ${lead.id}`;
           }
           if (lead.lead_type === "MESSAGE") touched.add(lead.id);
+          try {
+            await sendTelegram(
+              `New reply on Lead #${lead.id}${lead.name ? " from " + lead.name : ""}:\n\n"${email.message.trim().slice(0, 500)}"\n\nReply to this message to answer.`,
+            );
+          } catch {}
         }
       }
     }
