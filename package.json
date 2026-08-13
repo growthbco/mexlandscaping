@@ -12,9 +12,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.116.0",
     "@astrojs/sitemap": "^3.7.3",
+    "@neondatabase/serverless": "^1.1.0",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.4.6",
+    "imapflow": "^1.7.0",
+    "mailparser": "^3.9.15",
+    "nodemailer": "^9.0.5",
     "tailwindcss": "^4.3.0"
   },
   "devDependencies": {

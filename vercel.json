@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": true,
+  "crons": [
+    { "path": "/api/cron/ingest-lsa", "schedule": "0 12 * * *" }
+  ],
   "rewrites": [
     {
       "source": "/",
