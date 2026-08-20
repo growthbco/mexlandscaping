@@ -26,6 +26,62 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "basement-flooding-french-drain-grading",
+    title: "French Drain & Yard Regrading to Stop Basement Flooding",
+    summary:
+      "A home whose basement flooded every time it rained, fixed at the source with a French drain and a full regrade that pulls storm water off the foundation and toward the back of the property.",
+    services: [
+      { label: "Drainage & Storm Water", href: "/storm-water-management/" },
+      { label: "Landscape Design & Build", href: "/landscape-design/" },
+    ],
+    photos: [
+      {
+        src: "/images/drainage-flood-before-yard.jpg",
+        alt: "Overgrown, poorly graded yard beside the house before drainage work, where rainwater pooled against the foundation",
+        caption: "Before: a flat yard with no slope to move water away",
+        tag: "Before",
+      },
+      {
+        src: "/images/drainage-flood-before-side.jpg",
+        alt: "Side of the house with a flat, poorly draining yard before regrading",
+        caption: "Before: grade sat flat against the foundation",
+        tag: "Before",
+      },
+      {
+        src: "/images/drainage-french-drain-graded.jpg",
+        alt: "Freshly regraded yard sloping away from the house with a white gravel French drain trench",
+        caption: "After: regraded slope with the new French drain",
+        tag: "After",
+      },
+      {
+        src: "/images/drainage-french-drain-stone.jpg",
+        alt: "Close-up of the white stone French drain trench that carries water away from the foundation",
+        caption: "The French drain that carries water away from the house",
+        tag: "After",
+      },
+      {
+        src: "/images/drainage-french-drain-seeded.jpg",
+        alt: "Completed graded and seeded yard with the finished French drain, sloped away from the home",
+        caption: "Finished: graded, seeded, and draining",
+        tag: "Finished",
+      },
+    ],
+    sections: [
+      {
+        heading: "The problem",
+        text: "Every time it rained, this homeowner's basement took on water. The cause was not the basement, it was the yard. The ground around the house had no slope to carry storm water away, so rain pooled against the foundation and worked its way inside. A basement that floods with every storm is almost always a grading and drainage problem, and no amount of sealing or patching on the inside fixes it until the water outside is given somewhere else to go.",
+      },
+      {
+        heading: "The work",
+        text: "Our crew solved it at the source with two things working together. First, a French drain: a buried, gravel-wrapped perforated pipe that intercepts water in the ground and carries it away from the house. Second, a full regrade of the yard with heavy equipment, raising the ground around the foundation roughly seven inches and shaping a consistent natural slope, a minimum two percent drop, that pulls every storm off the house and toward the back of the property. The new surface was compacted in layers for stability, then seeded so the lawn locks the grade in place, and the downspouts were directed to discharge onto the sloped surface instead of dumping at the foundation.",
+      },
+      {
+        heading: "The result",
+        text: "The basement stays dry now, rain or shine. Instead of collecting against the house, every storm runs the way water is supposed to: away from the foundation and off the property. It is the kind of fix you stop seeing once the grass fills in, but the homeowner feels it during every heavy rain. Solving a wet basement from the outside, with proper grading and a French drain, protects the single most expensive thing on the property, which is the house itself.",
+      },
+    ],
+  },
+  {
     slug: "natural-stone-retaining-wall-driveway",
     title: "Natural Stone Retaining Wall & Driveway Entrance",
     summary:
