@@ -22,6 +22,7 @@ export default defineConfig({
       // legal pages, and the empty press-release placeholder.
       filter: (page) =>
         !page.includes('/lp/') &&
+        !page.includes('/crm/') &&
         !page.includes('/project-intake/') &&
         !page.includes('/privacy-policy/') &&
         !page.includes('/terms-conditions/') &&

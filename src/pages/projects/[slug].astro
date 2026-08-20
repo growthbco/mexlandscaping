@@ -37,6 +37,19 @@ const schema = [
     creator: { "@id": `${site}/#business` },
     representativeOfPage: p.src === heroImage,
   })),
+  ...(project.video
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: project.title,
+          description: project.summary,
+          thumbnailUrl: `${site}${project.videoPoster ?? heroImage}`,
+          contentUrl: `${site}${project.video}`,
+          uploadDate: "2026-08-19",
+        },
+      ]
+    : []),
 ];
 ---
 
@@ -56,6 +69,25 @@ const schema = [
   <Section>
     <div class="grid gap-12 lg:grid-cols-3">
       <div class="lg:col-span-2">
+        {
+          project.video && (
+            <div class="mb-8">
+              <div class="mx-auto max-w-xs overflow-hidden rounded-2xl border border-forest-100 bg-ink-950 shadow-sm">
+                <video
+                  src={project.video}
+                  poster={project.videoPoster}
+                  controls
+                  playsinline
+                  preload="metadata"
+                  class="aspect-[9/16] w-full"
+                />
+              </div>
+              <p class="mt-3 text-center text-sm text-forest-600">
+                Watch the project: before, the work, and the finished result.
+              </p>
+            </div>
+          )
+        }
         <div class="grid gap-4 sm:grid-cols-2">
           {
             project.photos.map((p) => (

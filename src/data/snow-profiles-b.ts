@@ -207,7 +207,7 @@ export const snowProfilesB: Record<string, SnowProfile> = {
       },
       {
         heading: "Long driveways and larger properties",
-        text: "Worcester's larger lots often mean long, sometimes winding driveways that take real equipment and care to clear properly, not a quick pass at the bottom. We plow long driveways, turnarounds, and approaches thoroughly, and we clear walkways, steps, and entries by hand. Our crews work to keep every part of a larger property open and safe, so getting in and out is never a problem during or after a storm.",
+        text: "Worcester's larger lots often mean long, sometimes winding driveways that take real equipment and care to clear properly, not a quick pass at the bottom. We plow long driveways, turnarounds, and approaches thoroughly, and our crews clear the walkways, steps, and entries down to the surface. Our crews work to keep every part of a larger property open and safe, so getting in and out is never a problem during or after a storm.",
       },
       {
         heading: "Full-service plowing, salting, and de-icing",

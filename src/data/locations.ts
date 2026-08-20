@@ -848,8 +848,8 @@ const cityProfiles: Record<string, CityProfile> = {
     gallery: [
       {
         src: "/images/wall-stone-after.webp",
-        alt: "Hand-laid natural fieldstone retaining wall and stone steps by Mex Landscaping",
-        caption: "Hand-laid natural fieldstone wall and steps",
+        alt: "Natural fieldstone retaining wall and stone steps built by Mex Landscaping",
+        caption: "Natural fieldstone wall and steps",
       },
       {
         src: "/images/firepit-lit.webp",

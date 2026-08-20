@@ -1,0 +1,355 @@
+---
+// Internal mini CRM ("Lead Desk"). Password-gated client app: the static shell
+// contains no lead data; everything loads through /api/crm/* after login.
+// Excluded from the sitemap and noindexed.
+import "../../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>MEX Lead Desk</title>
+  </head>
+  <body class="bg-sand min-h-screen">
+    <!-- Login -->
+    <div id="login" class="hidden min-h-screen flex items-center justify-center p-4">
+      <form id="login-form" class="bg-white rounded-xl shadow-lg p-8 w-full max-w-sm border border-forest-100">
+        <h1 class="font-display text-2xl uppercase tracking-wide text-ink-950 mb-1">MEX Lead Desk</h1>
+        <p class="text-sm text-forest-500 mb-6">Internal use only.</p>
+        <input id="password" type="password" placeholder="Password" autocomplete="current-password"
+          class="w-full border border-forest-200 rounded-lg px-4 py-3 mb-3 focus:outline-none focus:border-leaf-500" />
+        <button type="submit" class="w-full bg-leaf-600 hover:bg-leaf-700 text-white font-semibold rounded-lg py-3">Sign in</button>
+        <p id="login-error" class="hidden text-red-600 text-sm mt-3">Wrong password.</p>
+      </form>
+    </div>
+
+    <!-- App -->
+    <div id="app" class="hidden">
+      <header class="bg-ink-950 text-white">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div>
+            <h1 class="font-display text-xl uppercase tracking-wide">MEX Lead Desk</h1>
+            <p class="text-xs text-forest-300">Leads from LSA, phone, Facebook and the website</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="btn-new" class="bg-leaf-500 hover:bg-leaf-600 text-white text-sm font-semibold rounded-lg px-4 py-2">+ Log a lead</button>
+            <button id="btn-logout" class="text-forest-300 hover:text-white text-sm">Log out</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="max-w-6xl mx-auto px-4 py-6">
+        <div class="grid grid-cols-3 gap-3 mb-6">
+          <div class="bg-white rounded-xl border border-forest-100 p-4">
+            <p class="text-xs uppercase tracking-wide text-forest-400">Today</p>
+            <p id="stat-today" class="text-2xl font-bold text-ink-950">0</p>
+          </div>
+          <div class="bg-white rounded-xl border border-forest-100 p-4">
+            <p class="text-xs uppercase tracking-wide text-forest-400">Hot (send to owner)</p>
+            <p id="stat-hot" class="text-2xl font-bold text-leaf-600">0</p>
+          </div>
+          <div class="bg-white rounded-xl border border-forest-100 p-4">
+            <p class="text-xs uppercase tracking-wide text-forest-400">Total</p>
+            <p id="stat-total" class="text-2xl font-bold text-ink-950">0</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+          <select id="filter-status" class="border border-forest-200 rounded-lg px-3 py-2 text-sm bg-white">
+            <option value="">All statuses</option>
+            <option value="new">New</option>
+            <option value="contacted">Contacted</option>
+            <option value="sent_to_owner">Sent to owner</option>
+            <option value="won">Won</option>
+            <option value="lost">Lost</option>
+          </select>
+          <select id="filter-source" class="border border-forest-200 rounded-lg px-3 py-2 text-sm bg-white">
+            <option value="">All sources</option>
+            <option value="lsa">Google LSA</option>
+            <option value="phone">Phone</option>
+            <option value="facebook">Facebook</option>
+            <option value="website">Website</option>
+          </select>
+          <input id="filter-q" type="search" placeholder="Search name, phone, town..."
+            class="border border-forest-200 rounded-lg px-3 py-2 text-sm bg-white flex-1 min-w-40" />
+          <button id="btn-refresh" class="text-sm text-forest-500 hover:text-ink-950 px-2">Refresh</button>
+        </div>
+
+        <div id="leads" class="space-y-2"></div>
+        <p id="empty" class="hidden text-center text-forest-400 py-12">No leads yet. Log the first one with "+ Log a lead".</p>
+      </main>
+    </div>
+
+    <!-- New lead modal -->
+    <div id="modal" class="hidden fixed inset-0 bg-black/50 z-50 overflow-y-auto p-4">
+      <div class="bg-white rounded-xl max-w-lg mx-auto my-8 p-6">
+        <div id="modal-form-view">
+          <h2 class="font-display text-xl uppercase tracking-wide text-ink-950 mb-4">Log a lead</h2>
+          <form id="lead-form" class="space-y-3">
+            <div class="grid grid-cols-2 gap-3">
+              <input name="name" placeholder="Name" class="border border-forest-200 rounded-lg px-3 py-2 w-full" />
+              <input name="phone" placeholder="Phone" class="border border-forest-200 rounded-lg px-3 py-2 w-full" />
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <input name="email" type="email" placeholder="Email (optional)" class="border border-forest-200 rounded-lg px-3 py-2 w-full" />
+              <input name="town" list="towns" placeholder="Town" class="border border-forest-200 rounded-lg px-3 py-2 w-full" />
+            </div>
+            <datalist id="towns">
+              <option>Norristown</option><option>King of Prussia</option><option>Bryn Mawr</option>
+              <option>Wayne</option><option>Conshohocken</option><option>Plymouth Meeting</option>
+              <option>Gladwyne</option><option>Newtown Square</option><option>Malvern</option>
+              <option>Paoli</option><option>Villanova</option><option>Broomall</option>
+              <option>Blue Bell</option><option>Radnor</option><option>Havertown</option>
+              <option>Collegeville</option><option>Berwyn</option><option>Ardmore</option>
+            </datalist>
+            <select name="service" class="border border-forest-200 rounded-lg px-3 py-2 w-full bg-white">
+              <option value="">What do they want?</option>
+              <option>Landscape design / build</option>
+              <option>Patio or hardscaping</option>
+              <option>Retaining wall</option>
+              <option>Outdoor living (kitchen, fire pit)</option>
+              <option>Drainage or grading</option>
+              <option>Landscape lighting</option>
+              <option>Planting / sod</option>
+              <option>Lawn maintenance / mowing</option>
+              <option>Cleanup / mulch</option>
+              <option>Snow management</option>
+              <option>Other</option>
+            </select>
+            <div class="grid grid-cols-2 gap-3">
+              <select name="budget" class="border border-forest-200 rounded-lg px-3 py-2 w-full bg-white">
+                <option value="">Budget?</option>
+                <option>Not sure</option>
+                <option>Under $10k</option>
+                <option>$10k - $25k</option>
+                <option>$25k - $50k</option>
+                <option>$50k+</option>
+              </select>
+              <select name="timeline" class="border border-forest-200 rounded-lg px-3 py-2 w-full bg-white">
+                <option value="">Timeline?</option>
+                <option>ASAP</option>
+                <option>1-3 months</option>
+                <option>3-6 months</option>
+                <option>Just exploring</option>
+              </select>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <select name="property_type" class="border border-forest-200 rounded-lg px-3 py-2 w-full bg-white">
+                <option value="">Property type?</option>
+                <option>Residential</option>
+                <option>Commercial</option>
+                <option>HOA / community</option>
+              </select>
+              <select name="source" class="border border-forest-200 rounded-lg px-3 py-2 w-full bg-white">
+                <option value="phone">Source: Phone call</option>
+                <option value="website">Source: Website</option>
+                <option value="facebook">Source: Facebook</option>
+                <option value="lsa">Source: Google LSA</option>
+              </select>
+            </div>
+            <textarea name="notes" rows="3" placeholder="Notes from the call..."
+              class="border border-forest-200 rounded-lg px-3 py-2 w-full"></textarea>
+            <div class="flex gap-3 pt-1">
+              <button type="submit" class="flex-1 bg-leaf-600 hover:bg-leaf-700 text-white font-semibold rounded-lg py-3">Save and score</button>
+              <button type="button" id="btn-cancel" class="px-4 text-forest-500 hover:text-ink-950">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="modal-result-view" class="hidden text-center">
+          <p class="text-xs uppercase tracking-wide text-forest-400 mb-2">Lead score</p>
+          <p id="result-score" class="text-5xl font-bold mb-1">0</p>
+          <p id="result-tier" class="font-semibold mb-4"></p>
+          <ul id="result-reasons" class="text-left text-sm text-forest-600 bg-sand rounded-lg p-4 mb-4 space-y-1"></ul>
+          <label class="flex items-center justify-center gap-2 text-sm text-forest-600 mb-4">
+            <input type="checkbox" id="result-hl" checked class="accent-leaf-600" />
+            Also add to HighLevel (starts follow-up texts)
+          </label>
+          <div class="flex gap-3">
+            <button id="btn-send-owner" class="flex-1 bg-leaf-600 hover:bg-leaf-700 text-white font-semibold rounded-lg py-3">Send to owner</button>
+            <button id="btn-result-close" class="flex-1 border border-forest-200 rounded-lg py-3 text-forest-600 hover:bg-sand">Just save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const $ = (id) => document.getElementById(id);
+      const api = (path, opts = {}) =>
+        fetch(`/api/${path}/`, {
+          headers: { "Content-Type": "application/json" },
+          credentials: "same-origin",
+          ...opts,
+        }).then((r) => r.json().then((j) => ({ status: r.status, ...j })));
+
+      const esc = (s) =>
+        String(s ?? "").replace(/[&<>"']/g, (c) =>
+          ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+
+      const TIER = {
+        hot: { label: "HOT", cls: "bg-leaf-600 text-white" },
+        review: { label: "MAYBE", cls: "bg-clay-400 text-ink-950" },
+        low: { label: "LOW", cls: "bg-forest-200 text-forest-600" },
+      };
+      const SOURCE = { lsa: "Google LSA", phone: "Phone", facebook: "Facebook", website: "Website" };
+      const STATUSES = ["new", "contacted", "sent_to_owner", "won", "lost"];
+      const STATUS_LABEL = { new: "New", contacted: "Contacted", sent_to_owner: "Sent to owner", won: "Won", lost: "Lost" };
+
+      let leads = [];
+      let lastSaved = null;
+
+      async function boot() {
+        try {
+          const s = await api("crm/auth", { method: "GET" });
+          if (s.ok) { showApp(); return; }
+        } catch { /* API unreachable: fall through to login */ }
+        $("login").classList.remove("hidden");
+      }
+
+      function showApp() {
+        $("login").classList.add("hidden");
+        $("app").classList.remove("hidden");
+        loadLeads();
+      }
+
+      async function loadLeads() {
+        const params = new URLSearchParams();
+        if ($("filter-status").value) params.set("status", $("filter-status").value);
+        if ($("filter-source").value) params.set("source", $("filter-source").value);
+        if ($("filter-q").value.trim()) params.set("q", $("filter-q").value.trim());
+        const qs = params.toString() ? `?${params}` : "";
+        const r = await fetch(`/api/crm/leads/${qs}`, { credentials: "same-origin" }).then((x) => x.json());
+        leads = r.leads || [];
+        render();
+      }
+
+      function render() {
+        const today = new Date().toDateString();
+        $("stat-today").textContent = leads.filter((l) => new Date(l.created_at).toDateString() === today).length;
+        $("stat-hot").textContent = leads.filter((l) => l.tier === "hot").length;
+        $("stat-total").textContent = leads.length;
+
+        const box = $("leads");
+        box.innerHTML = "";
+        $("empty").classList.toggle("hidden", leads.length > 0);
+
+        for (const l of leads) {
+          const t = TIER[l.tier] || TIER.low;
+          const d = new Date(l.created_at);
+          const el = document.createElement("div");
+          el.className = "bg-white rounded-xl border border-forest-100 overflow-hidden";
+          el.innerHTML = `
+            <div class="flex items-center gap-3 px-4 py-3 cursor-pointer lead-head">
+              <span class="inline-flex items-center justify-center rounded-lg px-2 py-1 text-xs font-bold ${t.cls} w-16 shrink-0">${l.score ?? "?"} ${t.label}</span>
+              <div class="min-w-0 flex-1">
+                <p class="font-semibold text-ink-950 truncate">${esc(l.name || "(no name)")}
+                  <span class="text-forest-400 font-normal">${esc(l.phone || "")}</span></p>
+                <p class="text-xs text-forest-400 truncate">${esc(SOURCE[l.source] || l.source)} · ${esc(l.service || "service unknown")} · ${esc(l.town || "town unknown")}</p>
+              </div>
+              <span class="text-xs text-forest-400 shrink-0 hidden sm:block">${d.toLocaleDateString()} ${d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</span>
+              <select data-id="${l.id}" class="status-sel border border-forest-200 rounded-lg px-2 py-1 text-xs bg-white shrink-0">
+                ${STATUSES.map((s) => `<option value="${s}" ${s === l.status ? "selected" : ""}>${STATUS_LABEL[s]}</option>`).join("")}
+              </select>
+              <button data-id="${l.id}" class="send-btn text-xs font-semibold rounded-lg px-3 py-1.5 shrink-0 ${l.status === "sent_to_owner" ? "bg-forest-100 text-forest-400" : "bg-ink-950 text-white hover:bg-ink-800"}">
+                ${l.status === "sent_to_owner" ? "Sent" : "Send"}
+              </button>
+            </div>
+            <div class="detail hidden border-t border-forest-100 px-4 py-3 text-sm text-forest-600 space-y-2">
+              ${l.budget ? `<p><b>Budget:</b> ${esc(l.budget)}</p>` : ""}
+              ${l.timeline ? `<p><b>Timeline:</b> ${esc(l.timeline)}</p>` : ""}
+              ${l.email ? `<p><b>Email:</b> ${esc(l.email)}</p>` : ""}
+              ${l.property_type ? `<p><b>Property:</b> ${esc(l.property_type)}</p>` : ""}
+              ${l.notes ? `<p><b>Notes:</b> ${esc(l.notes)}</p>` : ""}
+              ${Array.isArray(l.reasons) && l.reasons.length ? `<div><b>Why this score:</b><ul class="list-disc ml-5 mt-1">${l.reasons.map((r) => `<li>${esc(r)}</li>`).join("")}</ul></div>` : ""}
+              ${l.raw ? `<details><summary class="cursor-pointer text-forest-400">Raw email</summary><pre class="whitespace-pre-wrap text-xs bg-sand rounded-lg p-3 mt-2">${esc(l.raw)}</pre></details>` : ""}
+            </div>`;
+          el.querySelector(".lead-head").addEventListener("click", (e) => {
+            if (e.target.closest("select") || e.target.closest("button")) return;
+            el.querySelector(".detail").classList.toggle("hidden");
+          });
+          el.querySelector(".status-sel").addEventListener("change", async (e) => {
+            await api("crm/leads", { method: "PATCH", body: JSON.stringify({ id: l.id, status: e.target.value }) });
+            loadLeads();
+          });
+          el.querySelector(".send-btn").addEventListener("click", async (e) => {
+            e.target.disabled = true;
+            e.target.textContent = "Sending...";
+            const r = await api("crm/send-to-owner", { method: "POST", body: JSON.stringify({ id: l.id, addToHighLevel: false }) });
+            if (!r.ok) alert("Telegram send failed. Check TELEGRAM env vars.");
+            loadLeads();
+          });
+          box.appendChild(el);
+        }
+      }
+
+      // Login
+      $("login-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const r = await api("crm/auth", { method: "POST", body: JSON.stringify({ password: $("password").value }) });
+        if (r.ok) showApp();
+        else $("login-error").classList.remove("hidden");
+      });
+      $("btn-logout").addEventListener("click", async () => {
+        await api("crm/auth", { method: "DELETE" });
+        location.reload();
+      });
+
+      // Filters
+      for (const id of ["filter-status", "filter-source"]) $(id).addEventListener("change", loadLeads);
+      let qTimer;
+      $("filter-q").addEventListener("input", () => { clearTimeout(qTimer); qTimer = setTimeout(loadLeads, 300); });
+      $("btn-refresh").addEventListener("click", loadLeads);
+
+      // New lead modal
+      $("btn-new").addEventListener("click", () => {
+        $("lead-form").reset();
+        $("modal-form-view").classList.remove("hidden");
+        $("modal-result-view").classList.add("hidden");
+        $("modal").classList.remove("hidden");
+      });
+      $("btn-cancel").addEventListener("click", () => $("modal").classList.add("hidden"));
+
+      $("lead-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(e.target).entries());
+        const r = await api("crm/leads", { method: "POST", body: JSON.stringify(data) });
+        if (!r.ok) { alert(r.error === "need_name_or_phone" ? "Need at least a name or phone." : "Save failed: " + (r.detail || r.error)); return; }
+        lastSaved = r.lead;
+        const t = TIER[r.lead.tier] || TIER.low;
+        $("result-score").textContent = r.lead.score;
+        $("result-score").className = "text-5xl font-bold mb-1 " +
+          (r.lead.tier === "hot" ? "text-leaf-600" : r.lead.tier === "review" ? "text-clay-500" : "text-forest-400");
+        $("result-tier").textContent =
+          r.lead.tier === "hot" ? "Send this one to the owner" :
+          r.lead.tier === "review" ? "Borderline. Use your judgment." : "Low priority. Probably pass.";
+        $("result-reasons").innerHTML = (r.lead.reasons || []).map((x) => `<li>${esc(x)}</li>`).join("");
+        $("modal-form-view").classList.add("hidden");
+        $("modal-result-view").classList.remove("hidden");
+        loadLeads();
+      });
+
+      $("btn-send-owner").addEventListener("click", async (e) => {
+        if (!lastSaved) return;
+        e.target.disabled = true;
+        e.target.textContent = "Sending...";
+        const r = await api("crm/send-to-owner", {
+          method: "POST",
+          body: JSON.stringify({ id: lastSaved.id, addToHighLevel: $("result-hl").checked }),
+        });
+        e.target.disabled = false;
+        e.target.textContent = "Send to owner";
+        if (!r.ok) { alert("Telegram send failed. Check TELEGRAM env vars."); return; }
+        $("modal").classList.add("hidden");
+        loadLeads();
+      });
+      $("btn-result-close").addEventListener("click", () => {
+        $("modal").classList.add("hidden");
+        loadLeads();
+      });
+
+      boot();
+    </script>
+  </body>
+</html>

@@ -22,14 +22,21 @@ export type Project = {
   services: { label: string; href: string }[];
   photos: ProjectPhoto[];
   sections: { heading: string; text: string }[];
+  /** Optional self-hosted case-study video (mp4 in /public/videos). */
+  video?: string;
+  /** Poster frame for the video (image in /public/images), matches video aspect. */
+  videoPoster?: string;
 };
 
 export const projects: Project[] = [
   {
     slug: "basement-flooding-french-drain-grading",
     title: "French Drain & Yard Regrading to Stop Basement Flooding",
+    location: "Norristown, PA",
     summary:
       "A home whose basement flooded every time it rained, fixed at the source with a French drain and a full regrade that pulls storm water off the foundation and toward the back of the property.",
+    video: "/videos/mex-drainage-before-after.mp4",
+    videoPoster: "/images/drainage-video-poster.jpg",
     services: [
       { label: "Drainage & Storm Water", href: "/storm-water-management/" },
       { label: "Landscape Design & Build", href: "/landscape-design/" },
@@ -85,7 +92,7 @@ export const projects: Project[] = [
     slug: "natural-stone-retaining-wall-driveway",
     title: "Natural Stone Retaining Wall & Driveway Entrance",
     summary:
-      "A failing slope beside the garage rebuilt with a hand-laid natural fieldstone retaining wall, stone steps, and a clean driveway entrance.",
+      "A failing slope beside the garage rebuilt with a natural fieldstone retaining wall, stone steps, and a clean driveway entrance.",
     services: [
       { label: "Retaining & Seating Walls", href: "/retaining-walls/" },
       { label: "Driveways", href: "/driveways/" },
@@ -95,7 +102,7 @@ export const projects: Project[] = [
       {
         src: "/images/wall-stone-during.webp",
         alt: "Mex Landscaping masons hand-laying a natural fieldstone retaining wall",
-        caption: "Our masons laying the fieldstone wall by hand",
+        caption: "Our crew building the fieldstone wall",
         tag: "During",
       },
       {
@@ -118,7 +125,7 @@ export const projects: Project[] = [
       },
       {
         heading: "The build",
-        text: "We rebuilt the slope with a hand-laid natural fieldstone retaining wall. Fieldstone walls are the slow way to do it: each stone is selected and placed by a mason rather than stacked from a pallet of identical block, which is exactly why the finished wall looks like it has always been part of the property. Behind the face of the wall is what makes it last: a proper excavated footing, compacted base, and drainage so water moves through and away instead of building pressure behind the stone.",
+        text: "We rebuilt the slope with a natural fieldstone retaining wall. Fieldstone is the craftsman's approach: our masons select and set each stone rather than stacking a pallet of identical block, which is exactly why the finished wall looks like it has always been part of the property. Behind the face of the wall is what makes it last: a proper excavated footing, compacted base, and drainage so water moves through and away instead of building pressure behind the stone.",
       },
       {
         heading: "The result",

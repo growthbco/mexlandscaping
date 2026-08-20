@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page {
+    size: A4;
+    margin: 22mm 18mm 25mm 18mm;
+    @bottom-center {
+      content: "Page " counter(page) " of " counter(pages);
+      font-size: 9pt;
+      color: #6b7280;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+    @bottom-left {
+      content: "Confidential";
+      font-size: 7pt;
+      color: #d6d3cc;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+    @bottom-right {
+      content: "www.mexlandscaping.com Google SEO Report";
+      font-size: 8pt;
+      color: #cbd5e1;
+      font-family: 'DejaVu Serif', 'Times New Roman', Georgia, serif;
+    }
+  }
+
+  @page :first {
+    margin: 0;
+    @bottom-left { content: none; }
+    @bottom-center { content: none; }
+    @bottom-right { content: none; }
+  }
+
+  @page toc {
+    @bottom-center {
+      content: counter(page);
+      font-size: 9pt;
+      color: #6b7280;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Times New Roman', 'DejaVu Serif', Georgia, serif;
+    font-size: 10pt;
+    line-height: 1.55;
+    color: #1e293b;
+    background: white;
+  }
+
+  /* ─── Title Page (Clean White) ─── */
+  .title-page {
+    page: first;
+    width: 210mm;
+    height: 297mm;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #1a1a2e;
+    position: relative;
+    padding: 50mm 30mm 40mm 30mm;
+    border-top: 6mm solid #1e3a5f;
+  }
+
+  .title-page .badge {
+    background: #f7f6f3;
+    border: 1px solid #d6d3cc;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 9pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15mm;
+    color: #1e3a5f;
+  }
+
+  .title-page h1 {
+    font-size: 28pt;
+    font-weight: bold;
+    margin-bottom: 5mm;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    color: #1a1a2e;
+  }
+
+  .title-page .subtitle {
+    font-size: 13pt;
+    color: #6b7280;
+    margin-bottom: 12mm;
+    font-weight: 300;
+  }
+
+  .title-page .url {
+    font-size: 12pt;
+    color: #1e3a5f;
+    margin-bottom: 15mm;
+    padding: 4mm 8mm;
+    border: 1px solid #d6d3cc;
+    border-radius: 6px;
+    background: #faf9f7;
+  }
+
+  .title-page .score-box {
+    background: #faf9f7;
+    border: 2px solid #d6d3cc;
+    border-radius: 12px;
+    padding: 6mm 12mm;
+    margin-bottom: 15mm;
+  }
+
+  .title-page .score-number {
+    font-size: 42pt;
+    font-weight: bold;
+    color: #1e3a5f;
+    line-height: 1;
+  }
+
+  .title-page .score-label {
+    font-size: 10pt;
+    color: #6b7280;
+    margin-top: 2mm;
+  }
+
+  .title-page .meta {
+    font-size: 9pt;
+    color: #6b7280;
+    margin-top: 8mm;
+    padding-top: 5mm;
+    border-top: 1px solid #d6d3cc;
+  }
+
+  .title-page .meta span {
+    margin: 0 8px;
+  }
+
+  /* ─── Table of Contents ─── */
+  .toc-page {
+    page: toc;
+    page-break-before: always;
+  }
+
+  .toc-page h2 {
+    font-size: 18pt;
+    color: #1e3a5f;
+    margin-bottom: 8mm;
+    padding-bottom: 3mm;
+    border-bottom: 2px solid #1e3a5f;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .toc-list li {
+    padding: 2mm 0;
+    border-bottom: 1px solid #f1f5f9;
+    overflow: hidden;
+  }
+
+  .toc-list li.toc-section {
+    font-weight: bold;
+    font-size: 11pt;
+    padding-top: 4mm;
+    color: #0f172a;
+  }
+
+  .toc-list li.toc-sub {
+    padding-left: 8mm;
+    font-size: 9.5pt;
+    color: #475569;
+  }
+
+  .toc-score {
+    display: inline-block;
+    float: right;
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 9pt;
+    font-weight: bold;
+    color: white;
+  }
+
+  .score-good { background: #2d6a4f; }
+  .score-warn { background: #d4740e; }
+  .score-bad { background: #c53030; }
+
+  /* ─── Section Styles ─── */
+  div.section {
+    page-break-before: always;
+  }
+
+  .section-header {
+    background: #faf9f7;
+    border-left: 4px solid #1e3a5f;
+    padding: 5mm 6mm;
+    margin-bottom: 6mm;
+    page-break-after: avoid;
+  }
+
+  .section-header h2 {
+    font-size: 16pt;
+    color: #0f172a;
+    margin-bottom: 1mm;
+  }
+
+  .section-header .section-score {
+    font-size: 12pt;
+    font-weight: bold;
+    float: right;
+    margin-top: -6mm;
+  }
+
+  h3 {
+    font-size: 12pt;
+    color: #1e3a5f;
+    margin-top: 6mm;
+    margin-bottom: 3mm;
+    padding-bottom: 1.5mm;
+    border-bottom: 1px solid #d6d3cc;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 10.5pt;
+    color: #334155;
+    margin-top: 4mm;
+    margin-bottom: 2mm;
+    page-break-after: avoid;
+  }
+
+  p {
+    margin-bottom: 3mm;
+    color: #334155;
+  }
+
+  .highlight {
+    background: #fef3c7;
+    border-left: 3px solid #d4740e;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .critical-box {
+    background: #fef2f2;
+    border-left: 3px solid #c53030;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .success-box {
+    background: #f0fdf4;
+    border-left: 3px solid #2d6a4f;
+    padding: 3mm 4mm;
+    margin: 4mm 0;
+    font-size: 9.5pt;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  /* ─── Tables ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 4mm 0 6mm 0;
+    font-size: 9pt;
+  }
+
+  thead th {
+    background: #f7f6f3;
+    color: #0f172a;
+    font-weight: bold;
+    padding: 3mm 4mm;
+    text-align: left;
+    border-bottom: 2px solid #d6d3cc;
+    font-size: 9pt;
+  }
+
+  tbody td {
+    padding: 2.5mm 3mm;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+  }
+
+  tbody tr:nth-child(even) {
+    background: #fdfcfa;
+  }
+
+  .status-pass {
+    color: #2d6a4f;
+    font-weight: bold;
+  }
+
+  .status-fail {
+    color: #c53030;
+    font-weight: bold;
+  }
+
+  .status-warn {
+    color: #d4740e;
+    font-weight: bold;
+  }
+
+  .status-partial {
+    color: #4a5568;
+    font-weight: bold;
+  }
+
+  /* ─── Charts ─── */
+  .chart-container {
+    text-align: center;
+    margin: 4mm 0;
+  }
+
+  .chart-container img {
+    max-width: 100%;
+    max-height: 120mm;
+    height: auto;
+  }
+
+  .chart-caption {
+    font-size: 8.5pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 2mm;
+    text-align: center;
+  }
+
+  .chart-half {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+    text-align: center;
+    margin: 2mm 0;
+  }
+
+  .chart-half img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* ─── Two column layout ─── */
+  .two-col {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 3mm 0;
+  }
+
+  .two-col .col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 2mm;
+  }
+
+  .four-col {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    margin: 3mm 0;
+  }
+
+  .four-col .col {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 1.5mm;
+  }
+
+  /* ─── Metric Cards ─── */
+  .metric-card {
+    background: #faf9f7;
+    border: 1px solid #d6d3cc;
+    border-radius: 6px;
+    padding: 2.5mm 3mm;
+    text-align: center;
+    margin: 2mm 0;
+  }
+
+  .metric-card .value {
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
+  .metric-card .label {
+    font-size: 7.5pt;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1mm;
+  }
+
+  /* ─── Action Plan ─── */
+  .action-item {
+    background: #faf9f7;
+    border-radius: 4px;
+    padding: 3mm 4mm;
+    margin: 3mm 0;
+    border-left: 3px solid #cbd5e1;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .action-item.critical {
+    border-left-color: #c53030;
+    background: #fdf2f2;
+  }
+
+  .action-item.high {
+    border-left-color: #d4740e;
+    background: #fdf8ef;
+  }
+
+  .action-item.medium {
+    border-left-color: #1e3a5f;
+    background: #f0f4f8;
+  }
+
+  .action-item.low {
+    border-left-color: #94a3b8;
+  }
+
+  .action-item h4 {
+    margin-top: 0;
+    margin-bottom: 1.5mm;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .action-item .effort {
+    font-size: 8.5pt;
+    color: #64748b;
+    float: right;
+  }
+
+  .priority-tag {
+    display: inline-block;
+    padding: 0.5mm 3mm;
+    border-radius: 3px;
+    font-size: 8pt;
+    font-weight: bold;
+    color: white;
+    margin-right: 2mm;
+    vertical-align: middle;
+  }
+
+  .priority-critical { background: #c53030; }
+  .priority-high { background: #d4740e; }
+  .priority-medium { background: #1e3a5f; }
+  .priority-low { background: #94a3b8; }
+
+  /* ─── Code blocks ─── */
+  .code-block {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 3mm 4mm;
+    border-radius: 4px;
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 8pt;
+    line-height: 1.6;
+    margin: 3mm 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  /* ─── Divider ─── */
+  .divider {
+    border: none;
+    border-top: 1px solid #d6d3cc;
+    margin: 5mm 0;
+  }
+
+  /* ─── Roadmap ─── */
+  .roadmap-phase {
+    background: #faf9f7;
+    border-radius: 6px;
+    padding: 4mm 5mm;
+    margin: 4mm 0;
+    border: 1px solid #d6d3cc;
+    /* allow page breaks to prevent white gaps */
+  }
+
+  .roadmap-phase h4 {
+    margin-top: 0;
+    border-bottom: none;
+    color: #1e3a5f;
+  }
+
+  .roadmap-phase ul {
+    margin: 2mm 0 0 5mm;
+    padding: 0;
+  }
+
+  .roadmap-phase li {
+    margin-bottom: 1.5mm;
+    font-size: 9.5pt;
+    color: #334155;
+  }
+
+  /* ─── Lists ─── */
+  ul {
+    margin-left: 5mm;
+    margin-bottom: 3mm;
+  }
+
+  li {
+    margin-bottom: 1.5mm;
+  }
+
+  /* ─── Data freshness ─── */
+  .data-freshness {
+    font-size: 8pt;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 4mm;
+    padding-top: 2mm;
+    border-top: 1px solid #d6d3cc;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ======================================================= TITLE PAGE === -->
+<div class="title-page">
+  <div class="badge">Full SEO Audit Report</div>
+  <h1>www.mexlandscaping.com</h1>
+  <div class="subtitle">Prepared by Claude SEO</div>
+  <div class="score-box">
+    <div class="score-number">57<span style="font-size: 20pt; color: #94a3b8;">/100</span></div>
+    <div class="score-label">SEO Health Score</div>
+  </div>
+  <div class="meta">
+    <span>July 08, 2026</span>
+    <span>Full Audit</span>
+  </div>
+</div>
+
+
+<!-- ======================================================= TABLE OF CONTENTS === -->
+<div class="toc-page">
+  <h2>Table of Contents</h2>
+  <ul class="toc-list">
+    <li class="toc-section"><span>1. Executive Summary</span></li>
+    <li class="toc-sub"><span>Key Metrics, Critical Issues &amp; Quick Wins</span></li>
+    <li class="toc-section"><span>2. Audit Categories</span></li>
+    <li class="toc-sub"><span>What Works</span></li>
+    <li class="toc-sub"><span>Findings by Severity</span></li>
+    <li class="toc-section"><span>3. Action Plan</span></li>
+    <li class="toc-sub"><span>Phased Roadmap</span></li>
+    <li class="toc-section"><span>4. Data Sources &amp; Methodology</span></li>
+  </ul>
+</div>
+
+
+<!-- ======================================================= 1. EXECUTIVE SUMMARY === -->
+<div class="section">
+  <div class="section-header">
+    <h2>1. Executive Summary</h2>
+  </div>
+
+  <p>This report presents a comprehensive SEO audit of <strong>www.mexlandscaping.com</strong> for a <strong>Local Service: Landscaping Design-Build (Norristown, PA / Main Line)</strong> site, generated on July 08, 2026. Findings combine technical, content, schema, performance, visual, and search-readiness evidence as available.</p>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="metric-card">
+        <div class="value" style="color: #d4740e;">57/100</div>
+        <div class="label">SEO Health Score</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="critical-box">
+    <strong>Critical Issues Found:</strong>
+    <ol>
+      <li><strong>Critical:</strong> Hero LCP image was a 1.22 MB raw JPEG; site served ~32 MB of unoptimized images. STATUS: FIXED (WebP conversion, preload, fetchpriority) - pending deploy</li>
+      <li><strong>Critical:</strong> NAP conflict: logo alt text said &#x27;Mex Landscaping Inc.&#x27; vs legal name &#x27;Mex Landscaping LLC&#x27;. STATUS: FIXED - pending deploy</li>
+      <li><strong>Critical:</strong> &#x27;Read All Reviews&#x27; link (g.page) resolved to a Google search page, not the GBP profile. STATUS: FIXED - pending deploy</li>
+      <li><strong>Critical:</strong> /press-release/ was indexable with a raw CSS comment as its meta description. STATUS: FIXED (noindex + real description) - pending deploy</li>
+      <li><strong>High:</strong> Map pack is the real battleground: directories (Angi, Houzz, LawnStarter) hold organic positions 1-6 for head terms; MEX sits at organic position 9. GBP reviews + directory profiles are the top levers (requires owner action)</li>
+    </ol>
+  </div>
+
+  <div class="success-box">
+    <strong>Quick Wins:</strong>
+    <ol>
+      <li>Deploy the committed fixes: image optimization alone should move LCP from POOR toward GOOD</li>
+      <li>Drainage SERP is winnable now: page retitled to &#x27;Drainage Solutions &amp; French Drain Installation&#x27;; top competitor (Paragon) ranks with zero drainage content</li>
+      <li>Nova Landscaping has no Norristown or Wayne pages: MEX home turf is uncontested</li>
+      <li>Add a review-request workflow (SMS/email post-job) targeting 30 Google reviews in 90 days</li>
+      <li>Claim Angi, Houzz, Yelp, BBB profiles now that the NAP is consistent</li>
+    </ol>
+  </div>
+
+</div>
+
+<!-- ======================================================= 2. AUDIT CATEGORIES === -->
+<div class="section">
+  <div class="section-header">
+    <h2>2. Audit Categories</h2>
+  </div>
+
+  <h3>2.1 Technical SEO</h3>
+  <p><strong>Score:</strong> <span class="status-warn">64/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Full server-side rendering (Astro SSG): all content, schema, and NAP present without JavaScript</li>
+    <li>Correct canonicals site-wide; clean www/https/trailing-slash consolidation via 301/308</li>
+    <li>Brotli compression, immutable caching on hashed assets, TTFB 120-130 ms from Vercel edge</li>
+    <li>True 404 handling and correctly noindexed paid landers excluded from the sitemap</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>/press-release/ indexable with corrupted meta description <span class="status-warn">Critical</span></h4>
+    <p>Meta description was literally &#x27;/*! elementor - v3.19.0 */&#x27;; page is 86 words thin and appeared in the sitemap.</p>
+    <p><strong>Recommendation:</strong> FIXED: noindexed, given a real description, removed from sitemap. Deploy to take effect.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>/snow-removal/ duplicated /snow-management-services/ (53% overlap, both indexed) <span class="status-warn">High</span></h4>
+    <p>Two indexable pages split link equity for snow queries.</p>
+    <p><strong>Recommendation:</strong> FIXED: page removed and 301-redirected to /snow-management-services/.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Two pages competed for Norristown landscaping intent <span class="status-warn">High</span></h4>
+    <p>/landscaping-services-in-norristown-pa/ (legacy) vs /landscape-design-hardscaping-in-norristown-pa/ (current).</p>
+    <p><strong>Recommendation:</strong> FIXED: legacy page removed and 301-redirected to the current city page.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>BreadcrumbList schema had a duplicate terminal item on all service pages <span class="status-warn">Medium</span></h4>
+    <p>Positions 2 and 3 were identical, invalidating breadcrumb rich results site-wide.</p>
+    <p><strong>Recommendation:</strong> FIXED: breadcrumb builder now collapses consecutive duplicates; verified in build output.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Five security headers missing <span class="status-warn">Low</span></h4>
+    <p>X-Content-Type-Options, X-Frame-Options, Referrer-Policy, Permissions-Policy absent (HSTS was present).</p>
+    <p><strong>Recommendation:</strong> FIXED: added via vercel.json headers configuration.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Sitemap had no lastmod; deprecated changefreq/priority on all URLs <span class="status-warn">Medium</span></h4>
+    <p>101 URLs with no freshness signal.</p>
+    <p><strong>Recommendation:</strong> FIXED: lastmod emitted for all 96 URLs; changefreq/priority removed; legal pages and press-release excluded.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Vercel bot mitigation returns 403 to some standard browser user-agents <span class="status-warn">Low</span></h4>
+    <p>Requests with a plain Chrome UA got &#x27;x-vercel-mitigated: deny&#x27;; verified Googlebot and Bingbot pass.</p>
+    <p><strong>Recommendation:</strong> OPEN: review Vercel firewall rules; use a non-blocked UA for uptime monitoring.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>21 legacy WordPress blog articles remain indexable <span class="status-warn">Medium</span></h4>
+    <p>Old thin articles (aeration, trimming guides) dilute index quality and overlap service pages.</p>
+    <p><strong>Recommendation:</strong> OPEN: audit each in GSC; noindex or 301 the zero-traffic ones.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.2 Content Quality (E-E-A-T)</h3>
+  <p><strong>Score:</strong> <span class="status-warn">61/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Service pages are genuinely strong: 1,300+ words, correct technical detail (geogrid, engineered bases, sod vs seed), locally accurate FAQs naming real townships and permit authorities</li>
+    <li>All 22 design city pages have unique locally-grounded body copy (no template fallback in use)</li>
+    <li>Real project photo library (~32 client photos) wired site-wide with before/after sequences</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Bare 6-18 character title tags on core service pages <span class="status-warn">Critical</span></h4>
+    <p>&#x27;Patios&#x27;, &#x27;Landscape Design&#x27;, &#x27;Lawn Installation&#x27;, &#x27;Landscape Lighting&#x27; inherited from the old WordPress crawl; /service-areas/ meta description was the breadcrumb string &#x27;Home / Service Areas&#x27;; three snow pages shared one identical description.</p>
+    <p><strong>Recommendation:</strong> FIXED: all bare titles rewritten with keyword + geo + brand; snow trio deduplicated; service-areas description written; lawn-installation title/H1 mismatch resolved.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>About page thin (~310 words) with no founder name, year, or credentials <span class="status-warn">High</span></h4>
+    <p>The most trust-weighted page has no named human, no license number, no company history specifics.</p>
+    <p><strong>Recommendation:</strong> OPEN (needs owner input): founder/team names, photos, founding year, PA HIC license number.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Unsubstantiated &#x27;Award-Winning Design&#x27; claim <span class="status-warn">High</span></h4>
+    <p>No award name, year, or organization anywhere on the site; flagged under Sept 2025 QRG unverifiable-superlative guidance.</p>
+    <p><strong>Recommendation:</strong> FIXED provisionally: changed to &#x27;Design-Build Craftsmanship&#x27;. If a real award exists, restore with attribution.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>&#x27;5.0 Average Rating&#x27; claim has no visible count, widget, or schema backing <span class="status-warn">High</span></h4>
+    <p>Trust claim not verifiable on-page; review link previously dead-ended.</p>
+    <p><strong>Recommendation:</strong> PARTIAL: review link now points to the real GBP profile. OPEN: display a real review count; do NOT add aggregateRating schema until pulled from a live verified source.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Snow city pages share 60-70% body copy across 22 cities <span class="status-warn">Medium</span></h4>
+    <p>Higher doorway-pattern risk than the well-differentiated design pages.</p>
+    <p><strong>Recommendation:</strong> OPEN: deprioritized under the luxury/commercial strategy; differentiate top commercial-corridor cities first (King of Prussia, Conshohocken, Plymouth Meeting).</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No case-study project pages <span class="status-warn">Medium</span></h4>
+    <p>Competitor analysis shows named-project pages rank (Paragon) but are executed as thin galleries; a structured case study format wins this lane.</p>
+    <p><strong>Recommendation:</strong> OPEN: build 5-8 case studies (problem, solution, materials, timeline, town) from the existing photo library; needs project details from owner.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.3 On-Page SEO</h3>
+  <p><strong>Score:</strong> <span class="status-warn">58/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Location page title template correct and consistent: &#x27;Landscape Design &amp; Hardscaping in {City}, PA | Mex Landscaping&#x27;</li>
+    <li>Proper H1-H2-H3 hierarchy across templates; city-to-service and service-to-city internal link mesh in place</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Drainage page vocabulary mismatched search demand <span class="status-warn">High</span></h4>
+    <p>Page said &#x27;Storm Water Management&#x27;; users search &#x27;drainage solutions&#x27; and &#x27;French drain&#x27;. SERP analysis shows this keyword set is winnable (no directory dominance; top competitor has zero drainage content).</p>
+    <p><strong>Recommendation:</strong> FIXED: retitled to &#x27;Drainage Solutions &amp; French Drain Installation | Norristown, PA&#x27; with matching H1 and intro copy.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Contact page title used a malformed phone format <span class="status-warn">Low</span></h4>
+    <p>&#x27;+1 (484) 261 6650&#x27; with space separator, inconsistent with every other NAP instance.</p>
+    <p><strong>Recommendation:</strong> FIXED: standardized to (484) 261-6650.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>King of Prussia page lacks localized service headings <span class="status-warn">Medium</span></h4>
+    <p>Nova ranks #3 for &#x27;landscape design King of Prussia&#x27; off exact-phrase H2/H3 headings on a doorway page with 2 photos and hidden FAQs.</p>
+    <p><strong>Recommendation:</strong> OPEN: add localized service H2s (including the literal phrase &#x27;landscape design in King of Prussia&#x27;) and 2-3 real KoP-area photos.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.4 Schema / Structured Data</h3>
+  <p><strong>Score:</strong> <span class="status-warn">72/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>LandscapingBusiness (valid LocalBusiness subtype) emitted site-wide from a single source of truth</li>
+    <li>Service, BreadcrumbList, and FAQPage schema on all service and location pages</li>
+    <li>NAP internally consistent: one data file feeds every template</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>Schema geo coordinates ~1.8 km off the verified GBP pin <span class="status-warn">Critical</span></h4>
+    <p>Schema said 40.1215,-75.34 while the site&#x27;s own Maps embed pin is 40.12361,-75.36106.</p>
+    <p><strong>Recommendation:</strong> FIXED: coordinates corrected to match the GBP pin.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Non-E.164 telephone in schema; missing openingHoursSpecification, hasMap, WebSite <span class="status-warn">Medium</span></h4>
+    <p>Hours existed only as footer text; no WebSite entity; phone had formatting characters.</p>
+    <p><strong>Recommendation:</strong> FIXED: E.164 phone, Mon-Sat 07:00-18:00 hours, hasMap, typed areaServed, and a WebSite block added site-wide.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Paid landing pages carried zero schema <span class="status-warn">Medium</span></h4>
+    <p>LandingLayout emitted no structured data at all.</p>
+    <p><strong>Recommendation:</strong> FIXED: minimal LocalBusiness block added to all /lp/ landers.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Article schema could emit undefined image; no dateModified <span class="status-warn">Low</span></h4>
+    <p>Posts without ogImage produced invalid Article markup.</p>
+    <p><strong>Recommendation:</strong> FIXED: image falls back to og-default; dateModified added.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>FAQPage markup retained for AI citation value <span class="status-warn">Info</span></h4>
+    <p>Google retired FAQ rich results May 2026; markup still aids AI/LLM citation.</p>
+    <p><strong>Recommendation:</strong> No action: keep as is; do not add new FAQPage expecting SERP features.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.5 Performance (Core Web Vitals)</h3>
+  <p><strong>Score:</strong> <span class="status-fail">40/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>TTFB excellent: 120-130 ms median from Vercel edge with Brotli</li>
+    <li>INP risk low: static site, ~2.4 KB of interaction JS, no client-side framework hydration</li>
+    <li>All competitors (WordPress/Elementor) have worse asset hygiene: post-fix, MEX should be the fastest site in its market</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>LCP estimated POOR: 1.22 MB unoptimized JPEG hero <span class="status-warn">Critical</span></h4>
+    <p>40 raw JPEGs totaling 32.5 MB; /our-work served ~20 MB; no image optimizer, no next-gen formats.</p>
+    <p><strong>Recommendation:</strong> FIXED: all 40 images converted to sized WebP (32.5 MB to 11.7 MB); hero compressed to 337 KB; 94 references updated.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No fetchpriority or preload on the LCP element <span class="status-warn">High</span></h4>
+    <p>Browser discovered the hero late in parse at normal priority.</p>
+    <p><strong>Recommendation:</strong> FIXED: fetchpriority=high, decoding=async, explicit dimensions, and a head preload added; interior-page heroes (PageHero) updated too.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Google Fonts CSS was render-blocking <span class="status-warn">High</span></h4>
+    <p>Synchronous third-party stylesheet in head on both layouts.</p>
+    <p><strong>Recommendation:</strong> FIXED: async preload/onload pattern with noscript fallback.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Images served with max-age=0 <span class="status-warn">Medium</span></h4>
+    <p>Every repeat visit revalidated all images.</p>
+    <p><strong>Recommendation:</strong> FIXED: 1-year immutable Cache-Control for /images/ via vercel.json.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>CLS risk: content images lack explicit dimensions <span class="status-warn">Medium</span></h4>
+    <p>Most images sit in fixed-aspect or absolutely-positioned containers (mitigating), but explicit dimensions were absent.</p>
+    <p><strong>Recommendation:</strong> PARTIAL: hero has width/height; gallery images rely on CSS aspect-ratio containers. Verify CLS in PageSpeed after deploy.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.6 Local SEO</h3>
+  <p><strong>Score:</strong> <span class="status-warn">54/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>Correct hybrid setup: visible street address + explicit service-area pages for 22 cities</li>
+    <li>GBP place embedded on contact and service-areas pages; click-to-call tracking wired to GTM</li>
+    <li>Strong seasonal signal: dedicated snow program with 24/7 emergency page</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>NAP name conflict: &#x27;Inc.&#x27; vs &#x27;LLC&#x27; <span class="status-warn">Critical</span></h4>
+    <p>Logo alt text said &#x27;Mex Landscaping Inc.&#x27; on every page while schema/legal say LLC; would have seeded conflicting citations.</p>
+    <p><strong>Recommendation:</strong> FIXED: alt corrected to &#x27;Mex Landscaping&#x27; in header, footer, and landers. Canonical NAP for all citations: Mex Landscaping / 1217 Linwood Ave, Norristown, PA 19404 / (484) 261-6650.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Broken review path <span class="status-warn">Critical</span></h4>
+    <p>g.page/mexlandscaping resolved to a Google search page.</p>
+    <p><strong>Recommendation:</strong> FIXED: replaced with the direct GBP place URL (maps.google.com/?cid=12265579253277940374) in schema sameAs and the Read All Reviews button.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No Tier-1 directory profiles linked (Yelp, Angi, Houzz, BBB) <span class="status-warn">High</span></h4>
+    <p>Directories occupy positions 1-6 for head terms; MEX absent from that SERP real estate.</p>
+    <p><strong>Recommendation:</strong> OPEN (owner action): claim and complete profiles with the canonical NAP, then add to sameAs.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Review volume/velocity unknown; no request workflow <span class="status-warn">High</span></h4>
+    <p>Map-pack position is driven by review count, velocity, and GBP completeness.</p>
+    <p><strong>Recommendation:</strong> OPEN (owner action): post-job SMS/email review requests; target 30 reviews in 90 days; complete GBP services, photos, and posts.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No PA contractor license number displayed <span class="status-warn">Medium</span></h4>
+    <p>&#x27;Licensed and insured&#x27; asserted but never evidenced.</p>
+    <p><strong>Recommendation:</strong> OPEN (needs owner input): add HIC number to contact and about pages.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No city-specific project photos on location pages <span class="status-warn">Medium</span></h4>
+    <p>Biggest differentiation gap vs doorway-page competitors.</p>
+    <p><strong>Recommendation:</strong> OPEN: add 2-3 tagged project photos to top-5 city pages, prioritizing Main Line money towns.</p>
+  </div>
+  <hr class="divider">
+  <h3>2.7 AI Search Readiness (GEO)</h3>
+  <p><strong>Score:</strong> <span class="status-fail">42/100</span></p>
+  <h4>What Works</h4>
+  <ul>
+    <li>All AI crawlers allowed (GPTBot, ClaudeBot, PerplexityBot, Google-Extended); full SSR means clean extraction</li>
+    <li>FAQ blocks with direct first-sentence answers are well-structured for AI citation</li>
+  </ul>
+  <h4>Findings</h4>
+  <div class="action-item medium">
+    <h4>llms.txt missing <span class="status-warn">Critical</span></h4>
+    <p>No machine-readable business self-description for AI systems.</p>
+    <p><strong>Recommendation:</strong> FIXED: llms.txt deployed with business profile, services, and key URLs.</p>
+  </div>
+  <div class="action-item medium">
+    <h4>Zero citable statistics in prose <span class="status-warn">High</span></h4>
+    <p>No timelines, price ranges, project counts, or founding year anywhere in body text; budget tiers exist only in the form.</p>
+    <p><strong>Recommendation:</strong> OPEN: add bounded numbers to service pages and FAQ answers (e.g. typical design-build timeline, price floors already used in the form).</p>
+  </div>
+  <div class="action-item medium">
+    <h4>No YouTube or LinkedIn presence <span class="status-warn">Medium</span></h4>
+    <p>YouTube is the strongest single AI-citation correlate; competitor Terra has both.</p>
+    <p><strong>Recommendation:</strong> OPEN (owner action): even 4-6 project walkthrough/timelapse videos meaningfully shift citation probability.</p>
+  </div>
+  <hr class="divider">
+</div>
+
+<!-- ======================================================= 3. ACTION PLAN === -->
+<div class="section">
+  <div class="section-header">
+    <h2>3. Action Plan</h2>
+  </div>
+
+  <div class="roadmap-phase">
+    <h4>Phase 1: Code fixes (COMPLETED 2026-07-08, pending deploy) <span class="effort">Done</span></h4>
+    <ul>
+      <li>Images: 40 JPEGs converted to sized WebP (32.5 MB to 11.7 MB); hero 1.22 MB to 337 KB with preload + fetchpriority; 1-year image caching</li>
+      <li>NAP: logo alt Inc. to LLC everywhere; GBP link fixed to real place URL; schema geo pin corrected; E.164 phone</li>
+      <li>Indexation: /snow-removal/ and legacy Norristown page 301-consolidated; /press-release/ noindexed; sitemap now 96 URLs with lastmod</li>
+      <li>Meta: all bare WordPress titles rewritten; snow descriptions deduplicated; drainage page retargeted to &#x27;Drainage Solutions &amp; French Drain Installation&#x27;</li>
+      <li>Schema: opening hours, hasMap, WebSite entity, typed areaServed, lander LocalBusiness, breadcrumb duplicate fixed</li>
+      <li>GEO + security: llms.txt deployed; security headers added; Google Fonts made non-blocking</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 2: Owner actions <span class="effort">This week</span></h4>
+    <ul>
+      <li>Deploy the Phase 1 changes and verify LCP/CLS in PageSpeed Insights</li>
+      <li>Start the GBP review engine: post-job SMS/email request with the direct review link; target 30 reviews in 90 days</li>
+      <li>Claim Angi, Houzz Pro, Yelp, and BBB profiles using the canonical NAP; add to schema sameAs</li>
+      <li>Provide: PA HIC license number, founding year, owner/team names and photos, any real award attribution</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 3: Luxury/commercial content build <span class="effort">This month</span></h4>
+    <ul>
+      <li>Build 5-8 case-study project pages (problem, solution, materials, timeline, town) from the photo library, prioritizing Main Line towns</li>
+      <li>Create the commercial landing page with PM-specific proof: COI availability, snow SLA, documented service records (open lane: no competitor has this)</li>
+      <li>Rebuild the About page around named humans, credentials, and history</li>
+      <li>Add localized service H2s and real photos to the King of Prussia page to attack Nova&#x27;s #3 ranking</li>
+      <li>Add citable numbers (timelines, price floors) to service page prose and FAQ answers</li>
+    </ul>
+  </div>
+  <div class="roadmap-phase">
+    <h4>Phase 4: Authority and expansion <span class="effort">This quarter</span></h4>
+    <ul>
+      <li>Villanova city page (Paragon&#x27;s flagship market, currently missing from MEX)</li>
+      <li>Main Line entity saturation: the phrase in more H2s and a footer city strip (copy Paragon&#x27;s one effective play)</li>
+      <li>B2B page for architect/builder partnerships (Paragon&#x27;s real moat is referral relationships)</li>
+      <li>YouTube channel with 4-6 project videos; LinkedIn company page; add both to sameAs</li>
+      <li>4-6 educational posts targeting consideration queries (retaining wall cost PA, paver vs stamped concrete)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ======================================================= DATA SOURCES & METHODOLOGY === -->
+<div class="section" style="text-align: center; padding-top: 15mm;">
+  <hr class="divider">
+  <h3 style="text-align: left;">Data Sources &amp; Methodology</h3>
+  <table>
+    <thead>
+      <tr><th>Source</th><th>Description</th><th>Update Frequency</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>PageSpeed Insights API</td>
+          <td>Lighthouse lab audit (mobile emulation, Moto G Power, slow 4G)</td>
+          <td>Real-time</td></tr>
+      <tr><td>Chrome UX Report (CrUX)</td>
+          <td>28-day rolling field data from real Chrome users</td>
+          <td>Daily ~04:00 UTC</td></tr>
+      <tr><td>CrUX History API</td>
+          <td>25-week p75 trend data per metric</td>
+          <td>Weekly</td></tr>
+      <tr><td>Google Search Console</td>
+          <td>Search Analytics (clicks, impressions, CTR, position)</td>
+          <td>2-3 day lag</td></tr>
+      <tr><td>URL Inspection API</td>
+          <td>Per-URL index status, coverage state, crawl info</td>
+          <td>Real-time (2,000/day)</td></tr>
+    </tbody>
+  </table>
+  <p style="color: #94a3b8; font-size: 9pt; margin-top: 5mm;">
+    Report generated by Claude SEO &mdash; Google SEO Intelligence Skill &mdash; July 08, 2026<br>
+    Methodology based on Google Web Vitals thresholds, Search Console documentation, and Lighthouse scoring algorithms.
+  </p>
+</div>
+
+</body>
+</html>
