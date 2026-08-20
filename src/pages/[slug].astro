@@ -5,6 +5,8 @@ import LocationTemplate from "../components/templates/LocationTemplate.astro";
 import PostTemplate from "../components/templates/PostTemplate.astro";
 import { services, categoryLabels, categoryHubs } from "../data/services";
 import { locationPages, locationContent } from "../data/locations";
+import { serviceLocationPages, fillTown } from "../data/service-locations";
+import ServiceLocationTemplate from "../components/templates/ServiceLocationTemplate.astro";
 import { posts } from "../data/posts";
 import { seoFor } from "../data/seo.generated";
 import { business } from "../data/site";
@@ -23,7 +25,11 @@ export function getStaticPaths() {
     params: { slug: p.slug },
     props: { kind: "post" as const, post: p },
   }));
-  return [...serviceRoutes, ...locationRoutes, ...postRoutes];
+  const svcLocRoutes = serviceLocationPages.map((p) => ({
+    params: { slug: trim(p.path) },
+    props: { kind: "servicelocation" as const, svcloc: p },
+  }));
+  return [...serviceRoutes, ...locationRoutes, ...postRoutes, ...svcLocRoutes];
 }
 
 const props = Astro.props;
@@ -127,6 +133,39 @@ if (props.kind === "service") {
       })),
     });
   }
+} else if (props.kind === "servicelocation") {
+  const { service, town } = props.svcloc;
+  path = props.svcloc.path;
+  const h1 = `${service.name} in ${town.name}, PA`;
+  title = fillTown(service.metaTitle, town.name);
+  description = fillTown(service.metaDescription, town.name);
+  ogImage = abs(service.image);
+  schema.push(
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: h1,
+      serviceType: service.name,
+      provider: { "@id": `${site}/#business` },
+      areaServed: { "@type": "City", name: `${town.name}, PA` },
+      description,
+      url: new URL(path, site).href,
+    },
+    breadcrumb([
+      { name: "Home", path: "/" },
+      { name: service.relatedService.label, path: service.relatedService.href },
+      { name: `${service.name} in ${town.name}`, path },
+    ]),
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: service.faqs.map((f) => ({
+        "@type": "Question",
+        name: fillTown(f.q, town.name),
+        acceptedAnswer: { "@type": "Answer", text: fillTown(f.a, town.name) },
+      })),
+    }
+  );
 } else {
   const post = props.post;
   path = `/${post.slug}/`;
@@ -158,5 +197,6 @@ if (props.kind === "service") {
 <BaseLayout title={title} description={description} path={path} ogImage={ogImage} schema={schema}>
   {props.kind === "service" && <ServiceTemplate service={props.service} />}
   {props.kind === "location" && <LocationTemplate page={props.page} />}
+  {props.kind === "servicelocation" && <ServiceLocationTemplate service={props.svcloc.service} town={props.svcloc.town} />}
   {props.kind === "post" && <PostTemplate post={props.post} />}
 </BaseLayout>

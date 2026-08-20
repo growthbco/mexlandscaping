@@ -1,0 +1,85 @@
+---
+import PageHero from "../PageHero.astro";
+import Section from "../Section.astro";
+import CtaBanner from "../CtaBanner.astro";
+import LeadForm from "../LeadForm.astro";
+import Icon from "../Icon.astro";
+import { fillTown, type ServiceDef } from "../../data/service-locations";
+import type { City } from "../../data/site";
+
+const { service, town } = Astro.props as { service: ServiceDef; town: City };
+const T = (s: string) => fillTown(s, town.name);
+const h1 = `${service.name} in ${town.name}, PA`;
+---
+
+<PageHero
+  eyebrow={`Serving ${town.name}, PA`}
+  title={h1}
+  intro={T(service.intro)}
+  image={service.image}
+  crumbs={[
+    { label: "Home", href: "/" },
+    { label: service.relatedService.label, href: service.relatedService.href },
+    { label: `${service.name} in ${town.name}` },
+  ]}
+/>
+
+<Section>
+  <div class="grid gap-12 lg:grid-cols-3">
+    <div class="lg:col-span-2">
+      {
+        service.sections.map((s, i) => (
+          <div class={i === 0 ? "" : "mt-10"}>
+            <h2 class="font-display text-2xl font-semibold text-forest-900">{T(s.heading)}</h2>
+            <p class="mt-3 text-lg leading-relaxed text-forest-800">{T(s.text)}</p>
+          </div>
+        ))
+      }
+
+      <div class="mt-10 grid gap-3 sm:grid-cols-2">
+        <a
+          href={service.relatedProject.href}
+          class="group flex items-center justify-between rounded-2xl border border-forest-100 bg-white px-5 py-3.5 text-forest-800 transition hover:border-leaf-500/40 hover:bg-forest-50"
+        >
+          <span class="font-medium">{service.relatedProject.label}</span>
+          <Icon name="arrow" class="h-4 w-4 shrink-0 text-forest-300 transition-transform group-hover:translate-x-0.5 group-hover:text-leaf-600" />
+        </a>
+        <a
+          href={service.relatedService.href}
+          class="group flex items-center justify-between rounded-2xl border border-forest-100 bg-white px-5 py-3.5 text-forest-800 transition hover:border-leaf-500/40 hover:bg-forest-50"
+        >
+          <span class="font-medium">{service.relatedService.label}</span>
+          <Icon name="arrow" class="h-4 w-4 shrink-0 text-forest-300 transition-transform group-hover:translate-x-0.5 group-hover:text-leaf-600" />
+        </a>
+      </div>
+
+      <div class="mt-12">
+        <h2 class="font-display text-2xl font-semibold text-forest-900">
+          {service.name} in {town.name}: common questions
+        </h2>
+        <div class="mt-4 divide-y divide-forest-100 border-y border-forest-100">
+          {
+            service.faqs.map((f) => (
+              <div class="py-5">
+                <h3 class="font-display text-lg font-semibold text-forest-900">{T(f.q)}</h3>
+                <p class="mt-2 leading-relaxed text-forest-800">{T(f.a)}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <p class="mt-10 text-forest-700">
+        <a href="/service-areas/" class="font-semibold text-leaf-600 hover:text-leaf-500">← All service areas</a>
+      </p>
+    </div>
+
+    <div>
+      <div class="lg:sticky lg:top-24">
+        <LeadForm defaultService={`${service.name} in ${town.name}`} compact />
+      </div>
+    </div>
+  </div>
+</Section>
+
+<CtaBanner title={`Need ${service.name.toLowerCase()} in ${town.name}?`} />
