@@ -1398,7 +1398,7 @@ export const services: Service[] = [
     title: "Split Rail Fencing",
     category: "hardscaping",
     icon: "stone",
-    image: "/images/rail-fence.webp",
+    image: "/images/split-rail-fence-line-field.webp",
     metaTitle: "Split Rail Fence Installation | Norristown & Main Line | Mex Landscaping",
     metaDescription:
       "Split rail and post-and-rail fence installation is a Mex Landscaping specialty. Classic 2-rail and 3-rail fencing set properly, across Norristown and the Main Line.",
@@ -1406,8 +1406,8 @@ export const services: Service[] = [
       "Split rail fencing is our specialty: classic post-and-rail fence lines that define a property beautifully without walling it in.",
     highlights: [
       "2-rail & 3-rail post-and-rail",
-      "Property lines & pasture-style runs",
-      "Welded wire backing for pets",
+      "Welded wire backing for kids & pets",
+      "Permits & layout handled for you",
       "Posts set below the frost line",
     ],
     body: [
@@ -1420,8 +1420,12 @@ export const services: Service[] = [
         text: "A rail fence looks simple, but the difference between a crisp fence line and a wavy one is all in the installation. We lay out runs precisely, dig every post hole to proper depth below the frost line, and set posts so the line stays straight and the rails stay seated through freeze-thaw winters. Corners, gates, and grade changes are planned rather than improvised, which is what keeps a long run looking intentional across a sloped or curved property.",
       },
       {
-        heading: "Keep the look, keep the dog in the yard",
-        text: "The most common request we hear: the classic rail look, but pet-safe. We install welded wire mesh backing along the fence line, fastened cleanly to the rails, so dogs stay in the yard while the fence keeps its open, traditional character. From the street you see a rail fence; from the yard you get real containment.",
+        heading: "Safe for children and pets, without losing the look",
+        text: "The most common request we hear: the classic rail look, but safe for kids and dogs. We install welded wire mesh backing along the fence line, fastened cleanly to the rails, so children and pets stay safely inside while the fence keeps its open, traditional character. From the street you see a rail fence; from the yard you get real containment.",
+      },
+      {
+        heading: "We handle the permits and the logistics",
+        text: "A fence is rarely just posts and rails. It often means confirming a property line, pulling a municipal permit, and coordinating materials and timing. We take care of that side for you: layout, township permitting, and the logistics, so the project stays compliant and on schedule. You tell us where you want the fence and gates, and we handle the paperwork and the install for your peace of mind.",
       },
       {
         heading: "Fencing that works with your landscape",
@@ -1434,19 +1438,29 @@ export const services: Service[] = [
     ],
     gallery: [
       {
-        src: "/images/rail-fence.webp",
-        alt: "Post-and-rail split rail fence installed by Mex Landscaping",
-        caption: "Post-and-rail fence installation",
+        src: "/images/split-rail-fence-line-field.webp",
+        alt: "Long post-and-rail split rail fence framing an open field, installed by Mex Landscaping",
+        caption: "Post-and-rail run along an open field",
       },
       {
-        src: "/images/driveway-gravel-pad.webp",
-        alt: "Stone parking pad with timber edging alongside a fence line",
-        caption: "Stone parking pad with timber edge",
+        src: "/images/split-rail-gate-wire-brick.webp",
+        alt: "Split rail fence with a wood gate and welded wire backing beside a brick home",
+        caption: "Rail fence with gate and wire backing",
       },
       {
-        src: "/images/curb-colonial.webp",
-        alt: "Colonial home with an open front landscape suited to rail fencing",
-        caption: "Open front landscape",
+        src: "/images/split-rail-wire-backing-hillside.webp",
+        alt: "New split rail fence with welded wire mesh backing on a planted hillside",
+        caption: "Welded wire backing keeps kids and pets in",
+      },
+      {
+        src: "/images/split-rail-double-gate-wire.webp",
+        alt: "Split rail double gate with welded wire backing at a wooded property",
+        caption: "Double gate with wire backing",
+      },
+      {
+        src: "/images/split-rail-fence-line-woods.webp",
+        alt: "Long split rail fence line running through a wooded property",
+        caption: "Fence line through the trees",
       },
     ],
     faqs: [
@@ -1469,6 +1483,10 @@ export const services: Service[] = [
       {
         q: "Do you replace old or failing rail fences?",
         a: "Yes. We remove tired fence lines and set new posts and rails properly, rather than patching new rails into rotted posts. If sections of your fence are leaning or the rails keep falling, a proper reset is usually the better investment, and we can quote both options honestly.",
+      },
+      {
+        q: "Do I need a permit for a fence, and do you handle it?",
+        a: "Many townships around Norristown and the Main Line require a permit for a new fence, and some also want the property line confirmed. We handle that for you as part of the project, including the layout, township permitting, and logistics, so the install stays compliant and on schedule.",
       },
     ],
   },
