@@ -680,7 +680,7 @@ export const services: Service[] = [
       },
       {
         heading: "Everything we build in stone and paver",
-        text: "Our hardscaping covers paver and natural stone <a href=\"/patios/\">patios</a>, walkways and garden paths, steps and stairs, <a href=\"/retaining-walls/\">retaining and seating walls</a>, paver and stone driveways, fire pits and fire features, <a href=\"/outdoor-kitchens/\">outdoor kitchens</a>, and architectural stone veneer. We work in concrete pavers, natural flagstone and bluestone, full stone and boulders, brick, and porcelain, matching materials to your home and how each space will be used.",
+        text: "Our hardscaping covers paver and natural stone <a href=\"/patios/\">patios</a>, walkways and garden paths, steps and stairs, <a href=\"/retaining-walls/\">retaining and seating walls</a>, paver and stone driveways, fire pits and fire features, <a href=\"/outdoor-kitchens/\">outdoor kitchens</a>, and architectural stone veneer. We also install <a href=\"/split-rail-fencing/\">post-and-rail split rail fencing</a> to define property lines and frame the landscape. We work in concrete pavers, natural flagstone and bluestone, full stone and boulders, brick, and porcelain, matching materials to your home and how each space will be used.",
       },
       {
         heading: "The engineered base behind every project",
@@ -960,8 +960,8 @@ export const services: Service[] = [
     gallery: [
       {
         src: "/images/wall-stone-during.webp",
-        alt: "Masons hand-laying a natural fieldstone retaining wall",
-        caption: "Hand-laying the fieldstone wall",
+        alt: "Our masons setting a natural fieldstone retaining wall",
+        caption: "Setting the fieldstone wall",
       },
       {
         src: "/images/wall-stone-after.webp",
@@ -1014,7 +1014,7 @@ export const services: Service[] = [
       },
       {
         heading: "Retaining wall contractor for Norristown and the Main Line",
-        text: "We build retaining and seating walls throughout Montgomery County and the Main Line, including the sloped lots common in Norristown, Conshohocken, and the surrounding areas. Every wall starts with a free on-site assessment of the grade, soil, and drainage so we can recommend the right system. Call (484) 261-6650 or request a free estimate.",
+        text: "We build retaining and seating walls throughout Montgomery County and the Main Line, including the sloped lots common in Norristown, Conshohocken, and the surrounding areas. Many properties pair a new wall with a <a href=\"/split-rail-fencing/\">split rail fence line</a> to define the boundary above it, and one crew handles both. Every wall starts with a free on-site assessment of the grade, soil, and drainage so we can recommend the right system. Call (484) 261-6650 or request a free estimate.",
       },
     ],
     faqs: [
@@ -1429,7 +1429,7 @@ export const services: Service[] = [
       },
       {
         heading: "Fencing that works with your landscape",
-        text: "Because we are a landscape design-build company, your fence is planned as part of the property, not dropped onto it. We coordinate fence lines with driveways, planting beds, stone walls, and grading so gates land where you actually walk and the fence complements the landscape around it. Pairing a new fence line with fresh plantings or a driveway entrance is common, and one crew handles all of it.",
+        text: "Because we are a landscape design-build company, your fence is planned as part of the property, not dropped onto it. We coordinate fence lines with <a href=\"/driveways/\">driveways</a>, <a href=\"/tree-plant-installation/\">planting beds</a>, <a href=\"/retaining-walls/\">stone walls</a>, and grading so gates land where you actually walk and the fence complements the landscape around it. Pairing a new fence line with fresh plantings or a driveway entrance is common, and one crew handles all of it.",
       },
       {
         heading: "Serving Norristown, Montgomery County, and the Main Line",
@@ -1532,7 +1532,7 @@ export const services: Service[] = [
     gallery: [
       {
         src: "/images/wall-stone-during.webp",
-        alt: "Mex Landscaping masons hand-laying natural fieldstone",
+        alt: "Mex Landscaping masons setting natural fieldstone",
         caption: "Our masons laying natural fieldstone",
       },
       {

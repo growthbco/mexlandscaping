@@ -101,7 +101,7 @@ export const projects: Project[] = [
     photos: [
       {
         src: "/images/wall-stone-during.webp",
-        alt: "Mex Landscaping masons hand-laying a natural fieldstone retaining wall",
+        alt: "Mex Landscaping masons setting a natural fieldstone retaining wall",
         caption: "Our crew building the fieldstone wall",
         tag: "During",
       },
