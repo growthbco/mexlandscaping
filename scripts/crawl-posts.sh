@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -u
-BASE="https://www.mexlandscaping.com"
+BASE="https://mexlandscaping.com"
 OUT="$(dirname "$0")/.cache/mex-posts.tsv"
 mkdir -p "$(dirname "$0")/.cache"
 echo -e "slug\ttitle\tdescription\tpublished\tog_image\tbody" > "$OUT"

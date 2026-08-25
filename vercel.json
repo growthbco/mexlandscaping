@@ -338,14 +338,14 @@
       "statusCode": 301
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!api/).*)",
       "has": [
         {
           "type": "host",
-          "value": "mexlandscaping.com"
+          "value": "www.mexlandscaping.com"
         }
       ],
-      "destination": "https://www.mexlandscaping.com/$1",
+      "destination": "https://mexlandscaping.com/$1",
       "statusCode": 301
     }
   ],
@@ -371,6 +371,10 @@
     {
       "source": "/(.*)",
       "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains"
+        },
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"

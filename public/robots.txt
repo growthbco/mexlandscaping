@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mexlandscaping.com/sitemap-index.xml
+Sitemap: https://mexlandscaping.com/sitemap-index.xml

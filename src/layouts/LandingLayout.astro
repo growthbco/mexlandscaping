@@ -10,7 +10,7 @@ interface Props {
   path: string;
 }
 const { title, description, path } = Astro.props;
-const site = "https://www.mexlandscaping.com";
+const site = "https://mexlandscaping.com";
 const canonical = new URL(path, site).href;
 const year = new Date().getFullYear();
 

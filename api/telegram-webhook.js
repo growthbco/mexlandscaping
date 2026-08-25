@@ -16,7 +16,7 @@ import { sql, ensureSchema } from "./_lib/db.js";
 import { sendLsaReply } from "./_lib/lsa-mail.js";
 import { sendTelegram } from "./_lib/telegram.js";
 
-const WEBHOOK_URL = "https://www.mexlandscaping.com/api/telegram-webhook/";
+const WEBHOOK_URL = "https://mexlandscaping.com/api/telegram-webhook/";
 const tgApi = (token, method) => `https://api.telegram.org/bot${token}/${method}`;
 
 export default async function handler(req, res) {
