@@ -8,6 +8,7 @@ import { locationPages, locationContent } from "../data/locations";
 import { serviceLocationPages, fillTown } from "../data/service-locations";
 import ServiceLocationTemplate from "../components/templates/ServiceLocationTemplate.astro";
 import { posts } from "../data/posts";
+import { editorialPost, isCuratedPost } from "../data/editorial-posts";
 import { seoFor } from "../data/seo.generated";
 import { business } from "../data/site";
 
@@ -23,7 +24,7 @@ export function getStaticPaths() {
   }));
   const postRoutes = posts.map((p) => ({
     params: { slug: p.slug },
-    props: { kind: "post" as const, post: p },
+    props: { kind: "post" as const, post: editorialPost(p) },
   }));
   const svcLocRoutes = serviceLocationPages.map((p) => ({
     params: { slug: trim(p.path) },
@@ -180,7 +181,7 @@ if (props.kind === "service") {
       description,
       image: abs(ogImage) || `${site}/images/og-default.jpg`,
       datePublished: post.date,
-      dateModified: post.date,
+      dateModified: post.updatedDate ?? post.date,
       author: { "@type": "Organization", name: business.name },
       publisher: { "@id": `${site}/#business` },
       mainEntityOfPage: new URL(path, site).href,
@@ -194,7 +195,7 @@ if (props.kind === "service") {
 }
 ---
 
-<BaseLayout title={title} description={description} path={path} ogImage={ogImage} schema={schema}>
+<BaseLayout title={title} description={description} path={path} ogImage={ogImage} schema={schema} noindex={props.kind === "post" && !isCuratedPost(props.post.slug)}>
   {props.kind === "service" && <ServiceTemplate service={props.service} />}
   {props.kind === "location" && <LocationTemplate page={props.page} />}
   {props.kind === "servicelocation" && <ServiceLocationTemplate service={props.svcloc.service} town={props.svcloc.town} />}

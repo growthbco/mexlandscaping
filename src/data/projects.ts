@@ -70,7 +70,7 @@ export const projects: Project[] = [
         src: "/images/drainage-french-drain-seeded.jpg",
         alt: "Completed graded and seeded yard with the finished French drain, sloped away from the home",
         caption: "Finished: graded, seeded, and draining",
-        tag: "Finished",
+        tag: "After",
       },
     ],
     sections: [
@@ -115,7 +115,7 @@ export const projects: Project[] = [
         src: "/images/wall-stone-house.webp",
         alt: "Completed driveway and stone entrance framed by the new fieldstone wall",
         caption: "Completed driveway and entrance",
-        tag: "Finished",
+        tag: "After",
       },
     ],
     sections: [

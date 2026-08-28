@@ -57,7 +57,7 @@ import Button from "./Button.astro";
     <div class="hidden shrink-0 items-center gap-2 xl:flex">
       <a
         href={business.phoneHref}
-        class="inline-flex items-center gap-1.5 rounded-lg bg-white px-3 py-2.5 text-sm font-bold text-ink-900 transition hover:bg-forest-50"
+        class="hidden items-center gap-1.5 rounded-lg bg-white px-3 py-2.5 text-sm font-bold text-ink-900 transition hover:bg-forest-50 2xl:inline-flex"
       >
         <Icon name="phone" class="h-4 w-4 text-leaf-500" />
         {business.phoneDisplay}
@@ -70,6 +70,7 @@ import Button from "./Button.astro";
       id="menu-toggle"
       class="grid h-10 w-10 place-items-center rounded-lg text-white hover:bg-white/10 xl:hidden"
       aria-label="Toggle menu"
+      aria-controls="mobile-menu"
       aria-expanded="false"
     >
       <span id="menu-open"><Icon name="menu" class="h-6 w-6" /></span>
@@ -127,5 +128,6 @@ import Button from "./Button.astro";
     toggle.setAttribute("aria-expanded", String(isOpen));
     openIcon?.classList.toggle("hidden", isOpen);
     closeIcon?.classList.toggle("hidden", !isOpen);
+    document.body.classList.toggle("mobile-menu-open", isOpen);
   });
 </script>

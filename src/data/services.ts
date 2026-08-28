@@ -74,9 +74,9 @@ export const services: Service[] = [
     featured: true,
     metaTitle: "Landscape Design Services | Main Line PA | Mex Landscaping",
     metaDescription:
-      "High-end landscape design and installation across the Main Line & Montgomery County, PA. Plans led by a licensed landscape architect, built by our own crews. Free consultation: (484) 261-6650.",
+      "Landscape design and installation across Montgomery County and the Main Line, led by a licensed landscape architect and built by our own crews.",
     intro:
-      "High-end landscape design and installation across the Main Line and Montgomery County. Plans are led by a Pennsylvania-licensed landscape architect and built by our own crews, from a full property redesign to refined planting, lighting, and grading. We design it, then we build it.",
+      "Based in Norristown and serving Montgomery County and the Main Line, we create coordinated plans for planting, hardscape, lighting, grading, and drainage, then build them with our own crews.",
     gallery: [
       {
         src: "/images/curb-colonial.webp",
@@ -111,48 +111,36 @@ export const services: Service[] = [
     ],
     highlights: [
       "Licensed landscape architect on staff",
-      "Luxury & high-end property redesigns",
+      "Whole-property and phased redesigns",
       "Custom planting & bed design",
       "Design-build under one roof",
     ],
     body: [
       {
-        heading: "Landscape design and build under one roof",
-        text: "A great outdoor space starts with a great plan. Mex Landscaping is a design-build landscaping firm serving Norristown and the Main Line, which means the same team that designs your landscape also builds it. We design thoughtful, site-specific plans that balance structure, planting, light, grading, and flow, then install them with our own crews. The vision that gets drawn is the vision that gets delivered, with no gap between the designer's intent and the finished result.",
+        heading: "One team from plan to installation",
+        text: "A Pennsylvania-licensed landscape architect leads the plan, and our crews build it. Keeping design and construction together means grading, drainage, planting, lighting, and hardscape are coordinated from the start, with one team accountable for the finished result.",
       },
       {
-        heading: "What a landscape design includes",
-        text: "A complete design considers far more than where the plants go. We plan the <a href=\"/hardscape-services/\">hardscape</a> and circulation, the planting palette for four-season interest, grading and <a href=\"/storm-water-management/\">drainage</a>, <a href=\"/landscape-lighting/\">landscape lighting</a>, and how each area connects to the next and to the house. For larger properties we phase the work so a big vision can be built in stages. The goal is a landscape that looks intentional, functions in every season, and grows in beautifully over time.",
+        heading: "A plan for the whole property",
+        text: "A complete design considers circulation, <a href=\"/hardscape-services/\">hardscape</a>, four-season planting, grading and <a href=\"/storm-water-management/\">drainage</a>, <a href=\"/landscape-lighting/\">landscape lighting</a>, and how each area connects to the house. The result is a practical roadmap that can be built at once or in coordinated phases.",
       },
       {
         heading: "Planting design that looks good all year",
-        text: "Thoughtful planting is what separates a designed landscape from a collection of shrubs. We layer <a href=\"/tree-plant-installation/\">specimen trees and plantings</a>, structural evergreens, flowering shrubs, ornamental grasses, and perennials so there is texture and color across spring, summer, fall, and winter. Every selection is matched to your light, soil, and maintenance appetite, and placed with proper spacing so the planting reads as deliberate the day it goes in and only gets better as it matures.",
+        text: "We layer <a href=\"/tree-plant-installation/\">specimen trees and plantings</a>, structural evergreens, flowering shrubs, grasses, and perennials for texture and color across the seasons. Selections are matched to the property's light, soil, drainage, and maintenance needs, with room to mature without crowding.",
       },
       {
-        heading: "Full redesign or a single refined area",
-        text: "Some clients are reimagining an entire property; others want to elevate one tired area or finally finish the front of the house. We work at both scales. You get a clear plan, a realistic timeline, an honest budget, and the same attention to detail whether we are rebuilding the whole landscape or perfecting a single garden bed and entry.",
-      },
-      {
-        heading: "Plans led by a licensed landscape architect",
-        text: "Your plan is developed by a Pennsylvania-licensed landscape architect, not sketched on the back of an estimate. That means grading, drainage, plant selection, and hardscape are engineered to work together and to hold up over time, with the training and accountability a licensed professional brings. It is a level of design most local landscapers cannot offer, and it is the difference between a yard that was planted and a property that was designed.",
-      },
-      {
-        heading: "Luxury and high-end landscape design",
-        text: "For homeowners who want a truly high-end result, we design and build at the level the best Main Line properties deserve: architectural planting schemes, custom stonework, integrated lighting, and outdoor living spaces that feel like a natural extension of the house. Every material and detail is chosen for how it looks the day it is installed and how gracefully it ages. If you want a landscape that reads as considered, cohesive, and genuinely luxurious, that is the work we do best.",
-      },
-      {
-        heading: "Residential and commercial design in Norristown and the Main Line",
-        text: "We provide landscape design and installation for homes and <a href=\"/commercial-landscaping/\">commercial properties</a> across Montgomery County and the Main Line, including <a href=\"/landscape-design-hardscaping-in-norristown-pa/\">Norristown</a>, <a href=\"/landscape-design-hardscaping-in-king-of-prussia-pa/\">King of Prussia</a>, <a href=\"/landscape-design-hardscaping-in-wayne-pa/\">Wayne</a>, Bryn Mawr, and Conshohocken. Every project begins with a free consultation to understand your goals, your property, and your budget. Call (484) 261-6650 or request a free estimate to start the conversation.",
+        heading: "A focused area or a phased master plan",
+        text: "We work at the scale the property needs, from one entry or garden bed to a whole-property redesign. Larger projects can be planned as a complete vision and built in stages, so each phase connects cleanly with the next. We also design and install for <a href=\"/commercial-landscaping/\">commercial properties</a> across Montgomery County and the Main Line.",
       },
     ],
     faqs: [
       {
         q: "Do you have a licensed landscape architect on staff?",
-        a: "Yes. Our landscape designs are led by a Pennsylvania-licensed landscape architect, which means your grading, drainage, planting, and hardscape are planned by a trained, licensed professional and engineered to work as one system. Most residential landscapers do not offer that, and it is a big part of why our projects hold up and photograph the way they do.",
+        a: "Yes. A Pennsylvania-licensed landscape architect leads our landscape plans so grading, drainage, planting, and hardscape are considered together before construction begins.",
       },
       {
-        q: "What makes a high-end landscape design different?",
-        a: "A high-end design is cohesive rather than piecemeal. Instead of adding one feature at a time, we plan the whole property so the planting, stonework, lighting, grading, and outdoor living areas all relate to each other and to the house. We also specify better materials and detail them properly, so the finished landscape looks intentional the day it is built and only improves as it matures.",
+        q: "What makes a complete landscape design different?",
+        a: "A complete design is coordinated rather than piecemeal. Planting, stonework, lighting, grading, drainage, and outdoor living areas are planned together so they relate to each other and to the house.",
       },
       {
         q: "What does design-build landscaping mean?",

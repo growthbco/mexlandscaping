@@ -31,8 +31,8 @@ const labelClass = green
   {
     green && (
       <div class="mb-6 text-center text-white">
-        <h2 class="font-display text-2xl font-semibold tracking-wide sm:text-3xl">Get Your Free Estimate</h2>
-        <p class="mt-2 text-sm text-white/85">Fill out the form below and we will get back to you within 24 hours.</p>
+        <h2 class="font-display text-2xl font-semibold tracking-wide sm:text-3xl">Request Your Free Estimate</h2>
+        <p class="mt-2 text-sm text-white/85">Tell us about the property. We respond within one business day.</p>
       </div>
     )
   }
@@ -49,8 +49,8 @@ const labelClass = green
         <input name="name" required class={inputClass} placeholder={green ? "Name*" : "Jane Doe"} />
       </label>
       <label class="block">
-        <span class={labelClass}>Email</span>
-        <input name="email" type="email" required class={inputClass} placeholder={green ? "Email*" : "you@example.com"} />
+        <span class={labelClass}>Email (optional)</span>
+        <input name="email" type="email" class={inputClass} placeholder={green ? "Email (optional)" : "you@example.com (optional)"} />
       </label>
       <label class="block">
         <span class={labelClass}>Phone</span>
@@ -60,9 +60,9 @@ const labelClass = green
         <span class={labelClass}>Property ZIP or town</span>
         <input name="zip" required class={inputClass} placeholder={green ? "Property ZIP or town*" : "e.g. 19401 or Norristown"} />
       </label>
-      <label class="block">
+      <label class={`block ${compact ? "" : "sm:col-span-2"}`}>
         <span class={labelClass}>Service needed</span>
-        <select name="service" class={inputClass}>
+        <select name="service" required class={inputClass}>
           <option value="" disabled selected={!defaultService}>Select a Service</option>
           {defaultService && <option value={defaultService} selected>{defaultService}</option>}
           {
@@ -77,36 +77,45 @@ const labelClass = green
           <option value="Other">Something else</option>
         </select>
       </label>
-      <label class="block">
-        <span class={labelClass}>Budget range</span>
-        <select name="budget" required class={inputClass}>
-          <option value="" disabled selected>{green ? "Budget range*" : "Select a budget range"}</option>
-          <option value="5k to 15k">$5k - $15k</option>
-          <option value="15k to 40k">$15k - $40k</option>
-          <option value="40k to 100k">$40k - $100k</option>
-          <option value="100k plus">$100k+</option>
-          <option value="Not sure yet">Not sure yet</option>
-        </select>
-      </label>
-      <label class="block">
-        <span class={labelClass}>Project timeline</span>
-        <select name="timeline" required class={inputClass}>
-          <option value="" disabled selected>{green ? "Project timeline*" : "Select a timeline"}</option>
-          <option value="As soon as possible">As soon as possible</option>
-          <option value="1 to 3 months">1 to 3 months</option>
-          <option value="3 to 6 months">3 to 6 months</option>
-          <option value="Just exploring">Just exploring</option>
-        </select>
-      </label>
-      <label class="block">
-        <span class={labelClass}>Property type</span>
-        <select name="property_type" required class={inputClass}>
-          <option value="" disabled selected>{green ? "Property type*" : "Select property type"}</option>
-          <option value="Residential">Residential</option>
-          <option value="Commercial">Commercial</option>
-        </select>
-      </label>
     </div>
+
+    <details class={`group rounded-lg border ${green ? "border-white/25 text-white" : "border-forest-200 text-forest-800"}`}>
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 text-sm font-medium">
+        Add budget, timeline, and property type <span class="font-normal opacity-75">(optional)</span>
+        <span aria-hidden="true" class="text-lg leading-none transition-transform group-open:rotate-45">+</span>
+      </summary>
+      <div class={`grid gap-4 border-t p-4 ${green ? "border-white/20" : "border-forest-200"} ${compact ? "" : "sm:grid-cols-3"}`}>
+        <label class="block">
+          <span class={labelClass}>Budget range</span>
+          <select name="budget" class={inputClass}>
+            <option value="" selected>Budget range</option>
+            <option value="5k to 15k">$5k - $15k</option>
+            <option value="15k to 40k">$15k - $40k</option>
+            <option value="40k to 100k">$40k - $100k</option>
+            <option value="100k plus">$100k+</option>
+            <option value="Not sure yet">Not sure yet</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class={labelClass}>Project timeline</span>
+          <select name="timeline" class={inputClass}>
+            <option value="" selected>Project timeline</option>
+            <option value="As soon as possible">As soon as possible</option>
+            <option value="1 to 3 months">1 to 3 months</option>
+            <option value="3 to 6 months">3 to 6 months</option>
+            <option value="Just exploring">Just exploring</option>
+          </select>
+        </label>
+        <label class="block">
+          <span class={labelClass}>Property type</span>
+          <select name="property_type" class={inputClass}>
+            <option value="" selected>Property type</option>
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+          </select>
+        </label>
+      </div>
+    </details>
 
     <label class="block">
       <span class={labelClass}>Project details</span>
@@ -128,7 +137,7 @@ const labelClass = green
       Get Your Free Estimate →
     </button>
     <p class={`text-center text-xs ${green ? "text-white/80" : "text-forest-500"}`}>
-      Your information is secure. We will never share it with anyone.
+      We only use your information to respond to this request.
     </p>
   </form>
 
@@ -137,7 +146,7 @@ const labelClass = green
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-7 w-7"><path d="m5 12 5 5L20 7"/></svg>
     </span>
     <h3 class={`mt-5 font-display text-2xl font-semibold ${green ? "text-white" : "text-forest-900"}`}>Thanks, we got it!</h3>
-    <p class={`mt-2 ${green ? "text-white/85" : "text-forest-600"}`}>A member of the Mex Landscaping team will reach out shortly to schedule your free estimate.</p>
+    <p class={`mt-2 ${green ? "text-white/85" : "text-forest-600"}`}>A member of the Mex Landscaping team will respond within one business day to schedule next steps.</p>
   </div>
 </div>
 

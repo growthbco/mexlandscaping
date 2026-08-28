@@ -6,6 +6,7 @@ export type Post = {
   title: string;
   description: string;
   date: string; // ISO
+  updatedDate?: string; // ISO; set only when an article receives a substantive editorial revision
   ogImage: string;
   paragraphs: string[];
 };

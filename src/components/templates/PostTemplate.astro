@@ -1,6 +1,6 @@
 ---
 import type { Post } from "../../data/posts";
-import { posts as allPosts } from "../../data/posts";
+import { curatedPosts as allPosts } from "../../data/editorial-posts";
 import PageHero from "../PageHero.astro";
 import Section from "../Section.astro";
 import CtaBanner from "../CtaBanner.astro";
@@ -10,18 +10,20 @@ interface Props {
   post: Post;
 }
 const { post } = Astro.props;
-const dateLabel = post.date
-  ? new Date(post.date).toLocaleDateString("en-US", {
+const displayDate = post.updatedDate ?? post.date;
+const dateLabel = displayDate
+  ? new Date(displayDate).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric",
+      timeZone: "UTC",
     })
   : "";
 const more = allPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
 ---
 
 <PageHero
-  eyebrow={dateLabel}
+  eyebrow={`${post.updatedDate ? "Updated " : ""}${dateLabel}`}
   title={post.title}
   crumbs={[
     { label: "Home", href: "/" },

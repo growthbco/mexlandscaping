@@ -55,6 +55,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body.mobile-menu-open {
+  overflow: hidden;
+}
+
+body.mobile-menu-open #mobile-cta-bar {
+  display: none;
+}
+
 .container-page {
   width: 100%;
   max-width: 80rem;
