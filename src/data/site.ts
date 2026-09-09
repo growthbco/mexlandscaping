@@ -87,7 +87,14 @@ export const nav: NavItem[] = [
       { label: "Salting & De-Icing", href: "/salting-de-icing/" },
     ],
   },
-  { label: "Our Work", href: "/our-work/" },
+  {
+    label: "Our Work",
+    href: "/our-work/",
+    children: [
+      { label: "Project Case Studies", href: "/projects/" },
+      { label: "Photo Gallery", href: "/our-work/" },
+    ],
+  },
   { label: "About", href: "/about-us/" },
   { label: "Contact", href: "/contact-us/" },
 ];

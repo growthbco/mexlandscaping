@@ -438,7 +438,15 @@ export const services: Service[] = [
       },
       {
         heading: "Drainage solutions for Norristown and the Main Line",
-        text: "We provide drainage and storm water management throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, where older lots and clay soils make water management a common challenge. It starts with a free on-site assessment of how water moves on your property. Call (484) 261-6650 or request a free estimate.",
+        text: "We provide drainage and storm water management in Norristown, King of Prussia, Wayne, Bryn Mawr, Conshohocken, Plymouth Meeting, Blue Bell, Havertown, Gladwyne, and Radnor. Conditions vary from one lot to the next; the assessment looks at your property's grade, water sources, access, and discharge options. Call (484) 261-6650 or request a free estimate.",
+      },
+      {
+        heading: "A closer look at our Norristown drainage work",
+        text: "Our <a href=\"/projects/basement-flooding-french-drain-grading/\">Norristown French drain and regrading case study</a> documents a yard beside a home, the stone-filled drainage trench, and the finished graded and seeded surface. The before-and-after photographs and video show the work at that property. See the <a href=\"/drainage-in-norristown-pa/\">Norristown drainage page</a> for the local example and questions to consider before an assessment. For surface-runoff options, our <a href=\"/projects/dry-creek-drainage-system/\">dry creek and stone-swale collection</a> shows open drainage routes integrated into the landscape.",
+      },
+      {
+        heading: "What to prepare for your drainage estimate",
+        text: "Share photographs or video of the water during rain, where it collects, and how long it remains. Point out downspouts, past drainage repairs, low spots, and areas that must remain accessible. We can then discuss the proposed water route, excavation, landscape restoration, and any site-specific approvals needed. A drainage plan should not simply transfer the problem onto a neighboring property.",
       },
     ],
     faqs: [
@@ -1002,7 +1010,15 @@ export const services: Service[] = [
       },
       {
         heading: "Retaining wall contractor for Norristown and the Main Line",
-        text: "We build retaining and seating walls throughout Montgomery County and the Main Line, including the sloped lots common in Norristown, Conshohocken, and the surrounding areas. Many properties pair a new wall with a <a href=\"/split-rail-fencing/\">split rail fence line</a> to define the boundary above it, and one crew handles both. Every wall starts with a free on-site assessment of the grade, soil, and drainage so we can recommend the right system. Call (484) 261-6650 or request a free estimate.",
+        text: "We build retaining and seating walls in Norristown, King of Prussia, Wayne, Bryn Mawr, Conshohocken, Plymouth Meeting, Blue Bell, Havertown, Gladwyne, and Radnor. A wall may be coordinated with a <a href=\"/split-rail-fencing/\">split rail fence</a>, steps, or planting beds. Every project starts with an on-site assessment of the grade, access, and drainage. Call (484) 261-6650 or request a free estimate.",
+      },
+      {
+        heading: "From the jobsite: a fieldstone wall and driveway entrance",
+        text: "Our <a href=\"/projects/natural-stone-retaining-wall-driveway/\">natural stone retaining wall case study</a> shows the crew setting fieldstone, the finished wall and steps, and the completed driveway entrance. It is a useful reference when discussing stone appearance and how a wall connects different levels. We have not listed a town for this project because its location has not been confirmed for publication; the photographs should not be read as examples from every town we serve.",
+      },
+      {
+        heading: "What affects the scope of a retaining wall",
+        text: "Bring photographs of the existing slope or wall and describe how you want to use the space. Height, length, soil conditions, access for equipment, drainage, and loads near the wall all affect the plan. A driveway or structure above a wall can change the design requirements. Engineering and permitting requirements must be checked for the actual site and municipality, not assumed from a single height rule.",
       },
     ],
     faqs: [

@@ -18,6 +18,131 @@
   ],
   "redirects": [
     {
+      "source": "/sitemap_index.xml",
+      "destination": "https://mexlandscaping.com/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/page-sitemap.xml",
+      "destination": "https://mexlandscaping.com/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/post-sitemap.xml",
+      "destination": "https://mexlandscaping.com/sitemap-index.xml",
+      "statusCode": 301
+    },
+    {
+      "source": "/service-areas/norristown-pa/landscape-lighting/",
+      "destination": "https://mexlandscaping.com/landscape-lighting/",
+      "statusCode": 301
+    },
+    {
+      "source": "/service-areas/king-of-prussia-pa/landscape-design/",
+      "destination": "https://mexlandscaping.com/landscape-design-hardscaping-in-king-of-prussia-pa/",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/retaining-wall-ideas-sloped-yards/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/drainage-in-king-of-prussia-pa/",
+      "destination": "https://mexlandscaping.com/storm-water-management/",
+      "statusCode": 301
+    },
+    {
+      "source": "/drainage-in-wayne-pa/",
+      "destination": "https://mexlandscaping.com/storm-water-management/",
+      "statusCode": 301
+    },
+    {
+      "source": "/drainage-in-bryn-mawr-pa/",
+      "destination": "https://mexlandscaping.com/storm-water-management/",
+      "statusCode": 301
+    },
+    {
+      "source": "/drainage-in-conshohocken-pa/",
+      "destination": "https://mexlandscaping.com/storm-water-management/",
+      "statusCode": 301
+    },
+    {
+      "source": "/drainage-in-plymouth-meeting-pa/",
+      "destination": "https://mexlandscaping.com/storm-water-management/",
+      "statusCode": 301
+    },
+    {
+      "source": "/drainage-in-blue-bell-pa/",
+      "destination": "https://mexlandscaping.com/storm-water-management/",
+      "statusCode": 301
+    },
+    {
+      "source": "/drainage-in-havertown-pa/",
+      "destination": "https://mexlandscaping.com/storm-water-management/",
+      "statusCode": 301
+    },
+    {
+      "source": "/drainage-in-gladwyne-pa/",
+      "destination": "https://mexlandscaping.com/storm-water-management/",
+      "statusCode": 301
+    },
+    {
+      "source": "/drainage-in-radnor-pa/",
+      "destination": "https://mexlandscaping.com/storm-water-management/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retaining-walls-in-norristown-pa/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retaining-walls-in-king-of-prussia-pa/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retaining-walls-in-wayne-pa/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retaining-walls-in-bryn-mawr-pa/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retaining-walls-in-conshohocken-pa/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retaining-walls-in-plymouth-meeting-pa/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retaining-walls-in-blue-bell-pa/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retaining-walls-in-havertown-pa/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retaining-walls-in-gladwyne-pa/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
+      "source": "/retaining-walls-in-radnor-pa/",
+      "destination": "https://mexlandscaping.com/retaining-walls/",
+      "statusCode": 301
+    },
+    {
       "source": "/lawn-mowing-services-in-norristown-pa/",
       "destination": "/landscape-design-hardscaping-in-norristown-pa/",
       "statusCode": 301

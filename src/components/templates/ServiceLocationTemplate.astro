@@ -6,10 +6,18 @@ import LeadForm from "../LeadForm.astro";
 import Icon from "../Icon.astro";
 import { fillTown, type ServiceDef } from "../../data/service-locations";
 import type { City } from "../../data/site";
+import { projects } from "../../data/projects";
 
 const { service, town } = Astro.props as { service: ServiceDef; town: City };
 const T = (s: string) => fillTown(s, town.name);
 const h1 = `${service.name} in ${town.name}, PA`;
+const localProject = projects.find(
+  (project) => `/projects/${project.slug}/` === service.relatedProject.href &&
+    project.location === `${town.name}, PA`,
+);
+const projectPhotos = localProject?.photos.filter((photo, index, all) =>
+  index === 0 || index === all.findIndex((item) => item.tag === "After"),
+) ?? [];
 ---
 
 <PageHero
@@ -27,6 +35,31 @@ const h1 = `${service.name} in ${town.name}, PA`;
 <Section>
   <div class="grid gap-12 lg:grid-cols-3">
     <div class="lg:col-span-2">
+      {localProject && (
+        <section class="mb-12 rounded-2xl border border-forest-100 bg-forest-50 p-6 sm:p-8" aria-labelledby="local-project">
+          <p class="text-sm font-semibold text-leaf-600">Documented project · {localProject.location}</p>
+          <h2 id="local-project" class="mt-2 font-display text-2xl font-semibold text-forest-900">
+            French drain and yard regrading in Norristown
+          </h2>
+          <p class="mt-3 leading-relaxed text-forest-800">
+            This home's project combined a French drain with reshaping the yard around the house.
+            The original photographs show the starting grade, the stone-filled drain, and the
+            finished seeded surface. This is one specific property, not a promise that the same
+            layout is right for every home.
+          </p>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2">
+            {projectPhotos.map((photo) => (
+              <figure class="overflow-hidden rounded-xl bg-white">
+                <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" class="aspect-[4/3] w-full object-cover" />
+                <figcaption class="p-3 text-sm text-forest-700">{photo.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <a href={service.relatedProject.href} class="mt-5 inline-flex font-semibold text-leaf-600 underline underline-offset-4">
+            See the full project, photographs, and before-and-after video
+          </a>
+        </section>
+      )}
       {
         service.sections.map((s, i) => (
           <div class={i === 0 ? "" : "mt-10"}>

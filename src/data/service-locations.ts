@@ -1,13 +1,7 @@
-// Service-in-location pages (GEO / AI-search play). These target the exact
-// high-intent, localized queries homeowners ask ChatGPT/Perplexity and Google,
-// e.g. "French drain in Norristown PA" or "retaining wall contractor Wayne PA".
-// The audit (2026-08) showed competitors win these queries with dedicated
-// service+town pages; this builds MEX's equivalent for the two validated,
-// highest-intent services across the core service-area towns.
-//
-// Content is substantive (not thin): each page shares deep service expertise but
-// is localized by town in the H1, intro, meta, area-served schema, and FAQ, and
-// links to the matching real case study. {town} is interpolated at render time.
+// Keep a service/town page only when we have distinct local project evidence.
+// The September 2026 audit found that town-name substitution alone produced
+// duplicate pages. Historical definitions remain here to document the URLs;
+// consolidated URLs have explicit permanent redirects in vercel.json.
 
 import { cities, type City } from "./site";
 
@@ -52,9 +46,9 @@ export const serviceDefs: ServiceDef[] = [
     name: "Drainage & French Drains",
     metaTitle: "French Drains & Yard Drainage in {town}, PA | Mex Landscaping",
     metaDescription:
-      "Basement flooding, standing water, and drainage problems solved in {town}, PA. French drains, yard regrading, and dry creek beds designed by a licensed landscape architect. Free on-site estimates.",
+      "Explore a real {town} French drain and yard-regrading project, with before-and-after photos. Request an on-site assessment for your property's drainage needs.",
     intro:
-      "A basement that floods when it rains, a lawn that stays soggy for days, water pooling against the foundation: these are drainage problems, and they do not fix themselves. We solve them at the source for homeowners in {town}, PA, with French drains, yard regrading, and dry creek beds that move storm water off your property for good.",
+      "Standing water, a soggy lawn, or runoff near the foundation calls for a site-specific assessment. Our {town} project below shows how French drain installation and yard regrading can work together, with photographs of the property before and after the work.",
     image: "/images/drainage-french-drain-graded.jpg",
     relatedService: { label: "Drainage & Storm Water", href: "/storm-water-management/" },
     relatedProject: {
@@ -63,12 +57,12 @@ export const serviceDefs: ServiceDef[] = [
     },
     sections: [
       {
-        heading: "Drainage problems we solve in {town}",
-        text: "If your basement takes on water every time it rains, water collects against the foundation, your yard stays soggy and unmowable, or mulch and soil wash out of the beds with every storm, the underlying issue is almost always that water has nowhere to go. On sloped {town} properties it can also mean runoff cutting channels across the yard or spilling toward the house. These are the exact problems our drainage work is built to fix, permanently, rather than moving them a few feet away.",
+        heading: "Start with the water's path",
+        text: "During an assessment we look at the ground around the house, downspout discharge, low spots, and possible outlets. Photos or video taken during rain help show where water collects and how long it remains. Basement moisture can have several causes, so the work should address the conditions found on your property rather than assume that every home needs the same drain.",
       },
       {
         heading: "How we fix it",
-        text: "Our crew diagnoses where the water comes from and where it can safely discharge, then solves it with the right tools working together. A French drain, a buried gravel-wrapped perforated pipe, intercepts water in the ground and carries it away from the house. Yard regrading with heavy equipment reshapes the ground into a consistent natural slope, a minimum two percent, that pulls every storm off the foundation. Dry creek beds and rip-rap swales handle surface flow and read as landscaping the rest of the year, and downspouts are redirected to discharge onto the graded surface instead of dumping at the foundation.",
+        text: "French drains collect water through a gravel-filled trench and perforated pipe; regrading changes the route of surface runoff. Dry creek beds and stone-lined swales are options for an open surface-water route. The selection depends on elevations, soil conditions, access, and a suitable discharge point. The slope and dimensions are determined for the site, not taken from a one-size-fits-all specification.",
       },
       {
         heading: "Why homeowners in {town} call Mex Landscaping",
@@ -78,7 +72,7 @@ export const serviceDefs: ServiceDef[] = [
     faqs: [
       {
         q: "Why does my basement flood when it rains in {town}?",
-        a: "Almost always because the yard has no slope to carry storm water away, so rain pools against the foundation and works its way inside. Sealing the basement from the inside rarely fixes it. The lasting solution is outside: a French drain to capture the water and a regrade that moves it away from the house.",
+        a: "Runoff, downspout discharge, groundwater, and building conditions can all contribute. An on-site assessment helps determine whether exterior grading or drainage is appropriate and whether the situation also needs a building or waterproofing specialist.",
       },
       {
         q: "How much does a French drain cost in {town}?",
@@ -86,7 +80,7 @@ export const serviceDefs: ServiceDef[] = [
       },
       {
         q: "Do I need a French drain or regrading?",
-        a: "Often both. A French drain handles subsurface water; regrading handles surface water and pulls it off the foundation. We assess the property and recommend only what the drainage problem actually requires.",
+        a: "They address different water paths and may be used together, as shown in our Norristown project. We assess the source of the water, elevations, and discharge options before recommending either approach.",
       },
       {
         q: "Do you offer free drainage estimates in {town}?",
@@ -150,12 +144,22 @@ export type ServiceLocationPage = {
   town: City;
 };
 
-export const serviceLocationPages: ServiceLocationPage[] = serviceDefs.flatMap((service) =>
+const historicalServiceLocationPages: ServiceLocationPage[] = serviceDefs.flatMap((service) =>
   svcLocTowns.map((town) => ({
     path: `/${service.urlPrefix}-${town.slug}-pa/`,
     service,
     town,
   })),
+);
+
+// Norristown drainage has a documented local case study. The other 19 routes
+// consolidate into the matching core service; no invented local jobs or facts.
+export const serviceLocationPages = historicalServiceLocationPages.filter(
+  ({ service, town }) => service.key === "drainage" && town.slug === "norristown",
+);
+
+export const consolidatedServiceLocationPages = historicalServiceLocationPages.filter(
+  (page) => !serviceLocationPages.includes(page),
 );
 
 export function fillTown(text: string, townName: string): string {
