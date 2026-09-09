@@ -33,6 +33,7 @@ for (const url of urls) {
   assert.equal(origin, 'https://mexlandscaping.com');
   assert(pathname.endsWith('/'), `Trailing slash: ${url}`);
   const html = htmlFor(pathname);
+  assert(!html.includes('<optgroup label="Our Work">'), `Portfolio links are not estimate services: ${url}`);
   assert.equal([...html.matchAll(/<h1\b/g)].length, 1, `One H1: ${url}`);
   assert(html.includes(`rel="canonical" href="${url}"`), `Self canonical: ${url}`);
   assert(!/<meta[^>]*name="robots"[^>]*noindex/i.test(html), `Indexable sitemap page: ${url}`);

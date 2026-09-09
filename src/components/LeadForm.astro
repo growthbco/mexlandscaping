@@ -12,8 +12,8 @@ const { defaultService = "", compact = false, theme = "card" } = Astro.props;
 
 const green = theme === "green";
 
-// Flatten the service menu into a select list.
-const serviceGroups = nav.filter((n) => n.children);
+// Only service menus belong in the estimate form, not the portfolio menu.
+const serviceGroups = nav.filter((n) => n.children && n.href !== "/our-work/");
 const inputClass = green
   ? "w-full rounded-lg border-0 bg-white px-4 py-3 text-forest-900 placeholder:text-forest-400 focus:outline-none focus:ring-2 focus:ring-ink-900/30"
   : "w-full rounded-lg border border-forest-200 bg-white px-4 py-3 text-forest-900 placeholder:text-forest-400 focus:border-leaf-500 focus:outline-none focus:ring-2 focus:ring-leaf-500/20";
