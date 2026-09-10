@@ -1,234 +1,87 @@
-// Cron: poll the Google LSA mailbox, ingest each lead, AI-answer new customer
-// messages, and run the silent-lead nudge ladder.
-//
-// Scheduled from vercel.json (every minute on Vercel Pro). Vercel sends
-// `Authorization: Bearer $CRON_SECRET`; an external minute-pinger can instead
-// call `/api/cron/ingest-lsa/?key=$CRON_SECRET`.
-//
-// Required env: DATABASE_URL, LSA_IMAP_USER, LSA_IMAP_PASSWORD, ANTHROPIC_API_KEY,
-// CRON_SECRET. Optional: TELEGRAM_* and HIGHLEVEL_* (reused from the CRM).
-
+// Daily Vercel cron + existing GitHub minute poller. Authentication required.
+// audit / dry=1: READ ONLY (no schema writes, flags, AI, alerts, or CRM sync).
+// recover: import history only; never enqueue or drain customer/owner messages.
+import { timingSafeEqual } from "node:crypto";
 import { sql, ensureSchema } from "../_lib/db.js";
-import { processLsaMailbox, sendLsaReply } from "../_lib/lsa-mail.js";
-import { maybeAutoReply } from "../_lib/lsa-autoreply.js";
-import { scoreLead, tierLabel } from "../_lib/score.js";
-import { upsertContact } from "../_lib/highlevel.js";
-import { sendTelegram, formatLeadMessage } from "../_lib/telegram.js";
+import { readLsaMailbox, mailErrorCode } from "../_lib/lsa-mail.js";
+import { ensureImportSchema, acquireImportLease, finishImportLease, compareMailbox, importEmail, jobCounts } from "../_lib/lsa-import.js";
+import { enqueueNudges, processImportJobs, notifyImportFailure } from "../_lib/lsa-jobs.js";
 
-const NUDGE_DELAYS_MS = [30 * 60 * 1000, 3 * 3600 * 1000, 24 * 3600 * 1000];
-
-function authorized(req) {
+export function authorized(req) {
   const secret = process.env.CRON_SECRET;
-  if (!secret) return false;
-  if (req.headers?.authorization === `Bearer ${secret}`) return true;
-  if (req.query?.key === secret) return true;
-  return false;
+  const supplied = req.headers?.authorization?.replace(/^Bearer /, "") || req.query?.key;
+  if (!secret || typeof supplied !== "string") return false;
+  const expected = Buffer.from(secret), actual = Buffer.from(supplied);
+  return actual.length === expected.length && timingSafeEqual(actual, expected);
 }
 
-export default async function handler(req, res) {
-  if (!authorized(req)) {
-    res.status(401).json({ ok: false, error: "unauthorized" });
-    return;
-  }
-
-  // Preview mode: ingest and compose AI drafts but SEND nothing. Use
-  // /api/cron/ingest-lsa/?key=SECRET&dry=1 to review replies before going live.
-  const dry = req.query?.dry === "1";
-
-  const db = sql();
-  await ensureSchema(db);
-
-  // Manual force-send for specific lead ids (admin/testing). Runs the AI reply
-  // and SENDS it: /api/cron/ingest-lsa/?key=...&send=2,6
-  const forceIds = String(req.query?.send || "")
-    .split(",")
-    .map((s) => parseInt(s.trim(), 10))
-    .filter((n) => Number.isFinite(n));
-  if (forceIds.length) {
-    const out = {};
-    for (const id of forceIds) {
-      try {
-        const rows = await db`SELECT * FROM leads WHERE id = ${id} LIMIT 1`;
-        if (!rows.length) {
-          out[id] = "not_found";
-          continue;
-        }
-        const r = await maybeAutoReply(db, rows[0], dry ? { dryRun: true } : {});
-        out[id] = { action: r.action, reason: r.reason || null, reply: r.reply || null };
-      } catch (e) {
-        out[id] = "error:" + String(e.message || e).slice(0, 120);
-      }
+export function createHandler(overrides = {}) {
+  const deps = { sql, ensureSchema, readLsaMailbox, ensureImportSchema, acquireImportLease,
+    finishImportLease, compareMailbox, importEmail, jobCounts, enqueueNudges, processImportJobs, notifyImportFailure, ...overrides };
+  return async function handler(req, res) {
+    res.setHeader("Cache-Control", "no-store");
+    if (!authorized(req)) return res.status(401).json({ ok: false, error: "unauthorized" });
+    if (!["GET", "POST"].includes(req.method)) return res.status(405).json({ ok: false, error: "method_not_allowed" });
+    const mode = req.query?.dry === "1" ? "audit" : (req.query?.mode || "poll");
+    if (!["audit", "recover", "poll", "health"].includes(mode) || req.query?.send) {
+      return res.status(400).json({ ok: false, error: "unsupported_mode" });
     }
-    res.status(200).json({ ok: true, forced: out });
-    return;
-  }
-
-  const touched = new Set(); // lead ids that gained a customer message this pass
-  let created = 0;
-  let duplicates = 0;
-
-  const mailResult = await processLsaMailbox(async (email) => {
-    const key = email.requestId
-      ? `awexpress:${email.requestId}`
-      : `email:${email.messageId || email.date || Math.random()}`;
-
-    const existing = await db`SELECT * FROM leads WHERE lead_key = ${key} LIMIT 1`;
-
-    if (existing.length === 0) {
-      const lead = {
-        source: "lsa",
-        name: email.name,
-        phone: email.phone,
-        town: email.location,
-        service: email.serviceType,
-      };
-      const { score, tier, reasons } = scoreLead(lead);
-      const rows = await db`
-        INSERT INTO leads (source, lead_key, lead_type, reply_email, subject, name, phone, town, service, message, raw, score, tier, reasons, status)
-        VALUES ('lsa', ${key}, ${email.isCallLead ? "PHONE_CALL" : "MESSAGE"},
-                ${email.requestId ? email.fromAddr : null}, ${email.subject},
-                ${email.name}, ${email.phone}, ${email.location}, ${email.serviceType},
-                ${email.message}, ${(email.subject + "\n\n" + (email.message || "")).slice(0, 8000)},
-                ${score}, ${tier}, ${JSON.stringify(reasons)}, 'new')
-        RETURNING *`;
-      const saved = rows[0];
-      created++;
-
-      if (email.message?.trim()) {
-        await db`
-          INSERT INTO lead_messages (lead_id, direction, body_text, ext_id)
-          VALUES (${saved.id}, 'in', ${email.message.trim()}, ${"lsa:" + (email.messageId || key)})
-          ON CONFLICT (ext_id) DO NOTHING`;
-      }
-      if (saved.lead_type === "MESSAGE") touched.add(saved.id);
-
-      // Owner alert + HighLevel sync (best-effort; never block ingest).
-      try {
-        await sendTelegram(
-          formatLeadMessage(`New Google LSA Lead (Lead #${saved.id})`, saved, [
-            "",
-            `Score: ${score}/100 (${tierLabel(tier)})`,
-            email.isCallLead
-              ? "Type: phone call"
-              : "Type: message (AI auto-replies; reply to this message to jump in)",
-          ]),
-        );
-      } catch {}
-      if (email.phone) {
-        try {
-          const hl = await upsertContact({ ...lead, name: lead.name || "LSA Lead" }, ["lsa-lead"]);
-          if (hl.ok && hl.contactId) {
-            await db`UPDATE leads SET hl_contact_id = ${hl.contactId} WHERE id = ${saved.id}`;
-          }
-        } catch {}
-      }
-    } else {
-      // Follow-up on an existing lead: log the new customer message (deduped
-      // on the email Message-ID) and resurface the lead.
-      duplicates++;
-      const lead = existing[0];
-      if (email.message?.trim()) {
-        const ins = await db`
-          INSERT INTO lead_messages (lead_id, direction, body_text, ext_id)
-          VALUES (${lead.id}, 'in', ${email.message.trim()}, ${"lsa:" + (email.messageId || key + ":" + Date.now())})
-          ON CONFLICT (ext_id) DO NOTHING
-          RETURNING id`;
-        if (ins.length > 0) {
-          await db`UPDATE leads SET message = ${email.message.trim()}, status = 'new', archived_at = NULL WHERE id = ${lead.id}`;
-          if (!lead.phone && email.phone) {
-            await db`UPDATE leads SET phone = ${email.phone} WHERE id = ${lead.id}`;
-          }
-          if (lead.lead_type === "MESSAGE") touched.add(lead.id);
-          try {
-            await sendTelegram(
-              `New reply on Lead #${lead.id}${lead.name ? " from " + lead.name : ""}:\n\n"${email.message.trim().slice(0, 500)}"\n\nReply to this message to answer.`,
-            );
-          } catch {}
-        }
-      }
+    if (mode === "recover" && (req.method !== "POST" || req.query?.confirm !== "recover_without_sending")) {
+      return res.status(400).json({ ok: false, error: "recovery_requires_explicit_post" });
     }
-  });
-
-  // AI first-touch for every conversation that gained a customer message.
-  const ai = {};
-  let aiSends = 0;
-  for (const id of touched) {
-    if (aiSends >= 5) break;
+    const started = Date.now();
+    let db, lease;
+    const result = { mode, created: 0, imported: 0, messages: 0, recovered: 0, queued: 0 };
     try {
-      const rows = await db`SELECT * FROM leads WHERE id = ${id} LIMIT 1`;
-      if (rows.length === 0) continue;
-      const r = await maybeAutoReply(db, rows[0], dry ? { dryRun: true } : {});
-      ai[id] = dry
-        ? { action: r.action, reason: r.reason || null, draft: r.reply || null }
-        : r.action + (r.reason ? `:${r.reason}` : "");
-      if (r.action !== "skipped") aiSends++;
-      if (r.proposed_time) {
-        try {
-          await sendTelegram(
-            `LSA lead #${id} proposed a time: ${r.proposed_time}. The AI said the team will confirm. Reply in the CRM to lock it in.`,
-          );
-        } catch {}
+      db = deps.sql();
+      if (mode === "health") {
+        const [state] = await db`SELECT live_since, last_success, last_error, last_result, consecutive_failures, failure_alerted_at,
+          lease_until FROM lsa_import_state WHERE name='mailbox'`;
+        return res.status(200).json({ ok: true, state, jobs: await deps.jobCounts(db) });
       }
-    } catch (e) {
-      ai[id] = `error:${(e.message || e).toString().slice(0, 120)}`;
-    }
-  }
-
-  // Preview mode stops here: no nudges, nothing sent.
-  if (dry) {
-    res.status(200).json({ ok: true, dry: true, mail: mailResult, created, duplicates, ai });
-    return;
-  }
-
-  // Silent-lead nudge ladder: we replied, they went quiet. 30m / 3h / 24h,
-  // three touches max, measured from our last outbound message.
-  const nudges = [];
-  let nudgesSent = 0;
-  try {
-    const cands = await db`
-      SELECT * FROM leads
-      WHERE source = 'lsa' AND lead_type = 'MESSAGE'
-        AND nudge_count < 3 AND archived_at IS NULL
-        AND reply_email ~ '^customer-request-[0-9]+@awexpress\\.google\\.com$'
-      ORDER BY id DESC LIMIT 100`;
-    for (const lead of cands) {
-      if (nudgesSent >= 5) break;
-      if (lead.ai_summary?.customer_closed) continue;
-      const lastRows = await db`
-        SELECT direction, created_at FROM lead_messages
-        WHERE lead_id = ${lead.id} ORDER BY created_at DESC LIMIT 1`;
-      const lastMsg = lastRows[0];
-      if (!lastMsg || lastMsg.direction !== "out") continue;
-      const silenceMs = Date.now() - new Date(lastMsg.created_at).getTime();
-      if (silenceMs <= NUDGE_DELAYS_MS[lead.nudge_count]) continue;
-
-      const first = (lead.name || "").trim().split(/\s+/)[0] || "";
-      const real =
-        /^[A-Za-z][A-Za-z'-]{1,29}$/.test(first) &&
-        !/^(lsa|unknown|potential|customer|none|null|lead|client|test)$/i.test(first);
-      const greet = real ? `Hi ${first}` : "Hi";
-      const bodies = [
-        `${greet}, just making sure my last message came through. Whenever you are ready, we would love to set up your free estimate.`,
-        `${greet}, just checking back in from Mex Landscaping. Happy to answer any questions or get your free on-site estimate on the calendar whenever works for you.`,
-        `${greet}, it is Mex Landscaping with one last note, we do not want to crowd your inbox. If you would still like that free estimate we are here anytime. Thank you.`,
-      ];
-      const body = bodies[Math.min(lead.nudge_count, 2)];
-      try {
-        await sendLsaReply({ to: lead.reply_email, subject: lead.subject, text: body });
-        await db`
-          INSERT INTO lead_messages (lead_id, direction, body_text, ext_id)
-          VALUES (${lead.id}, 'out', ${body}, ${"nudge:" + lead.id + ":" + (lead.nudge_count + 1)})
-          ON CONFLICT (ext_id) DO NOTHING`;
-        await db`UPDATE leads SET nudge_count = ${lead.nudge_count + 1}, last_nudge_at = now() WHERE id = ${lead.id}`;
-        nudgesSent++;
-        nudges.push(`${lead.id}:${lead.nudge_count + 1}`);
-      } catch (e) {
-        nudges.push(`error:${(e.message || e).toString().slice(0, 80)}`);
+      if (mode !== "audit") {
+        await deps.ensureSchema(db);
+        await deps.ensureImportSchema(db);
+        lease = await deps.acquireImportLease(db);
+        if (!lease) return res.status(200).json({ ok: true, skipped: "already_running" });
       }
+      const { emails, ...mail } = await deps.readLsaMailbox();
+      result.mail = mail;
+      if (mode === "audit") {
+        return res.status(200).json({ ok: true, mode, mail, comparison: await deps.compareMailbox(db, emails) });
+      }
+      const comparison = await deps.compareMailbox(db, emails);
+      if (comparison.potentialLegacyMatches) {
+        throw Object.assign(new Error("Legacy leads need exact matching before recovery"), { code: "LEGACY_MATCH_REVIEW" });
+      }
+      for (const email of emails) {
+        if (Date.now() - started > 150_000) throw Object.assign(new Error("Import deadline"), { code: "IMPORT_DEADLINE" });
+        const imported = await deps.importEmail(db, email, { recover: mode === "recover", liveSince: lease.liveSince });
+        for (const key of ["created", "imported", "messages", "queued"]) result[key] += imported[key];
+        result.recovered += Number(imported.recovered);
+      }
+      if (mode === "poll") {
+        await deps.enqueueNudges(db);
+        result.jobsProcessed = await deps.processImportJobs(db, { deadline: started + 180_000 });
+      }
+      result.jobs = await deps.jobCounts(db);
+      result.durationMs = Date.now() - started;
+      const jobError = result.jobs.review ? "JOBS_NEED_REVIEW" : (result.jobs.retryPending ? "JOBS_RETRY_PENDING" : null);
+      await deps.finishImportLease(db, lease, result, jobError);
+      lease = null;
+      if (jobError && mode === 'poll') await deps.notifyImportFailure(db);
+      console.info(JSON.stringify({ event: "lsa_import", ok: !jobError, ...result }));
+      return res.status(jobError ? 503 : 200).json({ ok: !jobError, ...result, ...(jobError ? { error: jobError } : {}) });
+    } catch (error) {
+      const code = mailErrorCode(error);
+      console.error(JSON.stringify({ event: "lsa_import_failed", mode, code, stage: error.mailStage || "import", durationMs: Date.now() - started }));
+      if (lease) {
+        try { await deps.finishImportLease(db, lease, result, code); } catch {}
+        if (mode === 'poll') { try { await deps.notifyImportFailure(db); } catch {} }
+      }
+      return res.status(503).json({ ok: false, mode, error: code, stage: error.mailStage || "import" });
     }
-  } catch (e) {
-    nudges.push(`sweep_error:${(e.message || e).toString().slice(0, 80)}`);
-  }
-
-  res.status(200).json({ ok: true, mail: mailResult, created, duplicates, ai, nudges });
+  };
 }
+
+export default createHandler();

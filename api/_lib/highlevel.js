@@ -34,6 +34,7 @@ export async function upsertContact(lead, tags) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
+      signal: AbortSignal.timeout(10_000),
     });
     const j = await r.json().catch(() => ({}));
     if (!r.ok) return { ok: false, error: `highlevel_${r.status}`, detail: j };

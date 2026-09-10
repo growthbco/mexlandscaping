@@ -1,0 +1,39 @@
+name: LSA safe maintenance
+
+# Manual only. The separate legacy poll workflow is intentionally disabled in
+# GitHub; do not re-enable it or add another recurring scheduler for this repair.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Read-only audit/health, or explicitly recover records without sending messages'
+        type: choice
+        default: audit
+        options: [audit, recover, health]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lsa-maintenance
+  cancel-in-progress: false
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Safely check or recover LSA records
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          REQUESTED_MODE: ${{ inputs.mode }}
+        run: |
+          set -euo pipefail
+          mode="$REQUESTED_MODE"
+          case "$mode" in audit|recover|health) ;; *) exit 1 ;; esac
+          method=GET
+          suffix="?mode=$mode"
+          if [ "$mode" = recover ]; then method=POST; suffix="$suffix&confirm=recover_without_sending"; fi
+          curl --fail-with-body --silent --show-error --max-time 250 \
+            -X "$method" -H "Authorization: Bearer $CRON_SECRET" \
+            "https://mexlandscaping.com/api/cron/ingest-lsa/$suffix"

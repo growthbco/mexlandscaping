@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "trailingSlash": true,
+  "functions": {
+    "api/cron/ingest-lsa.js": { "maxDuration": 240 }
+  },
   "crons": [
     { "path": "/api/cron/ingest-lsa", "schedule": "0 12 * * *" }
   ],

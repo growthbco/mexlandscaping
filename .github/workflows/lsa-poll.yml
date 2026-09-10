@@ -9,7 +9,16 @@ name: LSA lead poll
 on:
   schedule:
     - cron: "*/5 * * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'audit reads only; recover imports without sending; health reads status; poll runs normal automation'
+        type: choice
+        default: audit
+        options: [audit, recover, health, poll]
+
+permissions:
+  contents: read
 
 concurrency:
   group: lsa-poll
@@ -18,12 +27,26 @@ concurrency:
 jobs:
   poll:
     runs-on: ubuntu-latest
+    timeout-minutes: 28
     steps:
-      - name: Poll LSA ingest every 60s for ~5 min
+      - name: Check or poll the LSA importer
+        env:
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          REQUESTED_MODE: ${{ inputs.mode }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
-          for i in $(seq 1 5); do
-            curl -sS -L --max-time 90 \
-              "https://www.mexlandscaping.com/api/cron/ingest-lsa/?key=${{ secrets.CRON_SECRET }}" \
-              -o /dev/null -w "poll $i: HTTP %{http_code}\n"
-            if [ "$i" -lt 5 ]; then sleep 60; fi
+          set -euo pipefail
+          mode="${REQUESTED_MODE:-poll}"
+          count=1
+          if [ "$EVENT_NAME" = schedule ]; then mode=poll; count=5; fi
+          case "$mode" in audit|recover|health|poll) ;; *) exit 1 ;; esac
+          method=GET
+          suffix="?mode=$mode"
+          if [ "$mode" = recover ]; then method=POST; suffix="$suffix&confirm=recover_without_sending"; fi
+          for i in $(seq 1 "$count"); do
+            # No redirect or secret in URL. A 503 now fails the workflow visibly.
+            curl --fail-with-body --silent --show-error --max-time 250 \
+              -X "$method" -H "Authorization: Bearer $CRON_SECRET" \
+              "https://mexlandscaping.com/api/cron/ingest-lsa/$suffix"
+            if [ "$i" -lt "$count" ]; then sleep 60; fi
           done

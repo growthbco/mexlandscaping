@@ -130,10 +130,11 @@ export async function maybeAutoReply(db, lead, opts = {}) {
     return { action: "skipped", reason: "no_relay" };
   }
 
-  const msgs = await db`
+  const recent = await db`
     SELECT direction, body_text, created_at
     FROM lead_messages WHERE lead_id = ${lead.id}
-    ORDER BY created_at ASC LIMIT 50`;
+    ORDER BY created_at DESC, id DESC LIMIT 50`;
+  const msgs = recent.reverse();
   if (msgs.length === 0) return { action: "skipped", reason: "no_messages" };
   const last = msgs[msgs.length - 1];
   if (!opts.ignoreGuards) {
@@ -150,7 +151,7 @@ export async function maybeAutoReply(db, lead, opts = {}) {
   const contactState = `ON FILE ALREADY: name ${knownName ?? "MISSING"}, phone ${lead.phone ? "on file" : "MISSING"}, email ${lead.email ? "on file" : "MISSING"}, address ${lead.town ? "on file" : "MISSING"}.`;
 
   const Anthropic = (await import("@anthropic-ai/sdk")).default;
-  const client = new Anthropic({ apiKey });
+  const client = new Anthropic({ apiKey, timeout: 20_000, maxRetries: 1 });
   const resp = await client.messages.create({
     model: "claude-sonnet-5",
     max_tokens: 1024,
@@ -192,6 +193,9 @@ export async function maybeAutoReply(db, lead, opts = {}) {
   if (!reply) return { action: "skipped", reason: "nothing_to_say" };
   if (opts.dryRun) return { action: "replied_ask", reply };
 
+  // Record the external-send boundary so an uncertain SMTP result is reviewed,
+  // never automatically resent after a crash or a failed database write.
+  await opts.beforeSend?.();
   await sendLsaReply({ to: relay, subject: lead.subject, text: reply });
   await db`
     INSERT INTO lead_messages (lead_id, direction, body_text, ext_id)
