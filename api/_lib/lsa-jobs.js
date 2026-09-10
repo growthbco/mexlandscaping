@@ -99,7 +99,7 @@ export async function enqueueNudges(db) {
     ) m ON m.direction='out'
     JOIN lsa_import_state s ON s.name='mailbox' AND m.created_at>=s.live_since
     WHERE l.source='lsa' AND l.lead_type='MESSAGE' AND l.nudge_count<3
-      AND l.archived_at IS NULL AND l.reply_email ~ '^customer-request-[0-9]+@awexpress\\.google\\.com$'
+      AND l.archived_at IS NULL AND l.reply_email ~ '^customer-request-[0-9]+@awexpress[.]google[.]com$'
     ORDER BY l.id DESC LIMIT 100`;
   for (const lead of leads) {
     if (lead.ai_summary?.customer_closed || Date.now() - new Date(lead.last_message_at).getTime() <= delays[lead.nudge_count]) continue;

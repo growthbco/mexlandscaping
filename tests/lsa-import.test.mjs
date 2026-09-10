@@ -26,7 +26,7 @@ before(async () => {
 });
 beforeEach(async () => {
   await pg.exec('TRUNCATE lsa_mail_receipts, lsa_import_jobs, lead_messages, leads RESTART IDENTITY CASCADE');
-  await pg.exec("UPDATE lsa_import_state SET lease_owner=NULL,lease_until=NULL,last_error=NULL");
+  await pg.exec("UPDATE lsa_import_state SET lease_owner=NULL,lease_until=NULL,last_error=NULL,live_since=now(),consecutive_failures=0,failure_alerted_at=NULL");
 });
 after(async () => { await pg.close(); });
 const email = (overrides = {}) => ({
@@ -104,7 +104,7 @@ test('distributed lease prevents overlapping imports and releases only for its o
 });
 
 test('old conversations cannot restart historical nudges after recovery', async () => {
-  await importEmail(db, email(), { ...live(), recover: true });
+  await importEmail(db, email({ receivedAt: new Date(Date.now() - 4 * 3_600_000).toISOString() }), { ...live(), recover: true });
   await db`INSERT INTO lead_messages (lead_id,direction,body_text,ext_id,created_at)
     SELECT id,'out','Old reply','fixture-out',now()-interval '2 hours' FROM leads`;
   await enqueueNudges(db);
