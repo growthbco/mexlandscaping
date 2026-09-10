@@ -1,0 +1,66 @@
+# Mex Landscaping
+> Mex Landscaping LLC is a landscape design-build and hardscaping company serving Montgomery County and the Main Line in Pennsylvania. We plan and install complete outdoor spaces: landscape redesigns, patios, retaining walls, fire features, outdoor kitchens, driveways, drainage, and snow management, for high-end residential and commercial properties. One team handles design through installation.
+
+- Phone: (484) 261-6650
+- Email: team@mexlandscaping.com
+- Address: 1217 Linwood Ave, Norristown, PA 19404
+- Service Area: Montgomery County and the Main Line, PA, including Norristown, King of Prussia, Bryn Mawr, Wayne, Conshohocken, Plymouth Meeting, Gladwyne, Newtown Square, Villanova, Malvern, Paoli, Berwyn, Collegeville, and surrounding communities
+- Hours: Monday to Saturday, 7am to 6pm
+- Licensed, insured, and locally owned
+
+## Services
+
+### Landscape Design & Build
+Full-service landscape design and installation. One team designs and builds complete outdoor spaces including planting, grading, drainage, and lighting.
+https://mexlandscaping.com/landscape-design/
+
+### Hardscaping
+Patios, walkways, steps, retaining walls, driveways, and fire features built on engineered bases in concrete pavers, natural flagstone, bluestone, brick, and porcelain.
+https://mexlandscaping.com/hardscape-services/
+
+### Outdoor Living
+Fire pits, fire features, outdoor kitchens, and water features designed and built as complete outdoor rooms.
+https://mexlandscaping.com/outdoor-living/
+
+### Drainage & Storm Water Management
+French drains, dry wells, downspout routing, and grading that fix standing water at the source.
+https://mexlandscaping.com/storm-water-management/
+
+### Outdoor Concrete & Masonry
+Stamped and poured concrete patios, walkways, steps, and landscape stonework, for outdoor projects only. No chimney repair, repointing, or restoration masonry.
+https://mexlandscaping.com/concrete-masonry/
+
+### Split Rail Fencing
+Split rail and post-and-rail fence installation is a Mex Landscaping specialty: 2-rail and 3-rail fence lines with optional welded wire backing for pets.
+https://mexlandscaping.com/split-rail-fencing/
+
+### Landscape Lighting
+Low-voltage outdoor lighting design and installation.
+https://mexlandscaping.com/landscape-lighting/
+
+### Snow Management
+24/7 commercial snow plowing, de-icing, and sidewalk clearing for Norristown and Montgomery County. Per-storm and seasonal contracts with documented service records.
+https://mexlandscaping.com/snow-management-services/
+
+### Commercial Landscaping & Grounds Management
+One partner for commercial properties: landscape installation, year-round grounds maintenance, and documented snow management under a single contract. Offices, HOAs, retail, and medical properties.
+https://mexlandscaping.com/commercial-landscaping/
+
+## Service Area Pages
+https://mexlandscaping.com/service-areas/
+https://mexlandscaping.com/landscape-design-hardscaping-in-norristown-pa/
+https://mexlandscaping.com/landscape-design-hardscaping-in-king-of-prussia-pa/
+https://mexlandscaping.com/landscape-design-hardscaping-in-bryn-mawr-pa/
+https://mexlandscaping.com/landscape-design-hardscaping-in-wayne-pa/
+https://mexlandscaping.com/landscape-design-hardscaping-in-conshohocken-pa/
+https://mexlandscaping.com/landscape-design-hardscaping-in-gladwyne-pa/
+https://mexlandscaping.com/landscape-design-hardscaping-in-villanova-pa/
+
+## Portfolio & Case Studies
+https://mexlandscaping.com/our-work/
+https://mexlandscaping.com/projects/
+
+## Social Profiles
+- Facebook: https://www.facebook.com/mexlandscaping
+- TikTok: https://www.tiktok.com/@mexlandscaping
+- Google Business Profile: https://maps.google.com/?cid=12265579253277940374
