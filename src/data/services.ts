@@ -1578,6 +1578,7 @@ export const services: Service[] = [
     title: "Commercial Snow Management",
     category: "snow",
     icon: "snow",
+    image: "/images/commercial-snow-removal-truck.webp",
     intro:
       "Reliable 24/7 snow management that keeps your property safe, clear, and accessible all winter long.",
     highlights: [
@@ -1585,6 +1586,23 @@ export const services: Service[] = [
       "Plowing & de-icing",
       "Documented commercial service",
       "Residential & commercial",
+    ],
+    gallery: [
+      {
+        src: "/images/professional-snow-removal-service.webp",
+        alt: "MEX snowplow truck clearing pavement during a nighttime snowfall",
+        caption: "MEX plow truck working through a nighttime snowfall.",
+      },
+      {
+        src: "/images/snow-removal-equipment.webp",
+        alt: "Two MEX plow trucks and snow removal equipment ready for winter service",
+        caption: "Plow trucks and equipment ready for winter work.",
+      },
+      {
+        src: "/images/snow-plowing-commercial-property.webp",
+        alt: "MEX snowplow truck clearing a snow-covered commercial property at night",
+        caption: "Commercial property clearing during an active storm.",
+      },
     ],
     body: [
       {
@@ -1636,18 +1654,31 @@ export const services: Service[] = [
     title: "Commercial Snow Plowing",
     category: "snow",
     icon: "snow",
+    image: "/images/snow-plowing-commercial-property.webp",
     intro:
-      "Expert commercial snow plowing that keeps your business open, safe, and liability-ready all winter.",
+      "Local plowing, sidewalk clearing, and de-icing for businesses, property managers, and HOAs, with documented service and seasonal or per-storm plans.",
     highlights: [
       "Parking lot plowing",
       "Ice removal & salt",
       "Sidewalk & entry clearing",
       "Documented service",
     ],
+    gallery: [
+      {
+        src: "/images/professional-snow-removal-service.webp",
+        alt: "MEX plow truck working during a nighttime snowfall",
+        caption: "MEX snow crew plowing in winter conditions.",
+      },
+      {
+        src: "/images/snow-removal-equipment.webp",
+        alt: "MEX snowplow trucks equipped for commercial snow removal",
+        caption: "Commercial plow equipment prepared for the season.",
+      },
+    ],
     body: [
       {
-        heading: "Commercial snow plowing that keeps you open",
-        text: "A closed or hazardous lot costs you customers, sales, and liability exposure. Mex Landscaping provides commercial snow plowing across Norristown and the Main Line that keeps your business open, safe, and accessible through every storm. We clear parking lots, drive lanes, and entries, manage ice, and document our service, so your customers, staff, and tenants can come and go safely no matter what the winter throws at the property.",
+        heading: "Commercial snow removal for Norristown properties",
+        text: "When a storm hits, your lot, entrances, and walkways need a coordinated plan. Based in Norristown, Mex Landscaping provides commercial snow removal across Montgomery County and the Main Line for offices, retail sites, multifamily properties, and HOAs. We combine plowing, sidewalk clearing, and de-icing with documented visits so property managers have one team to call and a record of the work performed.",
       },
       {
         heading: "Parking lots, drive lanes, and entries",
