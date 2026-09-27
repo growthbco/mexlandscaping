@@ -10,14 +10,14 @@ export const business = {
   email: "team@mexlandscaping.com",
   emailHref: "mailto:team@mexlandscaping.com",
   address: {
-    street: "1217 Linwood Ave",
+    street: "1217 Linwood Avenue",
     city: "Norristown",
     state: "PA",
-    zip: "19404",
+    zip: "19401",
   },
   // Matches the verified GBP pin (same coordinates as the Maps embed).
   geo: { lat: 40.12361, lng: -75.36106 },
-  hours: "Mon to Sat, 7am to 6pm",
+  hours: "Mon–Fri, 7am–5pm; Sat, 8am–2pm; Sun closed",
   priceRange: "$$",
   social: {
     facebook: "https://www.facebook.com/mexlandscaping",
