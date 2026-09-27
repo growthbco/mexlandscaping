@@ -761,7 +761,7 @@ export const services: Service[] = [
       },
       {
         heading: "The engineered base that makes a patio last",
-        text: "Most failed patios fail underground. Settling, heaving, and weeds almost always trace back to a base that was rushed. We excavate to the proper depth, install and compact a graded aggregate base, and build in drainage and slope so water runs off instead of pooling. Polymeric sand locks the joints, and edge restraints hold everything tight. It is the part of the job you never see, and it is exactly why our patios stay level and crack-free for decades.",
+        text: "Base preparation has a major effect on how a patio performs over time. We excavate for the site, install and compact a graded aggregate base, and plan drainage and slope so water moves away from the surface. Jointing material and edge restraints help keep the finished layout together. These details are mostly hidden once the patio is built, but they are central to a durable installation.",
       },
       {
         heading: "Designed for how you actually use the yard",
@@ -773,7 +773,7 @@ export const services: Service[] = [
       },
       {
         heading: "Planning a patio for fall",
-        text: "Fall can be a practical time to plan or install a patio, depending on the weather, materials, and work already on the schedule. We assess site conditions and give you a realistic start window with your estimate; we do not promise an installation date before reviewing the property.",
+        text: "Fall can be a practical time to plan or install a patio, depending on the weather, materials, and work already on the schedule. We assess site conditions and discuss a realistic start window during the estimate.",
       },
       {
         heading: "Patio installation across Norristown and the Main Line",
