@@ -687,8 +687,12 @@ export const services: Service[] = [
         text: "The best results come from planning the hardscape as a whole. A patio flows into a walkway, a seating wall frames a fire pit, <a href=\"/landscape-lighting/\">landscape lighting</a> traces the steps, and the driveway and entry share the same materials. We design the elements to connect, then build them in a logical sequence so the finished property looks intentional and complete rather than assembled piece by piece over the years.",
       },
       {
+        heading: "Hardscaping for commercial properties and HOAs",
+        text: "We also plan hardscape work for offices, shared residential spaces, and other commercial properties: entries, walkways, seating walls, patios, and the grading and drainage around them. Site access, daily use, and ongoing maintenance shape the scope. See our <a href=\"/commercial-landscape-installations/\">commercial installations</a> or ask us to assess a specific property.",
+      },
+      {
         heading: "Your local design-build hardscape contractor",
-        text: "We build hardscaping throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken. Whether you need a single patio or a full backyard transformation, it starts with a free on-site estimate and a clear plan. Call (484) 261-6650 or request a free estimate to begin.",
+        text: "We build hardscaping throughout Montgomery County and the Main Line, including Norristown, <a href=\"/landscape-design-hardscaping-in-king-of-prussia-pa/\">King of Prussia</a>, Wayne, Bryn Mawr, and Conshohocken. Explore our <a href=\"/patios/\">patios</a>, <a href=\"/retaining-walls/\">retaining walls</a>, and <a href=\"/outdoor-living/\">outdoor living</a> work. Whether you need one feature or a coordinated property plan, it starts with an on-site estimate and a clear scope. Call (484) 261-6650 or request an estimate to begin.",
       },
     ],
     faqs: [
@@ -753,7 +757,7 @@ export const services: Service[] = [
       },
       {
         heading: "Patio materials that match your home",
-        text: "The right material sets the whole tone. We install concrete pavers in a wide range of colors and textures, natural flagstone and bluestone, travertine, clay brick, and large-format porcelain. Pavers offer the best mix of durability, value, and repairability; natural stone brings a timeless, high-end look. We walk you through the options, show you real samples, and recommend the surface that fits your home's style, your budget, and the way water moves across your yard.",
+        text: "The right material sets the whole tone. We install concrete pavers in a wide range of colors and textures, natural flagstone and bluestone, travertine, clay brick, and large-format porcelain. Pavers offer flexible patterns and the option to reset individual units; bluestone and other natural stone suit a more traditional look. We walk you through samples and recommend a surface that fits your home's style, your budget, and the way water moves across your yard.",
       },
       {
         heading: "The engineered base that makes a patio last",
@@ -762,6 +766,14 @@ export const services: Service[] = [
       {
         heading: "Designed for how you actually use the yard",
         text: "A patio works best as part of a bigger plan. We size and shape the space around real use: dining, lounging, a grill zone, a path to the door. From there we can integrate a <a href=\"/fire-pits/\">fire pit</a>, a <a href=\"/retaining-walls/\">seating wall</a>, steps, low-voltage <a href=\"/landscape-lighting/\">landscape lighting</a>, and surrounding plantings so the whole area reads as one finished outdoor room rather than a slab dropped in the grass.",
+      },
+      {
+        heading: "Paver patios in King of Prussia and Upper Merion",
+        text: "In King of Prussia, a patio may need to connect a newer home to a yard with unfinished grading, or fit an established property without overwhelming it. We plan the transition from door to patio, check how water crosses the site, and prepare the base for local freeze-thaw conditions. Concrete pavers can suit a clean-lined layout; bluestone or flagstone can complement older architecture. See our <a href=\"/landscape-design-hardscaping-in-king-of-prussia-pa/\">King of Prussia work</a> and <a href=\"/hardscape-services/\">hardscaping services</a> for the wider design-build approach.",
+      },
+      {
+        heading: "Planning a patio for fall",
+        text: "Fall can be a practical time to plan or install a patio, depending on the weather, materials, and work already on the schedule. We assess site conditions and give you a realistic start window with your estimate; we do not promise an installation date before reviewing the property.",
       },
       {
         heading: "Patio installation across Norristown and the Main Line",
@@ -779,7 +791,11 @@ export const services: Service[] = [
       },
       {
         q: "How long does it take to install a patio?",
-        a: "Most residential patios take a few days to a week of on-site work once we start, depending on size, material, and any walls, steps, or drainage involved. We give you a realistic timeline with your estimate and keep you updated as the work progresses.",
+        a: "The schedule depends on patio size, material, site access, and any walls, steps, or drainage work involved. We give you a project-specific timeline with your estimate and keep you updated as the work progresses.",
+      },
+      {
+        q: "Do you install patios in King of Prussia?",
+        a: "Yes. We design and install paver and natural stone patios in King of Prussia and across Upper Merion. We review layout, materials, drainage, and site access during the estimate so the plan fits your property.",
       },
       {
         q: "Do I need a permit for a patio in Montgomery County?",
@@ -2101,28 +2117,28 @@ export const services: Service[] = [
     category: "maintenance",
     icon: "leaf",
     image: "/images/curb-tan-house.webp",
-    intro: "Leaf removal and bed prep that puts your property to bed for winter.",
-    highlights: ["Full-property leaf removal", "Perennial cutback", "Bed & gutter clearing", "Debris haul-away"],
+    intro: "Leaf removal, bed cleanup, and seasonal property care before winter in Norristown and across the Main Line.",
+    highlights: ["Leaf removal", "Bed and landscape cleanup", "Gutter leaf clearing", "Debris haul-away"],
     body: [
       {
-        heading: "Fall cleanups that put your property to bed",
-        text: "How a property is closed out in fall sets up how it looks the following spring. Mex Landscaping provides thorough fall cleanups across Norristown and the Main Line, clearing leaves and debris, cutting back perennials, and prepping beds so your landscape is clean through winter and ready to rebound when the season turns. A good fall cleanup is one of the highest-value services of the year, protecting the lawn and beds you have invested in through the months ahead.",
+        heading: "Fall cleanup before winter",
+        text: "Leaves and debris can build up quickly on lawns, beds, and shared outdoor spaces. Mex Landscaping provides fall cleanup and leaf removal across Norristown and the Main Line. We walk the property, agree on the areas to clear, and schedule the work around the season and the amount of leaf drop. Call (484) 261-6650 or request an estimate for your property.",
       },
       {
-        heading: "Leaf removal, cutbacks, and bed prep",
-        text: "A complete fall cleanup is more than raking leaves. We perform full-property leaf removal from lawns and beds, cut back spent perennials, clear out beds, and tidy the landscape for winter. We can also clear leaves from gutters and other problem areas where they cause trouble. Each piece matters: leaves left on the lawn smother grass, and beds full of debris invite pests and disease over winter.",
+        heading: "What your cleanup can include",
+        text: "A fall cleanup can cover leaf removal from lawns and beds, spent perennial cutbacks, bed tidying, gutter leaf clearing, and debris haul-away. A final mow or other seasonal work can be discussed during the estimate. The written scope sets out what is included for your property, so there is no assumption that every site needs the same package.",
       },
       {
-        heading: "Why fall cleanup protects your landscape",
-        text: "A thick layer of fallen leaves blocks light and traps moisture against the lawn, which can lead to matting, mold, and dead patches by spring. Debris-filled beds give pests and disease a place to overwinter. Clearing it all out lets the lawn breathe, keeps beds healthy, and removes the mess that would otherwise greet you in spring. Doing it thoroughly in fall means far less repair work when the growing season returns.",
+        heading: "For homes, HOAs, and commercial properties",
+        text: "We handle residential yards as well as fall cleanup for HOA common areas and commercial landscapes. Larger sites may need attention to entries, walkways, planting beds, and the places leaves collect between visits. We can quote a one-time cleanup or discuss repeat visits as trees shed through the season.",
       },
       {
-        heading: "Done thoroughly, hauled away",
-        text: "We do not leave piles behind. After clearing leaves, cutting back, and prepping the beds, we remove and haul away all the debris so your property is genuinely clean and tidy heading into winter. For many clients, fall cleanup pairs naturally with aeration and overseeding earlier in the season and a spring cleanup afterward, all of which we can handle as part of a recurring maintenance plan.",
+        heading: "Plan the rest of the season",
+        text: "If the lawn also needs attention, ask about <a href=\"/fall-aeration-seeding/\">fall aeration and seeding</a>. Fall cleanup can also fit into a broader <a href=\"/property-maintenance/\">property maintenance plan</a>. For commercial properties planning beyond leaf season, we can discuss <a href=\"/snow-management-services/\">snow management</a> separately so the winter scope is clear.",
       },
       {
-        heading: "Fall cleanups for Norristown and the Main Line",
-        text: "We provide fall cleanups throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, as a standalone service or part of a recurring maintenance plan. Scheduling early helps ensure your property is handled before winter sets in. Call (484) 261-6650 or request a free estimate.",
+        heading: "Fall cleanups across Norristown and the Main Line",
+        text: "We serve Norristown, King of Prussia, Wayne, Bryn Mawr, Conshohocken, and surrounding Montgomery County and Main Line communities. Leaf drop and weather vary, so we discuss timing and whether one visit or several make sense for your site. Request an estimate to confirm the scope and schedule.",
       },
     ],
     faqs: [
@@ -2132,7 +2148,7 @@ export const services: Service[] = [
       },
       {
         q: "What is included in a fall cleanup?",
-        a: "A full fall cleanup typically includes leaf removal from lawns and beds, cutting back spent perennials, clearing out beds, tidying the landscape for winter, and hauling away all debris. We can tailor the scope to your property and add related services like a final mow or gutter leaf clearing.",
+        a: "Depending on the property, we can clear leaves from lawns and beds, cut back spent perennials, tidy planting areas, clear gutter leaves, and haul away debris. We confirm the included work in your estimate.",
       },
       {
         q: "Why not just leave the leaves?",
@@ -2140,7 +2156,11 @@ export const services: Service[] = [
       },
       {
         q: "Do you haul away the leaves and debris?",
-        a: "Yes. We remove and haul away all the leaves and debris so your property is genuinely clean heading into winter, with no piles left behind. A tidy finish is part of every cleanup we do.",
+        a: "Yes, debris haul-away is available as part of a fall cleanup. We specify removal in the estimate so you know how leaves and cuttings will be handled.",
+      },
+      {
+        q: "Do you clean up commercial and HOA properties?",
+        a: "Yes. We quote fall cleanups for commercial landscapes and HOA common areas, with the visit schedule and work areas tailored to the property.",
       },
       {
         q: "Can fall cleanup be part of a maintenance plan?",

@@ -334,8 +334,8 @@ const cityProfiles: Record<string, CityProfile> = {
         text: "From long-established streets to newer subdivisions, King of Prussia homes deserve outdoor spaces that match the quality of the neighborhood. We create complete landscape designs with layered plantings, custom hardscape, drainage, and lighting, all planned together. Whether you are finishing a new-construction yard or reimagining an older property, we work to your goals and budget with a clear plan and a realistic timeline.",
       },
       {
-        heading: "Patios and retaining walls for King of Prussia homes",
-        text: "Hardscaping is where a King of Prussia backyard becomes an outdoor room. We build paver and natural stone patios on engineered, compacted bases that stay level through Pennsylvania freeze-thaw, and retaining and seating walls that turn sloped or unusable ground into level living space. Fire pits, walkways, steps, and outdoor kitchens complete the picture, all matched to the home's materials and style.",
+        heading: "Paver and stone patios in King of Prussia",
+        text: "A King of Prussia patio should connect naturally to the house and work with the yard's grade. We design paver and natural stone layouts for dining, seating, and circulation, then plan the compacted base and drainage for Pennsylvania freeze-thaw. Material choice depends on the home: concrete pavers offer varied patterns and finishes, while bluestone or flagstone may suit older stone and brick architecture. Seating walls, steps, a fire feature, and lighting can be designed with the patio rather than added later. Explore our <a href=\"/patios/\">patio design and installation</a> service for materials, process, and cost factors, or see our broader <a href=\"/hardscape-services/\">hardscaping work</a>.",
       },
       {
         heading: "Landscape lighting and drainage in King of Prussia",
