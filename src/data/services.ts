@@ -1208,16 +1208,13 @@ export const services: Service[] = [
   },
   {
     path: "/fire-pits/",
-    title: "Fire Pits & Fire Features",
+    title: "Fire Pits & Outdoor Fireplaces",
     category: "outdoor-living",
     icon: "flame",
     image: "/images/firepit-lit.webp",
     featured: true,
-    metaTitle: "Fire Pits & Fire Features | Custom Built | Mex Landscaping Norristown PA",
-    metaDescription:
-      "Custom fire pits and fire features in Norristown, PA. Mex Landscaping builds wood-burning and gas fire features in stone and block to match your patio. Free estimate.",
     intro:
-      "Custom-built fire pits and fire features: the centerpiece of a great outdoor space, built in stone and block to match your patio.",
+      "Custom fire pits, outdoor fireplaces, and seating walls designed together for lasting outdoor gathering spaces.",
     gallery: [
       {
         src: "/images/firepit-lit.webp",
@@ -1225,9 +1222,9 @@ export const services: Service[] = [
         caption: "Stone fire pit at dusk",
       },
       {
-        src: "/images/pergola-patio.webp",
-        alt: "Cedar pergola over a paver patio",
-        caption: "Cedar pergola and paver patio",
+        src: "/images/wall-block-curved.webp",
+        alt: "Curved, capped stone wall beside a planting bed",
+        caption: "Curved capped wall",
       },
       {
         src: "/images/lighting-dusk.webp",
@@ -1236,53 +1233,65 @@ export const services: Service[] = [
       },
     ],
     highlights: [
-      "Wood-burning & gas features",
-      "In-ground & built-up designs",
-      "Matching stone & finishes",
+      "Custom wood-burning & gas fire pits",
+      "Outdoor fireplaces",
       "Integrated seating walls",
+      "Coordinated patio materials",
     ],
     body: [
       {
-        heading: "Custom fire pits that anchor the backyard",
-        text: "A fire feature turns an ordinary patio into a destination, the spot everyone gathers around once the sun goes down. Mex Landscaping designs and builds custom fire pits and fire features for homes across Norristown and the Main Line. These are not drop-in kits; we build permanent, custom features in stone, block, and brick, sized and finished to match your patio and the way you want to use the space.",
+        heading: "Custom fire pits built for the patio",
+        text: "A permanent fire pit can give a patio a clear place to gather. Mex Landscaping designs and builds custom fire pits for properties across Montgomery County and the Main Line, using stone, block, or brick finishes chosen to work with the surrounding <a href=\"/patios/\">patio</a>. We plan the size, position, and seating around the way you expect to use the space rather than dropping a kit into an existing layout.",
       },
       {
-        heading: "Wood-burning and gas fire features",
-        text: "We build both wood-burning and gas fire features, and the right choice comes down to how you like to use it. Wood-burning pits deliver the classic crackle, aroma, and bigger flame that many people love. Gas fire pits and fireplaces light instantly, burn cleanly, and shut off with a switch, which makes them effortless for a quick evening outside. We will walk you through the trade-offs and handle the gas line where one is needed.",
+        heading: "Wood-burning or gas fire pit?",
+        text: "We build wood-burning and gas fire pits. Wood-burning offers a traditional flame but needs fuel, tending, and cleanup; gas is convenient to start and shut off but requires utility planning. We discuss the trade-offs, site conditions, and any required trade work during the estimate so the choice fits your property and routine.",
       },
       {
-        heading: "In-ground pits, built-up features, and fireplaces",
-        text: "From a simple in-ground fire pit to a built-up circular feature with a sitting ledge to a full outdoor fireplace, we build the format that fits your space. We match the stone, block, or brick to your patio and surrounding hardscape so the feature looks original to the design rather than added on afterward, and we can pair it with a surrounding seating wall for built-in seating.",
+        heading: "Outdoor fireplaces as a focal point",
+        text: "An outdoor fireplace gives the patio a vertical focal point and a natural direction for seating. We design and build fireplaces as part of a permanent outdoor space, considering how the structure relates to the house, the patio footprint, and nearby planting. Materials and proportions can tie it to a new <a href=\"/outdoor-living/\">outdoor living design</a> or an existing hardscape after we assess the site.",
       },
       {
-        heading: "Built safely, sited correctly",
-        text: "A fire feature has to be built right to be enjoyed without worry. We handle proper siting and clearances from the house and plantings, fire-rated materials and liners, drainage so the pit does not hold water, and code-aware gas work where applicable. Done correctly, your fire feature is as safe as it is beautiful, and it pairs naturally with seating walls, patio lighting, and the rest of your outdoor space.",
+        heading: "Seat walls that complete the gathering space",
+        text: "A low, capped seating wall can frame a fire pit or define the edge of a patio while providing built-in places to sit. We choose stone or block finishes that work with the fire feature and surrounding hardscape, and plan the wall's position so circulation and seating stay comfortable. A wall that also holds back a grade has different structural demands; see our <a href=\"/retaining-walls/\">retaining and seating walls</a> service for that work.",
       },
       {
-        heading: "Fire pit installation in Norristown and the Main Line",
-        text: "We build fire pits and fire features throughout Montgomery County and the Main Line, including Norristown, King of Prussia, Wayne, Bryn Mawr, and Conshohocken, whether as part of a new patio or an addition to an existing one. It starts with a free on-site estimate. Call (484) 261-6650 or request a free estimate.",
+        heading: "Designed and built as one project",
+        text: "Fire features work best when the patio, seating, circulation, and <a href=\"/landscape-lighting/\">lighting</a> are considered together. We can plan a new outdoor room or assess whether a feature can be added to an existing patio. Layout, base conditions, drainage, materials, and utilities all shape the proposal, and one team coordinates the hardscape work from design through installation.",
+      },
+      {
+        heading: "Placement and project requirements",
+        text: "We review the proposed location in relation to structures, planting, traffic paths, drainage, and the type of feature you want. Material, utility, and municipal requirements vary by project, so we confirm the applicable scope before construction. We will talk through those considerations during the on-site estimate rather than assume every yard can use the same design.",
+      },
+      {
+        heading: "Fire features across Montgomery County and the Main Line",
+        text: "We build fire pits, outdoor fireplaces, and seating walls in Norristown, King of Prussia, Wayne, Bryn Mawr, Conshohocken, and surrounding communities. Tell us whether you are planning a complete patio or adding to an existing space, and we will assess the site and provide a clear scope. Call (484) 261-6650 or request a free on-site estimate.",
       },
     ],
     faqs: [
       {
         q: "Should I get a wood-burning or gas fire pit?",
-        a: "It comes down to how you will use it. Wood-burning gives you the traditional crackle, scent, and larger flame, but takes fuel, tending, and cleanup. Gas lights instantly, burns clean, and turns off with a switch, which makes it far more convenient for spur-of-the-moment evenings. We build both and will help you choose based on your habits and the space.",
+        a: "Wood-burning gives you a traditional fire but needs fuel, tending, and cleanup. Gas is convenient to start and stop but requires utility planning. We build both types of fire pit and can discuss the right fit for your site and how you plan to use it.",
       },
       {
         q: "How much does a custom fire pit cost?",
-        a: "A simple in-ground wood-burning pit is the most affordable option, while a built-up gas feature or full outdoor fireplace with a gas line and matching stonework costs more. Pricing depends on size, materials, and whether gas needs to be run. We provide a clear, no-obligation estimate after seeing your space.",
+        a: "Cost depends on size, materials, site access, the existing patio and base, and any utilities or seating walls involved. We provide a project-specific, no-obligation estimate after seeing the space.",
       },
       {
         q: "Can you add a fire pit to my existing patio?",
-        a: "Usually, yes. We assess your patio and its base, then build the fire feature so it integrates with the existing hardscape and drainage. If gas is involved, we coordinate the line. If the patio needs reinforcement to carry a built-up feature, we will tell you up front.",
+        a: "Often, but it depends on the patio's layout, base, and surrounding space. We assess those conditions before recommending a feature or any preparation the site may need.",
       },
       {
-        q: "Are custom-built fire pits safe near the house?",
-        a: "When they are built and sited correctly, yes. We follow proper clearances from structures and plantings, use fire-rated materials and liners, build in drainage, and keep gas work code-aware. Correct siting and materials are exactly what makes the difference between a safe permanent feature and a hazard.",
+        q: "Can you build an outdoor fireplace as well as a fire pit?",
+        a: "Yes. We design and build outdoor fireplaces as well as custom fire pits. A fireplace creates a vertical focal point, while a fire pit typically lets people gather around the flame. The right choice depends on layout, materials, budget, and how you want to use the patio.",
       },
       {
-        q: "Can a fire pit include built-in seating?",
-        a: "Yes. A seating wall built around the fire feature is one of the most popular combinations we install. It rings the fire with permanent seating, defines the space, and adds capacity without filling the patio with furniture. We design the two together so the proportions and materials match.",
+        q: "Can you add a seating wall around a fire feature?",
+        a: "Yes. We build seating walls that frame fire features or define a patio edge. We can plan the wall with a new patio or assess an existing one first. If the wall also retains soil, we account for that different structural role in the design.",
+      },
+      {
+        q: "Do I need a permit for a fire pit or outdoor fireplace?",
+        a: "Requirements vary by municipality and project details, including the feature type and any utility work. We review what applies to your property during planning rather than assume the same rules for every township.",
       },
     ],
   },

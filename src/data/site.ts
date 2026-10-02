@@ -70,7 +70,7 @@ export const nav: NavItem[] = [
     href: "/outdoor-living/",
     children: [
       { label: "Outdoor Living Spaces", href: "/outdoor-living/" },
-      { label: "Fire Pits & Fire Features", href: "/fire-pits/" },
+      { label: "Fire Pits & Fireplaces", href: "/fire-pits/" },
       { label: "Outdoor Kitchens", href: "/outdoor-kitchens/" },
       { label: "Water Features", href: "/water-features/" },
     ],
