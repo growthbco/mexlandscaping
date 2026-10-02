@@ -1,5 +1,30 @@
 {
   "enabledPlugins": {
     "claude-seo@agricidaniel-claude-seo": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v seoagent >/dev/null 2>&1 && seoagent sync --silent || npx -y @seoagent-official/seoagent@latest sync --silent",
+            "timeout": 60
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v seoagent >/dev/null 2>&1 && seoagent sync --silent || npx -y @seoagent-official/seoagent@latest sync --silent",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
   }
 }
